@@ -105,8 +105,7 @@ export function Navbar() {
               className="mt-2 rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground shadow-glow-violet"
             >
               Join Founding
-              </Link>
-            ))}
+            </Link>
             <div className="mt-3 px-3">
               <Countdown variant="compact" />
             </div>
