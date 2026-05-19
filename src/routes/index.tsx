@@ -12,6 +12,25 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "meUus — Connecting Everything | Launching 21 July 2026" },
       { name: "description", content: "meUus is a human-development ecosystem of 9 pillars connecting every soul to legal, business, mental, emotional, and economic growth. Final execution begins 21 July 2026." },
+      { property: "og:title", content: "meUus — Connecting Everything" },
+      { property: "og:description", content: "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026. Founding roles open now." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "meUus",
+          description: "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026.",
+          foundingDate: "2026-07-21",
+          founder: { "@type": "Person", name: "Md. Mahady Hasan" },
+          areaServed: "Bangladesh",
+          slogan: "Connecting Everything",
+        }),
+      },
     ],
   }),
   component: HomePage,
