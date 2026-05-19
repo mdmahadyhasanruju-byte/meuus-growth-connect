@@ -8,7 +8,6 @@ const LINKS = [
   { to: "/ecosystem" as const, label: "Ecosystem" },
   { to: "/pillars" as const, label: "Pillars" },
   { to: "/global" as const, label: "Global" },
-  { to: "/join" as const, label: "Join" },
 ];
 
 export function Navbar() {
@@ -69,8 +68,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
           <Countdown variant="compact" />
+          <Link
+            to="/join"
+            className="rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground shadow-glow-violet transition hover:scale-[1.03]"
+          >
+            Join Founding
+          </Link>
         </div>
 
         <button
@@ -95,6 +100,12 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <Link
+              to="/join"
+              className="mt-2 rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground shadow-glow-violet"
+            >
+              Join Founding
+            </Link>
             <div className="mt-3 px-3">
               <Countdown variant="compact" />
             </div>
