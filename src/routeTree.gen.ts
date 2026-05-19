@@ -9,38 +9,128 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PillarsRouteImport } from './routes/pillars'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as GlobalRouteImport } from './routes/global'
+import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 
+const PillarsRoute = PillarsRouteImport.update({
+  id: '/pillars',
+  path: '/pillars',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlobalRoute = GlobalRouteImport.update({
+  id: '/global',
+  path: '/global',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcosystemRoute = EcosystemRouteImport.update({
+  id: '/ecosystem',
+  path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PillarsSlugRoute = PillarsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PillarsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/global': typeof GlobalRoute
+  '/join': typeof JoinRoute
+  '/pillars': typeof PillarsRouteWithChildren
+  '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/global': typeof GlobalRoute
+  '/join': typeof JoinRoute
+  '/pillars': typeof PillarsRouteWithChildren
+  '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/global': typeof GlobalRoute
+  '/join': typeof JoinRoute
+  '/pillars': typeof PillarsRouteWithChildren
+  '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ecosystem'
+    | '/global'
+    | '/join'
+    | '/pillars'
+    | '/pillars/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ecosystem' | '/global' | '/join' | '/pillars' | '/pillars/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/ecosystem'
+    | '/global'
+    | '/join'
+    | '/pillars'
+    | '/pillars/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EcosystemRoute: typeof EcosystemRoute
+  GlobalRoute: typeof GlobalRoute
+  JoinRoute: typeof JoinRoute
+  PillarsRoute: typeof PillarsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/pillars': {
+      id: '/pillars'
+      path: '/pillars'
+      fullPath: '/pillars'
+      preLoaderRoute: typeof PillarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/global': {
+      id: '/global'
+      path: '/global'
+      fullPath: '/global'
+      preLoaderRoute: typeof GlobalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecosystem': {
+      id: '/ecosystem'
+      path: '/ecosystem'
+      fullPath: '/ecosystem'
+      preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +138,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pillars/$slug': {
+      id: '/pillars/$slug'
+      path: '/$slug'
+      fullPath: '/pillars/$slug'
+      preLoaderRoute: typeof PillarsSlugRouteImport
+      parentRoute: typeof PillarsRoute
+    }
   }
 }
 
+interface PillarsRouteChildren {
+  PillarsSlugRoute: typeof PillarsSlugRoute
+}
+
+const PillarsRouteChildren: PillarsRouteChildren = {
+  PillarsSlugRoute: PillarsSlugRoute,
+}
+
+const PillarsRouteWithChildren =
+  PillarsRoute._addFileChildren(PillarsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EcosystemRoute: EcosystemRoute,
+  GlobalRoute: GlobalRoute,
+  JoinRoute: JoinRoute,
+  PillarsRoute: PillarsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
