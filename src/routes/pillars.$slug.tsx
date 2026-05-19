@@ -122,18 +122,30 @@ function PillarPage() {
           <p className="mt-3 text-foreground/65">
             Every pillar needs leaders, contributors, and supporters before launch.
           </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {["co-founder", "execution-partner", "core-team", "advisor", "volunteer"].map((slug) => (
+              <Link
+                key={slug}
+                to="/join"
+                search={{ role: slug }}
+                className="rounded-full border-hairline bg-glass px-4 py-2 text-xs uppercase tracking-wider text-foreground/80 hover:text-foreground hover:bg-white/10"
+              >
+                Join as {slug.replace("-", " ")}
+              </Link>
+            ))}
+          </div>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/join"
               className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet"
             >
-              Contribute to this pillar
+              See all founding roles
             </Link>
             <Link
               to="/pillars"
               className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm text-foreground"
             >
-              See all pillars <ArrowRight className="h-4 w-4" />
+              All pillars <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
