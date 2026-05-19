@@ -92,7 +92,7 @@ function PillarPage() {
         <div className="mx-auto max-w-5xl">
           <h2 className="font-serif text-3xl text-foreground">What it offers</h2>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            {p.services.map((s) => (
+            {p.services.map((s: string) => (
               <div key={s} className="flex items-start gap-3 rounded-xl border-hairline bg-card/40 p-4">
                 <span
                   className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full"
