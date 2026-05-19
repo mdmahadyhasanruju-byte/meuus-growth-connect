@@ -13,6 +13,7 @@ import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as GlobalRouteImport } from './routes/global'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 
 const PillarsRoute = PillarsRouteImport.update({
   id: '/pillars',
@@ -34,39 +35,53 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PillarsSlugRoute = PillarsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PillarsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
-  '/pillars': typeof PillarsRoute
+  '/pillars': typeof PillarsRouteWithChildren
+  '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
-  '/pillars': typeof PillarsRoute
+  '/pillars': typeof PillarsRouteWithChildren
+  '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
-  '/pillars': typeof PillarsRoute
+  '/pillars': typeof PillarsRouteWithChildren
+  '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ecosystem' | '/global' | '/pillars'
+  fullPaths: '/' | '/ecosystem' | '/global' | '/pillars' | '/pillars/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ecosystem' | '/global' | '/pillars'
-  id: '__root__' | '/' | '/ecosystem' | '/global' | '/pillars'
+  to: '/' | '/ecosystem' | '/global' | '/pillars' | '/pillars/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/ecosystem'
+    | '/global'
+    | '/pillars'
+    | '/pillars/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EcosystemRoute: typeof EcosystemRoute
   GlobalRoute: typeof GlobalRoute
-  PillarsRoute: typeof PillarsRoute
+  PillarsRoute: typeof PillarsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -99,14 +114,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pillars/$slug': {
+      id: '/pillars/$slug'
+      path: '/$slug'
+      fullPath: '/pillars/$slug'
+      preLoaderRoute: typeof PillarsSlugRouteImport
+      parentRoute: typeof PillarsRoute
+    }
   }
 }
+
+interface PillarsRouteChildren {
+  PillarsSlugRoute: typeof PillarsSlugRoute
+}
+
+const PillarsRouteChildren: PillarsRouteChildren = {
+  PillarsSlugRoute: PillarsSlugRoute,
+}
+
+const PillarsRouteWithChildren =
+  PillarsRoute._addFileChildren(PillarsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EcosystemRoute: EcosystemRoute,
   GlobalRoute: GlobalRoute,
-  PillarsRoute: PillarsRoute,
+  PillarsRoute: PillarsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
