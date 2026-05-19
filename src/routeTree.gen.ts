@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as GlobalRouteImport } from './routes/global'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PillarsRoute = PillarsRouteImport.update({
+  id: '/pillars',
+  path: '/pillars',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GlobalRoute = GlobalRouteImport.update({
   id: '/global',
   path: '/global',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
+  '/pillars': typeof PillarsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
+  '/pillars': typeof PillarsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
+  '/pillars': typeof PillarsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ecosystem' | '/global'
+  fullPaths: '/' | '/ecosystem' | '/global' | '/pillars'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ecosystem' | '/global'
-  id: '__root__' | '/' | '/ecosystem' | '/global'
+  to: '/' | '/ecosystem' | '/global' | '/pillars'
+  id: '__root__' | '/' | '/ecosystem' | '/global' | '/pillars'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EcosystemRoute: typeof EcosystemRoute
   GlobalRoute: typeof GlobalRoute
+  PillarsRoute: typeof PillarsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/pillars': {
+      id: '/pillars'
+      path: '/pillars'
+      fullPath: '/pillars'
+      preLoaderRoute: typeof PillarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/global': {
       id: '/global'
       path: '/global'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EcosystemRoute: EcosystemRoute,
   GlobalRoute: GlobalRoute,
+  PillarsRoute: PillarsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
