@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PillarsRouteImport } from './routes/pillars'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as GlobalRouteImport } from './routes/global'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as IndexRouteImport } from './routes/index'
@@ -18,6 +19,11 @@ import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 const PillarsRoute = PillarsRouteImport.update({
   id: '/pillars',
   path: '/pillars',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlobalRoute = GlobalRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
+  '/join': typeof JoinRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/pillars/$slug': typeof PillarsSlugRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
+  '/join': typeof JoinRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/pillars/$slug': typeof PillarsSlugRoute
 }
@@ -60,19 +68,27 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/ecosystem': typeof EcosystemRoute
   '/global': typeof GlobalRoute
+  '/join': typeof JoinRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/pillars/$slug': typeof PillarsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ecosystem' | '/global' | '/pillars' | '/pillars/$slug'
+  fullPaths:
+    | '/'
+    | '/ecosystem'
+    | '/global'
+    | '/join'
+    | '/pillars'
+    | '/pillars/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ecosystem' | '/global' | '/pillars' | '/pillars/$slug'
+  to: '/' | '/ecosystem' | '/global' | '/join' | '/pillars' | '/pillars/$slug'
   id:
     | '__root__'
     | '/'
     | '/ecosystem'
     | '/global'
+    | '/join'
     | '/pillars'
     | '/pillars/$slug'
   fileRoutesById: FileRoutesById
@@ -81,6 +97,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EcosystemRoute: typeof EcosystemRoute
   GlobalRoute: typeof GlobalRoute
+  JoinRoute: typeof JoinRoute
   PillarsRoute: typeof PillarsRouteWithChildren
 }
 
@@ -91,6 +108,13 @@ declare module '@tanstack/react-router' {
       path: '/pillars'
       fullPath: '/pillars'
       preLoaderRoute: typeof PillarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/global': {
@@ -139,8 +163,19 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EcosystemRoute: EcosystemRoute,
   GlobalRoute: GlobalRoute,
+  JoinRoute: JoinRoute,
   PillarsRoute: PillarsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
