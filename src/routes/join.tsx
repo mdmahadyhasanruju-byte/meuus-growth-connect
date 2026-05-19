@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
-import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { toast } from "sonner";
 import { ParticleCanvas } from "@/components/site/ParticleCanvas";
 import { AnimatedOrb } from "@/components/site/AnimatedOrb";
@@ -11,11 +10,11 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Countdown } from "@/components/site/Countdown";
 
 const searchSchema = z.object({
-  role: fallback(z.string(), "").default(""),
+  role: z.string().optional().default(""),
 });
 
 export const Route = createFileRoute("/join")({
-  validateSearch: zodValidator(searchSchema),
+  validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
       { title: "Join meUus — Founding Roles Open Until 21 July 2026" },
