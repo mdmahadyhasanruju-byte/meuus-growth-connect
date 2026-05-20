@@ -44,23 +44,42 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
     );
   }
 
+  const accents = [
+    "text-[oklch(0.85_0.13_180)]", // teal — Days
+    "text-foreground/95",            // Hours
+    "text-foreground/95",            // Minutes
+    "text-[oklch(0.78_0.14_280)]", // indigo — Seconds
+  ];
+
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/60">
-        <span className="h-px w-8 bg-foreground/30" />
-        Final Execution begins · 21 July 2026
-        <span className="h-px w-8 bg-foreground/30" />
+    <div className="flex w-full max-w-2xl flex-col items-center gap-8">
+      <div className="flex items-center justify-center gap-3">
+        <span className="h-px w-10 bg-gradient-to-r from-transparent to-foreground/25" />
+        <span className="text-[0.6rem] uppercase tracking-[0.32em] text-foreground/45 sm:text-[0.65rem]">
+          Final Execution Begins · 21 July 2026
+        </span>
+        <span className="h-px w-10 bg-gradient-to-l from-transparent to-foreground/25" />
       </div>
-      <div className="grid grid-cols-4 gap-3 sm:gap-5">
-        {units.map((u) => (
+      <div className="grid w-full grid-cols-4">
+        {units.map((u, i) => (
           <div
             key={u.label}
-            className="flex w-20 flex-col items-center rounded-xl border-hairline bg-glass px-3 py-4 sm:w-28 sm:py-5"
+            className={`flex flex-col items-center px-2 sm:px-4 ${
+              i > 0 ? "border-l border-white/10" : ""
+            }`}
           >
-            <span className="font-serif text-4xl font-medium tabular-nums text-gradient-violet sm:text-6xl">
+            <span
+              className={`font-serif text-5xl font-light leading-none tabular-nums sm:text-6xl md:text-7xl ${accents[i]} ${
+                i === 0 ? "italic" : ""
+              }`}
+            >
               {String(u.v).padStart(2, "0")}
             </span>
-            <span className="mt-2 text-[0.65rem] uppercase tracking-[0.2em] text-foreground/55 sm:text-xs">
+            <span
+              className={`mt-3 text-[0.6rem] font-semibold uppercase tracking-[0.3em] sm:text-[0.65rem] ${
+                i === 0 ? "text-[oklch(0.85_0.13_180)]" : "text-foreground/40"
+              }`}
+            >
               {u.label}
             </span>
           </div>
