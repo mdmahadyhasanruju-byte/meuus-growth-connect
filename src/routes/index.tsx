@@ -115,6 +115,10 @@ function HomePage() {
               Explore the Ecosystem
             </Link>
           </div>
+
+          <p className="mt-10 text-[0.6rem] font-medium uppercase tracking-[0.5em] text-foreground/30">
+            Bismillah · Built for Humanity
+          </p>
         </div>
 
         {/* fade to next */}
