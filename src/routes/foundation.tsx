@@ -134,7 +134,7 @@ export default function FoundationPage() {
           <SectionHeading
             eyebrow="01 · What we already have"
             title="Four real-world entry points"
-            body="Not slides. Not plans. Systems that already breathe — people, customers, classrooms, soil."
+            subtitle="Not slides. Not plans. Systems that already breathe — people, customers, classrooms, soil."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {ENTRY_POINTS.map((e) => (
@@ -197,7 +197,7 @@ export default function FoundationPage() {
           <SectionHeading
             eyebrow="03 · The correct structure"
             title="Three layers, in order"
-            body="Each layer must breathe on its own before the next one starts pulling resources."
+            subtitle="Each layer must breathe on its own before the next one starts pulling resources."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {LAYERS.map((l, i) => (
@@ -262,7 +262,7 @@ export default function FoundationPage() {
           <SectionHeading
             eyebrow="05 · The next 7 days"
             title="Forget everything big for a moment"
-            body="Four steps. Nothing more. Finish them before adding a single new idea."
+            subtitle="Four steps. Nothing more. Finish them before adding a single new idea."
           />
           <ol className="mt-12 space-y-4">
             {NEXT_SEVEN.map((s, i) => (
