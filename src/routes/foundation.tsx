@@ -235,7 +235,7 @@ export default function FoundationPage() {
             Permanent in mission. Flexible in law.
           </h2>
           <p className="mt-5 text-foreground/75">
-            The instinct to say <em>“family property will be used forever for meUus, never sold”</em> is
+            The instinct to say <em>“The portion of The Founder's family property will be used forever for meUus, never sold”</em> is
             beautiful — and risky if locked informally too early.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
