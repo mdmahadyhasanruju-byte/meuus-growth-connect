@@ -166,27 +166,23 @@ function ApplyForm({ role }: { role: Role }) {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = {
-      role: role.slug,
-      roleTitle: role.title,
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-      submittedAt: new Date().toISOString(),
-    };
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
-    try {
-      const existing = JSON.parse(localStorage.getItem("meuus_applications") || "[]");
-      existing.push(data);
-      localStorage.setItem("meuus_applications", JSON.stringify(existing));
-    } catch {
-      /* ignore */
-    }
+    // No backend is wired yet — hand off via the user's mail client so the
+    // application actually reaches the operator instead of sitting in browser
+    // localStorage where it could be exfiltrated by any future XSS.
+    const subject = encodeURIComponent(`Founding application — ${role.title}`);
+    const body = encodeURIComponent(
+      `Role: ${role.title}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`,
+    );
+    window.location.href = `mailto:hello@meuus.org?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
-    toast.success(`Application received for ${role.title}`, {
-      description: "We will be in touch. JazakAllah for stepping forward.",
+    toast.success(`Opening your email app to send your ${role.title} application`, {
+      description: "Please hit send in your mail client to complete the application.",
     });
   }
 
