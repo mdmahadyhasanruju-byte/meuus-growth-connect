@@ -5,6 +5,7 @@ import { Countdown } from "./Countdown";
 
 const LINKS = [
   { to: "/" as const, label: "Home" },
+  { to: "/foundation" as const, label: "Foundation" },
   { to: "/ecosystem" as const, label: "Ecosystem" },
   { to: "/pillars" as const, label: "Pillars" },
   { to: "/global" as const, label: "Global" },
