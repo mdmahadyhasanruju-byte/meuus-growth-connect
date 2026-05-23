@@ -26,6 +26,8 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-[0.25em] text-foreground/45">Explore</h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link to="/" className="text-foreground/75 hover:text-foreground">Home</Link></li>
+              <li><Link to="/founder" className="text-foreground/75 hover:text-foreground">Founder's Letter</Link></li>
+              <li><Link to="/manifesto-full" className="text-foreground/75 hover:text-foreground">The Complete Manifesto</Link></li>
               <li><Link to="/ecosystem" className="text-foreground/75 hover:text-foreground">Ecosystem</Link></li>
               <li><Link to="/pillars" className="text-foreground/75 hover:text-foreground">Pillars</Link></li>
               <li><Link to="/global" className="text-foreground/75 hover:text-foreground">Global</Link></li>
