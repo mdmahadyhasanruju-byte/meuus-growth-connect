@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PillarsRouteImport } from './routes/pillars'
+import { Route as ManifestoRouteImport } from './routes/manifesto'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as GlobalRouteImport } from './routes/global'
 import { Route as FounderRouteImport } from './routes/founder'
@@ -21,6 +22,11 @@ import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 const PillarsRoute = PillarsRouteImport.update({
   id: '/pillars',
   path: '/pillars',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManifestoRoute = ManifestoRouteImport.update({
+  id: '/manifesto',
+  path: '/manifesto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JoinRoute = JoinRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
+  '/manifesto': typeof ManifestoRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/pillars/$slug': typeof PillarsSlugRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
+  '/manifesto': typeof ManifestoRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/pillars/$slug': typeof PillarsSlugRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
+  '/manifesto': typeof ManifestoRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/pillars/$slug': typeof PillarsSlugRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/global'
     | '/join'
+    | '/manifesto'
     | '/pillars'
     | '/pillars/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/global'
     | '/join'
+    | '/manifesto'
     | '/pillars'
     | '/pillars/$slug'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/global'
     | '/join'
+    | '/manifesto'
     | '/pillars'
     | '/pillars/$slug'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   FounderRoute: typeof FounderRoute
   GlobalRoute: typeof GlobalRoute
   JoinRoute: typeof JoinRoute
+  ManifestoRoute: typeof ManifestoRoute
   PillarsRoute: typeof PillarsRouteWithChildren
 }
 
@@ -140,6 +153,13 @@ declare module '@tanstack/react-router' {
       path: '/pillars'
       fullPath: '/pillars'
       preLoaderRoute: typeof PillarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manifesto': {
+      id: '/manifesto'
+      path: '/manifesto'
+      fullPath: '/manifesto'
+      preLoaderRoute: typeof ManifestoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/join': {
@@ -212,18 +232,9 @@ const rootRouteChildren: RootRouteChildren = {
   FounderRoute: FounderRoute,
   GlobalRoute: GlobalRoute,
   JoinRoute: JoinRoute,
+  ManifestoRoute: ManifestoRoute,
   PillarsRoute: PillarsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
