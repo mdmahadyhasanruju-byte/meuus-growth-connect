@@ -18,6 +18,13 @@ describe("journey route guards", () => {
     expect(canEnterJourneyRoute("/journey/quest/KBA-LQ-001", session)).toBe(false);
   });
 
+  test("allow preferences immediately after boundary acceptance", () => {
+    const session = journeyReducer(createInitialJourneySession(), { type: "BOUNDARY_ACCEPTED" });
+
+    expect(session.boundaryAccepted).toBe(true);
+    expect(canEnterJourneyRoute("/journey/preferences", session)).toBe(true);
+  });
+
   test("allow first quest only after orientation", () => {
     let session = createInitialJourneySession();
     session = journeyReducer(session, { type: "BOUNDARY_ACCEPTED" });

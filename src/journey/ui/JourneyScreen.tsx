@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 
 import { journeyCopy, firstSliceQuest } from "../content/first-slice";
 import type { JourneyEvent, JourneyPath, ReflectionResolution } from "../domain/types";
-import { JourneyProvider, useJourney } from "../provider";
+import { useJourney } from "../provider";
 import { canEnterJourneyRoute, getNextJourneyPath } from "../routing/guards";
 
 type ScreenKind =
@@ -21,15 +22,7 @@ type JourneyScreenProps = {
   path: JourneyPath;
 };
 
-export function JourneyScreen(props: JourneyScreenProps) {
-  return (
-    <JourneyProvider>
-      <JourneyScreenInner {...props} />
-    </JourneyProvider>
-  );
-}
-
-function JourneyScreenInner({ kind, path }: JourneyScreenProps) {
+export function JourneyScreen({ kind, path }: JourneyScreenProps) {
   const { session, dispatch } = useJourney();
   const language = session.language;
   const allowed = canEnterJourneyRoute(path, session);
@@ -131,10 +124,11 @@ function JourneyScreenInner({ kind, path }: JourneyScreenProps) {
 
 function PreferencesScreen() {
   const { session, dispatch } = useJourney();
+  const navigate = useJourneyNavigate();
 
   const save = (event: JourneyEvent) => {
     dispatch(event);
-    window.location.assign("/journey/orientation");
+    navigate("/journey/orientation");
   };
 
   return (
@@ -211,11 +205,12 @@ function PreferencesScreen() {
 
 function ReflectionScreen() {
   const { dispatch } = useJourney();
+  const navigate = useJourneyNavigate();
   const [text, setText] = useState("");
 
   const resolve = (resolution: ReflectionResolution) => {
     dispatch({ type: "REFLECTION_RESOLVED", resolution, text });
-    window.location.assign("/journey/review");
+    navigate("/journey/review");
   };
 
   return (
@@ -270,6 +265,7 @@ function ActionFrame({
   actionLabel: string;
 }) {
   const { dispatch } = useJourney();
+  const navigate = useJourneyNavigate();
 
   return (
     <Frame title={title} eyebrow="Knowledge Before Action">
@@ -278,13 +274,29 @@ function ActionFrame({
         className="inline-flex w-fit rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
         onClick={() => {
           dispatch(event);
-          window.location.assign(next);
+          navigate(next);
         }}
       >
         {actionLabel}
       </button>
     </Frame>
   );
+}
+
+function useJourneyNavigate() {
+  const navigate = useNavigate();
+
+  return (to: JourneyPath) => {
+    if (to === "/journey/quest/KBA-LQ-001") {
+      void navigate({
+        to: "/journey/quest/$questId",
+        params: { questId: "KBA-LQ-001" },
+      });
+      return;
+    }
+
+    void navigate({ to });
+  };
 }
 
 function Frame({

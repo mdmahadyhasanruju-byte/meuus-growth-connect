@@ -1,5 +1,6 @@
 import { Outlet, createFileRoute, useLocation } from "@tanstack/react-router";
 
+import { JourneyProvider } from "@/journey/provider";
 import { JourneyScreen } from "@/journey/ui/JourneyScreen";
 
 export const Route = createFileRoute("/journey")({
@@ -18,9 +19,13 @@ export const Route = createFileRoute("/journey")({
 function JourneyRoute() {
   const location = useLocation();
 
-  if (location.pathname === "/journey" || location.pathname === "/journey/") {
-    return <JourneyScreen kind="home" path="/journey" />;
-  }
-
-  return <Outlet />;
+  return (
+    <JourneyProvider>
+      {location.pathname === "/journey" || location.pathname === "/journey/" ? (
+        <JourneyScreen kind="home" path="/journey" />
+      ) : (
+        <Outlet />
+      )}
+    </JourneyProvider>
+  );
 }
