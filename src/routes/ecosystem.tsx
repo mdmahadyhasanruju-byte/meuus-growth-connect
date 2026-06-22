@@ -175,6 +175,7 @@ function EcosystemPage() {
           </p>
           <Link
             to="/join"
+            search={{}}
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground"
           >
             See open roles

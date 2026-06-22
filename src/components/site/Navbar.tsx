@@ -77,6 +77,7 @@ export function Navbar() {
           </div>
           <Link
             to="/join"
+            search={{}}
             className="hidden whitespace-nowrap rounded-full bg-primary px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-primary-foreground shadow-glow-violet transition hover:scale-[1.03] sm:inline-flex md:text-xs"
           >
             <span className="md:hidden">Join</span>
@@ -108,6 +109,7 @@ export function Navbar() {
             ))}
             <Link
               to="/join"
+              search={{}}
               className="mt-2 rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground shadow-glow-violet"
             >
               Join Founding

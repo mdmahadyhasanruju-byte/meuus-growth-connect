@@ -137,6 +137,7 @@ function PillarPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/join"
+              search={{}}
               className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet"
             >
               See all founding roles

@@ -298,6 +298,7 @@ export default function FoundationPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               to="/join"
+              search={{}}
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
             >
               Join the founding loop <ArrowRight className="h-4 w-4" />
