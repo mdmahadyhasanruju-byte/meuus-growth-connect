@@ -8,16 +8,22 @@ export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
       { title: "A Letter from the Founder — Md. Mahady Hasan | meUus" },
-      { name: "description", content: "The personal letter from Md. Mahady Hasan, founder of meUus, on why this ecosystem exists, what it stands for, and what it demands of everyone who joins." },
+      {
+        name: "description",
+        content:
+          "The personal letter from Md. Mahady Hasan, founder of meUus, on why this ecosystem exists, what it stands for, and what it demands of everyone who joins.",
+      },
       { property: "og:title", content: "A Letter from the Founder — Md. Mahady Hasan" },
-      { property: "og:description", content: "Why meUus exists. What it stands for. And what it demands of every soul who joins." },
+      {
+        property: "og:description",
+        content:
+          "Why meUus exists. What it stands for. And what it demands of every soul who joins.",
+      },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://meuus-growth-connect.lovable.app/founder" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: "https://meuus-growth-connect.lovable.app/founder" },
-    ],
+    links: [{ rel: "canonical", href: "https://meuus-growth-connect.lovable.app/founder" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -28,7 +34,8 @@ export const Route = createFileRoute("/founder")({
           author: { "@type": "Person", name: "Md. Mahady Hasan" },
           publisher: { "@type": "Organization", name: "meUus" },
           datePublished: "2026-07-21",
-          description: "The personal letter from Md. Mahady Hasan, founder of meUus, on why this ecosystem exists, what it stands for, and what it demands of everyone who joins.",
+          description:
+            "The personal letter from Md. Mahady Hasan, founder of meUus, on why this ecosystem exists, what it stands for, and what it demands of everyone who joins.",
         }),
       },
     ],
@@ -62,7 +69,11 @@ export default function FounderPage() {
       {/* HERO */}
       <section className="relative flex min-h-[60svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
         <ParticleCanvas density={40} />
-        <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" color="oklch(0.78 0.14 280)" size={700} />
+        <AnimatedOrb
+          className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
+          color="oklch(0.78 0.14 280)"
+          size={700}
+        />
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
             <Pen className="h-3 w-3 text-[var(--gold)]" />
@@ -84,7 +95,9 @@ export default function FounderPage() {
           <blockquote className="relative mb-16 border-l-2 border-[var(--gold)]/40 pl-6 sm:pl-8">
             <Quote className="absolute -left-3 -top-3 h-6 w-6 text-[var(--gold)]/60" />
             <p className="font-serif text-xl italic leading-relaxed text-foreground/90 sm:text-2xl">
-              I did not build meUus because the world needed another app. I built it because I watched too many people — brilliant, honest, hardworking people — drift through life without a map.
+              I did not build meUus because the world needed another app. I built it because I
+              watched too many people — brilliant, honest, hardworking people — drift through life
+              without a map.
             </p>
           </blockquote>
 
@@ -106,8 +119,8 @@ export default function FounderPage() {
                   i === 1
                     ? "font-serif text-2xl font-medium text-foreground"
                     : i === 0
-                    ? "text-sm uppercase tracking-[0.2em] text-foreground/55"
-                    : "text-sm text-foreground/65"
+                      ? "text-sm uppercase tracking-[0.2em] text-foreground/55"
+                      : "text-sm text-foreground/65"
                 }`}
               >
                 {line}

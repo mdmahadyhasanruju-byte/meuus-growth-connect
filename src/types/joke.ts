@@ -1,6 +1,6 @@
 export interface Joke {
   id?: string;
-  type: 'single' | 'twopart';
+  type: "single" | "twopart";
   category: string;
   joke?: string;
   setup?: string;
@@ -14,7 +14,7 @@ export interface Joke {
 export interface JokeApiResponse {
   error: boolean;
   category: string;
-  type: 'single' | 'twopart';
+  type: "single" | "twopart";
   joke?: string;
   setup?: string;
   delivery?: string;

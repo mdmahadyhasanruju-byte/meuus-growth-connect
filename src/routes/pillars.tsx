@@ -9,7 +9,11 @@ export const Route = createFileRoute("/pillars")({
   head: () => ({
     meta: [
       { title: "The Nine Pillars — meUus" },
-      { name: "description", content: "The nine pillars of meUus — Legal, Business, Unemployment, Mind, Drug, Family, Green, Idea Lab, aLive Bangladesh." },
+      {
+        name: "description",
+        content:
+          "The nine pillars of meUus — Legal, Business, Unemployment, Mind, Drug, Family, Green, Idea Lab, aLive Bangladesh.",
+      },
       { property: "og:title", content: "The Nine Pillars of meUus" },
       { property: "og:description", content: "Nine integrated pillars of human development." },
     ],
@@ -31,7 +35,8 @@ function PillarsIndex() {
             Nine doors. <span className="italic text-gradient-violet">One mission.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-foreground/70">
-            Each pillar is a full service. Click any one to see its philosophy, services, leader, and what launches on 21 July 2026.
+            Each pillar is a full service. Click any one to see its philosophy, services, leader,
+            and what launches on 21 July 2026.
           </p>
         </div>
       </section>
@@ -53,10 +58,14 @@ function PillarsIndex() {
               <div className="relative">
                 <div className="flex items-start justify-between">
                   <div>
-                    <div className="text-xs uppercase tracking-[0.3em] text-foreground/45">Pillar {p.num}</div>
+                    <div className="text-xs uppercase tracking-[0.3em] text-foreground/45">
+                      Pillar {p.num}
+                    </div>
                     <h3 className="mt-2 font-serif text-3xl text-foreground">{p.name}</h3>
                   </div>
-                  <span className="font-serif text-4xl" style={{ color: p.color }}>{p.symbol}</span>
+                  <span className="font-serif text-4xl" style={{ color: p.color }}>
+                    {p.symbol}
+                  </span>
                 </div>
                 <p className="mt-3 italic text-foreground/70">{p.tagline}</p>
                 <p className="mt-4 text-sm text-foreground/60">{p.description.slice(0, 130)}…</p>

@@ -32,9 +32,7 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "border-b border-white/5 bg-background/70 backdrop-blur-xl"
-          : "bg-transparent"
+        scrolled ? "border-b border-white/5 bg-background/70 backdrop-blur-xl" : "bg-transparent"
       }`}
     >
       {/* platinum hairline */}

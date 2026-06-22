@@ -117,8 +117,7 @@ export const PILLARS: Pillar[] = [
     short: "Recovery, rehabilitation, and reintegration.",
     description:
       "Addiction recovery support, rehabilitation guidance, and family reintegration — handled with honesty, never with shame.",
-    philosophy:
-      "We do not judge the fall. We walk the climb back, together.",
+    philosophy: "We do not judge the fall. We walk the climb back, together.",
     services: [
       "Recovery counselling",
       "Rehabilitation referrals",
@@ -139,8 +138,7 @@ export const PILLARS: Pillar[] = [
     short: "Mediation, parenting, marriage, and elder care.",
     description:
       "Mediation, marriage support, parenting guidance, and elder care — protecting the foundation of society from the inside out.",
-    philosophy:
-      "A healed family heals a generation. We start where the world starts.",
+    philosophy: "A healed family heals a generation. We start where the world starts.",
     services: [
       "Family & marriage mediation",
       "Parenting guidance",
@@ -161,8 +159,7 @@ export const PILLARS: Pillar[] = [
     short: "Greenhouse, agri-tech, and clean living.",
     description:
       "Greenhouse partnerships, agri-tech, and clean-living projects rooted in real Bangladeshi soil — economy and ecology, not one or the other.",
-    philosophy:
-      "We borrow this land from the next generation. We hand it back honestly.",
+    philosophy: "We borrow this land from the next generation. We hand it back honestly.",
     services: [
       "Greenhouse partnerships",
       "Agri-tech advisory",
@@ -183,8 +180,7 @@ export const PILLARS: Pillar[] = [
     short: "Validation, prototyping, and launch support.",
     description:
       "Structured validation, prototyping, gate reviews, and launch support for first-time founders — the missing space between an idea and a business.",
-    philosophy:
-      "An idea deserves a real chance. We give it structure, not flattery.",
+    philosophy: "An idea deserves a real chance. We give it structure, not flattery.",
     services: [
       "Idea validation sprints",
       "Prototype & MVP support",
@@ -205,8 +201,7 @@ export const PILLARS: Pillar[] = [
     short: "Local economy, district outreach, transparent reporting.",
     description:
       "A living map of national progress — local economy programs, district outreach, transparent reporting, and the connective tissue across all other pillars.",
-    philosophy:
-      "Bangladesh is not a problem to be solved. It is a country to be unlocked.",
+    philosophy: "Bangladesh is not a problem to be solved. It is a country to be unlocked.",
     services: [
       "District-level outreach",
       "Local economy programs",

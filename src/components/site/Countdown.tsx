@@ -37,7 +37,9 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
         <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] shadow-glow-gold" />
         <span>{t.days}d</span>
         <span className="text-foreground/40">·</span>
-        <span>{String(t.hours).padStart(2, "0")}h {String(t.minutes).padStart(2, "0")}m</span>
+        <span>
+          {String(t.hours).padStart(2, "0")}h {String(t.minutes).padStart(2, "0")}m
+        </span>
         <span className="text-foreground/40">·</span>
         <span className="text-[var(--gold)]">21 July 2026</span>
       </div>
@@ -46,8 +48,8 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
 
   const accents = [
     "text-[oklch(0.85_0.13_180)]", // teal — Days
-    "text-foreground/95",            // Hours
-    "text-foreground/95",            // Minutes
+    "text-foreground/95", // Hours
+    "text-foreground/95", // Minutes
     "text-[oklch(0.78_0.14_280)]", // indigo — Seconds
   ];
 

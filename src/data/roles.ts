@@ -162,10 +162,7 @@ export const ROLES: Role[] = [
       "Open access for specific decisions in your domain",
       "Honest, principled guidance",
     ],
-    ideal: [
-      "10+ years in your domain",
-      "Mission-aligned and comfortable with a youth-led team",
-    ],
+    ideal: ["10+ years in your domain", "Mission-aligned and comfortable with a youth-led team"],
     commitment: "Light · 1–2 hrs / month",
     reward: "Symbolic equity · Advisor recognition",
     symbol: "◎",
@@ -182,9 +179,7 @@ export const ROLES: Role[] = [
       "Help with events, content, translation, or outreach",
       "Show up consistently for what you commit to",
     ],
-    ideal: [
-      "Anyone with time, care, and integrity",
-    ],
+    ideal: ["Anyone with time, care, and integrity"],
     commitment: "Flexible",
     reward: "Recognition · Certificate · Community",
     symbol: "✷",

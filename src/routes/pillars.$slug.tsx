@@ -25,7 +25,9 @@ export const Route = createFileRoute("/pillars/$slug")({
     <div className="flex min-h-screen items-center justify-center px-4 text-center">
       <div>
         <h1 className="font-serif text-4xl text-foreground">Pillar not found</h1>
-        <Link to="/pillars" className="mt-4 inline-block text-[var(--gold)]">← Back to all pillars</Link>
+        <Link to="/pillars" className="mt-4 inline-block text-[var(--gold)]">
+          ← Back to all pillars
+        </Link>
       </div>
     </div>
   ),
@@ -41,7 +43,11 @@ function PillarPage() {
       {/* HERO */}
       <section className="relative flex min-h-[70svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
         <ParticleCanvas density={40} />
-        <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" color={p.color} size={800} />
+        <AnimatedOrb
+          className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
+          color={p.color}
+          size={800}
+        />
 
         <div className="relative z-10 animate-fade-up">
           <Link
@@ -51,8 +57,12 @@ function PillarPage() {
             <ArrowLeft className="h-3 w-3" />
             All pillars
           </Link>
-          <div className="mt-4 font-serif text-7xl" style={{ color: p.color }}>{p.symbol}</div>
-          <div className="mt-2 text-xs uppercase tracking-[0.3em] text-foreground/55">Pillar {p.num}</div>
+          <div className="mt-4 font-serif text-7xl" style={{ color: p.color }}>
+            {p.symbol}
+          </div>
+          <div className="mt-2 text-xs uppercase tracking-[0.3em] text-foreground/55">
+            Pillar {p.num}
+          </div>
           <h1 className="mt-2 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
             {p.name}
           </h1>
@@ -66,9 +76,7 @@ function PillarPage() {
             >
               {p.status}
             </span>
-            {p.leader && (
-              <span className="text-xs text-foreground/55">Led by {p.leader}</span>
-            )}
+            {p.leader && <span className="text-xs text-foreground/55">Led by {p.leader}</span>}
           </div>
         </div>
       </section>
@@ -81,7 +89,9 @@ function PillarPage() {
             <p className="mt-4 text-lg leading-relaxed text-foreground/75">{p.description}</p>
           </div>
           <div className="rounded-3xl border-hairline bg-card/50 p-7">
-            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">Philosophy</div>
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">
+              Philosophy
+            </div>
             <p className="mt-3 font-serif text-xl italic text-foreground/85">"{p.philosophy}"</p>
           </div>
         </div>
@@ -93,7 +103,10 @@ function PillarPage() {
           <h2 className="font-serif text-3xl text-foreground">What it offers</h2>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {p.services.map((s: string) => (
-              <div key={s} className="flex items-start gap-3 rounded-xl border-hairline bg-card/40 p-4">
+              <div
+                key={s}
+                className="flex items-start gap-3 rounded-xl border-hairline bg-card/40 p-4"
+              >
                 <span
                   className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full"
                   style={{ background: `${p.color}33`, color: p.color }}
@@ -110,7 +123,9 @@ function PillarPage() {
       {/* LAUNCH */}
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-card/50 p-8 text-center shadow-glow-gold">
-          <div className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">Launching · 21 July 2026</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
+            Launching · 21 July 2026
+          </div>
           <p className="mt-4 font-serif text-2xl text-foreground sm:text-3xl">{p.launch}</p>
         </div>
       </section>
@@ -123,16 +138,18 @@ function PillarPage() {
             Every pillar needs leaders, contributors, and supporters before launch.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-2">
-            {["co-founder", "execution-partner", "core-team", "advisor", "volunteer"].map((slug) => (
-              <Link
-                key={slug}
-                to="/join"
-                search={{ role: slug }}
-                className="rounded-full border-hairline bg-glass px-4 py-2 text-xs uppercase tracking-wider text-foreground/80 hover:text-foreground hover:bg-white/10"
-              >
-                Join as {slug.replace("-", " ")}
-              </Link>
-            ))}
+            {["co-founder", "execution-partner", "core-team", "advisor", "volunteer"].map(
+              (slug) => (
+                <Link
+                  key={slug}
+                  to="/join"
+                  search={{ role: slug }}
+                  className="rounded-full border-hairline bg-glass px-4 py-2 text-xs uppercase tracking-wider text-foreground/80 hover:text-foreground hover:bg-white/10"
+                >
+                  Join as {slug.replace("-", " ")}
+                </Link>
+              ),
+            )}
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
@@ -166,7 +183,9 @@ function PillarPage() {
               >
                 <div className="flex items-center justify-between">
                   <h4 className="font-serif text-lg text-foreground">{r.name}</h4>
-                  <span className="font-serif text-2xl" style={{ color: r.color }}>{r.symbol}</span>
+                  <span className="font-serif text-2xl" style={{ color: r.color }}>
+                    {r.symbol}
+                  </span>
                 </div>
                 <p className="mt-2 text-sm text-foreground/60">{r.short}</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-[var(--gold)] opacity-0 transition group-hover:opacity-100">

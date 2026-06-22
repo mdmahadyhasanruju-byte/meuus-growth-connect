@@ -3,15 +3,32 @@ import { ParticleCanvas } from "@/components/site/ParticleCanvas";
 import { AnimatedOrb } from "@/components/site/AnimatedOrb";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Countdown } from "@/components/site/Countdown";
-import { ArrowRight, CheckCircle2, Scale, Sprout, ShoppingBag, GraduationCap, Layers, ShieldCheck, Compass } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Scale,
+  Sprout,
+  ShoppingBag,
+  GraduationCap,
+  Layers,
+  ShieldCheck,
+  Compass,
+} from "lucide-react";
 
 export const Route = createFileRoute("/foundation")({
   head: () => ({
     meta: [
       { title: "Before Founding — The meUus Foundation Map" },
-      { name: "description", content: "The four real-world entry points already operating, the three execution layers, and the next seven days of disciplined work before meUus is officially founded." },
+      {
+        name: "description",
+        content:
+          "The four real-world entry points already operating, the three execution layers, and the next seven days of disciplined work before meUus is officially founded.",
+      },
       { property: "og:title", content: "Before Founding — The meUus Foundation Map" },
-      { property: "og:description", content: "Four real entry points. Three execution layers. One controlled loop at a time." },
+      {
+        property: "og:description",
+        content: "Four real entry points. Three execution layers. One controlled loop at a time.",
+      },
     ],
   }),
   component: FoundationPage,
@@ -97,10 +114,26 @@ const LAYERS = [
 ] as const;
 
 const NEXT_SEVEN = [
-  { step: "Step 1", title: "Finish domain setup", body: "meuus.org live, SSL clean, primary domain set." },
-  { step: "Step 2", title: "Deploy the homepage", body: "Ship the current site — no more redesigning before launch." },
-  { step: "Step 3", title: "One form only", body: "“Join Founding Member” — single intake, single source of truth." },
-  { step: "Step 4", title: "Pick ONE pilot", body: "Either grocery / home service OR the taxation chamber site. Not both. Not yet." },
+  {
+    step: "Step 1",
+    title: "Finish domain setup",
+    body: "meuus.org live, SSL clean, primary domain set.",
+  },
+  {
+    step: "Step 2",
+    title: "Deploy the homepage",
+    body: "Ship the current site — no more redesigning before launch.",
+  },
+  {
+    step: "Step 3",
+    title: "One form only",
+    body: "“Join Founding Member” — single intake, single source of truth.",
+  },
+  {
+    step: "Step 4",
+    title: "Pick ONE pilot",
+    body: "Either grocery / home service OR the taxation chamber site. Not both. Not yet.",
+  },
 ] as const;
 
 export default function FoundationPage() {
@@ -109,7 +142,11 @@ export default function FoundationPage() {
       {/* HERO */}
       <section className="relative flex min-h-[70svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
         <ParticleCanvas density={50} />
-        <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" color="oklch(0.82 0.13 80)" size={760} />
+        <AnimatedOrb
+          className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
+          color="oklch(0.82 0.13 80)"
+          size={760}
+        />
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
             <Compass className="h-3 w-3 text-[var(--gold)]" />
@@ -119,8 +156,8 @@ export default function FoundationPage() {
             The work <span className="italic text-gradient-violet">before</span> the founding
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground/70">
-            Four real entry points already operating. Three execution layers to keep them sane.
-            One controlled loop at a time — until 21 July 2026.
+            Four real entry points already operating. Three execution layers to keep them sane. One
+            controlled loop at a time — until 21 July 2026.
           </p>
           <div className="mt-10">
             <Countdown variant="compact" />
@@ -148,11 +185,17 @@ export default function FoundationPage() {
                 />
                 <div className="relative">
                   <div className="flex items-center justify-between">
-                    <span className="text-[0.65rem] uppercase tracking-[0.3em] text-foreground/55">{e.tag}</span>
+                    <span className="text-[0.65rem] uppercase tracking-[0.3em] text-foreground/55">
+                      {e.tag}
+                    </span>
                     <e.icon className="h-5 w-5" style={{ color: e.accent }} />
                   </div>
-                  <h3 className="mt-4 font-serif text-2xl text-foreground sm:text-3xl">{e.title}</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-foreground/45">{e.status}</p>
+                  <h3 className="mt-4 font-serif text-2xl text-foreground sm:text-3xl">
+                    {e.title}
+                  </h3>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-foreground/45">
+                    {e.status}
+                  </p>
                   <ul className="mt-5 space-y-2">
                     {e.points.map((p) => (
                       <li key={p} className="flex items-start gap-2 text-sm text-foreground/80">
@@ -175,18 +218,22 @@ export default function FoundationPage() {
       {/* THE KEY ISSUE */}
       <section className="px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-card/40 p-8 sm:p-12">
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">02 · The honest issue</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
+            02 · The honest issue
+          </span>
           <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
-            We are trying to build <span className="italic text-gradient-violet">everything</span> at once.
+            We are trying to build <span className="italic text-gradient-violet">everything</span>{" "}
+            at once.
           </h2>
           <p className="mt-5 text-foreground/75">
-            Institutions. Businesses. Social systems. Infrastructure. The AI ecosystem. Ownership structure.
-            Six different operating systems trying to start in the same week. The result is mental overload,
-            execution confusion, and slow progress in every single track.
+            Institutions. Businesses. Social systems. Infrastructure. The AI ecosystem. Ownership
+            structure. Six different operating systems trying to start in the same week. The result
+            is mental overload, execution confusion, and slow progress in every single track.
           </p>
           <p className="mt-4 text-foreground/75">
-            The fix is not more ideas. The fix is <strong className="text-foreground">controlled execution loops</strong> —
-            one system fully working, then the next.
+            The fix is not more ideas. The fix is{" "}
+            <strong className="text-foreground">controlled execution loops</strong> — one system
+            fully working, then the next.
           </p>
         </div>
       </section>
@@ -209,7 +256,9 @@ export default function FoundationPage() {
                   <span className="font-serif text-5xl italic text-foreground/15">0{i + 1}</span>
                   <l.icon className="h-5 w-5 text-[var(--gold)]" />
                 </div>
-                <span className="mt-2 text-[0.65rem] uppercase tracking-[0.3em] text-[var(--gold)]/85">{l.num}</span>
+                <span className="mt-2 text-[0.65rem] uppercase tracking-[0.3em] text-[var(--gold)]/85">
+                  {l.num}
+                </span>
                 <h3 className="mt-2 font-serif text-2xl text-foreground">{l.title}</h3>
                 <p className="mt-3 text-sm text-foreground/75">{l.body}</p>
                 <div className="mt-auto pt-5">
@@ -229,14 +278,20 @@ export default function FoundationPage() {
         <div className="mx-auto max-w-4xl rounded-3xl border border-amber-500/20 bg-amber-500/[0.04] p-8 sm:p-12">
           <div className="flex items-center gap-3">
             <ShieldCheck className="h-5 w-5 text-amber-300" />
-            <span className="text-xs uppercase tracking-[0.3em] text-amber-300/90">04 · Ownership correction</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-amber-300/90">
+              04 · Ownership correction
+            </span>
           </div>
           <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">
             Permanent in mission. Flexible in law.
           </h2>
           <p className="mt-5 text-foreground/75">
-            The instinct to say <em>“The portion of The Founder's family property will be used forever for meUus, never sold”</em> is
-            beautiful — and risky if locked informally too early.
+            The instinct to say{" "}
+            <em>
+              “The portion of The Founder's family property will be used forever for meUus, never
+              sold”
+            </em>{" "}
+            is beautiful — and risky if locked informally too early.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
@@ -244,14 +299,17 @@ export default function FoundationPage() {
               "Use assets through agreements or trusts later",
               "Don’t lock anything informally at this stage",
             ].map((x) => (
-              <div key={x} className="rounded-2xl border-hairline bg-background/40 p-4 text-sm text-foreground/85">
+              <div
+                key={x}
+                className="rounded-2xl border-hairline bg-background/40 p-4 text-sm text-foreground/85"
+              >
                 {x}
               </div>
             ))}
           </div>
           <p className="mt-6 text-sm text-foreground/65">
-            The mission stays permanent. The legal structure stays flexible. Early-stage systems need
-            flexibility, legal clarity, and risk protection — not informal forever-locks.
+            The mission stays permanent. The legal structure stays flexible. Early-stage systems
+            need flexibility, legal clarity, and risk protection — not informal forever-locks.
           </p>
         </div>
       </section>
@@ -274,7 +332,9 @@ export default function FoundationPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1">
-                  <span className="text-[0.65rem] uppercase tracking-[0.3em] text-[var(--gold)]/85">{s.step}</span>
+                  <span className="text-[0.65rem] uppercase tracking-[0.3em] text-[var(--gold)]/85">
+                    {s.step}
+                  </span>
                   <h3 className="mt-1 font-serif text-xl text-foreground sm:text-2xl">{s.title}</h3>
                   <p className="mt-2 text-sm text-foreground/75">{s.body}</p>
                 </div>
@@ -287,7 +347,9 @@ export default function FoundationPage() {
       {/* THE REAL TRUTH */}
       <section className="px-4 pb-24 pt-8 sm:px-6">
         <div className="mx-auto max-w-3xl rounded-3xl border-hairline bg-gradient-to-br from-card/60 via-card/30 to-card/60 p-10 text-center">
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">06 · The real truth</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
+            06 · The real truth
+          </span>
           <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">
             We don’t need more ideas. <br className="hidden sm:block" />
             We need <span className="italic text-gradient-violet">controlled execution loops.</span>

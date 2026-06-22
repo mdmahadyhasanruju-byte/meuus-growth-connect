@@ -11,9 +11,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "meUus — Connecting Everything | Launching 21 July 2026" },
-      { name: "description", content: "meUus is a human-development ecosystem of 9 pillars connecting every soul to legal, business, mental, emotional, and economic growth. Final execution begins 21 July 2026." },
+      {
+        name: "description",
+        content:
+          "meUus is a human-development ecosystem of 9 pillars connecting every soul to legal, business, mental, emotional, and economic growth. Final execution begins 21 July 2026.",
+      },
       { property: "og:title", content: "meUus — Connecting Everything" },
-      { property: "og:description", content: "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026. Founding roles open now." },
+      {
+        property: "og:description",
+        content:
+          "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026. Founding roles open now.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -24,7 +32,8 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "meUus",
-          description: "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026.",
+          description:
+            "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026.",
           foundingDate: "2026-07-21",
           founder: { "@type": "Person", name: "Md. Mahady Hasan" },
           areaServed: "Bangladesh",
@@ -37,11 +46,41 @@ export const Route = createFileRoute("/")({
 });
 
 const JOURNEY = [
-  { num: "01", title: "Foundation", body: "Truth, privacy, dignity. A human-first operating system, not a feature list.", href: "/", linkLabel: "The intention" },
-  { num: "02", title: "DLAS", body: "The Deep Life Assessment System — 5 levels of structured truth across past, present, and future.", href: "/ecosystem", linkLabel: "How it works" },
-  { num: "03", title: "Ecosystem", body: "Nine pillars working as one: legal, business, mind, work, family, green, ideas, recovery, and aLive Bangladesh.", href: "/ecosystem", linkLabel: "Explore" },
-  { num: "04", title: "Platform", body: "One super app — jobs, learning, AI guidance, assessments, community, wallet — connected to the pillars.", href: "/ecosystem", linkLabel: "The product" },
-  { num: "05", title: "Global", body: "Bangladesh first. Then Gulf diaspora. Then the world — every soul, every opportunity.", href: "/global", linkLabel: "The vision" },
+  {
+    num: "01",
+    title: "Foundation",
+    body: "Truth, privacy, dignity. A human-first operating system, not a feature list.",
+    href: "/",
+    linkLabel: "The intention",
+  },
+  {
+    num: "02",
+    title: "DLAS",
+    body: "The Deep Life Assessment System — 5 levels of structured truth across past, present, and future.",
+    href: "/ecosystem",
+    linkLabel: "How it works",
+  },
+  {
+    num: "03",
+    title: "Ecosystem",
+    body: "Nine pillars working as one: legal, business, mind, work, family, green, ideas, recovery, and aLive Bangladesh.",
+    href: "/ecosystem",
+    linkLabel: "Explore",
+  },
+  {
+    num: "04",
+    title: "Platform",
+    body: "One super app — jobs, learning, AI guidance, assessments, community, wallet — connected to the pillars.",
+    href: "/ecosystem",
+    linkLabel: "The product",
+  },
+  {
+    num: "05",
+    title: "Global",
+    body: "Bangladesh first. Then Gulf diaspora. Then the world — every soul, every opportunity.",
+    href: "/global",
+    linkLabel: "The vision",
+  },
 ] as const;
 
 const HUBS = [
@@ -75,8 +114,16 @@ function HomePage() {
       <section className="relative flex min-h-[100svh] flex-col items-center justify-center px-4 pt-32 pb-20 text-center sm:px-6">
         <ParticleCanvas density={80} />
         <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" size={900} />
-        <AnimatedOrb className="bottom-0 right-0 translate-x-1/3 translate-y-1/3" color="oklch(0.78 0.15 200)" size={500} />
-        <AnimatedOrb className="top-10 left-0 -translate-x-1/3" color="oklch(0.82 0.13 80)" size={400} />
+        <AnimatedOrb
+          className="bottom-0 right-0 translate-x-1/3 translate-y-1/3"
+          color="oklch(0.78 0.15 200)"
+          size={500}
+        />
+        <AnimatedOrb
+          className="top-10 left-0 -translate-x-1/3"
+          color="oklch(0.82 0.13 80)"
+          size={400}
+        />
 
         <div className="relative z-10 flex flex-col items-center gap-8 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
@@ -94,8 +141,8 @@ function HomePage() {
           </p>
 
           <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
-            A human-development ecosystem of nine pillars and one platform —
-            built to connect every soul to opportunity, guidance, and a life worth living.
+            A human-development ecosystem of nine pillars and one platform — built to connect every
+            soul to opportunity, guidance, and a life worth living.
           </p>
 
           <Countdown />
@@ -131,7 +178,12 @@ function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="The Journey"
-            title={<>From <em className="italic text-gradient-violet">intention</em> to <em className="italic text-gradient-gold">every soul</em></>}
+            title={
+              <>
+                From <em className="italic text-gradient-violet">intention</em> to{" "}
+                <em className="italic text-gradient-gold">every soul</em>
+              </>
+            }
             subtitle="One continuous arc — from the philosophy of meUus, through the platform, to global reach."
           />
 
@@ -146,12 +198,16 @@ function HomePage() {
                     i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  <div className={`flex items-center ${i % 2 === 1 ? "md:justify-start md:pl-12" : "md:justify-end md:pr-12"}`}>
+                  <div
+                    className={`flex items-center ${i % 2 === 1 ? "md:justify-start md:pl-12" : "md:justify-end md:pr-12"}`}
+                  >
                     {/* dot */}
                     <span className="absolute left-4 -translate-x-1/2 md:left-1/2">
                       <span className="block h-3 w-3 rounded-full bg-[var(--gold)] shadow-glow-gold" />
                     </span>
-                    <div className={`hidden font-serif text-[7rem] font-medium leading-none text-foreground/10 md:block`}>
+                    <div
+                      className={`hidden font-serif text-[7rem] font-medium leading-none text-foreground/10 md:block`}
+                    >
                       {s.num}
                     </div>
                   </div>
@@ -159,7 +215,9 @@ function HomePage() {
                     <div className="font-serif text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85 md:hidden">
                       Chapter {s.num}
                     </div>
-                    <h3 className="mt-1 font-serif text-3xl text-foreground sm:text-4xl">{s.title}</h3>
+                    <h3 className="mt-1 font-serif text-3xl text-foreground sm:text-4xl">
+                      {s.title}
+                    </h3>
                     <p className="mt-3 max-w-md text-foreground/65">{s.body}</p>
                     <Link
                       to={s.href}
@@ -180,7 +238,11 @@ function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Three Hubs"
-            title={<>One vision, <em className="italic">three doors</em></>}
+            title={
+              <>
+                One vision, <em className="italic">three doors</em>
+              </>
+            }
             subtitle="Enter through any door. They lead to the same horizon."
           />
           <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -190,13 +252,16 @@ function HomePage() {
                 to={h.href}
                 className="group relative overflow-hidden rounded-3xl border-hairline bg-card/40 p-8 transition hover:border-white/15 hover:bg-card/60"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${h.accent} opacity-60 transition group-hover:opacity-100`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${h.accent} opacity-60 transition group-hover:opacity-100`}
+                />
                 <div className="relative">
                   <p className="text-xs uppercase tracking-[0.3em] text-foreground/55">{h.label}</p>
                   <h3 className="mt-4 font-serif text-4xl">{h.title}</h3>
                   <p className="mt-3 text-foreground/70">{h.body}</p>
                   <div className="mt-8 inline-flex items-center gap-1 text-sm text-foreground/85">
-                    Enter <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+                    Enter{" "}
+                    <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>
@@ -211,7 +276,11 @@ function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="The Nine Pillars"
-            title={<>A constellation, <em className="italic text-gradient-gold">not a list</em></>}
+            title={
+              <>
+                A constellation, <em className="italic text-gradient-gold">not a list</em>
+              </>
+            }
             subtitle="Each pillar stands alone. Together they form a complete human-development ecosystem."
           />
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -229,10 +298,14 @@ function HomePage() {
                 />
                 <div className="relative flex items-start justify-between">
                   <div>
-                    <div className="text-xs uppercase tracking-[0.3em] text-foreground/45">{p.num}</div>
+                    <div className="text-xs uppercase tracking-[0.3em] text-foreground/45">
+                      {p.num}
+                    </div>
                     <h3 className="mt-2 font-serif text-2xl text-foreground">{p.name}</h3>
                   </div>
-                  <span className="font-serif text-3xl" style={{ color: p.color }}>{p.symbol}</span>
+                  <span className="font-serif text-3xl" style={{ color: p.color }}>
+                    {p.symbol}
+                  </span>
                 </div>
                 <p className="mt-3 text-sm italic text-foreground/65">{p.tagline}</p>
                 <p className="mt-3 text-sm text-foreground/55">{p.short}</p>
@@ -270,7 +343,11 @@ function HomePage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="DLAS"
-            title={<>Deep Life <em className="italic">Assessment System</em></>}
+            title={
+              <>
+                Deep Life <em className="italic">Assessment System</em>
+              </>
+            }
             subtitle="A structured way to understand a whole human — not just a visible problem. Five levels deep, four dimensions wide."
           />
           <div className="mt-16 grid gap-10 lg:grid-cols-2">
@@ -314,9 +391,15 @@ function HomePage() {
               <div className="rounded-3xl border-hairline bg-card/40 p-8">
                 <h3 className="font-serif text-xl text-foreground">Three Protocols</h3>
                 <ul className="mt-4 space-y-2 text-sm text-foreground/75">
-                  <li><span className="text-[var(--gold)]">·</span> Truth over performance</li>
-                  <li><span className="text-[var(--gold)]">·</span> Privacy and consent always</li>
-                  <li><span className="text-[var(--gold)]">·</span> Respect, never manipulation</li>
+                  <li>
+                    <span className="text-[var(--gold)]">·</span> Truth over performance
+                  </li>
+                  <li>
+                    <span className="text-[var(--gold)]">·</span> Privacy and consent always
+                  </li>
+                  <li>
+                    <span className="text-[var(--gold)]">·</span> Respect, never manipulation
+                  </li>
                 </ul>
               </div>
             </div>
@@ -330,7 +413,12 @@ function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Before Launch"
-            title={<>Before founding, <em className="italic text-gradient-gold">we are choosing the founders</em></>}
+            title={
+              <>
+                Before founding,{" "}
+                <em className="italic text-gradient-gold">we are choosing the founders</em>
+              </>
+            }
             subtitle="Until 21 July 2026, every meaningful role is open. If the intention resonates, there is a seat for you."
           />
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -343,14 +431,16 @@ function HomePage() {
                 style={{ animationDelay: `${i * 50}ms` }}
               >
                 <div className="flex items-start justify-between">
-                  <span className="font-serif text-3xl" style={{ color: r.color }}>{r.symbol}</span>
+                  <span className="font-serif text-3xl" style={{ color: r.color }}>
+                    {r.symbol}
+                  </span>
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-[0.6rem] uppercase tracking-wider ${
                       r.urgency === "Most Urgent"
                         ? "bg-rose-500/20 text-rose-300"
                         : r.urgency === "Urgent"
-                        ? "bg-amber-500/20 text-amber-300"
-                        : "bg-white/10 text-foreground/65"
+                          ? "bg-amber-500/20 text-amber-300"
+                          : "bg-white/10 text-foreground/65"
                     }`}
                   >
                     {r.urgency}
@@ -387,11 +477,13 @@ function HomePage() {
             بسم الله الرحمن الرحيم
           </p>
           <p className="mt-8 font-serif text-3xl italic leading-tight text-foreground/90 sm:text-5xl">
-            "Understand the whole human.<br />Not only the visible problem."
+            "Understand the whole human.
+            <br />
+            Not only the visible problem."
           </p>
           <p className="mt-8 text-foreground/60">
-            meUus is not just an app. It is an operating system for human development —
-            for every soul, every opportunity, every step toward a better life.
+            meUus is not just an app. It is an operating system for human development — for every
+            soul, every opportunity, every step toward a better life.
           </p>
           <p className="mt-2 text-xs uppercase tracking-[0.3em] text-foreground/45">
             Alhamdulillah · InShaAllah
