@@ -147,7 +147,7 @@ function GlobalPage() {
             "Bringing meUus alive — one soul, one opportunity, one country at a time."
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/join" className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet">
+            <Link to="/join" search={{}} className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet">
               Join the journey
             </Link>
             <Link to="/ecosystem" className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm text-foreground">

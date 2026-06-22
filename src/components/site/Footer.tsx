@@ -31,7 +31,7 @@ export function Footer() {
               <li><Link to="/ecosystem" className="text-foreground/75 hover:text-foreground">Ecosystem</Link></li>
               <li><Link to="/pillars" className="text-foreground/75 hover:text-foreground">Pillars</Link></li>
               <li><Link to="/global" className="text-foreground/75 hover:text-foreground">Global</Link></li>
-              <li><Link to="/join" className="text-foreground/75 hover:text-foreground">Join Us</Link></li>
+              <li><Link to="/join" search={{}} className="text-foreground/75 hover:text-foreground">Join Us</Link></li>
             </ul>
           </div>
 

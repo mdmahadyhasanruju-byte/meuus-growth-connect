@@ -10,7 +10,7 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Countdown } from "@/components/site/Countdown";
 
 const searchSchema = z.object({
-  role: z.string().optional().default(""),
+  role: z.string().optional(),
 });
 
 export const Route = createFileRoute("/join")({

@@ -103,6 +103,7 @@ function HomePage() {
           <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
             <Link
               to="/join"
+              search={{}}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.03] sm:w-auto"
             >
               Join the Founding Journey
@@ -369,6 +370,7 @@ function HomePage() {
           <div className="mt-12 text-center">
             <Link
               to="/join"
+              search={{}}
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet hover:scale-[1.03]"
             >
               See all open roles & apply

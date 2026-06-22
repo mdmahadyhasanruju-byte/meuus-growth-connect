@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as ManifestoFullRouteImport } from './routes/manifesto-full'
 import { Route as ManifestoRouteImport } from './routes/manifesto'
+import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as GlobalRouteImport } from './routes/global'
 import { Route as FounderRouteImport } from './routes/founder'
@@ -19,6 +20,18 @@ import { Route as FoundationRouteImport } from './routes/foundation'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
+import { Route as JourneyStartRouteImport } from './routes/journey.start'
+import { Route as JourneySafetyRouteImport } from './routes/journey.safety'
+import { Route as JourneyReviewRouteImport } from './routes/journey.review'
+import { Route as JourneyReflectionRouteImport } from './routes/journey.reflection'
+import { Route as JourneyPrivacyRouteImport } from './routes/journey.privacy'
+import { Route as JourneyPreferencesRouteImport } from './routes/journey.preferences'
+import { Route as JourneyOrientationRouteImport } from './routes/journey.orientation'
+import { Route as JourneyMilestoneRouteImport } from './routes/journey.milestone'
+import { Route as JourneyConfirmRouteImport } from './routes/journey.confirm'
+import { Route as JourneyCompleteRouteImport } from './routes/journey.complete'
+import { Route as JourneyAccessibilityRouteImport } from './routes/journey.accessibility'
+import { Route as JourneyQuestQuestIdRouteImport } from './routes/journey.quest.$questId'
 
 const PillarsRoute = PillarsRouteImport.update({
   id: '/pillars',
@@ -33,6 +46,11 @@ const ManifestoFullRoute = ManifestoFullRouteImport.update({
 const ManifestoRoute = ManifestoRouteImport.update({
   id: '/manifesto',
   path: '/manifesto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JoinRoute = JoinRouteImport.update({
@@ -70,6 +88,66 @@ const PillarsSlugRoute = PillarsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PillarsRoute,
 } as any)
+const JourneyStartRoute = JourneyStartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneySafetyRoute = JourneySafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyReviewRoute = JourneyReviewRouteImport.update({
+  id: '/review',
+  path: '/review',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyReflectionRoute = JourneyReflectionRouteImport.update({
+  id: '/reflection',
+  path: '/reflection',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyPrivacyRoute = JourneyPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyPreferencesRoute = JourneyPreferencesRouteImport.update({
+  id: '/preferences',
+  path: '/preferences',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyOrientationRoute = JourneyOrientationRouteImport.update({
+  id: '/orientation',
+  path: '/orientation',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyMilestoneRoute = JourneyMilestoneRouteImport.update({
+  id: '/milestone',
+  path: '/milestone',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyConfirmRoute = JourneyConfirmRouteImport.update({
+  id: '/confirm',
+  path: '/confirm',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyCompleteRoute = JourneyCompleteRouteImport.update({
+  id: '/complete',
+  path: '/complete',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyAccessibilityRoute = JourneyAccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => JourneyRoute,
+} as any)
+const JourneyQuestQuestIdRoute = JourneyQuestQuestIdRouteImport.update({
+  id: '/quest/$questId',
+  path: '/quest/$questId',
+  getParentRoute: () => JourneyRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -78,10 +156,23 @@ export interface FileRoutesByFullPath {
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
+  '/journey': typeof JourneyRouteWithChildren
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/journey/accessibility': typeof JourneyAccessibilityRoute
+  '/journey/complete': typeof JourneyCompleteRoute
+  '/journey/confirm': typeof JourneyConfirmRoute
+  '/journey/milestone': typeof JourneyMilestoneRoute
+  '/journey/orientation': typeof JourneyOrientationRoute
+  '/journey/preferences': typeof JourneyPreferencesRoute
+  '/journey/privacy': typeof JourneyPrivacyRoute
+  '/journey/reflection': typeof JourneyReflectionRoute
+  '/journey/review': typeof JourneyReviewRoute
+  '/journey/safety': typeof JourneySafetyRoute
+  '/journey/start': typeof JourneyStartRoute
   '/pillars/$slug': typeof PillarsSlugRoute
+  '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -90,10 +181,23 @@ export interface FileRoutesByTo {
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
+  '/journey': typeof JourneyRouteWithChildren
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/journey/accessibility': typeof JourneyAccessibilityRoute
+  '/journey/complete': typeof JourneyCompleteRoute
+  '/journey/confirm': typeof JourneyConfirmRoute
+  '/journey/milestone': typeof JourneyMilestoneRoute
+  '/journey/orientation': typeof JourneyOrientationRoute
+  '/journey/preferences': typeof JourneyPreferencesRoute
+  '/journey/privacy': typeof JourneyPrivacyRoute
+  '/journey/reflection': typeof JourneyReflectionRoute
+  '/journey/review': typeof JourneyReviewRoute
+  '/journey/safety': typeof JourneySafetyRoute
+  '/journey/start': typeof JourneyStartRoute
   '/pillars/$slug': typeof PillarsSlugRoute
+  '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -103,10 +207,23 @@ export interface FileRoutesById {
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
+  '/journey': typeof JourneyRouteWithChildren
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/journey/accessibility': typeof JourneyAccessibilityRoute
+  '/journey/complete': typeof JourneyCompleteRoute
+  '/journey/confirm': typeof JourneyConfirmRoute
+  '/journey/milestone': typeof JourneyMilestoneRoute
+  '/journey/orientation': typeof JourneyOrientationRoute
+  '/journey/preferences': typeof JourneyPreferencesRoute
+  '/journey/privacy': typeof JourneyPrivacyRoute
+  '/journey/reflection': typeof JourneyReflectionRoute
+  '/journey/review': typeof JourneyReviewRoute
+  '/journey/safety': typeof JourneySafetyRoute
+  '/journey/start': typeof JourneyStartRoute
   '/pillars/$slug': typeof PillarsSlugRoute
+  '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -117,10 +234,23 @@ export interface FileRouteTypes {
     | '/founder'
     | '/global'
     | '/join'
+    | '/journey'
     | '/manifesto'
     | '/manifesto-full'
     | '/pillars'
+    | '/journey/accessibility'
+    | '/journey/complete'
+    | '/journey/confirm'
+    | '/journey/milestone'
+    | '/journey/orientation'
+    | '/journey/preferences'
+    | '/journey/privacy'
+    | '/journey/reflection'
+    | '/journey/review'
+    | '/journey/safety'
+    | '/journey/start'
     | '/pillars/$slug'
+    | '/journey/quest/$questId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -129,10 +259,23 @@ export interface FileRouteTypes {
     | '/founder'
     | '/global'
     | '/join'
+    | '/journey'
     | '/manifesto'
     | '/manifesto-full'
     | '/pillars'
+    | '/journey/accessibility'
+    | '/journey/complete'
+    | '/journey/confirm'
+    | '/journey/milestone'
+    | '/journey/orientation'
+    | '/journey/preferences'
+    | '/journey/privacy'
+    | '/journey/reflection'
+    | '/journey/review'
+    | '/journey/safety'
+    | '/journey/start'
     | '/pillars/$slug'
+    | '/journey/quest/$questId'
   id:
     | '__root__'
     | '/'
@@ -141,10 +284,23 @@ export interface FileRouteTypes {
     | '/founder'
     | '/global'
     | '/join'
+    | '/journey'
     | '/manifesto'
     | '/manifesto-full'
     | '/pillars'
+    | '/journey/accessibility'
+    | '/journey/complete'
+    | '/journey/confirm'
+    | '/journey/milestone'
+    | '/journey/orientation'
+    | '/journey/preferences'
+    | '/journey/privacy'
+    | '/journey/reflection'
+    | '/journey/review'
+    | '/journey/safety'
+    | '/journey/start'
     | '/pillars/$slug'
+    | '/journey/quest/$questId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -154,6 +310,7 @@ export interface RootRouteChildren {
   FounderRoute: typeof FounderRoute
   GlobalRoute: typeof GlobalRoute
   JoinRoute: typeof JoinRoute
+  JourneyRoute: typeof JourneyRouteWithChildren
   ManifestoRoute: typeof ManifestoRoute
   ManifestoFullRoute: typeof ManifestoFullRoute
   PillarsRoute: typeof PillarsRouteWithChildren
@@ -180,6 +337,13 @@ declare module '@tanstack/react-router' {
       path: '/manifesto'
       fullPath: '/manifesto'
       preLoaderRoute: typeof ManifestoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/join': {
@@ -231,8 +395,125 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PillarsSlugRouteImport
       parentRoute: typeof PillarsRoute
     }
+    '/journey/start': {
+      id: '/journey/start'
+      path: '/start'
+      fullPath: '/journey/start'
+      preLoaderRoute: typeof JourneyStartRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/safety': {
+      id: '/journey/safety'
+      path: '/safety'
+      fullPath: '/journey/safety'
+      preLoaderRoute: typeof JourneySafetyRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/review': {
+      id: '/journey/review'
+      path: '/review'
+      fullPath: '/journey/review'
+      preLoaderRoute: typeof JourneyReviewRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/reflection': {
+      id: '/journey/reflection'
+      path: '/reflection'
+      fullPath: '/journey/reflection'
+      preLoaderRoute: typeof JourneyReflectionRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/privacy': {
+      id: '/journey/privacy'
+      path: '/privacy'
+      fullPath: '/journey/privacy'
+      preLoaderRoute: typeof JourneyPrivacyRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/preferences': {
+      id: '/journey/preferences'
+      path: '/preferences'
+      fullPath: '/journey/preferences'
+      preLoaderRoute: typeof JourneyPreferencesRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/orientation': {
+      id: '/journey/orientation'
+      path: '/orientation'
+      fullPath: '/journey/orientation'
+      preLoaderRoute: typeof JourneyOrientationRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/milestone': {
+      id: '/journey/milestone'
+      path: '/milestone'
+      fullPath: '/journey/milestone'
+      preLoaderRoute: typeof JourneyMilestoneRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/confirm': {
+      id: '/journey/confirm'
+      path: '/confirm'
+      fullPath: '/journey/confirm'
+      preLoaderRoute: typeof JourneyConfirmRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/complete': {
+      id: '/journey/complete'
+      path: '/complete'
+      fullPath: '/journey/complete'
+      preLoaderRoute: typeof JourneyCompleteRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/accessibility': {
+      id: '/journey/accessibility'
+      path: '/accessibility'
+      fullPath: '/journey/accessibility'
+      preLoaderRoute: typeof JourneyAccessibilityRouteImport
+      parentRoute: typeof JourneyRoute
+    }
+    '/journey/quest/$questId': {
+      id: '/journey/quest/$questId'
+      path: '/quest/$questId'
+      fullPath: '/journey/quest/$questId'
+      preLoaderRoute: typeof JourneyQuestQuestIdRouteImport
+      parentRoute: typeof JourneyRoute
+    }
   }
 }
+
+interface JourneyRouteChildren {
+  JourneyAccessibilityRoute: typeof JourneyAccessibilityRoute
+  JourneyCompleteRoute: typeof JourneyCompleteRoute
+  JourneyConfirmRoute: typeof JourneyConfirmRoute
+  JourneyMilestoneRoute: typeof JourneyMilestoneRoute
+  JourneyOrientationRoute: typeof JourneyOrientationRoute
+  JourneyPreferencesRoute: typeof JourneyPreferencesRoute
+  JourneyPrivacyRoute: typeof JourneyPrivacyRoute
+  JourneyReflectionRoute: typeof JourneyReflectionRoute
+  JourneyReviewRoute: typeof JourneyReviewRoute
+  JourneySafetyRoute: typeof JourneySafetyRoute
+  JourneyStartRoute: typeof JourneyStartRoute
+  JourneyQuestQuestIdRoute: typeof JourneyQuestQuestIdRoute
+}
+
+const JourneyRouteChildren: JourneyRouteChildren = {
+  JourneyAccessibilityRoute: JourneyAccessibilityRoute,
+  JourneyCompleteRoute: JourneyCompleteRoute,
+  JourneyConfirmRoute: JourneyConfirmRoute,
+  JourneyMilestoneRoute: JourneyMilestoneRoute,
+  JourneyOrientationRoute: JourneyOrientationRoute,
+  JourneyPreferencesRoute: JourneyPreferencesRoute,
+  JourneyPrivacyRoute: JourneyPrivacyRoute,
+  JourneyReflectionRoute: JourneyReflectionRoute,
+  JourneyReviewRoute: JourneyReviewRoute,
+  JourneySafetyRoute: JourneySafetyRoute,
+  JourneyStartRoute: JourneyStartRoute,
+  JourneyQuestQuestIdRoute: JourneyQuestQuestIdRoute,
+}
+
+const JourneyRouteWithChildren =
+  JourneyRoute._addFileChildren(JourneyRouteChildren)
 
 interface PillarsRouteChildren {
   PillarsSlugRoute: typeof PillarsSlugRoute
@@ -252,6 +533,7 @@ const rootRouteChildren: RootRouteChildren = {
   FounderRoute: FounderRoute,
   GlobalRoute: GlobalRoute,
   JoinRoute: JoinRoute,
+  JourneyRoute: JourneyRouteWithChildren,
   ManifestoRoute: ManifestoRoute,
   ManifestoFullRoute: ManifestoFullRoute,
   PillarsRoute: PillarsRouteWithChildren,
@@ -259,3 +541,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
