@@ -18,7 +18,11 @@ export const Route = createFileRoute("/join")({
   head: () => ({
     meta: [
       { title: "Join meUus — Founding Roles Open Until 21 July 2026" },
-      { name: "description", content: "Co-founder, Execution Partner, Investor, Founding Member, Core Team, Campus Ambassador, Advisor, Volunteer — all roles open." },
+      {
+        name: "description",
+        content:
+          "Co-founder, Execution Partner, Investor, Founding Member, Core Team, Campus Ambassador, Advisor, Volunteer — all roles open.",
+      },
       { property: "og:title", content: "Join the meUus Founding Journey" },
     ],
   }),
@@ -43,7 +47,11 @@ function JoinPage() {
     <div className="relative isolate">
       <section className="relative flex min-h-[60svh] flex-col items-center justify-center px-4 pt-32 pb-12 text-center sm:px-6">
         <ParticleCanvas density={50} />
-        <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" color="oklch(0.82 0.13 80)" size={700} />
+        <AnimatedOrb
+          className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
+          color="oklch(0.82 0.13 80)"
+          size={700}
+        />
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
             Founding Phase · Open Until 21 July 2026
@@ -52,7 +60,8 @@ function JoinPage() {
             Join the <span className="italic text-gradient-violet">founding</span> journey
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-foreground/70">
-            Before founding, we are choosing the founders. Every meaningful role is open — choose where you fit.
+            Before founding, we are choosing the founders. Every meaningful role is open — choose
+            where you fit.
           </p>
           <div className="mt-8">
             <Countdown variant="compact" />
@@ -76,7 +85,9 @@ function JoinPage() {
                 onClick={() => setOpenSlug(openSlug === r.slug ? null : r.slug)}
                 className="flex w-full items-center gap-5 px-6 py-6 text-left sm:px-8"
               >
-                <span className="font-serif text-4xl" style={{ color: r.color }}>{r.symbol}</span>
+                <span className="font-serif text-4xl" style={{ color: r.color }}>
+                  {r.symbol}
+                </span>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-3">
                     <h3 className="font-serif text-2xl text-foreground sm:text-3xl">{r.title}</h3>
@@ -85,8 +96,8 @@ function JoinPage() {
                         r.urgency === "Most Urgent"
                           ? "bg-rose-500/20 text-rose-300"
                           : r.urgency === "Urgent"
-                          ? "bg-amber-500/20 text-amber-300"
-                          : "bg-white/10 text-foreground/65"
+                            ? "bg-amber-500/20 text-amber-300"
+                            : "bg-white/10 text-foreground/65"
                       }`}
                     >
                       {r.urgency}
@@ -127,7 +138,9 @@ function RoleDetails({ role }: { role: Role }) {
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <div>
-          <h4 className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">Responsibilities</h4>
+          <h4 className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">
+            Responsibilities
+          </h4>
           <ul className="mt-3 space-y-2">
             {role.responsibilities.map((x) => (
               <li key={x} className="flex items-start gap-2 text-sm text-foreground/80">
@@ -151,7 +164,9 @@ function RoleDetails({ role }: { role: Role }) {
       </div>
 
       <div className="mt-6 flex flex-wrap gap-3 text-xs text-foreground/65">
-        <span className="rounded-full border-hairline bg-glass px-3 py-1">⌛ {role.commitment}</span>
+        <span className="rounded-full border-hairline bg-glass px-3 py-1">
+          ⌛ {role.commitment}
+        </span>
         <span className="rounded-full border-hairline bg-glass px-3 py-1">★ {role.reward}</span>
       </div>
 
@@ -201,21 +216,33 @@ function ApplyForm({ role }: { role: Role }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 grid gap-3 rounded-2xl border-hairline bg-background/30 p-5 sm:grid-cols-2">
+    <form
+      onSubmit={handleSubmit}
+      className="mt-8 grid gap-3 rounded-2xl border-hairline bg-background/30 p-5 sm:grid-cols-2"
+    >
       <input
-        required name="name" placeholder="Your name"
+        required
+        name="name"
+        placeholder="Your name"
         className="rounded-xl border-hairline bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]/50"
       />
       <input
-        required type="email" name="email" placeholder="Email"
+        required
+        type="email"
+        name="email"
+        placeholder="Email"
         className="rounded-xl border-hairline bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]/50"
       />
       <input
-        name="phone" placeholder="Phone (optional)"
+        name="phone"
+        placeholder="Phone (optional)"
         className="rounded-xl border-hairline bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]/50 sm:col-span-2"
       />
       <textarea
-        required name="message" rows={4} placeholder={`Why ${role.title}? Tell us briefly.`}
+        required
+        name="message"
+        rows={4}
+        placeholder={`Why ${role.title}? Tell us briefly.`}
         className="rounded-xl border-hairline bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]/50 sm:col-span-2"
       />
       <button

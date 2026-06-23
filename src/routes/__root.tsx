@@ -43,12 +43,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-serif text-2xl text-foreground">Something went off-course</h1>
-        <p className="mt-2 text-sm text-foreground/60">
-          Try again, or return to the home map.
-        </p>
+        <p className="mt-2 text-sm text-foreground/60">Try again, or return to the home map.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground"
           >
             Try again
@@ -71,16 +72,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "meUus — Connecting Everything" },
-      { name: "description", content: "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026." },
+      {
+        name: "description",
+        content:
+          "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026.",
+      },
       { name: "author", content: "Md. Mahady Hasan" },
       { property: "og:title", content: "meUus — Connecting Everything" },
-      { property: "og:description", content: "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026." },
+      {
+        property: "og:description",
+        content:
+          "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "meUus — Connecting Everything" },
-      { name: "twitter:description", content: "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eb2af373-d4eb-41e1-a862-29904eb4cd30/id-preview-6fe9670d--890696a6-dac5-4b40-bd12-87e26597ace5.lovable.app-1779222160009.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eb2af373-d4eb-41e1-a862-29904eb4cd30/id-preview-6fe9670d--890696a6-dac5-4b40-bd12-87e26597ace5.lovable.app-1779222160009.png" },
+      {
+        name: "twitter:description",
+        content:
+          "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eb2af373-d4eb-41e1-a862-29904eb4cd30/id-preview-6fe9670d--890696a6-dac5-4b40-bd12-87e26597ace5.lovable.app-1779222160009.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eb2af373-d4eb-41e1-a862-29904eb4cd30/id-preview-6fe9670d--890696a6-dac5-4b40-bd12-87e26597ace5.lovable.app-1779222160009.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

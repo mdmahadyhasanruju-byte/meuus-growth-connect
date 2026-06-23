@@ -8,28 +8,71 @@ export const Route = createFileRoute("/global")({
   head: () => ({
     meta: [
       { title: "meUus Global — Every soul, every border" },
-      { name: "description", content: "meUus Global: from Bangladesh to the Gulf to the world — connecting every soul to opportunity, across every border." },
+      {
+        name: "description",
+        content:
+          "meUus Global: from Bangladesh to the Gulf to the world — connecting every soul to opportunity, across every border.",
+      },
       { property: "og:title", content: "meUus Global" },
-      { property: "og:description", content: "From Bangladesh to the world — every soul, every opportunity." },
+      {
+        property: "og:description",
+        content: "From Bangladesh to the world — every soul, every opportunity.",
+      },
     ],
   }),
   component: GlobalPage,
 });
 
 const MARKETS = [
-  { phase: "Phase 1", flag: "🇧🇩", name: "Bangladesh", body: "Home. Where the philosophy is tested, the pillars run, and the platform proves itself.", stat: "170M+ people" },
-  { phase: "Phase 2", flag: "🌐", name: "Gulf Diaspora", body: "Bangladeshi workers and families across UAE, KSA, Qatar, Oman, Kuwait — remittance, hiring, mental support.", stat: "3M+ diaspora" },
-  { phase: "Phase 3", flag: "🇮🇳 🇵🇰 🇳🇵", name: "South Asia Corridor", body: "India, Pakistan, Nepal — shared labour markets, shared language, shared challenges.", stat: "1.8B+ region" },
-  { phase: "Phase 4", flag: "🌏", name: "Emerging Markets", body: "Southeast Asia and Africa — where the meUus model of integrated human development scales further.", stat: "Billions" },
-  { phase: "Phase 5", flag: "✺", name: "Every soul, everywhere", body: "Borderless ecosystem. Every person, every opportunity, every step toward a life worth living.", stat: "Infinite" },
+  {
+    phase: "Phase 1",
+    flag: "🇧🇩",
+    name: "Bangladesh",
+    body: "Home. Where the philosophy is tested, the pillars run, and the platform proves itself.",
+    stat: "170M+ people",
+  },
+  {
+    phase: "Phase 2",
+    flag: "🌐",
+    name: "Gulf Diaspora",
+    body: "Bangladeshi workers and families across UAE, KSA, Qatar, Oman, Kuwait — remittance, hiring, mental support.",
+    stat: "3M+ diaspora",
+  },
+  {
+    phase: "Phase 3",
+    flag: "🇮🇳 🇵🇰 🇳🇵",
+    name: "South Asia Corridor",
+    body: "India, Pakistan, Nepal — shared labour markets, shared language, shared challenges.",
+    stat: "1.8B+ region",
+  },
+  {
+    phase: "Phase 4",
+    flag: "🌏",
+    name: "Emerging Markets",
+    body: "Southeast Asia and Africa — where the meUus model of integrated human development scales further.",
+    stat: "Billions",
+  },
+  {
+    phase: "Phase 5",
+    flag: "✺",
+    name: "Every soul, everywhere",
+    body: "Borderless ecosystem. Every person, every opportunity, every step toward a life worth living.",
+    stat: "Infinite",
+  },
 ];
 
 const FEATURES = [
   ["Multilingual", "Bangla, English, Arabic, Hindi, Urdu, Nepali — and growing."],
   ["Cross-border hiring", "Verified employers across countries with transparent placement."],
   ["Remittance bridge", "Future integration for safer, cheaper, faster transfers."],
-  ["DLAS in every language", "The Deep Life Assessment System adapted culturally and linguistically."],
-  ["Low-bandwidth first", "Built to work for the worker with a $40 phone, not the executive with fibre."],
+  [
+    "DLAS in every language",
+    "The Deep Life Assessment System adapted culturally and linguistically.",
+  ],
+  [
+    "Low-bandwidth first",
+    "Built to work for the worker with a $40 phone, not the executive with fibre.",
+  ],
   ["Diaspora networks", "Connect families across borders — counselling, work, learning, news."],
   ["District-aware", "Local content, local leaders, local trust — surfaced through the platform."],
   ["Faith-respectful", "Designed with respect for belief, never against it."],
@@ -49,7 +92,11 @@ function GlobalPage() {
       {/* HERO */}
       <section className="relative flex min-h-[70svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
         <ParticleCanvas density={60} />
-        <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" color="oklch(0.78 0.15 200)" size={800} />
+        <AnimatedOrb
+          className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
+          color="oklch(0.78 0.15 200)"
+          size={800}
+        />
         <AnimatedOrb className="-right-32 top-0" color="oklch(0.82 0.13 80)" size={500} />
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
@@ -82,7 +129,11 @@ function GlobalPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Expansion"
-            title={<>Five phases. <em className="italic">One destination.</em></>}
+            title={
+              <>
+                Five phases. <em className="italic">One destination.</em>
+              </>
+            }
             subtitle="Local first. Global by consequence. Never by force."
           />
           <div className="mt-16 space-y-5">
@@ -93,13 +144,17 @@ function GlobalPage() {
               >
                 <div className="text-5xl">{m.flag}</div>
                 <div>
-                  <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">{m.phase}</div>
+                  <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">
+                    {m.phase}
+                  </div>
                   <h3 className="mt-1 font-serif text-3xl text-foreground">{m.name}</h3>
                   <p className="mt-2 text-foreground/65">{m.body}</p>
                 </div>
                 <div className="text-right">
                   <div className="font-serif text-xl text-gradient-violet">{m.stat}</div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-foreground/45">{i === MARKETS.length - 1 ? "Vision" : "Target"}</div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-foreground/45">
+                    {i === MARKETS.length - 1 ? "Vision" : "Target"}
+                  </div>
                 </div>
               </div>
             ))}
@@ -112,7 +167,11 @@ function GlobalPage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Built for the world"
-            title={<>The platform <em className="italic">crosses every border</em></>}
+            title={
+              <>
+                The platform <em className="italic">crosses every border</em>
+              </>
+            }
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {FEATURES.map(([t, b]) => (
@@ -128,7 +187,10 @@ function GlobalPage() {
       {/* BELIEFS */}
       <section className="relative px-4 py-24 sm:px-6">
         <div className="mx-auto max-w-3xl">
-          <SectionHeading eyebrow="What we believe" title="Five beliefs that guide the global path" />
+          <SectionHeading
+            eyebrow="What we believe"
+            title="Five beliefs that guide the global path"
+          />
           <ol className="mt-12 space-y-5">
             {BELIEFS.map((b, i) => (
               <li key={b} className="flex gap-5 rounded-2xl border-hairline bg-card/40 p-6">
@@ -147,10 +209,17 @@ function GlobalPage() {
             "Bringing meUus alive — one soul, one opportunity, one country at a time."
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/join" search={{}} className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet">
+            <Link
+              to="/join"
+              search={{}}
+              className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet"
+            >
               Join the journey
             </Link>
-            <Link to="/ecosystem" className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm text-foreground">
+            <Link
+              to="/ecosystem"
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm text-foreground"
+            >
               See the ecosystem <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
