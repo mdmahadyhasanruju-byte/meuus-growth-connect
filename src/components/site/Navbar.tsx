@@ -11,6 +11,7 @@ const LINKS = [
   { to: "/ecosystem" as const, label: "Ecosystem" },
   { to: "/pillars" as const, label: "Pillars" },
   { to: "/global" as const, label: "Global" },
+  { to: "/status" as const, label: "Status" },
 ];
 
 export function Navbar() {

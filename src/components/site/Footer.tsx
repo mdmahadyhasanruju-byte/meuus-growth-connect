@@ -56,6 +56,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/status" className="text-foreground/75 hover:text-foreground">
+                  Current Status
+                </Link>
+              </li>
+              <li>
                 <Link to="/join" search={{}} className="text-foreground/75 hover:text-foreground">
                   Join Us
                 </Link>
@@ -83,7 +88,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-foreground/50 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} meUus. Founder: Md. Mahady Hasan.</p>
-          <p>Final Execution · 21 July 2026 · Alhamdulillah · InShaAllah</p>
+          <p>Day One truth status · 21 July 2026 · Alhamdulillah · InShaAllah</p>
         </div>
       </div>
     </footer>

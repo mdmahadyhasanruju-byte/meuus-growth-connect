@@ -75,14 +75,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026.",
+          "meUus has begun as a public website codebase, a Journey prototype, and a planned nine-pillar human-development vision.",
       },
       { name: "author", content: "Md. Mahady Hasan" },
       { property: "og:title", content: "meUus — Connecting Everything" },
       {
         property: "og:description",
         content:
-          "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026.",
+          "meUus has begun as a public website codebase, a Journey prototype, and a planned nine-pillar human-development vision.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "meUus is a human-development ecosystem connecting every soul to opportunity, guidance, and growth. Final execution begins 21 July 2026.",
+          "meUus has begun as a public website codebase, a Journey prototype, and a planned nine-pillar human-development vision.",
       },
       {
         property: "og:image",
