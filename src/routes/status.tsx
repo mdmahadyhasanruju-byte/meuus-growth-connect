@@ -26,7 +26,7 @@ export const Route = createFileRoute("/status")({
 
 const STATUS_ITEMS = [
   {
-    label: "Live verified",
+    label: "Merged source; live verification pending",
     icon: CheckCircle2,
     title: "Public website source",
     body: "The repository contains a merged public website codebase with routes, content, metadata, and a Cloudflare-compatible application structure. Current deployment, domain, and runtime status still need external verification before they are described as live.",

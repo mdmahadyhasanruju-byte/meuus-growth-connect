@@ -44,9 +44,18 @@ const MODULES = [
 ];
 
 const REVENUE = [
-  { t: "Consumer", body: "Premium subscriptions · Course sales · Coaching · Premium AI." },
-  { t: "Business", body: "Employer plans · Sponsored listings · Recruitment services." },
-  { t: "Platform", body: "Transaction fees · Marketplace commissions · Partnerships." },
+  {
+    t: "Consumer",
+    body: "Planned premium subscriptions, course sales, coaching, and future AI-supported services. Not yet available.",
+  },
+  {
+    t: "Business",
+    body: "Planned employer plans, sponsored listings, and recruitment services. Not yet available.",
+  },
+  {
+    t: "Platform",
+    body: "Planned transaction fees, marketplace commissions, and partnerships. Payment and revenue systems are not implemented in this repository.",
+  },
 ];
 
 const PHASES = [
@@ -185,22 +194,23 @@ function EcosystemPage() {
         </div>
       </section>
 
-      {/* REVENUE */}
+      {/* PLANNED SUSTAINABILITY */}
       <section className="relative px-4 py-24 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="Sustainability"
+            eyebrow="Planned sustainability model"
             title={
               <>
-                How meUus <em className="italic">sustains itself</em>
+                How meUus <em className="italic">could sustain itself</em>
               </>
             }
+            subtitle="These are planned revenue streams, not active subscriptions, payments, rewards, or AI services."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {REVENUE.map((r) => (
               <div key={r.t} className="rounded-2xl border-hairline bg-card/50 p-6">
                 <p className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">
-                  Revenue stream
+                  Planned revenue stream
                 </p>
                 <h3 className="mt-2 font-serif text-2xl text-foreground">{r.t}</h3>
                 <p className="mt-2 text-sm text-foreground/65">{r.body}</p>
