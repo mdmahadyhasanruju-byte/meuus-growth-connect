@@ -74,7 +74,7 @@ function PillarPage() {
               className="rounded-full px-3 py-1 text-xs uppercase tracking-wider"
               style={{ background: `${p.color}22`, color: p.color }}
             >
-              {p.status}
+              In development
             </span>
             {p.leader && <span className="text-xs text-foreground/55">Led by {p.leader}</span>}
           </div>
@@ -100,7 +100,7 @@ function PillarPage() {
       {/* SERVICES */}
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-serif text-3xl text-foreground">What it offers</h2>
+          <h2 className="font-serif text-3xl text-foreground">Proposed services</h2>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {p.services.map((s: string) => (
               <div
@@ -124,7 +124,7 @@ function PillarPage() {
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-card/50 p-8 text-center shadow-glow-gold">
           <div className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
-            Launching · 21 July 2026
+            Planned · Day One 21 July 2026
           </div>
           <p className="mt-4 font-serif text-2xl text-foreground sm:text-3xl">{p.launch}</p>
         </div>

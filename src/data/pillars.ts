@@ -13,7 +13,7 @@ export interface Pillar {
   status: PillarStatus;
   color: string; // tailwind-safe hex used for accents/gradients
   symbol: string; // single character or short glyph used as visual mark
-  launch: string; // what launches on July 21, 2026
+  launch: string; // planned Day One intent for July 21, 2026
 }
 
 export const PILLARS: Pillar[] = [
@@ -38,7 +38,7 @@ export const PILLARS: Pillar[] = [
     status: "Active",
     color: "#5B8DEF",
     symbol: "⚖",
-    launch: "Live legal consultation desk, document templates, and online filing support.",
+    launch: "Planned legal consultation desk, document templates, and online filing support.",
   },
   {
     slug: "business-hub",
@@ -61,7 +61,7 @@ export const PILLARS: Pillar[] = [
     status: "Active",
     color: "#8B5CF6",
     symbol: "◆",
-    launch: "SME starter kit, founder office hours, and structured mentorship cohorts.",
+    launch: "Planned SME starter kit, founder office hours, and structured mentorship cohorts.",
   },
   {
     slug: "unemployment-buster",
@@ -84,7 +84,7 @@ export const PILLARS: Pillar[] = [
     status: "Active",
     color: "#F59E0B",
     symbol: "↗",
-    launch: "Live job board with verified employers, skills assessments, and placement desk.",
+    launch: "Planned job board, employer verification, skills assessments, and placement desk.",
   },
   {
     slug: "mind-beautifier",
@@ -100,14 +100,15 @@ export const PILLARS: Pillar[] = [
       "1-on-1 counselling sessions",
       "Emotional intelligence workshops",
       "Stress & burnout recovery",
-      "DLAS-guided self-assessments",
+      "Planned DLAS-informed self-reflection",
       "Peer support circles",
     ],
     leader: "Core Team",
     status: "Active",
     color: "#EC4899",
     symbol: "✦",
-    launch: "First-session-free counselling, DLAS self-assessment, and weekly wellness circles.",
+    launch:
+      "Planned first-session-free counselling, DLAS-informed self-reflection, and weekly wellness circles.",
   },
   {
     slug: "drug-buster",
@@ -128,7 +129,7 @@ export const PILLARS: Pillar[] = [
     status: "Building",
     color: "#EF4444",
     symbol: "⟁",
-    launch: "Confidential intake desk and partner-rehab referral network.",
+    launch: "Planned confidential intake desk and partner-rehab referral network.",
   },
   {
     slug: "family-harmony",
@@ -149,7 +150,7 @@ export const PILLARS: Pillar[] = [
     status: "Building",
     color: "#14B8A6",
     symbol: "❖",
-    launch: "Mediation desk and structured parenting / marriage support tracks.",
+    launch: "Planned mediation desk and structured parenting / marriage support tracks.",
   },
   {
     slug: "green-solutions",
@@ -170,7 +171,7 @@ export const PILLARS: Pillar[] = [
     status: "Planned",
     color: "#10B981",
     symbol: "❀",
-    launch: "Two pilot greenhouse partnerships and a clean-living advisory.",
+    launch: "Planned pilot greenhouse partnerships and clean-living advisory.",
   },
   {
     slug: "idea-lab",
@@ -191,7 +192,7 @@ export const PILLARS: Pillar[] = [
     status: "Building",
     color: "#F97316",
     symbol: "✸",
-    launch: "Quarterly Idea Lab cohort with structured validation and launch support.",
+    launch: "Planned Idea Lab cohort with structured validation and launch support.",
   },
   {
     slug: "alive-bangladesh",
@@ -212,7 +213,7 @@ export const PILLARS: Pillar[] = [
     status: "Building",
     color: "#27AE60",
     symbol: "✺",
-    launch: "Public progress dashboard and first three district partnerships.",
+    launch: "Planned public progress dashboard and district-partnership evidence record.",
   },
 ];
 

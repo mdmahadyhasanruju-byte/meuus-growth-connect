@@ -14,13 +14,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "meUus is a human-development ecosystem of 9 pillars connecting every soul to legal, business, mental, emotional, and economic growth. Final execution begins 21 July 2026.",
+          "meUus has begun as a public website codebase, a Journey prototype, and a planned nine-pillar human-development vision. Day One continues on 21 July 2026.",
       },
       { property: "og:title", content: "meUus — Connecting Everything" },
       {
         property: "og:description",
         content:
-          "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026. Founding roles open now.",
+          "A founding-phase human-development project with a public website, Journey prototype, and planned nine-pillar ecosystem direction.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "meUus",
           description:
-            "A human-development ecosystem of 9 pillars and one platform. Final execution 21 July 2026.",
+            "A founding-phase human-development project with a public website, Journey prototype, and planned nine-pillar ecosystem direction.",
           foundingDate: "2026-07-21",
           founder: { "@type": "Person", name: "Md. Mahady Hasan" },
           areaServed: "Bangladesh",
@@ -56,23 +56,23 @@ const JOURNEY = [
   {
     num: "02",
     title: "DLAS",
-    body: "The Deep Life Assessment System — 5 levels of structured truth across past, present, and future.",
-    href: "/ecosystem",
-    linkLabel: "How it works",
+    body: "Planned: the Deep Life Assessment System is a future concept, not an implemented engine.",
+    href: "/status",
+    linkLabel: "Current status",
   },
   {
     num: "03",
     title: "Ecosystem",
-    body: "Nine pillars working as one: legal, business, mind, work, family, green, ideas, recovery, and aLive Bangladesh.",
+    body: "In development: nine pillars are the intended content model and operating direction.",
     href: "/ecosystem",
     linkLabel: "Explore",
   },
   {
     num: "04",
     title: "Platform",
-    body: "One super app — jobs, learning, AI guidance, assessments, community, wallet — connected to the pillars.",
-    href: "/ecosystem",
-    linkLabel: "The product",
+    body: "Planned: jobs, learning, AI guidance, community, wallet, payments, and rewards are not yet available.",
+    href: "/status",
+    linkLabel: "Current status",
   },
   {
     num: "05",
@@ -141,8 +141,8 @@ function HomePage() {
           </p>
 
           <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
-            A human-development ecosystem of nine pillars and one platform — built to connect every
-            soul to opportunity, guidance, and a life worth living.
+            A human-development project in its founding phase: public website source, a Journey
+            first-slice prototype, and a larger ecosystem vision still being built.
           </p>
 
           <Countdown />
@@ -161,6 +161,12 @@ function HomePage() {
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
             >
               Explore the Ecosystem
+            </Link>
+            <Link
+              to="/status"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
+            >
+              Current Status
             </Link>
           </div>
 

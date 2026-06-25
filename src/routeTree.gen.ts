@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StatusRouteImport } from './routes/status'
 import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as ManifestoFullRouteImport } from './routes/manifesto-full'
 import { Route as ManifestoRouteImport } from './routes/manifesto'
@@ -33,6 +34,11 @@ import { Route as JourneyCompleteRouteImport } from './routes/journey.complete'
 import { Route as JourneyAccessibilityRouteImport } from './routes/journey.accessibility'
 import { Route as JourneyQuestQuestIdRouteImport } from './routes/journey.quest.$questId'
 
+const StatusRoute = StatusRouteImport.update({
+  id: '/status',
+  path: '/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PillarsRoute = PillarsRouteImport.update({
   id: '/pillars',
   path: '/pillars',
@@ -160,6 +166,7 @@ export interface FileRoutesByFullPath {
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/status': typeof StatusRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
   '/journey/confirm': typeof JourneyConfirmRoute
@@ -185,6 +192,7 @@ export interface FileRoutesByTo {
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/status': typeof StatusRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
   '/journey/confirm': typeof JourneyConfirmRoute
@@ -211,6 +219,7 @@ export interface FileRoutesById {
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/status': typeof StatusRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
   '/journey/confirm': typeof JourneyConfirmRoute
@@ -238,6 +247,7 @@ export interface FileRouteTypes {
     | '/manifesto'
     | '/manifesto-full'
     | '/pillars'
+    | '/status'
     | '/journey/accessibility'
     | '/journey/complete'
     | '/journey/confirm'
@@ -263,6 +273,7 @@ export interface FileRouteTypes {
     | '/manifesto'
     | '/manifesto-full'
     | '/pillars'
+    | '/status'
     | '/journey/accessibility'
     | '/journey/complete'
     | '/journey/confirm'
@@ -288,6 +299,7 @@ export interface FileRouteTypes {
     | '/manifesto'
     | '/manifesto-full'
     | '/pillars'
+    | '/status'
     | '/journey/accessibility'
     | '/journey/complete'
     | '/journey/confirm'
@@ -314,10 +326,18 @@ export interface RootRouteChildren {
   ManifestoRoute: typeof ManifestoRoute
   ManifestoFullRoute: typeof ManifestoFullRoute
   PillarsRoute: typeof PillarsRouteWithChildren
+  StatusRoute: typeof StatusRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/status': {
+      id: '/status'
+      path: '/status'
+      fullPath: '/status'
+      preLoaderRoute: typeof StatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pillars': {
       id: '/pillars'
       path: '/pillars'
@@ -537,6 +557,7 @@ const rootRouteChildren: RootRouteChildren = {
   ManifestoRoute: ManifestoRoute,
   ManifestoFullRoute: ManifestoFullRoute,
   PillarsRoute: PillarsRouteWithChildren,
+  StatusRoute: StatusRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

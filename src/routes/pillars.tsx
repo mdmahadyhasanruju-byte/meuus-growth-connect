@@ -35,8 +35,8 @@ function PillarsIndex() {
             Nine doors. <span className="italic text-gradient-violet">One mission.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-foreground/70">
-            Each pillar is a full service. Click any one to see its philosophy, services, leader,
-            and what launches on 21 July 2026.
+            Each pillar is an ecosystem direction and content model. Click any one to see its
+            philosophy, proposed services, leader notes where present, and Day One intent.
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ function PillarsIndex() {
                     className="rounded-full px-2.5 py-0.5 text-xs"
                     style={{ background: `${p.color}22`, color: p.color }}
                   >
-                    {p.status}
+                    In development
                   </span>
                   <span className="inline-flex items-center gap-1 text-foreground/65 transition group-hover:text-foreground">
                     Read full <ArrowRight className="h-3.5 w-3.5" />

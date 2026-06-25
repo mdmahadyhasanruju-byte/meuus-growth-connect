@@ -12,29 +12,50 @@ export const Route = createFileRoute("/ecosystem")({
       {
         name: "description",
         content:
-          "The meUus Ecosystem: nine integrated pillars and one super app working as a connected human-development engine.",
+          "The meUus Ecosystem: nine intended pillars and a planned platform vision, with current operating status separated from future work.",
       },
       { property: "og:title", content: "meUus Ecosystem" },
-      { property: "og:description", content: "Nine pillars, one platform, one mission." },
+      {
+        property: "og:description",
+        content: "Nine intended pillars, one planned platform, one mission.",
+      },
     ],
   }),
   component: EcosystemPage,
 });
 
 const MODULES = [
-  { name: "Jobs & Opportunities", body: "Verified jobs, freelance, internships, scholarships." },
-  { name: "Learn & Certification", body: "Courses, skill tracks, career pathways." },
-  { name: "AI Growth Assistant", body: "CV, interview, career, and income guidance." },
-  { name: "Assessments", body: "Career fit, skills, personality, growth-readiness." },
-  { name: "Community & Chat", body: "Mentorship, groups, peer support." },
-  { name: "Business Tools", body: "Hiring, talent discovery, service marketplace." },
-  { name: "Wallet & Payments", body: "Subscriptions, services, rewards." },
+  {
+    name: "Jobs & Opportunities",
+    body: "Planned job, freelance, internship, and scholarship paths.",
+  },
+  { name: "Learn & Certification", body: "Planned courses, skill tracks, and career pathways." },
+  { name: "AI Growth Assistant", body: "Planned CV, interview, career, and income guidance." },
+  {
+    name: "Assessments",
+    body: "Planned career-fit, skills, personality, and growth-readiness tools.",
+  },
+  { name: "Community & Chat", body: "Planned mentorship, groups, and peer support." },
+  {
+    name: "Business Tools",
+    body: "Planned hiring, talent discovery, and service marketplace tools.",
+  },
+  { name: "Wallet & Payments", body: "Planned subscriptions, services, payments, and rewards." },
 ];
 
 const REVENUE = [
-  { t: "Consumer", body: "Premium subscriptions · Course sales · Coaching · Premium AI." },
-  { t: "Business", body: "Employer plans · Sponsored listings · Recruitment services." },
-  { t: "Platform", body: "Transaction fees · Marketplace commissions · Partnerships." },
+  {
+    t: "Consumer",
+    body: "Planned premium subscriptions, course sales, coaching, and future AI-supported services. Not yet available.",
+  },
+  {
+    t: "Business",
+    body: "Planned employer plans, sponsored listings, and recruitment services. Not yet available.",
+  },
+  {
+    t: "Platform",
+    body: "Planned transaction fees, marketplace commissions, and partnerships. Payment and revenue systems are not implemented in this repository.",
+  },
 ];
 
 const PHASES = [
@@ -44,7 +65,7 @@ const PHASES = [
   },
   {
     t: "21 July 2026 — Launch",
-    body: "Public platform live: jobs board, learn module, AI assistant, pillar services.",
+    body: "Day One continuation: truthful public status, prototype clarity, and manually verified next steps.",
   },
   { t: "Year 1 — Product–Market Fit", body: "Retention, referral growth, revenue optimization." },
   {
@@ -68,8 +89,8 @@ function EcosystemPage() {
             meUus <span className="text-gradient-violet italic">Ecosystem</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground/70">
-            Nine integrated pillars and one super app — connected to operate as a single
-            human-development engine.
+            Nine intended pillars and one platform vision. The current repository documents the
+            direction, not a fully operating ecosystem.
           </p>
         </div>
       </section>
@@ -99,7 +120,7 @@ function EcosystemPage() {
               ],
               [
                 "One platform spine",
-                "Jobs, learn, AI, assessments, community, and wallet — the operating layer underneath every pillar.",
+                "Jobs, learn, AI, assessments, community, and wallet are planned platform modules, not currently available systems.",
               ],
               [
                 "Long-term accountability",
@@ -125,7 +146,7 @@ function EcosystemPage() {
                 One ecosystem, <em className="italic">nine doors</em>
               </>
             }
-            subtitle="Each pillar is a full service. Together they cover the surface of a real life."
+            subtitle="Each pillar is an intended service direction. Operating status requires separate evidence."
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {PILLARS.map((p) => (
@@ -158,8 +179,7 @@ function EcosystemPage() {
             eyebrow="The platform"
             title={
               <>
-                One super app,{" "}
-                <em className="italic text-gradient-gold">connected to every pillar</em>
+                Planned platform, <em className="italic text-gradient-gold">not yet available</em>
               </>
             }
           />
@@ -174,22 +194,23 @@ function EcosystemPage() {
         </div>
       </section>
 
-      {/* REVENUE */}
+      {/* PLANNED SUSTAINABILITY */}
       <section className="relative px-4 py-24 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="Sustainability"
+            eyebrow="Planned sustainability model"
             title={
               <>
-                How meUus <em className="italic">sustains itself</em>
+                How meUus <em className="italic">could sustain itself</em>
               </>
             }
+            subtitle="These are planned revenue streams, not active subscriptions, payments, rewards, or AI services."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {REVENUE.map((r) => (
               <div key={r.t} className="rounded-2xl border-hairline bg-card/50 p-6">
                 <p className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]/85">
-                  Revenue stream
+                  Planned revenue stream
                 </p>
                 <h3 className="mt-2 font-serif text-2xl text-foreground">{r.t}</h3>
                 <p className="mt-2 text-sm text-foreground/65">{r.body}</p>

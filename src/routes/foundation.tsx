@@ -22,12 +22,13 @@ export const Route = createFileRoute("/foundation")({
       {
         name: "description",
         content:
-          "The four real-world entry points already operating, the three execution layers, and the next seven days of disciplined work before meUus is officially founded.",
+          "A founder execution map for proposed entry points, execution layers, and disciplined Day One work before public operating claims are verified.",
       },
       { property: "og:title", content: "Before Founding — The meUus Foundation Map" },
       {
         property: "og:description",
-        content: "Four real entry points. Three execution layers. One controlled loop at a time.",
+        content:
+          "Proposed entry points, three execution layers, and one controlled loop at a time.",
       },
     ],
   }),
@@ -39,11 +40,11 @@ const ENTRY_POINTS = [
     tag: "A · Institutional",
     title: "Legal & Taxation Chamber",
     icon: Scale,
-    status: "Operational offline",
+    status: "Unverified offline claim",
     points: [
-      "Established network of 20–30 professionals",
-      "Respected authority figure already involved",
-      "Trust + credibility already earned",
+      "Professional network requires external evidence",
+      "Authority involvement requires named confirmation",
+      "Trust and credibility must be documented before public claim",
     ],
     role: "First institutional partner system",
     accent: "oklch(0.78 0.14 280)",
@@ -52,11 +53,11 @@ const ENTRY_POINTS = [
     tag: "B · Livelihood",
     title: "Green House Project",
     icon: Sprout,
-    status: "Physical · local · scalable",
+    status: "Planned pilot evidence needed",
     points: [
-      "Employment generation built in",
+      "Employment model needs evidence",
       "Sustainability and food-security angle",
-      "Replicable across districts",
+      "Replication requires tested pilot records",
     ],
     role: "Pilot livelihood pillar",
     accent: "oklch(0.78 0.16 150)",
@@ -65,11 +66,11 @@ const ENTRY_POINTS = [
     tag: "C · Cashflow",
     title: "Grocery + Home Delivery (Mirpur)",
     icon: ShoppingBag,
-    status: "Real demand · recurring revenue",
+    status: "Manual/offline evidence needed",
     points: [
-      "Monthly recurring customer model",
-      "Daily operations already running",
-      "Service-prototype for the wider platform",
+      "Customer model requires dated records",
+      "Daily operations must be verified outside this repository",
+      "Possible service prototype for later platform work",
     ],
     role: "Cashflow + service prototype",
     accent: "oklch(0.82 0.13 80)",
@@ -78,11 +79,11 @@ const ENTRY_POINTS = [
     tag: "D · Intelligence",
     title: "School + Student Assessment + Profile",
     icon: GraduationCap,
-    status: "Aligned with DLAS core",
+    status: "Conceptual DLAS alignment",
     points: [
-      "Structured student profiles from day one",
-      "Feeds the Deep Life Assessment System",
-      "Becomes the long-term data + education engine",
+      "Structured student profiles require consent and governance",
+      "DLAS connection is conceptual, not implemented",
+      "Long-term data use requires a reviewed privacy model",
     ],
     role: "Core long-term intelligence layer",
     accent: "oklch(0.85 0.13 180)",
@@ -107,8 +108,8 @@ const LAYERS = [
   {
     num: "Layer 3",
     title: "meUus Digital System",
-    body: "Website, onboarding, AI assessment, profiles.",
-    goal: "Scale every offline win digitally — only after the first two layers breathe.",
+    body: "Website, onboarding, future assessment concepts, and profile ideas.",
+    goal: "Scale offline learning digitally only after evidence, consent, and governance exist.",
     icon: Layers,
   },
 ] as const;
@@ -117,17 +118,17 @@ const NEXT_SEVEN = [
   {
     step: "Step 1",
     title: "Finish domain setup",
-    body: "meuus.org live, SSL clean, primary domain set.",
+    body: "Verify domain ownership, DNS, TLS, redirects, and canonical URL before any live claim.",
   },
   {
     step: "Step 2",
     title: "Deploy the homepage",
-    body: "Ship the current site — no more redesigning before launch.",
+    body: "Publish only after truthful status labels, validation, and deployment evidence exist.",
   },
   {
     step: "Step 3",
     title: "One form only",
-    body: "“Join Founding Member” — single intake, single source of truth.",
+    body: "Use one verified contact path; the current mail-client flow does not confirm receipt.",
   },
   {
     step: "Step 4",
@@ -156,8 +157,8 @@ export default function FoundationPage() {
             The work <span className="italic text-gradient-violet">before</span> the founding
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground/70">
-            Four real entry points already operating. Three execution layers to keep them sane. One
-            controlled loop at a time — until 21 July 2026.
+            Proposed entry points, three execution layers, and one controlled loop at a time until
+            Day One on 21 July 2026. Offline operations require evidence outside this repository.
           </p>
           <div className="mt-10">
             <Countdown variant="compact" />
@@ -169,9 +170,9 @@ export default function FoundationPage() {
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="01 · What we already have"
-            title="Four real-world entry points"
-            subtitle="Not slides. Not plans. Systems that already breathe — people, customers, classrooms, soil."
+            eyebrow="01 · What needs evidence"
+            title="Four proposed entry points"
+            subtitle="This repository can describe the map. It cannot prove offline operations, customers, professionals, pilots, or revenue."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {ENTRY_POINTS.map((e) => (
@@ -205,7 +206,7 @@ export default function FoundationPage() {
                     ))}
                   </ul>
                   <div className="mt-6 rounded-2xl border-hairline bg-background/40 px-4 py-3 text-sm">
-                    <span className="text-foreground/55">Role · </span>
+                    <span className="text-foreground/55">Intended role · </span>
                     <span className="text-foreground">{e.role}</span>
                   </div>
                 </div>
@@ -226,9 +227,9 @@ export default function FoundationPage() {
             at once.
           </h2>
           <p className="mt-5 text-foreground/75">
-            Institutions. Businesses. Social systems. Infrastructure. The AI ecosystem. Ownership
-            structure. Six different operating systems trying to start in the same week. The result
-            is mental overload, execution confusion, and slow progress in every single track.
+            Institutions, businesses, social systems, infrastructure, AI concepts, and ownership
+            structure are too broad to claim at once. The result can become mental overload,
+            execution confusion, and slow progress in every track.
           </p>
           <p className="mt-4 text-foreground/75">
             The fix is not more ideas. The fix is{" "}
@@ -297,7 +298,7 @@ export default function FoundationPage() {
             {[
               "Keep ownership legally clean",
               "Use assets through agreements or trusts later",
-              "Don’t lock anything informally at this stage",
+              "Do not lock anything informally at this stage",
             ].map((x) => (
               <div
                 key={x}

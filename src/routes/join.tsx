@@ -17,11 +17,11 @@ export const Route = createFileRoute("/join")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
-      { title: "Join meUus — Founding Roles Open Until 21 July 2026" },
+      { title: "Join meUus — Founding Roles Until 21 July 2026" },
       {
         name: "description",
         content:
-          "Co-founder, Execution Partner, Investor, Founding Member, Core Team, Campus Ambassador, Advisor, Volunteer — all roles open.",
+          "Co-founder, Execution Partner, Investor, Founding Member, Core Team, Campus Ambassador, Advisor, and Volunteer roles presented for manual intake.",
       },
       { property: "og:title", content: "Join the meUus Founding Journey" },
     ],
@@ -54,14 +54,14 @@ function JoinPage() {
         />
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
-            Founding Phase · Open Until 21 July 2026
+            Founding Phase · Manual Intake Until 21 July 2026
           </div>
           <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
             Join the <span className="italic text-gradient-violet">founding</span> journey
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-foreground/70">
-            Before founding, we are choosing the founders. Every meaningful role is open — choose
-            where you fit.
+            Before founding, we are choosing the founders. These roles are presented for manual
+            review and follow-up; availability and response handling should be verified directly.
           </p>
           <div className="mt-8">
             <Countdown variant="compact" />
@@ -207,9 +207,13 @@ function ApplyForm({ role }: { role: Role }) {
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--gold)]/20 text-[var(--gold)]">
           <Check className="h-6 w-6" />
         </div>
-        <h4 className="mt-4 font-serif text-2xl text-foreground">Application received</h4>
+        <h4 className="mt-4 font-serif text-2xl text-foreground">
+          Your email client has been prepared
+        </h4>
         <p className="mt-2 text-sm text-foreground/65">
-          Thank you for stepping forward as <strong>{role.title}</strong>. We will reach out soon.
+          Please review and send the email to complete your application for{" "}
+          <strong>{role.title}</strong>. Submission is only complete after the email is sent
+          successfully from your mail app.
         </p>
       </div>
     );
