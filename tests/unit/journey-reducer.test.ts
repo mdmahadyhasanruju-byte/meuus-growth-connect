@@ -23,6 +23,8 @@ describe("journey reducer", () => {
       storageMode: "progress_only",
     });
     expect(session.stage).toBe("orientation");
+    expect(session.language).toBe("bn");
+    expect(session.storageMode).toBe("progress_only");
 
     session = journeyReducer(session, { type: "ORIENTATION_COMPLETED" });
     expect(session.stage).toBe("quest");

@@ -1,9 +1,35 @@
 import { describe, expect, test } from "bun:test";
 
+import type {
+  JourneyLanguage,
+  JourneySession,
+  JourneyStorageMode,
+} from "../../src/journey/domain/types";
 import { getNextJourneyPath } from "../../src/journey/routing/guards";
 import { createInitialJourneySession, journeyReducer } from "../../src/journey/domain/reducer";
 
 describe("journey first slice route flow", () => {
+  test("preference choices advance only after explicit confirmation", () => {
+    let session = journeyReducer(createInitialJourneySession(), { type: "BOUNDARY_ACCEPTED" });
+    let draftLanguage: JourneyLanguage = session.language;
+    let draftStorageMode: JourneyStorageMode = session.storageMode;
+
+    draftLanguage = "bn";
+    draftStorageMode = "progress_only";
+
+    expect(getNextJourneyPath(session)).toBe("/journey/preferences");
+    expect(session.stage).toBe("preferences");
+    expect(session.language).toBe("en");
+    expect(session.storageMode).toBe("session_only");
+
+    session = confirmPreferences(session, draftLanguage, draftStorageMode);
+
+    expect(session.stage).toBe("orientation");
+    expect(getNextJourneyPath(session)).toBe("/journey/orientation");
+    expect(session.language).toBe("bn");
+    expect(session.storageMode).toBe("progress_only");
+  });
+
   test("reaches only the internal non-terminal checkpoint", () => {
     let session = createInitialJourneySession();
     expect(getNextJourneyPath(session)).toBe("/journey/start");
@@ -34,3 +60,15 @@ describe("journey first slice route flow", () => {
     expect(session.milestone).toBeUndefined();
   });
 });
+
+function confirmPreferences(
+  session: JourneySession,
+  language: JourneyLanguage,
+  storageMode: JourneyStorageMode,
+) {
+  return journeyReducer(session, {
+    type: "PREFERENCES_SAVED",
+    language,
+    storageMode,
+  });
+}
