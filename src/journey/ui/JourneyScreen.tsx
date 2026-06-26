@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { cn } from "@/lib/utils";
 
 import { journeyCopy, firstSliceQuest } from "../content/first-slice";
@@ -346,8 +357,51 @@ function Frame({
         <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">{eyebrow}</p>
         <h1 className="font-serif text-4xl text-foreground sm:text-6xl">{title}</h1>
         {children}
+        <JourneyClearControl />
       </div>
     </section>
+  );
+}
+
+function JourneyClearControl() {
+  const { clearJourney } = useJourney();
+  const navigate = useJourneyNavigate();
+
+  return (
+    <div className="border-t border-border/50 pt-5">
+      <AlertDialog>
+        <AlertDialogTrigger asChild>
+          <button
+            className="text-left text-sm font-medium text-foreground/55 underline-offset-4 transition hover:text-foreground hover:underline"
+            type="button"
+          >
+            Clear Journey data
+          </button>
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Clear local Journey data?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This clears Journey progress from this browser profile. It may also clear optional
+              reflection text if you chose to save reflection locally. This does not delete cloud
+              data because Journey currently does not save to cloud.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Keep Journey data</AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              onClick={() => {
+                clearJourney();
+                navigate("/journey/start");
+              }}
+            >
+              Clear and restart
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </div>
   );
 }
 
