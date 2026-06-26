@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 
+import { cn } from "@/lib/utils";
+
 import { journeyCopy, firstSliceQuest } from "../content/first-slice";
-import type { JourneyEvent, JourneyPath, ReflectionResolution } from "../domain/types";
+import type {
+  JourneyEvent,
+  JourneyLanguage,
+  JourneyPath,
+  JourneyStorageMode,
+  ReflectionResolution,
+} from "../domain/types";
 import { useJourney } from "../provider";
 import { canEnterJourneyRoute, getNextJourneyPath } from "../routing/guards";
 
@@ -66,11 +74,11 @@ export function JourneyScreen({ kind, path }: JourneyScreenProps) {
   if (kind === "orientation") {
     return (
       <ActionFrame
-        title="Orientation"
-        body="Move slowly. Learn first, then reflect privately or in writing. No written text is required."
+        title={journeyCopy.orientationTitle[language]}
+        body={journeyCopy.orientationBody[language]}
         event={{ type: "ORIENTATION_COMPLETED" }}
         next="/journey/quest/KBA-LQ-001"
-        actionLabel="Continue to quest"
+        actionLabel={journeyCopy.orientationCta[language]}
       />
     );
   }
@@ -125,6 +133,8 @@ export function JourneyScreen({ kind, path }: JourneyScreenProps) {
 function PreferencesScreen() {
   const { session, dispatch } = useJourney();
   const navigate = useJourneyNavigate();
+  const [draftLanguage, setDraftLanguage] = useState<JourneyLanguage>(session.language);
+  const [draftStorageMode, setDraftStorageMode] = useState<JourneyStorageMode>(session.storageMode);
 
   const save = (event: JourneyEvent) => {
     dispatch(event);
@@ -137,69 +147,91 @@ function PreferencesScreen() {
         Choose the language and storage mode for this prototype. Progress-only storage never keeps
         private reflection text.
       </p>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <button
-          className="rounded-2xl border-hairline bg-glass px-4 py-3 text-left text-sm"
-          onClick={() =>
-            save({
-              type: "PREFERENCES_SAVED",
-              language: "en",
-              storageMode: session.storageMode,
-            })
-          }
-        >
-          English
-        </button>
-        <button
-          className="rounded-2xl border-hairline bg-glass px-4 py-3 text-left text-sm"
-          onClick={() =>
-            save({
-              type: "PREFERENCES_SAVED",
-              language: "bn",
-              storageMode: session.storageMode,
-            })
-          }
-        >
-          বাংলা
-        </button>
-        <button
-          className="rounded-2xl border-hairline bg-glass px-4 py-3 text-left text-sm"
-          onClick={() =>
-            save({
-              type: "PREFERENCES_SAVED",
-              language: session.language,
-              storageMode: "session_only",
-            })
-          }
-        >
-          Session only
-        </button>
-        <button
-          className="rounded-2xl border-hairline bg-glass px-4 py-3 text-left text-sm"
-          onClick={() =>
-            save({
-              type: "PREFERENCES_SAVED",
-              language: session.language,
-              storageMode: "progress_only",
-            })
-          }
-        >
-          Progress only
-        </button>
-        <button
-          className="rounded-2xl border-hairline bg-glass px-4 py-3 text-left text-sm sm:col-span-2"
-          onClick={() =>
-            save({
-              type: "PREFERENCES_SAVED",
-              language: session.language,
-              storageMode: "progress_and_reflection",
-            })
-          }
-        >
-          Progress and reflection
-        </button>
+      <div className="space-y-5">
+        <div className="grid gap-3 sm:grid-cols-2" role="group" aria-label="Journey language">
+          <PreferenceOption
+            selected={draftLanguage === "en"}
+            title="English"
+            description="Use English for the first-slice Journey screens."
+            onSelect={() => setDraftLanguage("en")}
+          />
+          <PreferenceOption
+            selected={draftLanguage === "bn"}
+            title="বাংলা"
+            description="প্রথম স্লাইসের যাত্রা স্ক্রিনে বাংলা ব্যবহার করুন।"
+            onSelect={() => setDraftLanguage("bn")}
+          />
+        </div>
+        <div className="grid gap-3 sm:grid-cols-3" role="group" aria-label="Journey storage mode">
+          <PreferenceOption
+            selected={draftStorageMode === "session_only"}
+            title="Session only"
+            description="Do not keep Journey progress after this browser session."
+            onSelect={() => setDraftStorageMode("session_only")}
+          />
+          <PreferenceOption
+            selected={draftStorageMode === "progress_only"}
+            title="Progress only"
+            description="Keep progress in this browser, but never private reflection text."
+            onSelect={() => setDraftStorageMode("progress_only")}
+          />
+          <PreferenceOption
+            selected={draftStorageMode === "progress_and_reflection"}
+            title="Progress and reflection"
+            description="Keep progress and optional reflection text in this browser."
+            onSelect={() => setDraftStorageMode("progress_and_reflection")}
+          />
+        </div>
       </div>
+      <p className="rounded-2xl border-hairline bg-background/50 px-4 py-3 text-sm text-foreground/65">
+        Persistent modes use this browser's local storage. On a shared device, another person using
+        the same browser profile may see saved Journey progress, and reflection text is kept only if
+        you choose progress and reflection.
+      </p>
+      <button
+        className="inline-flex w-fit rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+        onClick={() =>
+          save({
+            type: "PREFERENCES_SAVED",
+            language: draftLanguage,
+            storageMode: draftStorageMode,
+          })
+        }
+      >
+        Continue
+      </button>
     </Frame>
+  );
+}
+
+function PreferenceOption({
+  selected,
+  title,
+  description,
+  onSelect,
+}: {
+  selected: boolean;
+  title: string;
+  description: string;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      aria-pressed={selected}
+      className={cn(
+        "rounded-2xl border-hairline bg-glass px-4 py-3 text-left text-sm transition",
+        selected &&
+          "border-[var(--gold)] bg-primary/10 text-foreground shadow-[0_0_0_1px_var(--gold)]",
+      )}
+      onClick={onSelect}
+      type="button"
+    >
+      <span className="flex items-center justify-between gap-3 font-semibold">
+        {title}
+        {selected ? <span className="text-xs uppercase text-[var(--gold)]">Selected</span> : null}
+      </span>
+      <span className="mt-2 block text-foreground/65">{description}</span>
+    </button>
   );
 }
 
