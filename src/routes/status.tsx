@@ -26,16 +26,16 @@ export const Route = createFileRoute("/status")({
 
 const STATUS_ITEMS = [
   {
-    label: "Merged source; live verification pending",
+    label: "Live",
     icon: CheckCircle2,
     title: "Public website source",
-    body: "The repository contains a merged public website codebase with routes, content, metadata, and a Cloudflare-compatible application structure. Current deployment, domain, and runtime status still need external verification before they are described as live.",
+    body: "The public /status, /join, and /journey routes are live. /join uses bounded wording, and /journey presents the available first-slice prototype.",
   },
   {
-    label: "Prototype",
+    label: "Live prototype",
     icon: CircleDot,
     title: "Journey Mode first slice",
-    body: "Journey Mode is merged as a local-first, non-diagnostic first-slice prototype. It includes Knowledge Before Action, one quest, optional written reflection, and an internal checkpoint. Preference, storage, restart, privacy, localization, and browser validation work remain in progress.",
+    body: "Journey Mode is available as a local-first, non-diagnostic first-slice prototype. It includes Knowledge Before Action, one quest, optional written reflection, and an internal checkpoint. Explicit preference confirmation and the local browser clear/restart control are completed and live verified. Journey data remains in the current browser.",
   },
   {
     label: "Planned",
@@ -50,17 +50,18 @@ const STATUS_ITEMS = [
     body: "The website describes nine intended pillars as an ecosystem direction and content model. The repository does not prove operating services, partners, pilots, professionals, customers, revenue, or public impact.",
   },
   {
-    label: "Not yet available",
+    label: "Not verified or live",
     icon: PauseCircle,
     title: "Platform systems",
-    body: "Backend, database, auth, AI systems, AI agents, subscriptions, payments, rewards, wallet, analytics, jobs, learning, community, and automated service delivery are not available in the current repository.",
+    body: "No backend, AI runtime, DLAS runtime, accounts, cloud storage, payments, rewards, or subscriptions are verified or live.",
   },
 ] as const;
 
 const BOUNDARIES = [
   "21 July 2026 is a Day One continuation target, not proof that the full ecosystem is complete.",
-  "No live deployment, custom domain, Cloudflare Worker, inbox delivery, or operating program is verified by source code alone.",
-  "Journey should be described as a prototype until its known preference, storage, restart, privacy, localization, and runtime gaps are addressed.",
+  "The public /status, /join, and /journey routes are live. This does not verify a backend, operating program, or future platform services.",
+  "Journey remains a bounded first-slice prototype even though preference confirmation and the local browser clear/restart control are completed and live verified.",
+  "Internal source-of-truth and archive inventory documents exist. They preserve evidence and do not make old materials production truth.",
   "DLAS must stay non-operational in public wording until it has a governed specification, evidence standard, consent model, and implementation.",
   "Founding-role and intake language should be treated as proposed or manually handled unless a reliable intake workflow is verified.",
 ] as const;
@@ -149,7 +150,8 @@ function StatusPage() {
             Not yet available
           </p>
           <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">
-            No backend, AI, payments, rewards, subscriptions, or DLAS engine are available yet.
+            No backend, AI runtime, DLAS runtime, accounts, cloud storage, payments, rewards, or
+            subscriptions are verified or live.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">
             Those systems remain future work. Public claims should stay calm, specific, and tied to
