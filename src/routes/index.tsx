@@ -10,17 +10,17 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "meUus — Connecting Everything | Launching 21 July 2026" },
+      { title: "meUus — Live Public Foundation and Journey Prototype" },
       {
         name: "description",
         content:
-          "meUus has begun as a public website codebase, a Journey prototype, and a planned nine-pillar human-development vision. Day One continues on 21 July 2026.",
+          "meuus.org is live with a public status page, a manual expression-of-interest path, and a browser-local Knowledge Before Action Journey prototype.",
       },
       { property: "og:title", content: "meUus — Connecting Everything" },
       {
         property: "og:description",
         content:
-          "A founding-phase human-development project with a public website, Journey prototype, and planned nine-pillar ecosystem direction.",
+          "A live public foundation with a bounded Journey prototype and a larger human-development vision still in development.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,8 +33,7 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "meUus",
           description:
-            "A founding-phase human-development project with a public website, Journey prototype, and planned nine-pillar ecosystem direction.",
-          foundingDate: "2026-07-21",
+            "A founding-phase human-development project with a live public website, bounded Journey prototype, and planned nine-pillar ecosystem direction.",
           founder: { "@type": "Person", name: "Md. Mahady Hasan" },
           areaServed: "Bangladesh",
           slogan: "Connecting Everything",
@@ -49,37 +48,37 @@ const JOURNEY = [
   {
     num: "01",
     title: "Foundation",
-    body: "Truth, privacy, dignity. A human-first operating system, not a feature list.",
-    href: "/",
-    linkLabel: "The intention",
+    body: "Live now: public pages, a current status record, and clear evidence boundaries on meuus.org.",
+    href: "/status",
+    linkLabel: "Visit Status",
   },
   {
     num: "02",
-    title: "DLAS",
-    body: "Planned: the Deep Life Assessment System is a future concept, not an implemented engine.",
-    href: "/status",
-    linkLabel: "Current status",
+    title: "Knowledge Before Action",
+    body: "Live prototype: pause, learn, reflect, and choose responsibly in one bounded first slice.",
+    href: "/journey",
+    linkLabel: "Start Journey",
   },
   {
     num: "03",
     title: "Ecosystem",
-    body: "In development: nine pillars are the intended content model and operating direction.",
+    body: "In development: nine intended pillars describe the vision, not a fully operating ecosystem.",
     href: "/ecosystem",
-    linkLabel: "Explore",
+    linkLabel: "Learn the vision",
   },
   {
     num: "04",
     title: "Platform",
-    body: "Planned: jobs, learning, AI guidance, community, wallet, payments, and rewards are not yet available.",
+    body: "Future roadmap: backend, accounts, cloud storage, AI runtime, payments, rewards, and subscriptions are not live.",
     href: "/status",
-    linkLabel: "Current status",
+    linkLabel: "See boundaries",
   },
   {
     num: "05",
     title: "Global",
-    body: "Bangladesh first. Then Gulf diaspora. Then the world — every soul, every opportunity.",
+    body: "Future vision: begin in Bangladesh and consider wider reach only after evidence and responsible delivery.",
     href: "/global",
-    linkLabel: "The vision",
+    linkLabel: "Future vision",
   },
 ] as const;
 
@@ -87,21 +86,21 @@ const HUBS = [
   {
     label: "meUus",
     title: "The Soul",
-    body: "Truthful human assessment, structured guidance, responsible action. The intention behind everything.",
+    body: "Human-first principles: truth, dignity, privacy, responsible action, and learning before claims.",
     href: "/" as const,
     accent: "from-violet-500/30 via-violet-500/5 to-transparent",
   },
   {
     label: "meUus Ecosystem",
     title: "The Body",
-    body: "Nine integrated pillars and one platform working as a connected human-development engine.",
+    body: "Nine intended pillars and a future platform plan. The full operating ecosystem is not yet live.",
     href: "/ecosystem" as const,
     accent: "from-cyan-500/30 via-cyan-500/5 to-transparent",
   },
   {
     label: "meUus Global",
     title: "The Reach",
-    body: "From Bangladesh to the Gulf to the world — opportunity carried across every border.",
+    body: "A planned path from Bangladesh toward wider reach, subject to evidence, partnerships, and responsible delivery.",
     href: "/global" as const,
     accent: "from-amber-400/30 via-amber-400/5 to-transparent",
   },
@@ -128,7 +127,7 @@ function HomePage() {
         <div className="relative z-10 flex flex-col items-center gap-8 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
             <Sparkles className="h-3 w-3 text-[var(--gold)]" />
-            Pre-Launch · Founding Phase
+            Live Public Foundation · Founding Phase
           </div>
 
           <h1 className="font-serif text-[clamp(3.5rem,12vw,11rem)] font-medium leading-[0.95] tracking-tight">
@@ -141,32 +140,32 @@ function HomePage() {
           </p>
 
           <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
-            A human-development project in its founding phase: public website source, a Journey
-            first-slice prototype, and a larger ecosystem vision still being built.
+            meuus.org is live with public status, manual expressions of interest, and Knowledge
+            Before Action as its first bounded working experience. Journey preferences and local
+            clear/restart are available, and Journey data stays in this browser.
           </p>
 
           <Countdown />
 
           <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
             <Link
-              to="/join"
-              search={{}}
+              to="/journey"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.03] sm:w-auto"
             >
-              Join the Founding Journey
+              Start Journey
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              to="/ecosystem"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
-            >
-              Explore the Ecosystem
             </Link>
             <Link
               to="/status"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
             >
-              Current Status
+              Visit Status
+            </Link>
+            <Link
+              to="/ecosystem"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
+            >
+              Learn the Vision
             </Link>
           </div>
 
@@ -190,7 +189,7 @@ function HomePage() {
                 <em className="italic text-gradient-gold">every soul</em>
               </>
             }
-            subtitle="One continuous arc — from the philosophy of meUus, through the platform, to global reach."
+            subtitle="From a live public foundation and one bounded experience toward a larger vision that remains in development."
           />
 
           <div className="relative mt-20">
@@ -249,7 +248,7 @@ function HomePage() {
                 One vision, <em className="italic">three doors</em>
               </>
             }
-            subtitle="Enter through any door. They lead to the same horizon."
+            subtitle="Each door separates what is available now from what remains intended or planned."
           />
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {HUBS.map((h) => (
@@ -287,7 +286,7 @@ function HomePage() {
                 A constellation, <em className="italic text-gradient-gold">not a list</em>
               </>
             }
-            subtitle="Each pillar stands alone. Together they form a complete human-development ecosystem."
+            subtitle="Each pillar is an intended direction. Together they describe a future ecosystem, not current operating services."
           />
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PILLARS.map((p, i) => (
@@ -323,7 +322,7 @@ function HomePage() {
                       color: p.color,
                     }}
                   >
-                    {p.status}
+                    In development
                   </span>
                   <span className="inline-flex items-center gap-1 text-foreground/55 transition group-hover:text-foreground">
                     Open <ArrowRight className="h-3 w-3" />
@@ -348,17 +347,17 @@ function HomePage() {
       <section className="relative px-4 py-32 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="DLAS"
+            eyebrow="Future Roadmap · DLAS"
             title={
               <>
-                Deep Life <em className="italic">Assessment System</em>
+                Deep Life <em className="italic">Assessment System concept</em>
               </>
             }
-            subtitle="A structured way to understand a whole human — not just a visible problem. Five levels deep, four dimensions wide."
+            subtitle="A proposed future assessment and guidance framework. No DLAS runtime, scoring model, consent workflow, or validated system is live."
           />
           <div className="mt-16 grid gap-10 lg:grid-cols-2">
             <div className="rounded-3xl border-hairline bg-card/40 p-8">
-              <h3 className="font-serif text-2xl text-foreground">Five Levels</h3>
+              <h3 className="font-serif text-2xl text-foreground">Proposed five-level outline</h3>
               <ol className="mt-6 space-y-4">
                 {[
                   ["01", "Surface Entry", "What is bothering you most right now?"],
@@ -379,7 +378,7 @@ function HomePage() {
             </div>
             <div className="space-y-6">
               <div className="rounded-3xl border-hairline bg-card/40 p-8">
-                <h3 className="font-serif text-2xl text-foreground">Four Dimensions</h3>
+                <h3 className="font-serif text-2xl text-foreground">Proposed dimensions</h3>
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   {[
                     ["Facts", "What objectively happened."],
@@ -395,7 +394,7 @@ function HomePage() {
                 </div>
               </div>
               <div className="rounded-3xl border-hairline bg-card/40 p-8">
-                <h3 className="font-serif text-xl text-foreground">Three Protocols</h3>
+                <h3 className="font-serif text-xl text-foreground">Required future boundaries</h3>
                 <ul className="mt-4 space-y-2 text-sm text-foreground/75">
                   <li>
                     <span className="text-[var(--gold)]">·</span> Truth over performance
@@ -418,14 +417,13 @@ function HomePage() {
         <AnimatedOrb className="left-0 top-1/4" color="oklch(0.82 0.13 80)" size={500} />
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Before Launch"
+            eyebrow="Expression of Interest"
             title={
               <>
-                Before founding,{" "}
-                <em className="italic text-gradient-gold">we are choosing the founders</em>
+                Help shape the <em className="italic text-gradient-gold">founding phase</em>
               </>
             }
-            subtitle="Until 21 July 2026, every meaningful role is open. If the intention resonates, there is a seat for you."
+            subtitle="These are areas for manual expressions of interest, not guaranteed positions, compensation, equity, salaries, or perks."
           />
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ROLES.map((r, i) => (
@@ -449,7 +447,7 @@ function HomePage() {
                           : "bg-white/10 text-foreground/65"
                     }`}
                   >
-                    {r.urgency}
+                    Manual review
                   </span>
                 </div>
                 <h3 className="mt-4 font-serif text-2xl text-foreground">{r.title}</h3>
@@ -457,7 +455,7 @@ function HomePage() {
                 <div className="mt-6 flex items-center justify-between text-xs text-foreground/55">
                   <span>{r.commitment}</span>
                   <span className="inline-flex items-center gap-1 transition group-hover:text-foreground">
-                    Apply <ArrowRight className="h-3 w-3" />
+                    View details <ArrowRight className="h-3 w-3" />
                   </span>
                 </div>
               </Link>
@@ -469,7 +467,7 @@ function HomePage() {
               search={{}}
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet hover:scale-[1.03]"
             >
-              See all open roles & apply
+              Express interest manually
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -488,8 +486,8 @@ function HomePage() {
             Not only the visible problem."
           </p>
           <p className="mt-8 text-foreground/60">
-            meUus is not just an app. It is an operating system for human development — for every
-            soul, every opportunity, every step toward a better life.
+            meUus is a human-development vision beginning with a live public foundation and one
+            bounded Journey prototype. The wider ecosystem remains future work.
           </p>
           <p className="mt-2 text-xs uppercase tracking-[0.3em] text-foreground/45">
             Alhamdulillah · InShaAllah
