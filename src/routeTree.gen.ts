@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as SoulRouteImport } from './routes/soul'
 import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as OneWordStartRouteImport } from './routes/one-word-start'
 import { Route as ManifestoFullRouteImport } from './routes/manifesto-full'
@@ -39,6 +40,11 @@ import { Route as JourneyQuestQuestIdRouteImport } from './routes/journey.quest.
 const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoulRoute = SoulRouteImport.update({
+  id: '/soul',
+  path: '/soul',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PillarsRoute = PillarsRouteImport.update({
@@ -180,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/soul': typeof SoulRoute
   '/status': typeof StatusRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
@@ -208,6 +215,7 @@ export interface FileRoutesByTo {
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/soul': typeof SoulRoute
   '/status': typeof StatusRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
@@ -237,6 +245,7 @@ export interface FileRoutesById {
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/soul': typeof SoulRoute
   '/status': typeof StatusRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
@@ -267,6 +276,7 @@ export interface FileRouteTypes {
     | '/manifesto-full'
     | '/one-word-start'
     | '/pillars'
+    | '/soul'
     | '/status'
     | '/journey/accessibility'
     | '/journey/complete'
@@ -295,6 +305,7 @@ export interface FileRouteTypes {
     | '/manifesto-full'
     | '/one-word-start'
     | '/pillars'
+    | '/soul'
     | '/status'
     | '/journey/accessibility'
     | '/journey/complete'
@@ -323,6 +334,7 @@ export interface FileRouteTypes {
     | '/manifesto-full'
     | '/one-word-start'
     | '/pillars'
+    | '/soul'
     | '/status'
     | '/journey/accessibility'
     | '/journey/complete'
@@ -352,6 +364,7 @@ export interface RootRouteChildren {
   ManifestoFullRoute: typeof ManifestoFullRoute
   OneWordStartRoute: typeof OneWordStartRoute
   PillarsRoute: typeof PillarsRouteWithChildren
+  SoulRoute: typeof SoulRoute
   StatusRoute: typeof StatusRoute
 }
 
@@ -362,6 +375,13 @@ declare module '@tanstack/react-router' {
       path: '/status'
       fullPath: '/status'
       preLoaderRoute: typeof StatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soul': {
+      id: '/soul'
+      path: '/soul'
+      fullPath: '/soul'
+      preLoaderRoute: typeof SoulRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pillars': {
@@ -599,6 +619,7 @@ const rootRouteChildren: RootRouteChildren = {
   ManifestoFullRoute: ManifestoFullRoute,
   OneWordStartRoute: OneWordStartRoute,
   PillarsRoute: PillarsRouteWithChildren,
+  SoulRoute: SoulRoute,
   StatusRoute: StatusRoute,
 }
 export const routeTree = rootRouteImport
