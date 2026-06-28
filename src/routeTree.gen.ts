@@ -22,6 +22,7 @@ import { Route as GlobalRouteImport } from './routes/global'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as FoundationRouteImport } from './routes/foundation'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 import { Route as JourneyStartRouteImport } from './routes/journey.start'
@@ -102,6 +103,11 @@ const EcosystemRoute = EcosystemRouteImport.update({
   path: '/ecosystem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -175,6 +181,7 @@ const JourneyQuestQuestIdRoute = JourneyQuestQuestIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -204,6 +211,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -234,6 +242,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -265,6 +274,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/book'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -294,6 +304,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/book'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -323,6 +334,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/book'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -353,6 +365,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
   EcosystemRoute: typeof EcosystemRoute
   FoundationRoute: typeof FoundationRoute
   FounderRoute: typeof FounderRoute
@@ -459,6 +472,13 @@ declare module '@tanstack/react-router' {
       path: '/ecosystem'
       fullPath: '/ecosystem'
       preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -608,6 +628,7 @@ const PillarsRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
   EcosystemRoute: EcosystemRoute,
   FoundationRoute: FoundationRoute,
   FounderRoute: FounderRoute,
