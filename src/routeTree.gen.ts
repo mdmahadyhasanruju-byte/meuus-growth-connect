@@ -14,6 +14,7 @@ import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as OneWordStartRouteImport } from './routes/one-word-start'
 import { Route as ManifestoFullRouteImport } from './routes/manifesto-full'
 import { Route as ManifestoRouteImport } from './routes/manifesto'
+import { Route as KnowledgeBeforeActionRouteImport } from './routes/knowledge-before-action'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as GlobalRouteImport } from './routes/global'
@@ -58,6 +59,11 @@ const ManifestoFullRoute = ManifestoFullRouteImport.update({
 const ManifestoRoute = ManifestoRouteImport.update({
   id: '/manifesto',
   path: '/manifesto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeBeforeActionRoute = KnowledgeBeforeActionRouteImport.update({
+  id: '/knowledge-before-action',
+  path: '/knowledge-before-action',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JourneyRoute = JourneyRouteImport.update({
@@ -169,6 +175,7 @@ export interface FileRoutesByFullPath {
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
   '/journey': typeof JourneyRouteWithChildren
+  '/knowledge-before-action': typeof KnowledgeBeforeActionRoute
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
@@ -196,6 +203,7 @@ export interface FileRoutesByTo {
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
   '/journey': typeof JourneyRouteWithChildren
+  '/knowledge-before-action': typeof KnowledgeBeforeActionRoute
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
@@ -224,6 +232,7 @@ export interface FileRoutesById {
   '/global': typeof GlobalRoute
   '/join': typeof JoinRoute
   '/journey': typeof JourneyRouteWithChildren
+  '/knowledge-before-action': typeof KnowledgeBeforeActionRoute
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
@@ -253,6 +262,7 @@ export interface FileRouteTypes {
     | '/global'
     | '/join'
     | '/journey'
+    | '/knowledge-before-action'
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
@@ -280,6 +290,7 @@ export interface FileRouteTypes {
     | '/global'
     | '/join'
     | '/journey'
+    | '/knowledge-before-action'
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
@@ -307,6 +318,7 @@ export interface FileRouteTypes {
     | '/global'
     | '/join'
     | '/journey'
+    | '/knowledge-before-action'
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
@@ -335,6 +347,7 @@ export interface RootRouteChildren {
   GlobalRoute: typeof GlobalRoute
   JoinRoute: typeof JoinRoute
   JourneyRoute: typeof JourneyRouteWithChildren
+  KnowledgeBeforeActionRoute: typeof KnowledgeBeforeActionRoute
   ManifestoRoute: typeof ManifestoRoute
   ManifestoFullRoute: typeof ManifestoFullRoute
   OneWordStartRoute: typeof OneWordStartRoute
@@ -377,6 +390,13 @@ declare module '@tanstack/react-router' {
       path: '/manifesto'
       fullPath: '/manifesto'
       preLoaderRoute: typeof ManifestoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge-before-action': {
+      id: '/knowledge-before-action'
+      path: '/knowledge-before-action'
+      fullPath: '/knowledge-before-action'
+      preLoaderRoute: typeof KnowledgeBeforeActionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journey': {
@@ -574,6 +594,7 @@ const rootRouteChildren: RootRouteChildren = {
   GlobalRoute: GlobalRoute,
   JoinRoute: JoinRoute,
   JourneyRoute: JourneyRouteWithChildren,
+  KnowledgeBeforeActionRoute: KnowledgeBeforeActionRoute,
   ManifestoRoute: ManifestoRoute,
   ManifestoFullRoute: ManifestoFullRoute,
   OneWordStartRoute: OneWordStartRoute,
