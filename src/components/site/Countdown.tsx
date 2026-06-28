@@ -12,14 +12,17 @@ function diff() {
   return { days, hours, minutes, seconds };
 }
 
+const INITIAL_TIME = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
 interface CountdownProps {
   variant?: "hero" | "compact";
 }
 
 export function Countdown({ variant = "hero" }: CountdownProps) {
-  const [t, setT] = useState(diff());
+  const [t, setT] = useState(INITIAL_TIME);
 
   useEffect(() => {
+    setT(diff());
     const id = setInterval(() => setT(diff()), 1000);
     return () => clearInterval(id);
   }, []);
