@@ -24,6 +24,7 @@ import { Route as GlobalRouteImport } from './routes/global'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as FoundationRouteImport } from './routes/foundation'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as DomainsRouteImport } from './routes/domains'
 import { Route as ConsentRouteImport } from './routes/consent'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as AppreciationRouteImport } from './routes/appreciation'
@@ -116,6 +117,11 @@ const FoundationRoute = FoundationRouteImport.update({
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
   path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomainsRoute = DomainsRouteImport.update({
+  id: '/domains',
+  path: '/domains',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsentRoute = ConsentRouteImport.update({
@@ -215,6 +221,7 @@ export interface FileRoutesByFullPath {
   '/appreciation': typeof AppreciationRoute
   '/book': typeof BookRoute
   '/consent': typeof ConsentRoute
+  '/domains': typeof DomainsRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -250,6 +257,7 @@ export interface FileRoutesByTo {
   '/appreciation': typeof AppreciationRoute
   '/book': typeof BookRoute
   '/consent': typeof ConsentRoute
+  '/domains': typeof DomainsRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -286,6 +294,7 @@ export interface FileRoutesById {
   '/appreciation': typeof AppreciationRoute
   '/book': typeof BookRoute
   '/consent': typeof ConsentRoute
+  '/domains': typeof DomainsRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -323,6 +332,7 @@ export interface FileRouteTypes {
     | '/appreciation'
     | '/book'
     | '/consent'
+    | '/domains'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -358,6 +368,7 @@ export interface FileRouteTypes {
     | '/appreciation'
     | '/book'
     | '/consent'
+    | '/domains'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -393,6 +404,7 @@ export interface FileRouteTypes {
     | '/appreciation'
     | '/book'
     | '/consent'
+    | '/domains'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -429,6 +441,7 @@ export interface RootRouteChildren {
   AppreciationRoute: typeof AppreciationRoute
   BookRoute: typeof BookRoute
   ConsentRoute: typeof ConsentRoute
+  DomainsRoute: typeof DomainsRoute
   EcosystemRoute: typeof EcosystemRoute
   FoundationRoute: typeof FoundationRoute
   FounderRoute: typeof FounderRoute
@@ -551,6 +564,13 @@ declare module '@tanstack/react-router' {
       path: '/ecosystem'
       fullPath: '/ecosystem'
       preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/domains': {
+      id: '/domains'
+      path: '/domains'
+      fullPath: '/domains'
+      preLoaderRoute: typeof DomainsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/consent': {
@@ -732,6 +752,7 @@ const rootRouteChildren: RootRouteChildren = {
   AppreciationRoute: AppreciationRoute,
   BookRoute: BookRoute,
   ConsentRoute: ConsentRoute,
+  DomainsRoute: DomainsRoute,
   EcosystemRoute: EcosystemRoute,
   FoundationRoute: FoundationRoute,
   FounderRoute: FounderRoute,
