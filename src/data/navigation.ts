@@ -52,6 +52,7 @@ export const EXPLORER_NAVIGATION_GROUPS = [
       { to: "/terms", label: "Terms", status: "Initial public boundary" },
       { to: "/consent", label: "Consent", status: "Initial public boundary" },
       { to: "/appreciation", label: "Appreciation", status: "Gratitude and boundaries" },
+      { to: "/domains", label: "Domains", status: "Public role map" },
       { to: "/foundation", label: "Public Foundation" },
       { to: "/founder", label: "Founder’s Letter" },
       { to: "/global", label: "Global Vision", status: "Future direction" },
