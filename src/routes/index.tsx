@@ -106,6 +106,43 @@ const HUBS = [
   },
 ];
 
+const START_EXPLORING = [
+  {
+    group: "Start Here",
+    href: "/knowledge-before-action",
+    title: "Knowledge Before Action",
+    description:
+      "Understand what is known, unknown, felt, assumed, and responsibly possible before moving forward.",
+    secondaryHref: "/one-word-start",
+    secondaryLabel: "Begin with one word",
+  },
+  {
+    group: "Current Journey",
+    href: "/journey",
+    title: "Journey",
+    status: "Live · browser-local",
+    description:
+      "The current bounded first-slice experience. It stores progress in the browser and does not provide automated analysis or decisions.",
+  },
+  {
+    group: "Knowledge & Reflection",
+    href: "/soul",
+    title: "meUus Soul",
+    status: "In development",
+    description: "A developing public knowledge and reflection gateway.",
+    secondaryHref: "/book",
+    secondaryLabel: "Book meUus project",
+  },
+  {
+    group: "App Direction",
+    href: "/app",
+    title: "meUus App",
+    status: "Future app gateway",
+    description:
+      "A developing direction for guided reflection, learning, and responsible next steps. The full app, DLAS runtime, accounts, dashboards, AI analysis, and cloud systems are not live yet.",
+  },
+] as const;
+
 function HomePage() {
   return (
     <div className="relative isolate overflow-hidden">
@@ -176,6 +213,81 @@ function HomePage() {
 
         {/* fade to next */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
+      </section>
+
+      {/* ───────── START EXPLORING ───────── */}
+      <section className="relative px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="font-serif text-xs uppercase tracking-[0.35em] text-[var(--gold)]/80">
+              Public gateways
+            </p>
+            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
+              Start exploring meUus
+            </h2>
+            <p className="mt-5 text-base leading-7 text-foreground/65 sm:text-lg">
+              Begin with the current public foundation, then move through the developing knowledge,
+              book, and app gateways. Each path is labelled by what is live, planned, or still in
+              development.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {START_EXPLORING.map((item) => (
+              <article
+                key={item.group}
+                className="group flex min-h-[19rem] flex-col rounded-2xl border-hairline bg-card/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] transition hover:border-white/15 hover:bg-card/65"
+              >
+                <div className="flex min-h-8 items-center justify-between gap-3">
+                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--gold)]/85">
+                    {item.group}
+                  </p>
+                  {"status" in item ? (
+                    <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[0.62rem] font-medium uppercase tracking-[0.14em] text-foreground/70">
+                      {item.status}
+                    </span>
+                  ) : null}
+                </div>
+
+                <Link
+                  to={item.href}
+                  className="mt-6 inline-flex items-start justify-between gap-4 text-left"
+                >
+                  <span className="font-serif text-2xl leading-tight text-foreground">
+                    {item.title}
+                  </span>
+                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-[var(--gold)] transition group-hover:translate-x-0.5" />
+                </Link>
+
+                <p className="mt-4 flex-1 text-sm leading-6 text-foreground/65">
+                  {item.description}
+                </p>
+
+                {"secondaryHref" in item ? (
+                  <Link
+                    to={item.secondaryHref}
+                    className="mt-6 inline-flex items-center gap-1 text-sm text-[var(--gold)] hover:text-foreground"
+                  >
+                    {item.secondaryLabel}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                ) : null}
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-4xl text-sm leading-6 text-foreground/55">
+            For the current verified state of meUus, see the public{" "}
+            <Link to="/status" className="text-[var(--gold)] hover:text-foreground">
+              Status page
+            </Link>
+            . Joining remains a{" "}
+            <Link to="/join" search={{}} className="text-[var(--gold)] hover:text-foreground">
+              manual expression of interest
+            </Link>{" "}
+            and does not guarantee a role, payment, opportunity, or outcome.
+          </p>
+        </div>
       </section>
 
       {/* ───────── JOURNEY MAP ───────── */}
