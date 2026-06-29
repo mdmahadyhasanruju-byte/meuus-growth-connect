@@ -9,8 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StatusRouteImport } from './routes/status'
 import { Route as SoulRouteImport } from './routes/soul'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as OneWordStartRouteImport } from './routes/one-word-start'
 import { Route as ManifestoFullRouteImport } from './routes/manifesto-full'
@@ -22,6 +24,7 @@ import { Route as GlobalRouteImport } from './routes/global'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as FoundationRouteImport } from './routes/foundation'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as ConsentRouteImport } from './routes/consent'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
@@ -39,6 +42,11 @@ import { Route as JourneyCompleteRouteImport } from './routes/journey.complete'
 import { Route as JourneyAccessibilityRouteImport } from './routes/journey.accessibility'
 import { Route as JourneyQuestQuestIdRouteImport } from './routes/journey.quest.$questId'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
@@ -47,6 +55,11 @@ const StatusRoute = StatusRouteImport.update({
 const SoulRoute = SoulRouteImport.update({
   id: '/soul',
   path: '/soul',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PillarsRoute = PillarsRouteImport.update({
@@ -102,6 +115,11 @@ const FoundationRoute = FoundationRouteImport.update({
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
   path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsentRoute = ConsentRouteImport.update({
+  id: '/consent',
+  path: '/consent',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -189,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
   '/book': typeof BookRoute
+  '/consent': typeof ConsentRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -200,8 +219,10 @@ export interface FileRoutesByFullPath {
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/soul': typeof SoulRoute
   '/status': typeof StatusRoute
+  '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
   '/journey/confirm': typeof JourneyConfirmRoute
@@ -220,6 +241,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
   '/book': typeof BookRoute
+  '/consent': typeof ConsentRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -231,8 +253,10 @@ export interface FileRoutesByTo {
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/soul': typeof SoulRoute
   '/status': typeof StatusRoute
+  '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
   '/journey/confirm': typeof JourneyConfirmRoute
@@ -252,6 +276,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/app': typeof AppRoute
   '/book': typeof BookRoute
+  '/consent': typeof ConsentRoute
   '/ecosystem': typeof EcosystemRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
@@ -263,8 +288,10 @@ export interface FileRoutesById {
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/soul': typeof SoulRoute
   '/status': typeof StatusRoute
+  '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
   '/journey/complete': typeof JourneyCompleteRoute
   '/journey/confirm': typeof JourneyConfirmRoute
@@ -285,6 +312,7 @@ export interface FileRouteTypes {
     | '/'
     | '/app'
     | '/book'
+    | '/consent'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -296,8 +324,10 @@ export interface FileRouteTypes {
     | '/manifesto-full'
     | '/one-word-start'
     | '/pillars'
+    | '/privacy'
     | '/soul'
     | '/status'
+    | '/terms'
     | '/journey/accessibility'
     | '/journey/complete'
     | '/journey/confirm'
@@ -316,6 +346,7 @@ export interface FileRouteTypes {
     | '/'
     | '/app'
     | '/book'
+    | '/consent'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -327,8 +358,10 @@ export interface FileRouteTypes {
     | '/manifesto-full'
     | '/one-word-start'
     | '/pillars'
+    | '/privacy'
     | '/soul'
     | '/status'
+    | '/terms'
     | '/journey/accessibility'
     | '/journey/complete'
     | '/journey/confirm'
@@ -347,6 +380,7 @@ export interface FileRouteTypes {
     | '/'
     | '/app'
     | '/book'
+    | '/consent'
     | '/ecosystem'
     | '/foundation'
     | '/founder'
@@ -358,8 +392,10 @@ export interface FileRouteTypes {
     | '/manifesto-full'
     | '/one-word-start'
     | '/pillars'
+    | '/privacy'
     | '/soul'
     | '/status'
+    | '/terms'
     | '/journey/accessibility'
     | '/journey/complete'
     | '/journey/confirm'
@@ -379,6 +415,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRoute
   BookRoute: typeof BookRoute
+  ConsentRoute: typeof ConsentRoute
   EcosystemRoute: typeof EcosystemRoute
   FoundationRoute: typeof FoundationRoute
   FounderRoute: typeof FounderRoute
@@ -390,12 +427,21 @@ export interface RootRouteChildren {
   ManifestoFullRoute: typeof ManifestoFullRoute
   OneWordStartRoute: typeof OneWordStartRoute
   PillarsRoute: typeof PillarsRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
   SoulRoute: typeof SoulRoute
   StatusRoute: typeof StatusRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/status': {
       id: '/status'
       path: '/status'
@@ -408,6 +454,13 @@ declare module '@tanstack/react-router' {
       path: '/soul'
       fullPath: '/soul'
       preLoaderRoute: typeof SoulRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pillars': {
@@ -485,6 +538,13 @@ declare module '@tanstack/react-router' {
       path: '/ecosystem'
       fullPath: '/ecosystem'
       preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consent': {
+      id: '/consent'
+      path: '/consent'
+      fullPath: '/consent'
+      preLoaderRoute: typeof ConsentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -650,6 +710,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRoute,
   BookRoute: BookRoute,
+  ConsentRoute: ConsentRoute,
   EcosystemRoute: EcosystemRoute,
   FoundationRoute: FoundationRoute,
   FounderRoute: FounderRoute,
@@ -661,8 +722,10 @@ const rootRouteChildren: RootRouteChildren = {
   ManifestoFullRoute: ManifestoFullRoute,
   OneWordStartRoute: OneWordStartRoute,
   PillarsRoute: PillarsRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
   SoulRoute: SoulRoute,
   StatusRoute: StatusRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
