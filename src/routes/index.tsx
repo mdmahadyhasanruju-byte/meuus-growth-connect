@@ -143,6 +143,25 @@ const START_EXPLORING = [
   },
 ] as const;
 
+const LIVE_NOW = [
+  "Public website foundation",
+  "Current Status page",
+  "Browser-local Journey prototype",
+  "Manual expression-of-interest path",
+  "Initial privacy, terms, consent, appreciation, and domain-role boundaries",
+] as const;
+
+const NOT_LIVE_YET = [
+  "Full app",
+  "Accounts",
+  "AI runtime",
+  "DLAS runtime",
+  "Cloud storage",
+  "Payments",
+  "Rewards/subscriptions",
+  "Automated decisions",
+] as const;
+
 function HomePage() {
   return (
     <div className="relative isolate overflow-hidden">
@@ -177,10 +196,27 @@ function HomePage() {
           </p>
 
           <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
-            meuus.org is live with public status, manual expressions of interest, and Knowledge
-            Before Action as its first bounded working experience. Journey preferences and local
-            clear/restart are available, and Journey data stays in this browser.
+            meUus begins with a live public foundation, a browser-local Journey prototype, and the
+            first Soul learning path: Knowledge Before Action. Start by learning, reflecting, and
+            choosing one responsible next step. No account is required. Journey progress stays in
+            this browser.
           </p>
+
+          <p className="max-w-2xl text-sm leading-6 text-foreground/55">
+            Connecting knowledge, reflection, family, work, wellbeing, community, and future
+            responsibility — one careful step at a time.
+          </p>
+
+          <div className="grid w-full max-w-3xl gap-2 rounded-2xl border-hairline bg-glass p-3 text-xs text-foreground/70 sm:grid-cols-4 sm:p-4">
+            {["Understand", "Learn", "Reflect", "Choose one responsible step"].map((step, i) => (
+              <div key={step} className="flex items-center justify-center gap-2 sm:justify-start">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] font-serif text-[var(--gold)]">
+                  {i + 1}
+                </span>
+                <span className="font-medium">{step}</span>
+              </div>
+            ))}
+          </div>
 
           <Countdown />
 
@@ -285,8 +321,54 @@ function HomePage() {
             <Link to="/join" search={{}} className="text-[var(--gold)] hover:text-foreground">
               manual expression of interest
             </Link>{" "}
-            and does not guarantee a role, payment, opportunity, or outcome.
+            with manual review and no guaranteed role, payment, equity, opportunity, salary, or
+            outcome.
           </p>
+
+          <div className="mt-10 rounded-3xl border-hairline bg-card/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] sm:p-8">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="font-serif text-xs uppercase tracking-[0.35em] text-[var(--gold)]/80">
+                  Public boundary
+                </p>
+                <h3 className="mt-3 font-serif text-3xl text-foreground">What is live today?</h3>
+              </div>
+              <p className="max-w-2xl text-sm leading-6 text-foreground/60">
+                Day One continuation is a public foundation and truthful beginning for
+                evidence-building, not proof of a complete ecosystem.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200/80">
+                  Live now
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/70">
+                  {LIVE_NOW.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-emerald-200/80">·</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/55">
+                  Not live yet
+                </p>
+                <ul className="mt-4 grid gap-3 text-sm leading-6 text-foreground/60 sm:grid-cols-2">
+                  {NOT_LIVE_YET.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-foreground/35">·</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -535,7 +617,7 @@ function HomePage() {
                 Help shape the <em className="italic text-gradient-gold">founding phase</em>
               </>
             }
-            subtitle="These are areas for manual expressions of interest, not guaranteed positions, compensation, equity, salaries, or perks."
+            subtitle="These are areas for manual expressions of interest with manual review, not guaranteed roles, payment, equity, opportunities, salaries, or outcomes."
           />
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ROLES.map((r, i) => (
