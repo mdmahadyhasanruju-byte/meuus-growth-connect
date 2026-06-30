@@ -27,7 +27,7 @@ export const Route = createFileRoute("/soul")({
 const AVAILABLE_NOW = [
   {
     label: "Knowledge Before Action",
-    body: "A public principle for pausing, noticing what is known and unknown, and choosing one responsible next step.",
+    body: "The first public Soul learning path for pausing, noticing what is known and unknown, and choosing one responsible next step.",
   },
   {
     label: "One Word Start",
@@ -82,7 +82,7 @@ function SoulPage() {
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
-              to="/knowledge-before-action"
+              to="/soul/knowledge-before-action"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
             >
               Begin with understanding <ArrowRight className="h-4 w-4" />
@@ -220,10 +220,12 @@ function SoulPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <Link
-              to="/knowledge-before-action"
+              to="/soul/knowledge-before-action"
               className="rounded-2xl border border-foreground/10 bg-background/70 p-5 transition hover:border-primary/40"
             >
-              <span className="text-sm font-semibold text-primary">Knowledge Before Action</span>
+              <span className="text-sm font-semibold text-primary">
+                Knowledge Before Action — first public learning path
+              </span>
               <p className="mt-2 text-sm leading-relaxed text-foreground/65">
                 Understand what is known, unknown, felt, assumed, and responsibly possible.
               </p>

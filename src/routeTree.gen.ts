@@ -30,6 +30,7 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as AppreciationRouteImport } from './routes/appreciation'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SoulKnowledgeBeforeActionRouteImport } from './routes/soul.knowledge-before-action'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 import { Route as JourneyStartRouteImport } from './routes/journey.start'
 import { Route as JourneySafetyRouteImport } from './routes/journey.safety'
@@ -149,6 +150,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SoulKnowledgeBeforeActionRoute =
+  SoulKnowledgeBeforeActionRouteImport.update({
+    id: '/knowledge-before-action',
+    path: '/knowledge-before-action',
+    getParentRoute: () => SoulRoute,
+  } as any)
 const PillarsSlugRoute = PillarsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -234,7 +241,7 @@ export interface FileRoutesByFullPath {
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
-  '/soul': typeof SoulRoute
+  '/soul': typeof SoulRouteWithChildren
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -249,6 +256,7 @@ export interface FileRoutesByFullPath {
   '/journey/safety': typeof JourneySafetyRoute
   '/journey/start': typeof JourneyStartRoute
   '/pillars/$slug': typeof PillarsSlugRoute
+  '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRoutesByTo {
@@ -270,7 +278,7 @@ export interface FileRoutesByTo {
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
-  '/soul': typeof SoulRoute
+  '/soul': typeof SoulRouteWithChildren
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -285,6 +293,7 @@ export interface FileRoutesByTo {
   '/journey/safety': typeof JourneySafetyRoute
   '/journey/start': typeof JourneyStartRoute
   '/pillars/$slug': typeof PillarsSlugRoute
+  '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRoutesById {
@@ -307,7 +316,7 @@ export interface FileRoutesById {
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
-  '/soul': typeof SoulRoute
+  '/soul': typeof SoulRouteWithChildren
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -322,6 +331,7 @@ export interface FileRoutesById {
   '/journey/safety': typeof JourneySafetyRoute
   '/journey/start': typeof JourneyStartRoute
   '/pillars/$slug': typeof PillarsSlugRoute
+  '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRouteTypes {
@@ -360,6 +370,7 @@ export interface FileRouteTypes {
     | '/journey/safety'
     | '/journey/start'
     | '/pillars/$slug'
+    | '/soul/knowledge-before-action'
     | '/journey/quest/$questId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -396,6 +407,7 @@ export interface FileRouteTypes {
     | '/journey/safety'
     | '/journey/start'
     | '/pillars/$slug'
+    | '/soul/knowledge-before-action'
     | '/journey/quest/$questId'
   id:
     | '__root__'
@@ -432,6 +444,7 @@ export interface FileRouteTypes {
     | '/journey/safety'
     | '/journey/start'
     | '/pillars/$slug'
+    | '/soul/knowledge-before-action'
     | '/journey/quest/$questId'
   fileRoutesById: FileRoutesById
 }
@@ -454,7 +467,7 @@ export interface RootRouteChildren {
   OneWordStartRoute: typeof OneWordStartRoute
   PillarsRoute: typeof PillarsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
-  SoulRoute: typeof SoulRoute
+  SoulRoute: typeof SoulRouteWithChildren
   StatusRoute: typeof StatusRoute
   TermsRoute: typeof TermsRoute
 }
@@ -608,6 +621,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/soul/knowledge-before-action': {
+      id: '/soul/knowledge-before-action'
+      path: '/knowledge-before-action'
+      fullPath: '/soul/knowledge-before-action'
+      preLoaderRoute: typeof SoulKnowledgeBeforeActionRouteImport
+      parentRoute: typeof SoulRoute
+    }
     '/pillars/$slug': {
       id: '/pillars/$slug'
       path: '/$slug'
@@ -746,6 +766,16 @@ const PillarsRouteChildren: PillarsRouteChildren = {
 const PillarsRouteWithChildren =
   PillarsRoute._addFileChildren(PillarsRouteChildren)
 
+interface SoulRouteChildren {
+  SoulKnowledgeBeforeActionRoute: typeof SoulKnowledgeBeforeActionRoute
+}
+
+const SoulRouteChildren: SoulRouteChildren = {
+  SoulKnowledgeBeforeActionRoute: SoulKnowledgeBeforeActionRoute,
+}
+
+const SoulRouteWithChildren = SoulRoute._addFileChildren(SoulRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRoute,
@@ -765,7 +795,7 @@ const rootRouteChildren: RootRouteChildren = {
   OneWordStartRoute: OneWordStartRoute,
   PillarsRoute: PillarsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
-  SoulRoute: SoulRoute,
+  SoulRoute: SoulRouteWithChildren,
   StatusRoute: StatusRoute,
   TermsRoute: TermsRoute,
 }
