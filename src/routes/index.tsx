@@ -335,7 +335,7 @@ function HomePage() {
               </div>
               <p className="max-w-2xl text-sm leading-6 text-foreground/60">
                 Day One continuation is a public foundation and truthful beginning for
-                evidence-building, not proof of a complete ecosystem.
+                evidence-building, not proof that every part of the wider vision is already live.
               </p>
             </div>
 
