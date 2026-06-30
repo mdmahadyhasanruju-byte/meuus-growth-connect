@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, CircleDot, Feather, Globe2, ShieldCheck } from "lucide-react";
 
 import { ParticleCanvas } from "@/components/site/ParticleCanvas";
@@ -63,6 +63,12 @@ const BOUNDARIES = [
 ] as const;
 
 function SoulPage() {
+  const location = useLocation();
+
+  if (location.pathname !== "/soul" && location.pathname !== "/soul/") {
+    return <Outlet />;
+  }
+
   return (
     <div className="relative isolate">
       <section className="relative flex min-h-[72svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
