@@ -21,13 +21,15 @@ It distinguishes what is publicly reachable now from what remains unverified, no
 
 > “meUus is an amanah before it is an app, company, platform, or ecosystem.”
 
+Claim ≤ Evidence.
+
 Current public claims must remain no stronger than the evidence supporting them. Correction is part of the amanah.
 
 ## 3. Current canonical truth source
 
 - `https://meuus.org` is the current public foundation and truth gateway.
 - `https://meuus.org/status` is the current public status checkpoint.
-- `https://meuus.org/amanah` is the public Amanah Constitution page.
+- `https://meuus.org/amanah` is the public Amanah Constitution and trust page.
 - `docs/source-of-truth/MEUUS_AMANAH_CONSTITUTION_V1.md` is the internal governing constitution.
 
 When an older page, deployment, document, screenshot, prototype, or source pack conflicts with these current surfaces, it must not be treated as current public truth without renewed review and explicit promotion.
