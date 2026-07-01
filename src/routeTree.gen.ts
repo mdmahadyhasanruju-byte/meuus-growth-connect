@@ -29,6 +29,7 @@ import { Route as ConsentRouteImport } from './routes/consent'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as AppreciationRouteImport } from './routes/appreciation'
 import { Route as AppRouteImport } from './routes/app'
+import { Route as AmanahRouteImport } from './routes/amanah'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SoulKnowledgeBeforeActionRouteImport } from './routes/soul.knowledge-before-action'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
@@ -145,6 +146,11 @@ const AppRoute = AppRouteImport.update({
   path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AmanahRoute = AmanahRouteImport.update({
+  id: '/amanah',
+  path: '/amanah',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -224,6 +230,7 @@ const JourneyQuestQuestIdRoute = JourneyQuestQuestIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/amanah': typeof AmanahRoute
   '/app': typeof AppRoute
   '/appreciation': typeof AppreciationRoute
   '/book': typeof BookRoute
@@ -261,6 +268,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/amanah': typeof AmanahRoute
   '/app': typeof AppRoute
   '/appreciation': typeof AppreciationRoute
   '/book': typeof BookRoute
@@ -299,6 +307,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/amanah': typeof AmanahRoute
   '/app': typeof AppRoute
   '/appreciation': typeof AppreciationRoute
   '/book': typeof BookRoute
@@ -338,6 +347,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/amanah'
     | '/app'
     | '/appreciation'
     | '/book'
@@ -375,6 +385,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/amanah'
     | '/app'
     | '/appreciation'
     | '/book'
@@ -412,6 +423,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/amanah'
     | '/app'
     | '/appreciation'
     | '/book'
@@ -450,6 +462,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmanahRoute: typeof AmanahRoute
   AppRoute: typeof AppRoute
   AppreciationRoute: typeof AppreciationRoute
   BookRoute: typeof BookRoute
@@ -612,6 +625,13 @@ declare module '@tanstack/react-router' {
       path: '/app'
       fullPath: '/app'
       preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amanah': {
+      id: '/amanah'
+      path: '/amanah'
+      fullPath: '/amanah'
+      preLoaderRoute: typeof AmanahRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -778,6 +798,7 @@ const SoulRouteWithChildren = SoulRoute._addFileChildren(SoulRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmanahRoute: AmanahRoute,
   AppRoute: AppRoute,
   AppreciationRoute: AppreciationRoute,
   BookRoute: BookRoute,
