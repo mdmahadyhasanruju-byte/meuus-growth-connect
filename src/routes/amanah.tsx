@@ -146,7 +146,7 @@ function AmanahPage() {
               <p className="mt-3 text-base leading-relaxed text-foreground/78">
                 This constitution is a founder-governance and project-trust document. It is not a
                 religious ruling, legal contract, medical/psychological/financial advice, or service
-                guarantee.
+                guarantee. It does not replace the Terms, Privacy, or Consent pages.
               </p>
             </div>
           </div>
