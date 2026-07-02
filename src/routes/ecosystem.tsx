@@ -116,7 +116,7 @@ function EcosystemPage() {
               ],
               [
                 "Connected pillars",
-                "Legal, business, mental, family, work — they share signal, intake, and follow-up where consent allows.",
+                "Legal, business, mental, family, and work may later share learning signals, intake patterns, and follow-up structures after review.",
               ],
               [
                 "One platform spine",
@@ -124,7 +124,7 @@ function EcosystemPage() {
               ],
               [
                 "Long-term accountability",
-                "Weekly tasks, daily micro-actions, documented progress. Not advice that evaporates.",
+                "Proposed future pilot structure: weekly tasks, daily micro-actions, and documented progress after review.",
               ],
             ].map(([t, b]) => (
               <div key={t} className="rounded-2xl border-hairline bg-card/50 p-6">
