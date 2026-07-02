@@ -187,17 +187,17 @@ function ApplyForm({ role }: { role: Role }) {
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
     // No backend is wired yet — hand off via the user's mail client so the
-    // application actually reaches the operator instead of sitting in browser
+    // interest message actually reaches the operator instead of sitting in browser
     // localStorage where it could be exfiltrated by any future XSS.
-    const subject = encodeURIComponent(`Founding application — ${role.title}`);
+    const subject = encodeURIComponent(`Founding interest — ${role.title}`);
     const body = encodeURIComponent(
       `Role: ${role.title}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`,
     );
     window.location.href = `mailto:hello@meuus.org?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
-    toast.success(`Opening your email app to send your ${role.title} application`, {
-      description: "Please hit send in your mail client to complete the application.",
+    toast.success(`Opening your email app to send your ${role.title} interest message`, {
+      description: "Please hit send in your mail client to complete the interest message.",
     });
   }
 
@@ -211,9 +211,9 @@ function ApplyForm({ role }: { role: Role }) {
           Your email client has been prepared
         </h4>
         <p className="mt-2 text-sm text-foreground/65">
-          Please review and send the email to complete your application for{" "}
-          <strong>{role.title}</strong>. Submission is only complete after the email is sent
-          successfully from your mail app.
+          Please review and send the email to complete your expression of interest for{" "}
+          <strong>{role.title}</strong>. Your interest message is only complete after the email is
+          sent successfully from your mail app.
         </p>
       </div>
     );

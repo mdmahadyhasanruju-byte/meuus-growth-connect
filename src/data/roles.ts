@@ -181,7 +181,7 @@ export const ROLES: Role[] = [
     ],
     ideal: ["Anyone with time, care, and integrity"],
     commitment: "Flexible",
-    reward: "Recognition · Certificate · Community",
+    reward: "Recognition may be considered later · no guaranteed certificate or status",
     symbol: "✷",
     color: "#14B8A6",
   },
