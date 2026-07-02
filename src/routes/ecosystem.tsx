@@ -64,7 +64,7 @@ const PHASES = [
     body: "Foundation building, founding team recruitment, partnerships, content.",
   },
   {
-    t: "21 July 2026 — Launch",
+    t: "21 July 2026 — Day One public foundation checkpoint",
     body: "Day One continuation: truthful public status, prototype clarity, and manually verified next steps.",
   },
   { t: "Year 1 — Product–Market Fit", body: "Retention, referral growth, revenue optimization." },
@@ -116,7 +116,7 @@ function EcosystemPage() {
               ],
               [
                 "Connected pillars",
-                "Legal, business, mental, family, work — they share signal, intake, and follow-up where consent allows.",
+                "Legal, business, mental, family, and work may later share learning signals, intake patterns, and follow-up structures after review.",
               ],
               [
                 "One platform spine",
@@ -124,7 +124,7 @@ function EcosystemPage() {
               ],
               [
                 "Long-term accountability",
-                "Weekly tasks, daily micro-actions, documented progress. Not advice that evaporates.",
+                "Proposed future pilot structure: weekly tasks, daily micro-actions, and documented progress after review.",
               ],
             ].map(([t, b]) => (
               <div key={t} className="rounded-2xl border-hairline bg-card/50 p-6">
@@ -223,7 +223,7 @@ function EcosystemPage() {
       {/* PHASES */}
       <section className="relative px-4 py-24 sm:px-6">
         <div className="mx-auto max-w-5xl">
-          <SectionHeading eyebrow="Timeline" title="From here to launch and beyond" />
+          <SectionHeading eyebrow="Timeline" title="From here to Day One and beyond" />
           <ol className="mt-12 space-y-5">
             {PHASES.map((p, i) => (
               <li key={p.t} className="flex gap-5 rounded-2xl border-hairline bg-card/40 p-6">
