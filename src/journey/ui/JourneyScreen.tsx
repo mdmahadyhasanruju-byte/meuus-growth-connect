@@ -383,8 +383,8 @@ function JourneyClearControl() {
             <AlertDialogTitle>Clear local Journey data?</AlertDialogTitle>
             <AlertDialogDescription>
               This clears Journey progress from this browser profile. It may also clear optional
-              reflection text if you chose to save reflection locally. This does not delete cloud
-              data because Journey currently does not save to cloud.
+              reflection text if you chose to save reflection locally. There is no Journey cloud
+              data to delete because Journey currently does not save to cloud.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

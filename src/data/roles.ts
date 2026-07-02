@@ -21,7 +21,7 @@ export const ROLES: Role[] = [
     urgency: "Most Urgent",
     short: "Build the foundation of meUus with the founder.",
     description:
-      "Stand beside the founder and shape meUus from intention to institution. You will own a major surface of the project — product, technology, growth, or operations — and carry equal weight in direction, decisions, and discipline.",
+      "Express interest in standing beside the founder during the early foundation stage. Any future ownership, authority, title, or decision role requires direct review, clear agreement, and proper legal structure.",
     responsibilities: [
       "Co-own product, growth, technology, or operations end-to-end",
       "Shape strategy, roadmap, and culture from day zero",
@@ -34,7 +34,7 @@ export const ROLES: Role[] = [
       "Honest, principled, and willing to do unglamorous work",
     ],
     commitment: "Full ownership · Long-term",
-    reward: "Founding equity & co-founder title",
+    reward: "Manual founder discussion only · no guaranteed title, payment, or equity",
     symbol: "◈",
     color: "#A78BFA",
   },
@@ -44,7 +44,7 @@ export const ROLES: Role[] = [
     urgency: "Urgent",
     short: "Turn the blueprint into shipped reality.",
     description:
-      "We have direction. We need delivery. Execution Partners run sprints, ship product, coordinate pillars, and make sure July 21, 2026 arrives with something real in users' hands.",
+      "We have direction. We need careful delivery. Execution Partners may help with content, coordination, documentation, and public-foundation work so the Day One checkpoint remains truthful and useful.",
     responsibilities: [
       "Drive weekly delivery across product, content, or operations",
       "Coordinate between pillar leads and the founder",
@@ -57,7 +57,7 @@ export const ROLES: Role[] = [
       "Comfortable with structure, documentation, and follow-through",
     ],
     commitment: "Significant time · 6+ months",
-    reward: "Equity / honorarium · Founding team status",
+    reward: "Manual review · possible future discussion, no guaranteed compensation or equity",
     symbol: "▶",
     color: "#F59E0B",
   },
@@ -67,7 +67,7 @@ export const ROLES: Role[] = [
     urgency: "Open",
     short: "Back a long-term human-development platform.",
     description:
-      "meUus is raising a focused pre-seed round to fund the July 21, 2026 launch — infrastructure, founding team, pilot district programs, and the operational backbone. Patient capital, mission-aligned, with structured reporting.",
+      "meUus may explore mission-aligned funding later. This site is not offering securities, investment allocation, or financial terms.",
     responsibilities: [
       "Strategic capital partnership",
       "Optional advisory cadence",
@@ -79,7 +79,7 @@ export const ROLES: Role[] = [
       "Interested in Bangladesh and South Asia growth markets",
     ],
     commitment: "Capital partnership",
-    reward: "Pre-seed allocation · Quarterly reporting",
+    reward: "Direct founder conversation only · no public investment offer",
     symbol: "◇",
     color: "#D4AF37",
   },
@@ -87,11 +87,11 @@ export const ROLES: Role[] = [
     slug: "founding-member",
     title: "Founding Member",
     urgency: "Open",
-    short: "Among the first 500. Build the culture with us.",
+    short: "Express early interest and help shape the culture carefully.",
     description:
-      "Founding Members are not customers — they are the first community. Early access, direct input on the product, a permanent founding badge, and a seat in the conversations that shape what meUus becomes.",
+      "Founding Members are early expressions of interest, not customers or guaranteed users. Any future access, badge, role, or participation path must be reviewed and clearly confirmed later.",
     responsibilities: [
-      "Use the platform early and give honest feedback",
+      "Review public pages and give honest feedback",
       "Help shape culture, language, and tone",
       "Refer others who fit the mission",
     ],
@@ -100,7 +100,7 @@ export const ROLES: Role[] = [
       "Open to public or pseudonymous founding-member status",
     ],
     commitment: "Light · Self-paced",
-    reward: "Permanent Founding Member badge · Lifetime perks",
+    reward: "Recognition may be considered later · no guaranteed access, badge, or perks",
     symbol: "✶",
     color: "#27AE60",
   },
@@ -110,7 +110,7 @@ export const ROLES: Role[] = [
     urgency: "Open",
     short: "Engineers, designers, counsellors, writers, operators.",
     description:
-      "Core Team is the working team of meUus — the people who build, design, counsel, write, and operate every day. Multiple roles open across all 9 pillars and central platform.",
+      "Core Team is a proposed future working-team direction for people who may help build, design, write, organize, and support the public foundation. Multiple areas may be reviewed manually across the pillars and central platform direction.",
     responsibilities: [
       "Own a specific role within a pillar or central platform",
       "Contribute consistently to weekly delivery",
@@ -119,11 +119,11 @@ export const ROLES: Role[] = [
     ideal: [
       "Engineers (frontend, backend, AI)",
       "Designers, writers, content & community",
-      "Counsellors, mediators, legal, finance professionals",
+      "Qualified professional contributors may be considered later where appropriate",
       "Operators, recruiters, growth and partnerships",
     ],
     commitment: "Part-time or full-time",
-    reward: "Honorarium / salary · Equity for early joiners",
+    reward: "No guaranteed salary, honorarium, role, or equity",
     symbol: "✦",
     color: "#5B8DEF",
   },
@@ -133,11 +133,11 @@ export const ROLES: Role[] = [
     urgency: "Open",
     short: "Bring meUus to your university and community.",
     description:
-      "Run workshops, host events, build a campus chapter, and connect students to opportunities, counselling, and the founding journey of meUus.",
+      "Express interest in future campus outreach, learning sessions, and community feedback. No campus chapter, counselling path, opportunity, stipend, or certificate is guaranteed from this public page.",
     responsibilities: [
-      "Build a campus chapter on your university",
+      "Explore whether a future campus chapter could be appropriate",
       "Host monthly workshops or info sessions",
-      "Refer students to relevant pillars",
+      "Point students to public pillar pages and status boundaries",
       "Report on activity and feedback",
     ],
     ideal: [
@@ -146,7 +146,7 @@ export const ROLES: Role[] = [
       "Willing to commit at least one semester",
     ],
     commitment: "Light · 1 semester",
-    reward: "Stipend · Certificate · Founding Ambassador badge",
+    reward: "Recognition may be considered later · no guaranteed stipend or certificate",
     symbol: "◉",
     color: "#10B981",
   },
@@ -159,12 +159,12 @@ export const ROLES: Role[] = [
       "Advisors are people whose experience compresses our learning curve — in law, finance, mental health, government, technology, or international expansion. Light commitment, deep impact.",
     responsibilities: [
       "Monthly or quarterly advisory sessions",
-      "Open access for specific decisions in your domain",
+      "Optional input on specific questions if a reviewed advisory relationship is created",
       "Honest, principled guidance",
     ],
     ideal: ["10+ years in your domain", "Mission-aligned and comfortable with a youth-led team"],
     commitment: "Light · 1–2 hrs / month",
-    reward: "Symbolic equity · Advisor recognition",
+    reward: "Advisor recognition may be discussed later · no guaranteed equity",
     symbol: "◎",
     color: "#EC4899",
   },

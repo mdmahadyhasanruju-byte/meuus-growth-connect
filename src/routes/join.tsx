@@ -253,7 +253,7 @@ function ApplyForm({ role }: { role: Role }) {
         type="submit"
         className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02] sm:col-span-2"
       >
-        Apply for {role.title}
+        Express interest in {role.title}
         <ArrowRight className="h-4 w-4" />
       </button>
     </form>

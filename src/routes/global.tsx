@@ -11,7 +11,7 @@ export const Route = createFileRoute("/global")({
       {
         name: "description",
         content:
-          "meUus Global: from Bangladesh to the Gulf to the world — connecting every soul to opportunity, across every border.",
+          "meUus Global is a future global vision beginning from Bangladesh, not a live cross-border service.",
       },
       { property: "og:title", content: "meUus Global" },
       {
@@ -28,7 +28,7 @@ const MARKETS = [
     phase: "Phase 1",
     flag: "🇧🇩",
     name: "Bangladesh",
-    body: "Home. Where the philosophy is tested, the pillars run, and the platform proves itself.",
+    body: "Home. Where the pillar ideas are tested and evidence is built gradually.",
     stat: "170M+ people",
   },
   {
@@ -63,18 +63,27 @@ const MARKETS = [
 
 const FEATURES = [
   ["Multilingual", "Bangla, English, Arabic, Hindi, Urdu, Nepali — and growing."],
-  ["Cross-border hiring", "Verified employers across countries with transparent placement."],
+  [
+    "Cross-border hiring",
+    "Future concept: employer verification and transparent placement would require separate legal, operational, and evidence review.",
+  ],
   ["Remittance bridge", "Future integration for safer, cheaper, faster transfers."],
   [
     "DLAS in every language",
-    "The Deep Life Assessment System adapted culturally and linguistically.",
+    "A future DLAS concept would require cultural, linguistic, consent, validation, and governance review before use.",
   ],
   [
     "Low-bandwidth first",
     "Built to work for the worker with a $40 phone, not the executive with fibre.",
   ],
-  ["Diaspora networks", "Connect families across borders — counselling, work, learning, news."],
-  ["District-aware", "Local content, local leaders, local trust — surfaced through the platform."],
+  [
+    "Diaspora networks",
+    "Future concept: connect families to reviewed information, learning, and support pathways without claiming live counselling, work placement, or cross-border services.",
+  ],
+  [
+    "District-aware",
+    "Future concept: local content, local leaders, and local trust would require evidence before being surfaced through any platform.",
+  ],
   ["Faith-respectful", "Designed with respect for belief, never against it."],
 ];
 
@@ -169,7 +178,7 @@ function GlobalPage() {
             eyebrow="Built for the world"
             title={
               <>
-                The platform <em className="italic">crosses every border</em>
+                The future vision <em className="italic">stays evidence-bound</em>
               </>
             }
           />
