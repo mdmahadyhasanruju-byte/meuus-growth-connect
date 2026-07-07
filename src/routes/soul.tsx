@@ -42,6 +42,41 @@ const STATUS_LABELS = [
   "Not complete",
 ] as const;
 
+const ECOSYSTEM_LABELS = [
+  "Phase Zero",
+  "Connected ecosystem",
+  "Not complete",
+  "Updating gradually",
+  "No false live-service claim",
+] as const;
+
+const ECOSYSTEM_DOORS = [
+  {
+    step: "Understand",
+    domain: "meuus.org",
+    body: "Public truth, Amanah, Status, foundation.",
+    to: "/",
+  },
+  {
+    step: "Learn",
+    domain: "meuussoul.com / /soul",
+    body: "Knowledge Hub, Be, Listen Before Knowledge, Knowledge Before Action, visual maps.",
+    to: "/soul",
+  },
+  {
+    step: "Act",
+    domain: "meuus.app",
+    body: "Phase Zero reflection prototype, One Word Start, DLAS 21 Reflection Sample.",
+    to: "/app",
+  },
+  {
+    step: "Verify",
+    domain: "/status and /amanah",
+    body: "Claim ≤ Evidence, current reality, boundaries.",
+    to: "/status",
+  },
+] as const;
+
 const SOUL_EXPLAINS = [
   "Be before action",
   "Listen Before Knowledge",
@@ -275,6 +310,62 @@ function SoulPage() {
             >
               View current status
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            align="center"
+            eyebrow="Connected Ecosystem Doors"
+            title="Understand → Learn → Act → Verify"
+            subtitle="meUus is being built as one connected ecosystem, not separate disconnected websites."
+          />
+          <div className="mx-auto mt-6 max-w-4xl space-y-4 text-center text-base leading-relaxed text-foreground/70">
+            <p>
+              <span className="font-semibold text-foreground">Understand:</span> meuus.org helps
+              people see the public truth, current status, Amanah, and institutional foundation.
+            </p>
+            <p>
+              <span className="font-semibold text-foreground">Learn:</span> meuussoul.com and /soul
+              carry the knowledge, reflection, visual maps, and learning foundation.
+            </p>
+            <p>
+              <span className="font-semibold text-foreground">Act:</span> meuus.app is the action
+              doorway for Phase Zero reflection tools such as One Word Start and DLAS 21 Reflection
+              Sample.
+            </p>
+            <p>
+              <span className="font-semibold text-foreground">Verify:</span> Status and Amanah pages
+              explain what is live, what is not live, and what remains future.
+            </p>
+          </div>
+          <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-2">
+            {ECOSYSTEM_LABELS.map((label) => (
+              <span
+                key={label}
+                className="rounded-full border border-foreground/10 bg-background/70 px-3 py-1.5 text-xs font-medium text-foreground/70"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {ECOSYSTEM_DOORS.map((door, index) => (
+              <Link
+                key={door.step}
+                to={door.to}
+                className="group rounded-2xl border border-foreground/10 bg-background/70 p-6 transition hover:border-primary/40"
+              >
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                  {index + 1}
+                </div>
+                <h2 className="font-serif text-2xl text-foreground">{door.step}</h2>
+                <p className="mt-2 text-sm font-semibold text-primary">{door.domain}</p>
+                <p className="mt-4 text-sm leading-relaxed text-foreground/65">{door.body}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
