@@ -128,8 +128,9 @@ const START_EXPLORING = [
     group: "Knowledge & Reflection",
     href: "/soul",
     title: "meUus Soul",
-    status: "In development",
-    description: "A developing public knowledge and reflection gateway.",
+    status: "Knowledge Hub starting layer",
+    description:
+      "A live Soul learning layer and public Knowledge Hub starting point, updating gradually.",
     secondaryHref: "/book",
     secondaryLabel: "Book meUus project",
   },

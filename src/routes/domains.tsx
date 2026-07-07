@@ -43,10 +43,10 @@ const DOMAINS = [
   },
   {
     domain: "meuussoul.com",
-    label: "Knowledge and reflection direction",
-    status: "In development",
+    label: "Soul identity and learning layer",
+    status: "Knowledge Hub starting layer",
     summary:
-      "The intended deeper learning, reflection, writing, book, and knowledge-hub direction.",
+      "The connected Soul identity for learning, reflection, writing, book, and the Knowledge Hub starting layer.",
     points: [
       "Currently represented safely through the meUus Soul gateway on meuus.org.",
       "Older or archived Soul material requires review before reuse and is not current production truth.",
