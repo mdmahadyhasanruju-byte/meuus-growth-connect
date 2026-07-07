@@ -21,7 +21,7 @@ export const EXPLORER_NAVIGATION_GROUPS = [
     id: "knowledge-reflection",
     title: "Knowledge & Reflection",
     links: [
-      { to: "/soul", label: "meUus Soul", status: "In development" },
+      { to: "/soul", label: "meUus Soul", status: "Knowledge Hub starting layer" },
       {
         to: "/book",
         label: "Book meUus",
