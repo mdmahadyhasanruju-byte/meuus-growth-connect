@@ -148,32 +148,6 @@ function BookPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             align="center"
-            eyebrow="Public excerpt status"
-            title="Be — The Starting Point — meUus · Public Excerpt v0.1"
-            subtitle="Public excerpt prepared. Full manuscript in preparation. Not final publication."
-          />
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-foreground/10 bg-background/70 p-5 text-center text-sm leading-relaxed text-foreground/65">
-            Public PDF excerpt prepared for publication review. No PDF download is linked on this
-            page yet.
-          </div>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {EXCERPT_SECTIONS.map((section) => (
-              <article
-                key={section}
-                className="rounded-2xl border border-foreground/10 bg-background/70 p-5"
-              >
-                <p className="text-sm font-semibold text-primary">Selected excerpt section</p>
-                <h2 className="mt-2 font-serif text-2xl text-foreground">{section}</h2>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-20 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            align="center"
             eyebrow="What is available now"
             title="Begin with the verified public pages already live."
             subtitle="These pages provide current context for the developing book project; they are not chapters from a finalized manuscript."
