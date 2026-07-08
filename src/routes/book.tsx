@@ -197,6 +197,7 @@ function BookPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             align="center"
+<<<<<<< HEAD
             eyebrow="Reading path"
             title="Be -> Listen -> Know -> Act"
             subtitle="The preview is a careful working publication step, not a complete system or final publication."
@@ -225,6 +226,11 @@ function BookPage() {
             eyebrow="What this contains"
             title="A developing manuscript preview, not a final reader edition."
             subtitle="Public scope, order, editing, and design may change before final publication."
+=======
+            eyebrow="What is available now"
+            title="Begin with the verified public pages already live."
+            subtitle="These pages provide current context for the developing book project; they are not chapters from a finalized manuscript."
+>>>>>>> origin/main
           />
           <div className="mt-12 rounded-2xl border border-foreground/10 bg-background/70 p-6 sm:p-8">
             <p className="text-base leading-relaxed text-foreground/70">
