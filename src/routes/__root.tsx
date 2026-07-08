@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { BookPreviewPopup } from "@/components/BookPreviewPopup";
+import { FloatingBookCta } from "@/components/FloatingBookCta";
 import { Toaster } from "sonner";
 
 function NotFoundComponent() {
@@ -146,6 +147,7 @@ function RootComponent() {
         </main>
         <Footer />
         <BookPreviewPopup />
+        <FloatingBookCta />
         <Toaster theme="dark" position="top-center" richColors />
       </div>
     </QueryClientProvider>
