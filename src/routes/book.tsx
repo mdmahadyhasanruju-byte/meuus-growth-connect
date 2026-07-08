@@ -148,40 +148,6 @@ function BookPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             align="center"
-            eyebrow="Public excerpt status"
-            title="Be — The Starting Point — meUus · Public Excerpt v0.1"
-            subtitle="Public excerpt prepared. Full manuscript in preparation. Not final publication."
-          />
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-foreground/10 bg-background/70 p-5 text-center text-sm leading-relaxed text-foreground/65">
-            Download the public excerpt PDF. Full manuscript in preparation. Not final publication.
-            This is the controlled public excerpt only.
-          </div>
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
-            >
-              Download the public excerpt PDF <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {EXCERPT_SECTIONS.map((section) => (
-              <article
-                key={section}
-                className="rounded-2xl border border-foreground/10 bg-background/70 p-5"
-              >
-                <p className="text-sm font-semibold text-primary">Selected excerpt section</p>
-                <h2 className="mt-2 font-serif text-2xl text-foreground">{section}</h2>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-20 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            align="center"
             eyebrow="What is available now"
             title="Begin with the verified public pages already live."
             subtitle="These pages provide current context for the developing book project; they are not chapters from a finalized manuscript."
