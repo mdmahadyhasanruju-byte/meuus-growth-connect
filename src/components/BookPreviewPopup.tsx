@@ -61,18 +61,19 @@ export function BookPreviewPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-background/50 px-4 pb-5 backdrop-blur-sm sm:items-center sm:pb-0"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-background/55 px-4 pb-5 backdrop-blur-md sm:items-center sm:pb-0"
       role="presentation"
     >
       <section
         aria-describedby="book-preview-popup-description"
         aria-labelledby="book-preview-popup-title"
         aria-modal="true"
-        className="relative w-full max-w-lg overflow-hidden rounded-[2rem] border border-white/10 bg-[#090814]/95 p-6 shadow-2xl shadow-violet-950/40 sm:p-7"
+        className="relative w-full max-w-[820px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#080713]/95 p-6 text-center shadow-2xl shadow-violet-950/45 sm:p-10"
         role="dialog"
       >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.22),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.16),transparent_38%)]" />
-        <div className="relative">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.24),transparent_36%),radial-gradient(circle_at_bottom,rgba(245,158,11,0.14),transparent_42%)]" />
+        <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/50 to-transparent" />
+        <div className="relative mx-auto max-w-2xl">
           <button
             aria-label="Close book preview popup"
             className="absolute right-0 top-0 rounded-full border border-white/10 bg-white/[0.06] p-2 text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
@@ -82,40 +83,43 @@ export function BookPreviewPopup() {
             <X className="h-4 w-4" />
           </button>
 
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--gold)]">
-            Book Preview
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.36em] text-[var(--gold)]">
+            BOOK PREVIEW
           </p>
-          <h2
-            className="mt-4 max-w-sm font-serif text-3xl font-medium leading-tight text-foreground sm:text-4xl"
-            id="book-preview-popup-title"
-          >
-            Be — The Starting Point — meUus
+          <h2 className="mt-6 text-center font-serif text-foreground" id="book-preview-popup-title">
+            <span className="block text-[clamp(4.5rem,14vw,8rem)] font-medium leading-[0.8] tracking-tight text-gradient-violet">
+              Be
+            </span>
+            <span className="mt-5 block text-2xl font-medium leading-tight sm:text-4xl">
+              The Starting Point — meUus
+            </span>
           </h2>
+          <div className="mx-auto mt-6 h-px w-28 bg-gradient-to-r from-transparent via-[var(--gold)]/70 to-transparent" />
           <p
-            className="mt-4 text-sm leading-6 text-foreground/70 sm:text-base"
+            className="mx-auto mt-6 max-w-xl text-center text-sm leading-7 text-foreground/72 sm:text-base"
             id="book-preview-popup-description"
           >
             A working public preview of the meUus starting philosophy: Be before action, Listen
             Before Knowledge, Knowledge Before Action, and one responsible next step.
           </p>
-          <p className="mt-4 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-xs font-medium text-foreground/70">
+          <p className="mx-auto mt-6 inline-flex rounded-full border border-white/10 bg-white/[0.06] px-5 py-2.5 text-center text-xs font-medium text-foreground/72">
             Extended Manuscript Preview v0.3 · Not final publication
           </p>
-          <p className="mt-3 text-xs leading-5 text-foreground/50">
+          <p className="mx-auto mt-4 max-w-md text-center text-xs leading-5 text-foreground/52">
             Shared for early reading, reflection, and project transparency. Reader edition in
             preparation.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.01]"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.01]"
               onClick={dismissPopup}
               to="/book"
             >
               Read the book preview
             </Link>
             <button
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-medium text-foreground/75 transition hover:bg-white/10 hover:text-foreground"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-medium text-foreground/75 transition hover:bg-white/10 hover:text-foreground"
               onClick={dismissPopup}
               type="button"
             >
