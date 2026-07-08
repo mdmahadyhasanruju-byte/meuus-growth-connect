@@ -1,13 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  BookOpen,
-  CircleDot,
-  Feather,
-  Globe2,
-  Library,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowRight, BookOpen, CircleDot, Globe2, Library, ShieldCheck } from "lucide-react";
 
 import { ParticleCanvas } from "@/components/site/ParticleCanvas";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -39,6 +31,31 @@ const EXCERPT_SECTIONS = [
   "Chapter 12 — Listen Before Knowledge",
 ] as const;
 
+const STATUS_LABELS = [
+  "Public Excerpt v0.1",
+  "Manuscript in preparation",
+  "Not final publication",
+] as const;
+
+const READING_PATH = [
+  {
+    label: "Be",
+    body: "Return to truth before action.",
+  },
+  {
+    label: "Listen",
+    body: "Protect the first signal.",
+  },
+  {
+    label: "Know",
+    body: "Understand enough before moving.",
+  },
+  {
+    label: "Act",
+    body: "Choose one responsible next step.",
+  },
+] as const;
+
 const AVAILABLE_NOW = [
   {
     label: "meUus Soul",
@@ -55,17 +72,6 @@ const AVAILABLE_NOW = [
     body: "A simple manual beginning when a person cannot explain everything yet.",
     to: "/one-word-start",
   },
-] as const;
-
-const BEING_ORGANIZED = [
-  "Founder reflections grounded in lived experience and clearly stated limits.",
-  "Human development notes for careful public reading and revision.",
-  "Knowledge Before Action as a recurring principle, not a claim of certainty.",
-  "One Word Start as a humane entry point for reflection.",
-  "meUus Soul learning paths that may grow gradually from verified public pages.",
-  "DLAS explanations that describe developing ideas without claiming a live runtime.",
-  "The Bangladesh-first ecosystem journey, documented without overstating progress.",
-  "Bangla and English writing developed and reviewed over time.",
 ] as const;
 
 const BOUNDARIES = [
@@ -85,34 +91,73 @@ const BOUNDARIES = [
 function BookPage() {
   return (
     <div className="relative isolate">
-      <section className="relative flex min-h-[72svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
+      <section className="relative px-4 pt-32 pb-20 sm:px-6">
         <ParticleCanvas density={42} />
-        <div className="relative z-10 max-w-4xl animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
-            <CircleDot className="h-3 w-3 text-[var(--gold)]" />
-            Book meUus
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
+          <div className="animate-fade-up text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
+              <CircleDot className="h-3 w-3 text-[var(--gold)]" />
+              Book meUus
+            </div>
+            <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
+              Be — The Starting Point — <span className="italic text-gradient-violet">meUus</span>
+            </h1>
+            <p className="mt-4 text-xl leading-relaxed text-foreground/75">
+              Connecting Everything.
+            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70 lg:mx-0">
+              A foundational excerpt from the meUus starting philosophy: Be before action, Listen
+              Before Knowledge, Knowledge Before Action, and one responsible next step.
+            </p>
+            <div className="mt-7 flex flex-wrap justify-center gap-2 lg:justify-start">
+              {STATUS_LABELS.map((label) => (
+                <span
+                  key={label}
+                  className="rounded-full border border-foreground/10 bg-background/70 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+            <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <a
+                href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
+              >
+                Read the public excerpt PDF <ArrowRight className="h-4 w-4" />
+              </a>
+              <Link
+                to="/soul"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/70 px-6 py-3 text-sm font-semibold text-foreground/80 backdrop-blur transition hover:border-primary/50 hover:text-primary"
+              >
+                Explore Soul / Knowledge Hub
+              </Link>
+            </div>
           </div>
-          <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
-            Be — The Starting Point — <span className="italic text-gradient-violet">meUus</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-            Public Excerpt v0.1 is a controlled starting selection connected to meUus Soul and the
-            Knowledge Hub starting layer. The full manuscript remains in preparation and this is not
-            a final publication.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/soul"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
-            >
-              Visit meUus Soul <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/status"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/70 px-6 py-3 text-sm font-semibold text-foreground/80 backdrop-blur transition hover:border-primary/50 hover:text-primary"
-            >
-              View current status
-            </Link>
+
+          <div className="mx-auto w-full max-w-sm rounded-[2rem] border border-foreground/10 bg-background/70 p-5 shadow-glow-violet backdrop-blur">
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_36%),linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-7">
+              <div className="absolute inset-y-8 left-5 w-px bg-gradient-to-b from-transparent via-[var(--gold)]/40 to-transparent" />
+              <div className="min-h-[26rem] pl-5">
+                <p className="text-xs uppercase tracking-[0.35em] text-[var(--gold)]/85">
+                  Public Excerpt v0.1
+                </p>
+                <h2 className="mt-12 font-serif text-6xl leading-none text-foreground">Be</h2>
+                <p className="mt-5 font-serif text-2xl leading-tight text-foreground/90">
+                  The Starting Point — meUus
+                </p>
+                <p className="mt-6 text-sm uppercase tracking-[0.28em] text-foreground/55">
+                  Connecting Everything.
+                </p>
+                <div className="mt-16 h-px w-24 bg-[var(--gold)]/50" />
+                <p className="mt-6 text-sm leading-relaxed text-foreground/60">
+                  A controlled public beginning for reading, reflection, and responsible next steps.
+                </p>
+              </div>
+              <p className="mt-8 pl-5 text-xs uppercase tracking-[0.24em] text-foreground/45">
+                Public Excerpt v0.1
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -148,59 +193,53 @@ function BookPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             align="center"
-            eyebrow="What is available now"
-            title="Begin with the verified public pages already live."
-            subtitle="These pages provide current context for the developing book project; they are not chapters from a finalized manuscript."
+            eyebrow="Reading path"
+            title="Be → Listen → Know → Act"
+            subtitle="The excerpt is organized as a careful beginning, not a complete system or final publication."
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {AVAILABLE_NOW.map((item) => (
-              <Link
-                key={item.label}
-                to={item.to}
-                className="rounded-2xl border border-foreground/10 bg-background/70 p-6 transition hover:border-primary/40"
+          <div className="mt-12 grid gap-5 md:grid-cols-4">
+            {READING_PATH.map((step, index) => (
+              <article
+                key={step.label}
+                className="rounded-2xl border border-foreground/10 bg-background/70 p-6"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <BookOpen className="h-5 w-5" />
+                  {index + 1}
                 </div>
-                <h2 className="font-serif text-2xl text-foreground">{item.label}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/65">{item.body}</p>
-              </Link>
+                <h2 className="font-serif text-2xl text-foreground">{step.label}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/65">{step.body}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       <section className="px-4 py-20 sm:px-6">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div className="rounded-2xl border border-foreground/10 bg-background/70 p-6 sm:p-8">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <Feather className="h-6 w-6" />
-            </div>
-            <h2 className="font-serif text-3xl text-foreground">What is being organized</h2>
-            <div className="mt-6 grid gap-3">
-              {BEING_ORGANIZED.map((item) => (
-                <div
-                  key={item}
-                  className="flex gap-3 rounded-xl border border-foreground/10 bg-foreground/[0.025] p-4"
-                >
-                  <CircleDot className="mt-1 h-3.5 w-3.5 flex-none text-[var(--gold)]" />
-                  <p className="text-sm leading-relaxed text-foreground/70">{item}</p>
-                </div>
-              ))}
-            </div>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            align="center"
+            eyebrow="What this excerpt contains"
+            title="Four selected sections, shared as a controlled public beginning."
+            subtitle="No full manuscript text is exposed here."
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {EXCERPT_SECTIONS.map((section) => (
+              <article
+                key={section}
+                className="rounded-2xl border border-foreground/10 bg-background/70 p-5"
+              >
+                <p className="text-sm font-semibold text-primary">Selected excerpt section</p>
+                <h2 className="mt-2 font-serif text-2xl text-foreground">{section}</h2>
+              </article>
+            ))}
           </div>
-          <div className="space-y-5">
-            <SectionHeading
-              eyebrow="Developing areas"
-              title="Possible subjects are named as future work."
-              subtitle="Founder reflections, human development notes, learning paths, DLAS explanations, the Bangladesh-first ecosystem journey, and Bangla and English writing may be developed gradually. They are not being presented as finalized, validated, or released book content."
-            />
-            <Link
-              to="/knowledge-before-action"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80"
+          <div className="mt-10 flex justify-center">
+            <a
+              href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
             >
-              Read Knowledge Before Action <ArrowRight className="h-4 w-4" />
-            </Link>
+              Download the public excerpt PDF <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
@@ -251,6 +290,32 @@ function BookPage() {
             >
               Explore the meUus Soul gateway <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            align="center"
+            eyebrow="What is available now"
+            title="Begin with the verified public pages already live."
+            subtitle="These pages provide current context for the excerpt; they are not proof of a finalized manuscript, course, or platform."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {AVAILABLE_NOW.map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                className="rounded-2xl border border-foreground/10 bg-background/70 p-6 transition hover:border-primary/40"
+              >
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <BookOpen className="h-5 w-5" />
+                </div>
+                <h2 className="font-serif text-2xl text-foreground">{item.label}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/65">{item.body}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
