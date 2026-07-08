@@ -580,6 +580,12 @@ function SoulPage() {
             >
               Visit the public book status page <ArrowRight className="h-4 w-4" />
             </Link>
+            <a
+              href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
+              className="ml-0 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80 sm:ml-5"
+            >
+              Read the public excerpt <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>

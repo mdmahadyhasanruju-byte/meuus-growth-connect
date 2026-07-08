@@ -153,8 +153,16 @@ function BookPage() {
             subtitle="Public excerpt prepared. Full manuscript in preparation. Not final publication."
           />
           <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-foreground/10 bg-background/70 p-5 text-center text-sm leading-relaxed text-foreground/65">
-            Public PDF excerpt prepared for publication review. No PDF download is linked on this
-            page yet.
+            Download the public excerpt PDF. Full manuscript in preparation. Not final publication.
+            This is the controlled public excerpt only.
+          </div>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
+            >
+              Download the public excerpt PDF <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {EXCERPT_SECTIONS.map((section) => (
