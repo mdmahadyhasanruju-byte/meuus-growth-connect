@@ -4,37 +4,34 @@ import { ArrowRight, BookOpen, CircleDot, Globe2, Library, ShieldCheck } from "l
 import { ParticleCanvas } from "@/components/site/ParticleCanvas";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
+const PREVIEW_PDF_PATH =
+  "/books/be-the-starting-point-meuus-extended-manuscript-preview-v0-3-real-book-feel.pdf";
+
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Be — The Starting Point — meUus" },
+      { title: "Be - The Starting Point - meUus" },
       {
         name: "description",
         content:
-          "Public Excerpt v0.1 for Be — The Starting Point — meUus, a controlled starting selection connected to meUus Soul.",
+          "Extended Manuscript Preview v0.3 Real Book Feel edition for Be - The Starting Point - meUus. A working public preview, not final publication.",
       },
-      { property: "og:title", content: "Be — The Starting Point — meUus" },
+      { property: "og:title", content: "Be - The Starting Point - meUus" },
       {
         property: "og:description",
         content:
-          "A controlled public excerpt introducing Be, Listen Before Knowledge, Knowledge Before Action, and one responsible next step.",
+          "A working public preview from the developing meUus book manuscript, shared for early reading, reflection, and project transparency.",
       },
     ],
   }),
   component: BookPage,
 });
 
-const EXCERPT_SECTIONS = [
-  "Opening — The Truthful Beginning",
-  "Chapter 1 — Before Action, Be",
-  "Chapter 11 — Knowledge Before Action",
-  "Chapter 12 — Listen Before Knowledge",
-] as const;
-
 const STATUS_LABELS = [
-  "Public Excerpt v0.1",
-  "Manuscript in preparation",
+  "Extended Manuscript Preview v0.3",
+  "Working public preview",
   "Not final publication",
+  "Reader edition in preparation",
 ] as const;
 
 const READING_PATH = [
@@ -75,7 +72,8 @@ const AVAILABLE_NOW = [
 ] as const;
 
 const BOUNDARIES = [
-  "Not a finished or publicly released book yet.",
+  "Not the final book publication.",
+  "Not the final reader edition.",
   "Not therapy.",
   "Not diagnosis.",
   "Not religious authority.",
@@ -100,14 +98,16 @@ function BookPage() {
               Book meUus
             </div>
             <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
-              Be — The Starting Point — <span className="italic text-gradient-violet">meUus</span>
+              Be - The Starting Point - <span className="italic text-gradient-violet">meUus</span>
             </h1>
             <p className="mt-4 text-xl leading-relaxed text-foreground/75">
               Connecting Everything.
             </p>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70 lg:mx-0">
-              A foundational excerpt from the meUus starting philosophy: Be before action, Listen
-              Before Knowledge, Knowledge Before Action, and one responsible next step.
+              A working public preview from the developing meUus book manuscript. This preview is
+              shared for early reading, reflection, and project transparency. It is not the final
+              publication, not the final reader edition, and may include source-manuscript sections
+              that will be edited, reduced, reordered, or redesigned later.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-2 lg:justify-start">
               {STATUS_LABELS.map((label) => (
@@ -121,10 +121,10 @@ function BookPage() {
             </div>
             <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
               <a
-                href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
+                href={PREVIEW_PDF_PATH}
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
               >
-                Read the public excerpt PDF <ArrowRight className="h-4 w-4" />
+                Read the extended manuscript preview PDF <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 to="/soul"
@@ -140,22 +140,22 @@ function BookPage() {
               <div className="absolute inset-y-8 left-5 w-px bg-gradient-to-b from-transparent via-[var(--gold)]/40 to-transparent" />
               <div className="min-h-[26rem] pl-5">
                 <p className="text-xs uppercase tracking-[0.35em] text-[var(--gold)]/85">
-                  Public Excerpt v0.1
+                  Extended Manuscript Preview v0.3 — Real Book Feel
                 </p>
                 <h2 className="mt-12 font-serif text-6xl leading-none text-foreground">Be</h2>
                 <p className="mt-5 font-serif text-2xl leading-tight text-foreground/90">
-                  The Starting Point — meUus
+                  The Starting Point - meUus
                 </p>
                 <p className="mt-6 text-sm uppercase tracking-[0.28em] text-foreground/55">
                   Connecting Everything.
                 </p>
                 <div className="mt-16 h-px w-24 bg-[var(--gold)]/50" />
                 <p className="mt-6 text-sm leading-relaxed text-foreground/60">
-                  A controlled public beginning for reading, reflection, and responsible next steps.
+                  A working public preview for early reading, reflection, and project transparency.
                 </p>
               </div>
               <p className="mt-8 pl-5 text-xs uppercase tracking-[0.24em] text-foreground/45">
-                Public Excerpt v0.1
+                Not final publication
               </p>
             </div>
           </div>
@@ -166,16 +166,17 @@ function BookPage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="What Book meUus is"
-            title="Public Excerpt v0.1 introduces the starting philosophy behind meUus."
+            title="A developing manuscript preview connected to the public meUus foundation."
           />
           <div className="space-y-5 text-base leading-relaxed text-foreground/70">
             <p>
-              Be — The Starting Point — meUus introduces the starting philosophy behind meUus: Be,
+              Be - The Starting Point - meUus introduces the starting philosophy behind meUus: Be,
               Listen Before Knowledge, Knowledge Before Action, and one responsible next step.
             </p>
             <p>
-              The public excerpt is prepared for publication review. The full manuscript is still in
-              preparation, and this page does not publish the full book text.
+              This PDF is not the final book publication. It is an extended working preview from the
+              developing manuscript. The final reader edition, designed edition, and controlled
+              public excerpt may be prepared separately later.
             </p>
             <p>
               The current verified foundation remains meuus.org. The{" "}
@@ -194,8 +195,8 @@ function BookPage() {
           <SectionHeading
             align="center"
             eyebrow="Reading path"
-            title="Be → Listen → Know → Act"
-            subtitle="The excerpt is organized as a careful beginning, not a complete system or final publication."
+            title="Be -> Listen -> Know -> Act"
+            subtitle="The preview is a careful working publication step, not a complete system or final publication."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-4">
             {READING_PATH.map((step, index) => (
@@ -218,28 +219,24 @@ function BookPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             align="center"
-            eyebrow="What this excerpt contains"
-            title="Four selected sections, shared as a controlled public beginning."
-            subtitle="No full manuscript text is exposed here."
+            eyebrow="What this contains"
+            title="A developing manuscript preview, not a final reader edition."
+            subtitle="Public scope, order, editing, and design may change before final publication."
           />
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {EXCERPT_SECTIONS.map((section) => (
-              <article
-                key={section}
-                className="rounded-2xl border border-foreground/10 bg-background/70 p-5"
+          <div className="mt-12 rounded-2xl border border-foreground/10 bg-background/70 p-6 sm:p-8">
+            <p className="text-base leading-relaxed text-foreground/70">
+              This preview may include the opening, table of contents, early chapters, and
+              additional developing manuscript sections. Content order, editing, design, and public
+              scope may change before final publication.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <a
+                href={PREVIEW_PDF_PATH}
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
               >
-                <p className="text-sm font-semibold text-primary">Selected excerpt section</p>
-                <h2 className="mt-2 font-serif text-2xl text-foreground">{section}</h2>
-              </article>
-            ))}
-          </div>
-          <div className="mt-10 flex justify-center">
-            <a
-              href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
-            >
-              Download the public excerpt PDF <ArrowRight className="h-4 w-4" />
-            </a>
+                Download the extended manuscript preview PDF <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -275,12 +272,12 @@ function BookPage() {
             <SectionHeading
               eyebrow="How it connects to meUus Soul"
               title="The book belongs within a wider learning and reflection direction."
-              subtitle="This controlled excerpt supports the Soul / Knowledge Hub starting layer. It is a selected public beginning, not the full manuscript or a completed knowledge library."
+              subtitle="This working preview supports the Soul / Knowledge Hub starting layer. It is not the final reader edition or a completed knowledge library."
             />
           </div>
           <div className="rounded-2xl border border-foreground/10 bg-background/70 p-6 sm:p-8">
             <p className="text-sm leading-relaxed text-foreground/70">
-              The current relationship is simple: the controlled excerpt supports public learning,
+              The current relationship is simple: the working preview supports public learning,
               reflection, and visual understanding on meuus.org. The status board should still be
               used to distinguish current availability from future intention.
             </p>
@@ -300,7 +297,7 @@ function BookPage() {
             align="center"
             eyebrow="What is available now"
             title="Begin with the verified public pages already live."
-            subtitle="These pages provide current context for the excerpt; they are not proof of a finalized manuscript, course, or platform."
+            subtitle="These pages provide current context for the preview; they are not proof of a finalized manuscript, course, or platform."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {AVAILABLE_NOW.map((item) => (
@@ -377,7 +374,7 @@ function BookPage() {
           <SectionHeading
             align="center"
             eyebrow="Current availability"
-            title="Book meUus is a gateway to developing work, not a released book."
+            title="Book meUus is a gateway to developing work, not a final released book."
             subtitle="The project is being organized and public pages are being recovered gradually. The verified public foundation remains meuus.org, with /status as the current truth board."
           />
           <div className="mt-9 flex flex-wrap justify-center gap-3">

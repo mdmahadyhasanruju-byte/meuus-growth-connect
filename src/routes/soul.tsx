@@ -562,17 +562,17 @@ function SoulPage() {
             <SectionHeading
               eyebrow="Book connection"
               title="Be — The Starting Point — meUus"
-              subtitle="Public Excerpt v0.1 is prepared as a controlled starting selection for the meUus philosophy."
+              subtitle="The current working book preview supports the meUus philosophy and Soul / Knowledge Hub starting layer."
             />
           </div>
           <div className="space-y-5 text-base leading-relaxed text-foreground/70">
             <p>
-              Current status: Public excerpt prepared. Full manuscript in preparation. Not final
-              publication.
+              Current status: Extended Manuscript Preview v0.3 — Real Book Feel. Working public
+              preview. Not final publication.
             </p>
             <p>
-              This page does not include full manuscript text, private book content, or uploaded
-              book files.
+              This page does not include private book content, final reader-edition claims, or
+              professional-advice claims.
             </p>
             <Link
               to="/book"
@@ -581,10 +581,10 @@ function SoulPage() {
               Visit the public book status page <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="/books/be-the-starting-point-meuus-public-excerpt-v0-1.pdf"
+              href="/books/be-the-starting-point-meuus-extended-manuscript-preview-v0-3-real-book-feel.pdf"
               className="ml-0 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80 sm:ml-5"
             >
-              Read the public excerpt <ArrowRight className="h-4 w-4" />
+              Read the current working book preview <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
