@@ -5,7 +5,7 @@ import { ParticleCanvas } from "@/components/site/ParticleCanvas";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
 const PREVIEW_PDF_PATH =
-  "/books/be-the-starting-point-meuus-extended-manuscript-preview-v0-3-real-book-feel.pdf";
+  "/books/be-the-starting-point-meuus-extended-manuscript-preview-v0-3-real-book-feel-web.pdf";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/book")({
       {
         name: "description",
         content:
-          "Extended Manuscript Preview v0.3 Real Book Feel edition for Be - The Starting Point - meUus. A working public preview, not final publication.",
+          "Extended Manuscript Preview v0.3 Real Book Feel web edition for Be - The Starting Point - meUus. A working public preview, not final publication.",
       },
       { property: "og:title", content: "Be - The Starting Point - meUus" },
       {
@@ -133,6 +133,9 @@ function BookPage() {
                 Explore Soul / Knowledge Hub
               </Link>
             </div>
+            <p className="mt-3 text-center text-xs text-foreground/55 lg:text-left">
+              Web-optimized PDF for public reading.
+            </p>
           </div>
 
           <div className="mx-auto w-full max-w-sm rounded-[2rem] border border-foreground/10 bg-background/70 p-5 shadow-glow-violet backdrop-blur">
@@ -140,7 +143,7 @@ function BookPage() {
               <div className="absolute inset-y-8 left-5 w-px bg-gradient-to-b from-transparent via-[var(--gold)]/40 to-transparent" />
               <div className="min-h-[26rem] pl-5">
                 <p className="text-xs uppercase tracking-[0.35em] text-[var(--gold)]/85">
-                  Extended Manuscript Preview v0.3 — Real Book Feel
+                  Extended Manuscript Preview v0.3 — Real Book Feel web edition
                 </p>
                 <h2 className="mt-12 font-serif text-6xl leading-none text-foreground">Be</h2>
                 <p className="mt-5 font-serif text-2xl leading-tight text-foreground/90">
@@ -237,6 +240,9 @@ function BookPage() {
                 Download the extended manuscript preview PDF <ArrowRight className="h-4 w-4" />
               </a>
             </div>
+            <p className="mt-3 text-center text-xs text-foreground/55">
+              Web-optimized PDF for public reading.
+            </p>
           </div>
         </div>
       </section>

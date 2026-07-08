@@ -567,8 +567,8 @@ function SoulPage() {
           </div>
           <div className="space-y-5 text-base leading-relaxed text-foreground/70">
             <p>
-              Current status: Extended Manuscript Preview v0.3 — Real Book Feel. Working public
-              preview. Not final publication.
+              Current status: Extended Manuscript Preview v0.3 — Real Book Feel web edition. Working
+              public preview. Not final publication. Reader edition in preparation.
             </p>
             <p>
               This page does not include private book content, final reader-edition claims, or
@@ -581,7 +581,7 @@ function SoulPage() {
               Visit the public book status page <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="/books/be-the-starting-point-meuus-extended-manuscript-preview-v0-3-real-book-feel.pdf"
+              href="/books/be-the-starting-point-meuus-extended-manuscript-preview-v0-3-real-book-feel-web.pdf"
               className="ml-0 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80 sm:ml-5"
             >
               Read the current working book preview <ArrowRight className="h-4 w-4" />
