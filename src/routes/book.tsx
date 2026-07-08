@@ -193,32 +193,7 @@ function BookPage() {
         </div>
       </section>
 
-      <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-20 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            align="center"
-<<<<<<< HEAD
-            eyebrow="Reading path"
-            title="Be -> Listen -> Know -> Act"
-            subtitle="The preview is a careful working publication step, not a complete system or final publication."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-4">
-            {READING_PATH.map((step, index) => (
-              <article
-                key={step.label}
-                className="rounded-2xl border border-foreground/10 bg-background/70 p-6"
-              >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  {index + 1}
-                </div>
-                <h2 className="font-serif text-2xl text-foreground">{step.label}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/65">{step.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
+code src/routes/book.tsx
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
@@ -226,11 +201,6 @@ function BookPage() {
             eyebrow="What this contains"
             title="A developing manuscript preview, not a final reader edition."
             subtitle="Public scope, order, editing, and design may change before final publication."
-=======
-            eyebrow="What is available now"
-            title="Begin with the verified public pages already live."
-            subtitle="These pages provide current context for the developing book project; they are not chapters from a finalized manuscript."
->>>>>>> origin/main
           />
           <div className="mt-12 rounded-2xl border border-foreground/10 bg-background/70 p-6 sm:p-8">
             <p className="text-base leading-relaxed text-foreground/70">
