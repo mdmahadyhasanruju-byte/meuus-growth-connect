@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { BookPreviewPopup } from "@/components/BookPreviewPopup";
 import { Toaster } from "sonner";
 
 function NotFoundComponent() {
@@ -144,6 +145,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <BookPreviewPopup />
         <Toaster theme="dark" position="top-center" richColors />
       </div>
     </QueryClientProvider>
