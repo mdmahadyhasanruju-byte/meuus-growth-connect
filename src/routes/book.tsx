@@ -15,22 +15,29 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book meUus - meUus" },
+      { title: "Be — The Starting Point — meUus" },
       {
         name: "description",
         content:
-          "A developing writing and reflection project connected to meUus Soul and the public meUus foundation.",
+          "Public Excerpt v0.1 for Be — The Starting Point — meUus, a controlled starting selection connected to meUus Soul.",
       },
-      { property: "og:title", content: "Book meUus - meUus" },
+      { property: "og:title", content: "Be — The Starting Point — meUus" },
       {
         property: "og:description",
         content:
-          "A developing writing and reflection project connected to meUus Soul and the public meUus foundation.",
+          "A controlled public excerpt introducing Be, Listen Before Knowledge, Knowledge Before Action, and one responsible next step.",
       },
     ],
   }),
   component: BookPage,
 });
+
+const EXCERPT_SECTIONS = [
+  "Opening — The Truthful Beginning",
+  "Chapter 1 — Before Action, Be",
+  "Chapter 11 — Knowledge Before Action",
+  "Chapter 12 — Listen Before Knowledge",
+] as const;
 
 const AVAILABLE_NOW = [
   {
@@ -86,12 +93,12 @@ function BookPage() {
             Book meUus
           </div>
           <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
-            A book project <span className="italic text-gradient-violet">in development.</span>
+            Be — The Starting Point — <span className="italic text-gradient-violet">meUus</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-            Book meUus is a developing writing and reflection project connected to the meUus
-            ecosystem. The work is being organized carefully; the manuscript is not publicly
-            finalized or released.
+            Public Excerpt v0.1 is a controlled starting selection connected to meUus Soul and the
+            Knowledge Hub starting layer. The full manuscript remains in preparation and this is not
+            a final publication.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
@@ -114,18 +121,16 @@ function BookPage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="What Book meUus is"
-            title="A developing space for writing, reflection, and responsible meaning."
+            title="Public Excerpt v0.1 introduces the starting philosophy behind meUus."
           />
           <div className="space-y-5 text-base leading-relaxed text-foreground/70">
             <p>
-              Book meUus is intended to bring together selected founder reflections, human
-              development notes, and ideas connected to the public meUus foundation. It is a writing
-              project in progress, not a finished authority or complete account.
+              Be — The Starting Point — meUus introduces the starting philosophy behind meUus: Be,
+              Listen Before Knowledge, Knowledge Before Action, and one responsible next step.
             </p>
             <p>
-              The book project is being organized, the manuscript is not publicly finalized, and
-              public pages are being recovered gradually. Each public statement should remain
-              smaller than or equal to the evidence available today.
+              The public excerpt is prepared for publication review. The full manuscript is still in
+              preparation, and this page does not publish the full book text.
             </p>
             <p>
               The current verified foundation remains meuus.org. The{" "}
@@ -135,6 +140,32 @@ function BookPage() {
               truth board remains the place to check what is live, what is planned, and what is not
               yet available.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            align="center"
+            eyebrow="Public excerpt status"
+            title="Be — The Starting Point — meUus · Public Excerpt v0.1"
+            subtitle="Public excerpt prepared. Full manuscript in preparation. Not final publication."
+          />
+          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-foreground/10 bg-background/70 p-5 text-center text-sm leading-relaxed text-foreground/65">
+            Public PDF excerpt prepared for publication review. No PDF download is linked on this
+            page yet.
+          </div>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {EXCERPT_SECTIONS.map((section) => (
+              <article
+                key={section}
+                className="rounded-2xl border border-foreground/10 bg-background/70 p-5"
+              >
+                <p className="text-sm font-semibold text-primary">Selected excerpt section</p>
+                <h2 className="mt-2 font-serif text-2xl text-foreground">{section}</h2>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -231,15 +262,14 @@ function BookPage() {
             <SectionHeading
               eyebrow="How it connects to meUus Soul"
               title="The book belongs within a wider learning and reflection direction."
-              subtitle="meUus Soul is the developing public gateway for that wider direction. Book meUus may become one carefully reviewed part of it, but neither is being claimed as complete."
+              subtitle="This controlled excerpt supports the Soul / Knowledge Hub starting layer. It is a selected public beginning, not the full manuscript or a completed knowledge library."
             />
           </div>
           <div className="rounded-2xl border border-foreground/10 bg-background/70 p-6 sm:p-8">
             <p className="text-sm leading-relaxed text-foreground/70">
-              The current relationship is simple: public principles and small reflection experiences
-              can be read on meuus.org now, while deeper writing and learning paths remain in
-              development. The status board should be used to distinguish current availability from
-              future intention.
+              The current relationship is simple: the controlled excerpt supports public learning,
+              reflection, and visual understanding on meuus.org. The status board should still be
+              used to distinguish current availability from future intention.
             </p>
             <Link
               to="/soul"

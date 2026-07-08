@@ -135,8 +135,8 @@ const KNOWLEDGE_HUB_TOPICS = [
   {
     title: "Be — The Starting Point",
     meaning: "Before action, the person must return to truth, responsibility, and presence.",
-    status: "Manuscript in preparation.",
-    comingSoon: "Public excerpt and reading path.",
+    status: "Public excerpt prepared. Full manuscript in preparation.",
+    comingSoon: "Reading path and publication review.",
   },
   {
     title: "Listen Before Knowledge",
@@ -562,13 +562,13 @@ function SoulPage() {
             <SectionHeading
               eyebrow="Book connection"
               title="Be — The Starting Point — meUus"
-              subtitle="This book is being prepared as a foundational manuscript for the meUus starting philosophy."
+              subtitle="Public Excerpt v0.1 is prepared as a controlled starting selection for the meUus philosophy."
             />
           </div>
           <div className="space-y-5 text-base leading-relaxed text-foreground/70">
             <p>
-              Current status: Manuscript in preparation. Not final publication yet. Public excerpt
-              coming later.
+              Current status: Public excerpt prepared. Full manuscript in preparation. Not final
+              publication.
             </p>
             <p>
               This page does not include full manuscript text, private book content, or uploaded
