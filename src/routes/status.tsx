@@ -32,7 +32,7 @@ const STATUS_ITEMS = [
     body: "The public /status, /join, and /journey routes are live. /join uses bounded wording, and /journey presents the available first-slice prototype.",
   },
   {
-    label: "Live prototype",
+    label: "Browser-local prototype",
     icon: CircleDot,
     title: "Journey Mode first slice",
     body: "Journey Mode is available as a local-first, non-diagnostic first-slice prototype. It includes Knowledge Before Action, one quest, optional written reflection, and an internal checkpoint. Explicit preference confirmation and the local browser clear/restart control are completed and live verified. Journey data remains in the current browser.",

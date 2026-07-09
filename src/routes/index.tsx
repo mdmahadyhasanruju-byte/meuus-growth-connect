@@ -55,7 +55,7 @@ const JOURNEY = [
   {
     num: "02",
     title: "Knowledge Before Action",
-    body: "Live prototype: pause, learn, reflect, and choose responsibly in one bounded first slice.",
+    body: "Browser-local prototype: pause, learn, reflect, and choose responsibly in one bounded first slice.",
     href: "/journey",
     linkLabel: "Start Journey",
   },
@@ -69,7 +69,7 @@ const JOURNEY = [
   {
     num: "04",
     title: "Platform",
-    body: "Future roadmap: backend, accounts, cloud storage, AI runtime, payments, rewards, and subscriptions are not live.",
+    body: "Future architecture: backend, accounts, cloud storage, AI runtime, payments, rewards, and subscriptions are not live.",
     href: "/status",
     linkLabel: "See boundaries",
   },
@@ -138,7 +138,7 @@ const START_EXPLORING = [
     group: "App Direction",
     href: "/app",
     title: "meUus App",
-    status: "Future app gateway",
+    status: "Future concept",
     description:
       "A developing direction for guided reflection, learning, and responsible next steps. The full app, DLAS runtime, accounts, dashboards, AI analysis, and cloud systems are not live yet.",
   },
@@ -542,7 +542,7 @@ function HomePage() {
       <section className="relative px-4 py-32 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="Future Roadmap · DLAS"
+            eyebrow="Future Architecture · DLAS"
             title={
               <>
                 Deep Life <em className="italic">Assessment System concept</em>
