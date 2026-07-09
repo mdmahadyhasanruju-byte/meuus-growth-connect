@@ -135,8 +135,8 @@ const KNOWLEDGE_HUB_TOPICS = [
   {
     title: "Be — The Starting Point",
     meaning: "Before action, the person must return to truth, responsibility, and presence.",
-    status: "Public excerpt prepared. Full manuscript in preparation.",
-    comingSoon: "Reading path and publication review.",
+    status: "Working public preview · v0.3. Not final publication.",
+    comingSoon: "Reader edition in preparation.",
   },
   {
     title: "Listen Before Knowledge",
