@@ -60,7 +60,7 @@ const REVENUE = [
 
 const PHASES = [
   {
-    t: "Now — Pre-Launch",
+    t: "Now — Current Public Foundation",
     body: "Foundation building, founding team recruitment, partnerships, content.",
   },
   {

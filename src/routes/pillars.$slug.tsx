@@ -120,11 +120,11 @@ function PillarPage() {
         </div>
       </section>
 
-      {/* LAUNCH */}
+      {/* INTENDED FUTURE DIRECTION */}
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-card/50 p-8 text-center shadow-glow-gold">
           <div className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
-            Planned · Day One public foundation checkpoint
+            Intended future direction · Not live
           </div>
           <p className="mt-4 font-serif text-2xl text-foreground sm:text-3xl">{p.launch}</p>
         </div>

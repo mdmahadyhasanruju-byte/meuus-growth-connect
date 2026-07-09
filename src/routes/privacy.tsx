@@ -11,13 +11,13 @@ export const Route = createFileRoute("/privacy")({
       {
         name: "description",
         content:
-          "Initial public privacy boundary for the current pre-launch meUus public foundation and bounded prototypes.",
+          "Initial public privacy boundary for the current meUus public foundation and bounded prototypes.",
       },
       { property: "og:title", content: "Privacy — meUus" },
       {
         property: "og:description",
         content:
-          "Initial public privacy boundary for the current pre-launch meUus public foundation and bounded prototypes.",
+          "Initial public privacy boundary for the current meUus public foundation and bounded prototypes.",
       },
     ],
   }),
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/privacy")({
 });
 
 const PRIVACY_POINTS = [
-  "meUus is currently a pre-launch public foundation and bounded prototype.",
+  "meUus currently provides a public foundation and bounded prototypes.",
   "Current Journey progress is browser-local unless a page clearly says otherwise.",
   "The public site does not currently provide live AI analysis, full DLAS services, accounts, dashboards, payments, subscriptions, rewards, or cloud profile storage.",
   "Expression-of-interest forms, if used, are manual and should not include sensitive personal information unless specifically requested and explained.",
@@ -65,7 +65,7 @@ function PrivacyPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Current truth"
-            title="Use the public site as a careful pre-launch surface."
+            title="Use the current public foundation with care."
             subtitle="The current public foundation should collect less, claim less, and explain limits clearly before deeper app, AI, DLAS, or account features exist."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2">

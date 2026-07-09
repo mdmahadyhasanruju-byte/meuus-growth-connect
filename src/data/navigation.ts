@@ -34,7 +34,7 @@ export const EXPLORER_NAVIGATION_GROUPS = [
     id: "app-direction",
     title: "App Direction",
     links: [
-      { to: "/app", label: "meUus App", status: "Future app gateway" },
+      { to: "/app", label: "meUus App", status: "Future concept" },
       {
         to: "/ecosystem",
         label: "Ecosystem Vision",

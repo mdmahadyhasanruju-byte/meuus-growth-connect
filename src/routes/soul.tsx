@@ -429,7 +429,7 @@ function SoulPage() {
                     {topic.status}
                   </p>
                   <p>
-                    <span className="font-semibold text-foreground/80">Coming soon: </span>
+                    <span className="font-semibold text-foreground/80">In preparation: </span>
                     {topic.comingSoon}
                   </p>
                   {"boundary" in topic ? (
