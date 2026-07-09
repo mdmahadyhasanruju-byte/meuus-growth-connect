@@ -7,16 +7,17 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/global")({
   head: () => ({
     meta: [
-      { title: "meUus Global — Every soul, every border" },
+      { title: "Global — meUus Public Foundation" },
       {
         name: "description",
         content:
-          "meUus Global is a future global vision beginning from Bangladesh, not a live cross-border service.",
+          "A global-facing view of the meUus public foundation, current learning layers, and future human-development architecture.",
       },
-      { property: "og:title", content: "meUus Global" },
+      { property: "og:title", content: "Global — meUus Public Foundation" },
       {
         property: "og:description",
-        content: "From Bangladesh to the world — every soul, every opportunity.",
+        content:
+          "A global-facing view of the meUus public foundation, current learning layers, and future human-development architecture.",
       },
     ],
   }),

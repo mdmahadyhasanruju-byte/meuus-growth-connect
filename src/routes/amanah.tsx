@@ -8,17 +8,17 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 export const Route = createFileRoute("/amanah")({
   head: () => ({
     meta: [
-      { title: "meUus Amanah Constitution" },
+      { title: "Amanah — meUus Trust Boundary" },
       {
         name: "description",
         content:
-          "The written trust before the system: the founder-governance and project-trust constitution for meUus.",
+          "The Amanah layer explains meUus truth boundaries, evidence limits, and public responsibility during Phase Zero.",
       },
-      { property: "og:title", content: "meUus Amanah Constitution" },
+      { property: "og:title", content: "Amanah — meUus Trust Boundary" },
       {
         property: "og:description",
         content:
-          "A public trust page explaining the amanah, boundaries, and governing discipline behind meUus.",
+          "The Amanah layer explains meUus truth boundaries, evidence limits, and public responsibility during Phase Zero.",
       },
     ],
   }),

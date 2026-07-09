@@ -17,13 +17,18 @@ export const Route = createFileRoute("/join")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
-      { title: "Join meUus — Founding Roles Until 21 July 2026" },
+      { title: "Join — meUus Interest Layer" },
       {
         name: "description",
         content:
-          "Co-founder, Execution Partner, Investor, Founding Member, Core Team, Campus Ambassador, Advisor, and Volunteer roles presented for manual intake.",
+          "Express interest in the meUus public foundation and future development without account-based membership or service claims.",
       },
-      { property: "og:title", content: "Join the meUus Founding Journey" },
+      { property: "og:title", content: "Join — meUus Interest Layer" },
+      {
+        property: "og:description",
+        content:
+          "Express interest in the meUus public foundation and future development without account-based membership or service claims.",
+      },
     ],
   }),
   component: JoinPage,

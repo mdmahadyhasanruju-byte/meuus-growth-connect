@@ -8,14 +8,18 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/pillars")({
   head: () => ({
     meta: [
-      { title: "The Nine Pillars — meUus" },
+      { title: "Pillars — meUus Future Directions" },
       {
         name: "description",
         content:
-          "The nine pillars of meUus — Legal, Business, Unemployment, Mind, Drug, Family, Green, Idea Lab, aLive Bangladesh.",
+          "The meUus pillars describe intended future directions and institutional architecture, not live operational services.",
       },
-      { property: "og:title", content: "The Nine Pillars of meUus" },
-      { property: "og:description", content: "Nine integrated pillars of human development." },
+      { property: "og:title", content: "Pillars — meUus Future Directions" },
+      {
+        property: "og:description",
+        content:
+          "The meUus pillars describe intended future directions and institutional architecture, not live operational services.",
+      },
     ],
   }),
   component: PillarsIndex,
