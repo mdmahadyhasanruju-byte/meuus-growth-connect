@@ -11,13 +11,13 @@ export const Route = createFileRoute("/privacy")({
       {
         name: "description",
         content:
-          "Initial public privacy boundary for the current meUus public foundation and bounded prototypes.",
+          "Privacy information for the current meUus public foundation and browser-local prototype layers.",
       },
       { property: "og:title", content: "Privacy — meUus" },
       {
         property: "og:description",
         content:
-          "Initial public privacy boundary for the current meUus public foundation and bounded prototypes.",
+          "Privacy information for the current meUus public foundation and browser-local prototype layers.",
       },
     ],
   }),

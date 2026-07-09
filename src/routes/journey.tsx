@@ -6,10 +6,17 @@ import { JourneyScreen } from "@/journey/ui/JourneyScreen";
 export const Route = createFileRoute("/journey")({
   head: () => ({
     meta: [
-      { title: "Journey Mode — Knowledge Before Action" },
+      { title: "Journey — meUus Browser-Local Prototype" },
       {
         name: "description",
-        content: "A local-first public prototype for learning before action.",
+        content:
+          "A browser-local reflection prototype for learning and responsible next steps. No account, backend, or completed platform is implied.",
+      },
+      { property: "og:title", content: "Journey — meUus Browser-Local Prototype" },
+      {
+        property: "og:description",
+        content:
+          "A browser-local reflection prototype for learning and responsible next steps. No account, backend, or completed platform is implied.",
       },
     ],
   }),

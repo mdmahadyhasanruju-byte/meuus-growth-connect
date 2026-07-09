@@ -10,17 +10,17 @@ const PREVIEW_PDF_PATH =
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Be - The Starting Point - meUus" },
+      { title: "Be — The Starting Point — meUus" },
       {
         name: "description",
         content:
-          "Extended Manuscript Preview v0.3 Real Book Feel web edition for Be - The Starting Point - meUus. A working public preview, not final publication.",
+          "Read the Extended Manuscript Preview v0.3 of Be — The Starting Point — meUus, a working public preview and not the final publication.",
       },
-      { property: "og:title", content: "Be - The Starting Point - meUus" },
+      { property: "og:title", content: "Be — The Starting Point — meUus" },
       {
         property: "og:description",
         content:
-          "A working public preview from the developing meUus book manuscript, shared for early reading, reflection, and project transparency.",
+          "Read the Extended Manuscript Preview v0.3 of Be — The Starting Point — meUus, a working public preview and not the final publication.",
       },
     ],
   }),

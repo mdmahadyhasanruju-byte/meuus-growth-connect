@@ -10,17 +10,17 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "meUus — Live Public Foundation and Journey Prototype" },
+      { title: "meUus — Connecting Everything" },
       {
         name: "description",
         content:
-          "meuus.org is live with a public status page, a manual expression-of-interest path, and a browser-local Knowledge Before Action Journey prototype.",
+          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
       },
       { property: "og:title", content: "meUus — Connecting Everything" },
       {
         property: "og:description",
         content:
-          "A live public foundation with a bounded Journey prototype and a larger human-development vision still in development.",
+          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "meUus",
           description:
-            "A founding-phase human-development project with a live public website, bounded Journey prototype, and planned nine-pillar ecosystem direction.",
+            "A Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
           founder: { "@type": "Person", name: "Md. Mahady Hasan" },
           areaServed: "Bangladesh",
           slogan: "Connecting Everything",

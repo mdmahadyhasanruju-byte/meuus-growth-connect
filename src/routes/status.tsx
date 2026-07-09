@@ -7,17 +7,17 @@ import { ArrowRight, CheckCircle2, CircleDot, Clock3, PauseCircle } from "lucide
 export const Route = createFileRoute("/status")({
   head: () => ({
     meta: [
-      { title: "Current Status - meUus" },
+      { title: "Status — meUus Public Foundation" },
       {
         name: "description",
         content:
-          "A public status page explaining what meUus is now, what is prototype, what is in development, what is planned, and what is not yet available.",
+          "Verify what is current, what is in development, and what remains future architecture in the meUus public foundation.",
       },
-      { property: "og:title", content: "Current Status - meUus" },
+      { property: "og:title", content: "Status — meUus Public Foundation" },
       {
         property: "og:description",
         content:
-          "A truthful Day One status update for the meUus website, Journey prototype, DLAS concept, nine pillars, and future platform systems.",
+          "Verify what is current, what is in development, and what remains future architecture in the meUus public foundation.",
       },
     ],
   }),

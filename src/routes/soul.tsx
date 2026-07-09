@@ -15,17 +15,17 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 export const Route = createFileRoute("/soul")({
   head: () => ({
     meta: [
-      { title: "meUus Soul - meUus" },
+      { title: "Soul — meUus Knowledge Hub" },
       {
         name: "description",
         content:
-          "The developing learning and reflection layer of meUus, presented carefully as a starting point rather than a completed knowledge library.",
+          "The meUus Soul layer is the current Knowledge Hub starting layer for learning, reflection, and the working book preview.",
       },
-      { property: "og:title", content: "meUus Soul - meUus" },
+      { property: "og:title", content: "Soul — meUus Knowledge Hub" },
       {
         property: "og:description",
         content:
-          "A calm public starting point for understanding the principles behind meUus before action begins.",
+          "The meUus Soul layer is the current Knowledge Hub starting layer for learning, reflection, and the working book preview.",
       },
     ],
   }),

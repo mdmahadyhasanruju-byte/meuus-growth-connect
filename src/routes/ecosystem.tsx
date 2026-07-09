@@ -8,16 +8,17 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/ecosystem")({
   head: () => ({
     meta: [
-      { title: "meUus Ecosystem — Nine pillars, one platform" },
+      { title: "Ecosystem — meUus Future Architecture" },
       {
         name: "description",
         content:
-          "The meUus Ecosystem: nine intended pillars and a planned platform vision, with current operating status separated from future work.",
+          "Explore meUus future architecture and intended directions without implying that future systems are already operational.",
       },
-      { property: "og:title", content: "meUus Ecosystem" },
+      { property: "og:title", content: "Ecosystem — meUus Future Architecture" },
       {
         property: "og:description",
-        content: "Nine intended pillars, one planned platform, one mission.",
+        content:
+          "Explore meUus future architecture and intended directions without implying that future systems are already operational.",
       },
     ],
   }),
