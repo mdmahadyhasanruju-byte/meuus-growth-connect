@@ -300,7 +300,7 @@ function AmanahPage() {
       <section className="px-4 pb-24 pt-8 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-gradient-to-br from-card/70 via-card/35 to-card/60 p-8 text-center shadow-glow-violet sm:p-12">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
-            Founder covenant
+            Where this fits · Verify
           </span>
           <blockquote className="mx-auto mt-5 max-w-2xl font-serif text-2xl leading-relaxed text-foreground sm:text-3xl">
             “I was not avoiding life. I was searching for the right form of responsibility. Now that
@@ -323,6 +323,12 @@ function AmanahPage() {
               className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground"
             >
               See domain boundaries
+            </Link>
+            <Link
+              to="/soul"
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground"
+            >
+              Continue to Soul <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

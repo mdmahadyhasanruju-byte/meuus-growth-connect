@@ -62,6 +62,26 @@ export function JourneyScreen({ kind, path }: JourneyScreenProps) {
       <Frame title={journeyCopy.title[language]} eyebrow="Public prototype">
         <p className="text-foreground/70">{journeyCopy.boundary[language]}</p>
         <LinkButton to={getNextJourneyPath(session)}>Begin first slice</LinkButton>
+        <div className="border-t border-white/10 pt-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/45">
+            Where this fits · Journey
+          </p>
+          <p className="mt-2 text-sm leading-6 text-foreground/60">
+            This browser-local prototype follows the public truth, Amanah, learning, and reading
+            layers. No account or backend system is created here.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3 text-sm">
+            <a className="text-[var(--gold)] hover:text-foreground" href="/status">
+              Verify status
+            </a>
+            <a className="text-[var(--gold)] hover:text-foreground" href="/soul">
+              Visit Soul
+            </a>
+            <a className="text-[var(--gold)] hover:text-foreground" href="/book">
+              Read the working book preview
+            </a>
+          </div>
+        </div>
       </Frame>
     );
   }

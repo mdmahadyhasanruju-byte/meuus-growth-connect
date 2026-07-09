@@ -146,6 +146,9 @@ function StatusPage() {
 
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-card/50 p-8 text-center shadow-glow-gold">
+          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
+            Where this fits · Verify
+          </p>
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
             Not yet available
           </p>
@@ -164,6 +167,18 @@ function StatusPage() {
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet"
             >
               View Journey prototype <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/amanah"
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground"
+            >
+              Read Amanah <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/soul"
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground"
+            >
+              Continue to Soul <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/join"

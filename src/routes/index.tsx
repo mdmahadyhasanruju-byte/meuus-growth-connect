@@ -144,6 +144,16 @@ const START_EXPLORING = [
   },
 ] as const;
 
+const PUBLIC_JOURNEY = [
+  { label: "Understand", to: "/" },
+  { label: "Verify", to: "/status" },
+  { label: "Learn", to: "/soul" },
+  { label: "Read", to: "/book" },
+  { label: "Reflect", to: "/knowledge-before-action" },
+  { label: "Journey", to: "/journey" },
+  { label: "Future Direction", to: "/ecosystem" },
+] as const;
+
 const LIVE_NOW = [
   "Public website foundation",
   "Current Status page",
@@ -253,6 +263,42 @@ function HomePage() {
       </section>
 
       {/* ───────── START EXPLORING ───────── */}
+      <section className="relative px-4 py-14 sm:px-6">
+        <div className="mx-auto max-w-7xl rounded-3xl border-hairline bg-card/40 p-6 sm:p-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--gold)]/85">
+              Where the public routes fit
+            </p>
+            <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
+              Continue through one truthful public journey.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-foreground/65">
+              Begin with what meUus is, verify what is live, then move through learning, reading,
+              reflection, the browser-local Journey, and clearly labelled future direction.
+            </p>
+          </div>
+          <nav
+            aria-label="meUus public foundation journey"
+            className="mt-7 grid gap-2 sm:grid-cols-2 lg:grid-cols-7"
+          >
+            {PUBLIC_JOURNEY.map((step, index) => (
+              <Link
+                key={step.label}
+                to={step.to}
+                className="group flex min-h-20 items-center justify-between rounded-2xl border border-white/8 bg-background/35 px-4 py-3 transition hover:border-white/15 hover:bg-white/[0.05] lg:flex-col lg:items-start"
+              >
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[var(--gold)]/75">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm font-medium text-foreground/80 transition group-hover:text-foreground">
+                  {step.label}
+                </span>
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </section>
+
       <section className="relative px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
