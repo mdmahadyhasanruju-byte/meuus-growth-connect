@@ -141,8 +141,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative flex min-h-screen flex-col">
+        <a
+          href="#main-content"
+          className="sr-only z-[60] rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:ring-offset-2 focus:ring-offset-background"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 focus:outline-none" id="main-content" tabIndex={-1}>
           <Outlet />
         </main>
         <Footer />

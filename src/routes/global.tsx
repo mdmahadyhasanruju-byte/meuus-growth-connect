@@ -98,7 +98,7 @@ const BELIEFS = [
 
 function GlobalPage() {
   return (
-    <div className="relative isolate">
+    <div className="relative isolate overflow-x-hidden">
       {/* HERO */}
       <section className="relative flex min-h-[70svh] flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6">
         <ParticleCanvas density={60} />
