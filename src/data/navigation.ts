@@ -25,7 +25,7 @@ export const EXPLORER_NAVIGATION_GROUPS = [
       {
         to: "/book",
         label: "Book meUus",
-        status: "Public excerpt prepared",
+        status: "Working public preview · v0.3",
       },
       { to: "/manifesto-full", label: "Founder Manifesto" },
     ],

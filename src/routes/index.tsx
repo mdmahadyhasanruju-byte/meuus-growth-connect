@@ -130,9 +130,9 @@ const START_EXPLORING = [
     title: "meUus Soul",
     status: "Knowledge Hub starting layer",
     description:
-      "A live Soul learning layer and public Knowledge Hub starting point, updating gradually.",
+      "A live Soul learning layer and public Knowledge Hub starting point, updating gradually. The current book is a working public preview, not final publication.",
     secondaryHref: "/book",
-    secondaryLabel: "Book meUus project",
+    secondaryLabel: "Read Be — The Starting Point",
   },
   {
     group: "App Direction",

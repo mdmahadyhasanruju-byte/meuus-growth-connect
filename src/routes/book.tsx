@@ -193,7 +193,6 @@ function BookPage() {
         </div>
       </section>
 
-code src/routes/book.tsx
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
