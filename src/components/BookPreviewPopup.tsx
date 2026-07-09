@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const STORAGE_KEY = "meuus-book-preview-popup-dismissed-v1";
 
@@ -11,6 +11,8 @@ function shouldSkipPopup(pathname: string) {
 export function BookPreviewPopup() {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (shouldSkipPopup(location.pathname)) {
@@ -38,6 +40,10 @@ export function BookPreviewPopup() {
       return;
     }
 
+    previousFocusRef.current =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         dismissPopup();
@@ -45,7 +51,12 @@ export function BookPreviewPopup() {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      window.removeEventListener("keydown", handleKeyDown);
+      previousFocusRef.current?.focus();
+      previousFocusRef.current = null;
+    };
   }, [isVisible]);
 
   const dismissPopup = () => {
@@ -76,8 +87,9 @@ export function BookPreviewPopup() {
         <div className="relative mx-auto max-w-2xl">
           <button
             aria-label="Close book preview popup"
-            className="absolute right-0 top-0 rounded-full border border-white/10 bg-white/[0.06] p-2 text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
+            className="absolute right-0 top-0 rounded-full border border-white/10 bg-white/[0.06] p-2 text-foreground/70 transition hover:bg-white/10 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080713]"
             onClick={dismissPopup}
+            ref={closeButtonRef}
             type="button"
           >
             <X className="h-4 w-4" />
@@ -112,14 +124,14 @@ export function BookPreviewPopup() {
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.01]"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080713]"
               onClick={dismissPopup}
               to="/book"
             >
               Read the book preview
             </Link>
             <button
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-medium text-foreground/75 transition hover:bg-white/10 hover:text-foreground"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-medium text-foreground/75 transition hover:bg-white/10 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080713]"
               onClick={dismissPopup}
               type="button"
             >
