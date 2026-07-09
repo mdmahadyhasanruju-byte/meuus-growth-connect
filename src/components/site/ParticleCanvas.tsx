@@ -14,8 +14,10 @@ export function ParticleCanvas({ density = 60, className }: ParticleCanvasProps)
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let width = (canvas.width = canvas.offsetWidth * window.devicePixelRatio);
-    let height = (canvas.height = canvas.offsetHeight * window.devicePixelRatio);
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    let width = (canvas.width = canvas.offsetWidth * pixelRatio);
+    let height = (canvas.height = canvas.offsetHeight * pixelRatio);
 
     const particles = Array.from({ length: density }, () => ({
       x: Math.random() * width,
@@ -25,8 +27,7 @@ export function ParticleCanvas({ density = 60, className }: ParticleCanvasProps)
       r: Math.random() * 1.4 + 0.4,
     }));
 
-    let raf = 0;
-    const draw = () => {
+    const drawFrame = () => {
       ctx.clearRect(0, 0, width, height);
       // connecting lines
       for (let i = 0; i < particles.length; i++) {
@@ -40,8 +41,8 @@ export function ParticleCanvas({ density = 60, className }: ParticleCanvasProps)
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 140 * window.devicePixelRatio) {
-            ctx.strokeStyle = `rgba(167,139,250,${0.12 * (1 - dist / (140 * window.devicePixelRatio))})`;
+          if (dist < 140 * pixelRatio) {
+            ctx.strokeStyle = `rgba(167,139,250,${0.12 * (1 - dist / (140 * pixelRatio))})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -51,21 +52,51 @@ export function ParticleCanvas({ density = 60, className }: ParticleCanvasProps)
         }
         ctx.fillStyle = "rgba(220,210,255,0.55)";
         ctx.beginPath();
-        ctx.arc(a.x, a.y, a.r * window.devicePixelRatio, 0, Math.PI * 2);
+        ctx.arc(a.x, a.y, a.r * pixelRatio, 0, Math.PI * 2);
         ctx.fill();
       }
-      raf = requestAnimationFrame(draw);
     };
-    draw();
+
+    let raf = 0;
+    const animate = () => {
+      drawFrame();
+      raf = requestAnimationFrame(animate);
+    };
+
+    const stopAnimation = () => {
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+
+    const syncAnimation = () => {
+      stopAnimation();
+      drawFrame();
+      if (!document.hidden && !motionQuery.matches) {
+        raf = requestAnimationFrame(animate);
+      }
+    };
 
     const onResize = () => {
-      width = canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      height = canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      width = canvas.width = canvas.offsetWidth * pixelRatio;
+      height = canvas.height = canvas.offsetHeight * pixelRatio;
+      if (document.hidden || motionQuery.matches) {
+        drawFrame();
+      }
     };
+
+    syncAnimation();
     window.addEventListener("resize", onResize);
+    document.addEventListener("visibilitychange", syncAnimation);
+    motionQuery.addEventListener("change", syncAnimation);
+
     return () => {
-      cancelAnimationFrame(raf);
+      stopAnimation();
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", syncAnimation);
+      motionQuery.removeEventListener("change", syncAnimation);
     };
   }, [density]);
 
