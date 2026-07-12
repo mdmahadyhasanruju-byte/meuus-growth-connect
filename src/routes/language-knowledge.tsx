@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { Outlet, createFileRoute, useLocation } from "@tanstack/react-router";
 import { LanguageKnowledgePreview, type LanguageKnowledgePreviewPage } from "@/components/site/LanguageKnowledgePreview";
 
 const page: LanguageKnowledgePreviewPage = {
@@ -21,5 +21,15 @@ const page: LanguageKnowledgePreviewPage = {
 
 export const Route = createFileRoute("/language-knowledge")({
   head: () => ({ meta: [{ title: "Language & Knowledge Hub - Draft Public Preview" }, { name: "description", content: "Internal draft public-preview candidate for learning support only. Not published, not canonical, not production-ready, and not a live advanced meUus system." }, { name: "robots", content: "noindex,nofollow" }, { property: "og:title", content: "Language & Knowledge Hub - Draft Public Preview" }, { property: "og:description", content: "Internal draft public-preview candidate for learning support only. Not published, not canonical, not production-ready, and not a live advanced meUus system." }] }),
-  component: () => <LanguageKnowledgePreview page={page} />,
+  component: LanguageKnowledgeRoute,
 });
+
+function LanguageKnowledgeRoute() {
+  const location = useLocation();
+
+  if (location.pathname !== "/language-knowledge" && location.pathname !== "/language-knowledge/") {
+    return <Outlet />;
+  }
+
+  return <LanguageKnowledgePreview page={page} />;
+}
