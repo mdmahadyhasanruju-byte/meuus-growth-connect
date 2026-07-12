@@ -17,6 +17,7 @@ import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as OneWordStartRouteImport } from './routes/one-word-start'
 import { Route as ManifestoFullRouteImport } from './routes/manifesto-full'
 import { Route as ManifestoRouteImport } from './routes/manifesto'
+import { Route as LanguageKnowledgeRouteImport } from './routes/language-knowledge'
 import { Route as KnowledgeBeforeActionRouteImport } from './routes/knowledge-before-action'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as JoinRouteImport } from './routes/join'
@@ -33,6 +34,12 @@ import { Route as AmanahRouteImport } from './routes/amanah'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SoulKnowledgeBeforeActionRouteImport } from './routes/soul.knowledge-before-action'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
+import { Route as LanguageKnowledgeWordsToUnderstandingRouteImport } from './routes/language-knowledge.words-to-understanding'
+import { Route as LanguageKnowledgeStatusRouteImport } from './routes/language-knowledge.status'
+import { Route as LanguageKnowledgeStartWithOneWordRouteImport } from './routes/language-knowledge.start-with-one-word'
+import { Route as LanguageKnowledgeErrorLogRouteImport } from './routes/language-knowledge.error-log'
+import { Route as LanguageKnowledgeDraftSetRouteImport } from './routes/language-knowledge.draft-set'
+import { Route as LanguageKnowledgeDailyLearningLogRouteImport } from './routes/language-knowledge.daily-learning-log'
 import { Route as JourneyStartRouteImport } from './routes/journey.start'
 import { Route as JourneySafetyRouteImport } from './routes/journey.safety'
 import { Route as JourneyReviewRouteImport } from './routes/journey.review'
@@ -84,6 +91,11 @@ const ManifestoFullRoute = ManifestoFullRouteImport.update({
 const ManifestoRoute = ManifestoRouteImport.update({
   id: '/manifesto',
   path: '/manifesto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LanguageKnowledgeRoute = LanguageKnowledgeRouteImport.update({
+  id: '/language-knowledge',
+  path: '/language-knowledge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KnowledgeBeforeActionRoute = KnowledgeBeforeActionRouteImport.update({
@@ -167,6 +179,41 @@ const PillarsSlugRoute = PillarsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PillarsRoute,
 } as any)
+const LanguageKnowledgeWordsToUnderstandingRoute =
+  LanguageKnowledgeWordsToUnderstandingRouteImport.update({
+    id: '/words-to-understanding',
+    path: '/words-to-understanding',
+    getParentRoute: () => LanguageKnowledgeRoute,
+  } as any)
+const LanguageKnowledgeStatusRoute = LanguageKnowledgeStatusRouteImport.update({
+  id: '/status',
+  path: '/status',
+  getParentRoute: () => LanguageKnowledgeRoute,
+} as any)
+const LanguageKnowledgeStartWithOneWordRoute =
+  LanguageKnowledgeStartWithOneWordRouteImport.update({
+    id: '/start-with-one-word',
+    path: '/start-with-one-word',
+    getParentRoute: () => LanguageKnowledgeRoute,
+  } as any)
+const LanguageKnowledgeErrorLogRoute =
+  LanguageKnowledgeErrorLogRouteImport.update({
+    id: '/error-log',
+    path: '/error-log',
+    getParentRoute: () => LanguageKnowledgeRoute,
+  } as any)
+const LanguageKnowledgeDraftSetRoute =
+  LanguageKnowledgeDraftSetRouteImport.update({
+    id: '/draft-set',
+    path: '/draft-set',
+    getParentRoute: () => LanguageKnowledgeRoute,
+  } as any)
+const LanguageKnowledgeDailyLearningLogRoute =
+  LanguageKnowledgeDailyLearningLogRouteImport.update({
+    id: '/daily-learning-log',
+    path: '/daily-learning-log',
+    getParentRoute: () => LanguageKnowledgeRoute,
+  } as any)
 const JourneyStartRoute = JourneyStartRouteImport.update({
   id: '/start',
   path: '/start',
@@ -243,6 +290,7 @@ export interface FileRoutesByFullPath {
   '/join': typeof JoinRoute
   '/journey': typeof JourneyRouteWithChildren
   '/knowledge-before-action': typeof KnowledgeBeforeActionRoute
+  '/language-knowledge': typeof LanguageKnowledgeRouteWithChildren
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
@@ -262,6 +310,12 @@ export interface FileRoutesByFullPath {
   '/journey/review': typeof JourneyReviewRoute
   '/journey/safety': typeof JourneySafetyRoute
   '/journey/start': typeof JourneyStartRoute
+  '/language-knowledge/daily-learning-log': typeof LanguageKnowledgeDailyLearningLogRoute
+  '/language-knowledge/draft-set': typeof LanguageKnowledgeDraftSetRoute
+  '/language-knowledge/error-log': typeof LanguageKnowledgeErrorLogRoute
+  '/language-knowledge/start-with-one-word': typeof LanguageKnowledgeStartWithOneWordRoute
+  '/language-knowledge/status': typeof LanguageKnowledgeStatusRoute
+  '/language-knowledge/words-to-understanding': typeof LanguageKnowledgeWordsToUnderstandingRoute
   '/pillars/$slug': typeof PillarsSlugRoute
   '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
@@ -281,6 +335,7 @@ export interface FileRoutesByTo {
   '/join': typeof JoinRoute
   '/journey': typeof JourneyRouteWithChildren
   '/knowledge-before-action': typeof KnowledgeBeforeActionRoute
+  '/language-knowledge': typeof LanguageKnowledgeRouteWithChildren
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
@@ -300,6 +355,12 @@ export interface FileRoutesByTo {
   '/journey/review': typeof JourneyReviewRoute
   '/journey/safety': typeof JourneySafetyRoute
   '/journey/start': typeof JourneyStartRoute
+  '/language-knowledge/daily-learning-log': typeof LanguageKnowledgeDailyLearningLogRoute
+  '/language-knowledge/draft-set': typeof LanguageKnowledgeDraftSetRoute
+  '/language-knowledge/error-log': typeof LanguageKnowledgeErrorLogRoute
+  '/language-knowledge/start-with-one-word': typeof LanguageKnowledgeStartWithOneWordRoute
+  '/language-knowledge/status': typeof LanguageKnowledgeStatusRoute
+  '/language-knowledge/words-to-understanding': typeof LanguageKnowledgeWordsToUnderstandingRoute
   '/pillars/$slug': typeof PillarsSlugRoute
   '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
@@ -320,6 +381,7 @@ export interface FileRoutesById {
   '/join': typeof JoinRoute
   '/journey': typeof JourneyRouteWithChildren
   '/knowledge-before-action': typeof KnowledgeBeforeActionRoute
+  '/language-knowledge': typeof LanguageKnowledgeRouteWithChildren
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
@@ -339,6 +401,12 @@ export interface FileRoutesById {
   '/journey/review': typeof JourneyReviewRoute
   '/journey/safety': typeof JourneySafetyRoute
   '/journey/start': typeof JourneyStartRoute
+  '/language-knowledge/daily-learning-log': typeof LanguageKnowledgeDailyLearningLogRoute
+  '/language-knowledge/draft-set': typeof LanguageKnowledgeDraftSetRoute
+  '/language-knowledge/error-log': typeof LanguageKnowledgeErrorLogRoute
+  '/language-knowledge/start-with-one-word': typeof LanguageKnowledgeStartWithOneWordRoute
+  '/language-knowledge/status': typeof LanguageKnowledgeStatusRoute
+  '/language-knowledge/words-to-understanding': typeof LanguageKnowledgeWordsToUnderstandingRoute
   '/pillars/$slug': typeof PillarsSlugRoute
   '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
@@ -360,6 +428,7 @@ export interface FileRouteTypes {
     | '/join'
     | '/journey'
     | '/knowledge-before-action'
+    | '/language-knowledge'
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
@@ -379,6 +448,12 @@ export interface FileRouteTypes {
     | '/journey/review'
     | '/journey/safety'
     | '/journey/start'
+    | '/language-knowledge/daily-learning-log'
+    | '/language-knowledge/draft-set'
+    | '/language-knowledge/error-log'
+    | '/language-knowledge/start-with-one-word'
+    | '/language-knowledge/status'
+    | '/language-knowledge/words-to-understanding'
     | '/pillars/$slug'
     | '/soul/knowledge-before-action'
     | '/journey/quest/$questId'
@@ -398,6 +473,7 @@ export interface FileRouteTypes {
     | '/join'
     | '/journey'
     | '/knowledge-before-action'
+    | '/language-knowledge'
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
@@ -417,6 +493,12 @@ export interface FileRouteTypes {
     | '/journey/review'
     | '/journey/safety'
     | '/journey/start'
+    | '/language-knowledge/daily-learning-log'
+    | '/language-knowledge/draft-set'
+    | '/language-knowledge/error-log'
+    | '/language-knowledge/start-with-one-word'
+    | '/language-knowledge/status'
+    | '/language-knowledge/words-to-understanding'
     | '/pillars/$slug'
     | '/soul/knowledge-before-action'
     | '/journey/quest/$questId'
@@ -436,6 +518,7 @@ export interface FileRouteTypes {
     | '/join'
     | '/journey'
     | '/knowledge-before-action'
+    | '/language-knowledge'
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
@@ -455,6 +538,12 @@ export interface FileRouteTypes {
     | '/journey/review'
     | '/journey/safety'
     | '/journey/start'
+    | '/language-knowledge/daily-learning-log'
+    | '/language-knowledge/draft-set'
+    | '/language-knowledge/error-log'
+    | '/language-knowledge/start-with-one-word'
+    | '/language-knowledge/status'
+    | '/language-knowledge/words-to-understanding'
     | '/pillars/$slug'
     | '/soul/knowledge-before-action'
     | '/journey/quest/$questId'
@@ -475,6 +564,7 @@ export interface RootRouteChildren {
   JoinRoute: typeof JoinRoute
   JourneyRoute: typeof JourneyRouteWithChildren
   KnowledgeBeforeActionRoute: typeof KnowledgeBeforeActionRoute
+  LanguageKnowledgeRoute: typeof LanguageKnowledgeRouteWithChildren
   ManifestoRoute: typeof ManifestoRoute
   ManifestoFullRoute: typeof ManifestoFullRoute
   OneWordStartRoute: typeof OneWordStartRoute
@@ -541,6 +631,13 @@ declare module '@tanstack/react-router' {
       path: '/manifesto'
       fullPath: '/manifesto'
       preLoaderRoute: typeof ManifestoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/language-knowledge': {
+      id: '/language-knowledge'
+      path: '/language-knowledge'
+      fullPath: '/language-knowledge'
+      preLoaderRoute: typeof LanguageKnowledgeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/knowledge-before-action': {
@@ -654,6 +751,48 @@ declare module '@tanstack/react-router' {
       fullPath: '/pillars/$slug'
       preLoaderRoute: typeof PillarsSlugRouteImport
       parentRoute: typeof PillarsRoute
+    }
+    '/language-knowledge/words-to-understanding': {
+      id: '/language-knowledge/words-to-understanding'
+      path: '/words-to-understanding'
+      fullPath: '/language-knowledge/words-to-understanding'
+      preLoaderRoute: typeof LanguageKnowledgeWordsToUnderstandingRouteImport
+      parentRoute: typeof LanguageKnowledgeRoute
+    }
+    '/language-knowledge/status': {
+      id: '/language-knowledge/status'
+      path: '/status'
+      fullPath: '/language-knowledge/status'
+      preLoaderRoute: typeof LanguageKnowledgeStatusRouteImport
+      parentRoute: typeof LanguageKnowledgeRoute
+    }
+    '/language-knowledge/start-with-one-word': {
+      id: '/language-knowledge/start-with-one-word'
+      path: '/start-with-one-word'
+      fullPath: '/language-knowledge/start-with-one-word'
+      preLoaderRoute: typeof LanguageKnowledgeStartWithOneWordRouteImport
+      parentRoute: typeof LanguageKnowledgeRoute
+    }
+    '/language-knowledge/error-log': {
+      id: '/language-knowledge/error-log'
+      path: '/error-log'
+      fullPath: '/language-knowledge/error-log'
+      preLoaderRoute: typeof LanguageKnowledgeErrorLogRouteImport
+      parentRoute: typeof LanguageKnowledgeRoute
+    }
+    '/language-knowledge/draft-set': {
+      id: '/language-knowledge/draft-set'
+      path: '/draft-set'
+      fullPath: '/language-knowledge/draft-set'
+      preLoaderRoute: typeof LanguageKnowledgeDraftSetRouteImport
+      parentRoute: typeof LanguageKnowledgeRoute
+    }
+    '/language-knowledge/daily-learning-log': {
+      id: '/language-knowledge/daily-learning-log'
+      path: '/daily-learning-log'
+      fullPath: '/language-knowledge/daily-learning-log'
+      preLoaderRoute: typeof LanguageKnowledgeDailyLearningLogRouteImport
+      parentRoute: typeof LanguageKnowledgeRoute
     }
     '/journey/start': {
       id: '/journey/start'
@@ -775,6 +914,30 @@ const JourneyRouteChildren: JourneyRouteChildren = {
 const JourneyRouteWithChildren =
   JourneyRoute._addFileChildren(JourneyRouteChildren)
 
+interface LanguageKnowledgeRouteChildren {
+  LanguageKnowledgeDailyLearningLogRoute: typeof LanguageKnowledgeDailyLearningLogRoute
+  LanguageKnowledgeDraftSetRoute: typeof LanguageKnowledgeDraftSetRoute
+  LanguageKnowledgeErrorLogRoute: typeof LanguageKnowledgeErrorLogRoute
+  LanguageKnowledgeStartWithOneWordRoute: typeof LanguageKnowledgeStartWithOneWordRoute
+  LanguageKnowledgeStatusRoute: typeof LanguageKnowledgeStatusRoute
+  LanguageKnowledgeWordsToUnderstandingRoute: typeof LanguageKnowledgeWordsToUnderstandingRoute
+}
+
+const LanguageKnowledgeRouteChildren: LanguageKnowledgeRouteChildren = {
+  LanguageKnowledgeDailyLearningLogRoute:
+    LanguageKnowledgeDailyLearningLogRoute,
+  LanguageKnowledgeDraftSetRoute: LanguageKnowledgeDraftSetRoute,
+  LanguageKnowledgeErrorLogRoute: LanguageKnowledgeErrorLogRoute,
+  LanguageKnowledgeStartWithOneWordRoute:
+    LanguageKnowledgeStartWithOneWordRoute,
+  LanguageKnowledgeStatusRoute: LanguageKnowledgeStatusRoute,
+  LanguageKnowledgeWordsToUnderstandingRoute:
+    LanguageKnowledgeWordsToUnderstandingRoute,
+}
+
+const LanguageKnowledgeRouteWithChildren =
+  LanguageKnowledgeRoute._addFileChildren(LanguageKnowledgeRouteChildren)
+
 interface PillarsRouteChildren {
   PillarsSlugRoute: typeof PillarsSlugRoute
 }
@@ -811,6 +974,7 @@ const rootRouteChildren: RootRouteChildren = {
   JoinRoute: JoinRoute,
   JourneyRoute: JourneyRouteWithChildren,
   KnowledgeBeforeActionRoute: KnowledgeBeforeActionRoute,
+  LanguageKnowledgeRoute: LanguageKnowledgeRouteWithChildren,
   ManifestoRoute: ManifestoRoute,
   ManifestoFullRoute: ManifestoFullRoute,
   OneWordStartRoute: OneWordStartRoute,
