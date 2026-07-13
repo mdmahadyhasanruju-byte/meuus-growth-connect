@@ -20,13 +20,13 @@ export const Route = createFileRoute("/app")({
       {
         name: "description",
         content:
-          "A developing application gateway for meUus, with the current verified experience limited to the browser-local Journey.",
+          "A future Act Layer prototype for meUus. Accounts, AI guidance, DLAS, payments, subscriptions, and certifications are not live.",
       },
       { property: "og:title", content: "meUus App - meUus" },
       {
         property: "og:description",
         content:
-          "A developing application gateway for meUus, with the current verified experience limited to the browser-local Journey.",
+          "A future Act Layer prototype for meUus. Accounts, AI guidance, DLAS, payments, subscriptions, and certifications are not live.",
       },
     ],
   }),
@@ -52,12 +52,17 @@ const AVAILABLE_NOW = [
 ] as const;
 
 const NOT_LIVE_YET = [
+  "meuus.app is a future Act Layer prototype.",
   "No full meUus App is live yet.",
   "No account system, email verification, or dashboard is live.",
   "No AI analysis, AI companion, or automated decision system is live.",
   "No DLAS runtime or complete DLAS assessment system is live.",
   "No cloud storage, database-backed profile, or Supabase auth flow is live.",
   "No payment, reward, subscription, or commercial app product is live.",
+  "Accounts, AI guidance, DLAS, payments, subscriptions, and certifications are not live.",
+  "Any forms, profiles, journeys, tiers, or dashboards shown are preview/prototype elements unless clearly approved.",
+  "Do not submit personal data here unless a verified live privacy and consent flow is announced.",
+  "Phase One is focused on governance, correction, and controlled preparation.",
 ] as const;
 
 const FUTURE_DIRECTIONS = [
@@ -99,9 +104,10 @@ function AppPage() {
             An app gateway <span className="italic text-gradient-violet">in development.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-            meUus App is the future application gateway for guided reflection, learning, and
-            responsible next steps. The full app is not live yet; the current verified app-like
-            experience is the bounded browser-local Journey on meuus.org.
+            meuus.app is a future Act Layer prototype for guided reflection, learning, and
+            responsible next steps. Accounts, AI guidance, DLAS, payments, subscriptions, and
+            certifications are not live. The current verified app-like experience is the bounded
+            browser-local Journey on meuus.org.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
@@ -135,7 +141,8 @@ function AppPage() {
             <p>
               The current verified foundation remains meuus.org. The full app, account system,
               dashboard, AI analysis, DLAS runtime, cloud storage, payment system, and automated
-              decision system are not live.
+              decision system are not live. Do not submit personal data here unless a verified live
+              privacy and consent flow is announced.
             </p>
             <p>
               The{" "}
