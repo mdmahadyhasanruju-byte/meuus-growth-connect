@@ -14,7 +14,7 @@ export const EXPLORER_NAVIGATION_GROUPS = [
       { to: "/", label: "meUus Home" },
       { to: "/knowledge-before-action", label: "Knowledge Before Action" },
       { to: "/one-word-start", label: "One Word Start" },
-      { to: "/journey", label: "Journey", status: "Live · browser-local" },
+      { to: "/journey", label: "Journey", status: "Prototype · browser-local" },
     ],
   },
   {

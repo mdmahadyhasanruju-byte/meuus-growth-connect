@@ -176,7 +176,8 @@ function PreferencesScreen() {
     <Frame title="Preferences" eyebrow="Private local settings">
       <p className="text-foreground/70">
         Choose the language and storage mode for this prototype. Progress-only storage never keeps
-        private reflection text.
+        private reflection text. These controls are local prototype settings, not a live account,
+        profile, or cloud submission flow.
       </p>
       <div className="space-y-5">
         <div className="grid gap-3 sm:grid-cols-2" role="group" aria-label="Journey language">
@@ -280,7 +281,8 @@ function ReflectionScreen() {
     <Frame title="Private reflection resolution" eyebrow="Explicit choice required">
       <p className="text-foreground/70">
         Written text is optional. Completion comes from one explicit resolution, not from text
-        length or truthiness.
+        length or truthiness. Do not submit sensitive personal data here; this is a browser-local
+        prototype, not a verified live privacy and consent flow.
       </p>
       <textarea
         aria-label="Optional private reflection"
