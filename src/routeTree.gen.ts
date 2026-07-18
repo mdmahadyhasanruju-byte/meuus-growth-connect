@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as SoulaiTestRouteImport } from './routes/soulai-test'
 import { Route as SoulRouteImport } from './routes/soul'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PillarsRouteImport } from './routes/pillars'
@@ -61,6 +62,11 @@ const TermsRoute = TermsRouteImport.update({
 const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoulaiTestRoute = SoulaiTestRouteImport.update({
+  id: '/soulai-test',
+  path: '/soulai-test',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SoulRoute = SoulRouteImport.update({
@@ -297,6 +303,7 @@ export interface FileRoutesByFullPath {
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/soul': typeof SoulRouteWithChildren
+  '/soulai-test': typeof SoulaiTestRoute
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -342,6 +349,7 @@ export interface FileRoutesByTo {
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/soul': typeof SoulRouteWithChildren
+  '/soulai-test': typeof SoulaiTestRoute
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -388,6 +396,7 @@ export interface FileRoutesById {
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/soul': typeof SoulRouteWithChildren
+  '/soulai-test': typeof SoulaiTestRoute
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -435,6 +444,7 @@ export interface FileRouteTypes {
     | '/pillars'
     | '/privacy'
     | '/soul'
+    | '/soulai-test'
     | '/status'
     | '/terms'
     | '/journey/accessibility'
@@ -480,6 +490,7 @@ export interface FileRouteTypes {
     | '/pillars'
     | '/privacy'
     | '/soul'
+    | '/soulai-test'
     | '/status'
     | '/terms'
     | '/journey/accessibility'
@@ -525,6 +536,7 @@ export interface FileRouteTypes {
     | '/pillars'
     | '/privacy'
     | '/soul'
+    | '/soulai-test'
     | '/status'
     | '/terms'
     | '/journey/accessibility'
@@ -571,6 +583,7 @@ export interface RootRouteChildren {
   PillarsRoute: typeof PillarsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   SoulRoute: typeof SoulRouteWithChildren
+  SoulaiTestRoute: typeof SoulaiTestRoute
   StatusRoute: typeof StatusRoute
   TermsRoute: typeof TermsRoute
 }
@@ -589,6 +602,13 @@ declare module '@tanstack/react-router' {
       path: '/status'
       fullPath: '/status'
       preLoaderRoute: typeof StatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soulai-test': {
+      id: '/soulai-test'
+      path: '/soulai-test'
+      fullPath: '/soulai-test'
+      preLoaderRoute: typeof SoulaiTestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/soul': {
@@ -981,6 +1001,7 @@ const rootRouteChildren: RootRouteChildren = {
   PillarsRoute: PillarsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   SoulRoute: SoulRouteWithChildren,
+  SoulaiTestRoute: SoulaiTestRoute,
   StatusRoute: StatusRoute,
   TermsRoute: TermsRoute,
 }
