@@ -1,0 +1,70 @@
+.soulai-official-chat {
+  --chat--color--primary: #8b5cf6;
+  --chat--color--primary-shade-50: #7c3aed;
+  --chat--color--primary--shade-100: #6d28d9;
+  --chat--color--secondary: #a78bfa;
+  --chat--color-secondary-shade-50: #8b5cf6;
+  --chat--color-white: hsl(var(--card));
+  --chat--color-light: hsl(var(--background));
+  --chat--color-light-shade-50: hsl(var(--border));
+  --chat--color-light-shade-100: hsl(var(--border));
+  --chat--color-dark: hsl(var(--foreground));
+  --chat--color-disabled: hsl(var(--muted-foreground));
+  --chat--color-typing: #c4b5fd;
+  --chat--font-family: inherit;
+  --chat--border-radius: 1rem;
+  --chat--message--border-radius: 1rem;
+  --chat--message--bot--background: color-mix(in srgb, hsl(var(--card)) 88%, transparent);
+  --chat--message--bot--color: hsl(var(--foreground));
+  --chat--message--bot--border: 1px solid
+    color-mix(in srgb, hsl(var(--foreground)) 10%, transparent);
+  --chat--message--user--background: #7c3aed;
+  --chat--message--user--color: #fff;
+  --chat--body--background: color-mix(in srgb, hsl(var(--background)) 65%, transparent);
+  --chat--footer--background: color-mix(in srgb, hsl(var(--background)) 85%, transparent);
+  --chat--input--background: color-mix(in srgb, hsl(var(--card)) 92%, transparent);
+  --chat--input--text-color: hsl(var(--foreground));
+  min-height: 31rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, hsl(var(--foreground)) 10%, transparent);
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, hsl(var(--background)) 60%, transparent);
+}
+
+.soulai-official-chat .chat-layout {
+  min-height: 31rem;
+}
+
+.soulai-official-chat .chat-header {
+  display: none;
+}
+
+.soulai-official-chat .chat-inputs textarea {
+  color: hsl(var(--foreground));
+}
+
+.soulai-official-chat.soulai-chat-locked .chat-input {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .soulai-official-chat,
+  .soulai-official-chat .chat-layout {
+    min-height: 27rem;
+  }
+
+  .soulai-official-chat .chat-messages-list {
+    padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soulai-official-chat *,
+  .soulai-official-chat *::before,
+  .soulai-official-chat *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
