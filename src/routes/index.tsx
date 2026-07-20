@@ -82,29 +82,26 @@ const JOURNEY = [
   },
 ] as const;
 
-const DOMAIN_DIRECTIONS = [
+const HUBS = [
   {
-    label: "meuus.org",
-    title: "Understand",
-    status: "Live",
-    body: "The public truth and trust foundation: understand what meUus is, what exists now, and what remains unfinished.",
-    href: "https://meuus.org/",
+    label: "meUus",
+    title: "The Soul",
+    body: "Human-first principles: truth, dignity, privacy, responsible action, and learning before claims.",
+    href: "/" as const,
     accent: "from-violet-500/30 via-violet-500/5 to-transparent",
   },
   {
-    label: "meuussoul.com",
-    title: "Learn",
-    status: "Live knowledge gateway",
-    body: "A bounded path into Soul, knowledge, reflection, and Book Be. The wider learning system remains in development.",
-    href: "https://meuussoul.com/",
+    label: "meUus Ecosystem",
+    title: "The Body",
+    body: "Nine intended pillars and a future platform plan. The full operating ecosystem is not yet live.",
+    href: "/ecosystem" as const,
     accent: "from-cyan-500/30 via-cyan-500/5 to-transparent",
   },
   {
-    label: "meuus.app",
-    title: "Act",
-    status: "In Review",
-    body: "The future application direction for assessment, action, progress, and support. The complete platform is not live.",
-    href: "https://meuus.app/",
+    label: "meUus Global",
+    title: "The Reach",
+    body: "A planned path from Bangladesh toward wider reach, subject to evidence, partnerships, and responsible delivery.",
+    href: "/global" as const,
     accent: "from-amber-400/30 via-amber-400/5 to-transparent",
   },
 ];
@@ -160,26 +157,15 @@ const PUBLIC_JOURNEY = [
 const LIVE_NOW = [
   "Public website foundation",
   "Current Status page",
+  "Browser-local Journey prototype",
   "Manual expression-of-interest path",
   "Initial privacy, terms, consent, appreciation, and domain-role boundaries",
 ] as const;
 
-const EXPERIMENTAL_NOW = [
-  "Feel meUus guided-reflection pilot",
-  "Browser-local Journey prototype",
-  "Book Be working public preview",
-] as const;
-
-const IN_DEVELOPMENT = [
-  "Nine Pillars ecosystem directions",
-  "Soul and Knowledge Hub",
-  "One responsible service pathway",
-] as const;
-
-const COMING_LATER = [
+const NOT_LIVE_YET = [
   "Full app",
   "Accounts",
-  "Full meYoo intelligence layer",
+  "AI runtime",
   "DLAS runtime",
   "Cloud storage",
   "Payments",
@@ -220,14 +206,6 @@ function HomePage() {
             Connecting Everything.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gold)]/85 sm:text-sm">
-            <span>me → U → us</span>
-            <span aria-hidden="true" className="text-foreground/30">
-              ·
-            </span>
-            <span>Claim ≤ Evidence</span>
-          </div>
-
           <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
             meUus begins with a live public foundation, a browser-local Journey prototype, and the
             first Soul learning path: Knowledge Before Action. Start by learning, reflecting, and
@@ -241,7 +219,7 @@ function HomePage() {
           </p>
 
           <div className="grid w-full max-w-3xl gap-2 rounded-2xl border-hairline bg-glass p-3 text-xs text-foreground/70 sm:grid-cols-4 sm:p-4">
-            {["Understand", "Learn", "Reflect", "Act responsibly"].map((step, i) => (
+            {["Understand", "Learn", "Reflect", "Choose one responsible step"].map((step, i) => (
               <div key={step} className="flex items-center justify-center gap-2 sm:justify-start">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] font-serif text-[var(--gold)]">
                   {i + 1}
@@ -408,7 +386,7 @@ function HomePage() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
               <div className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200/80">
                   Live now
@@ -423,40 +401,12 @@ function HomePage() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-violet-300/15 bg-violet-300/[0.04] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-violet-200/80">
-                  Experimental Pilot
-                </p>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/70">
-                  {EXPERIMENTAL_NOW.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-violet-200/80">·</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.04] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200/80">
-                  In Development
-                </p>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/70">
-                  {IN_DEVELOPMENT.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-cyan-200/80">·</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/55">
-                  Coming Later
+                  Not live yet
                 </p>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/60">
-                  {COMING_LATER.map((item) => (
+                <ul className="mt-4 grid gap-3 text-sm leading-6 text-foreground/60 sm:grid-cols-2">
+                  {NOT_LIVE_YET.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="text-foreground/35">·</span>
                       <span>{item}</span>
@@ -588,37 +538,30 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ───────── THREE DOMAIN DIRECTIONS ───────── */}
+      {/* ───────── THREE VISION HUBS ───────── */}
       <section className="relative px-4 py-32 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Three connected domain directions"
+            eyebrow="Three Hubs"
             title={
               <>
-                Understand, learn, then <em className="italic">act</em>
+                One vision, <em className="italic">three doors</em>
               </>
             }
-            subtitle="One ecosystem and one truthful journey, presented through three bounded public surfaces."
+            subtitle="Each door separates what is available now from what remains intended or planned."
           />
           <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {DOMAIN_DIRECTIONS.map((h) => (
-              <a
+            {HUBS.map((h) => (
+              <Link
                 key={h.label}
-                href={h.href}
+                to={h.href}
                 className="group relative overflow-hidden rounded-3xl border-hairline bg-card/40 p-8 transition hover:border-white/15 hover:bg-card/60"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${h.accent} opacity-60 transition group-hover:opacity-100`}
                 />
                 <div className="relative">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <p className="text-xs uppercase tracking-[0.3em] text-foreground/55">
-                      {h.label}
-                    </p>
-                    <span className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-foreground/65">
-                      {h.status}
-                    </span>
-                  </div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/55">{h.label}</p>
                   <h3 className="mt-4 font-serif text-4xl">{h.title}</h3>
                   <p className="mt-3 text-foreground/70">{h.body}</p>
                   <div className="mt-8 inline-flex items-center gap-1 text-sm text-foreground/85">
@@ -626,7 +569,7 @@ function HomePage() {
                     <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
