@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const STORAGE_KEY = "meuus-book-preview-popup-dismissed-v1";
-
+const AUTO_OPEN_BOOK_PREVIEW = false;
 function shouldSkipPopup(pathname: string) {
   return pathname === "/book" || pathname.startsWith("/books/");
 }
@@ -15,7 +15,7 @@ export function BookPreviewPopup() {
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (shouldSkipPopup(location.pathname)) {
+    if (!AUTO_OPEN_BOOK_PREVIEW || shouldSkipPopup(location.pathname)) {
       setIsVisible(false);
       return;
     }

@@ -69,28 +69,40 @@ describe("Feel meUus RC1 hidden-route boundaries", () => {
     expect(html).not.toContain("<strong>");
   });
 
-  test("keeps ordinary public surfaces unchanged while retaining the direct hidden route", () => {
-    const home = readSource("src/routes/index.tsx");
-    const status = readSource("src/routes/status.tsx");
-    const privacy = readSource("src/routes/privacy.tsx");
-    const consent = readSource("src/routes/consent.tsx");
-    const navigation = readSource("src/data/navigation.ts");
-    const navbar = readSource("src/components/site/Navbar.tsx");
-    const footer = readSource("src/components/site/Footer.tsx");
-    const route = readSource("src/routes/soulai-test.tsx");
-    const routeTree = readSource("src/routeTree.gen.ts");
+test("keeps non-home public surfaces unchanged while exposing a bounded homepage gateway", () => {
+  const home = readSource("src/routes/index.tsx");
+  const status = readSource("src/routes/status.tsx");
+  const privacy = readSource("src/routes/privacy.tsx");
+  const consent = readSource("src/routes/consent.tsx");
+  const navigation = readSource("src/data/navigation.ts");
+  const navbar = readSource("src/components/site/Navbar.tsx");
+  const footer = readSource("src/components/site/Footer.tsx");
+  const route = readSource("src/routes/soulai-test.tsx");
+  const routeTree = readSource("src/routeTree.gen.ts");
 
-    expect(route).toContain('createFileRoute("/soulai-test")');
-    expect(route).toContain("noindex,nofollow");
-    expect(routeTree).toContain("'/soulai-test'");
+  expect(route).toContain('createFileRoute("/soulai-test")');
+  expect(route).toContain("noindex,nofollow");
+  expect(routeTree).toContain("'/soulai-test'");
 
-    const ordinaryPublicSurfaces = [home, status, privacy, consent, navigation, navbar, footer];
-    for (const source of ordinaryPublicSurfaces) {
-      expect(source).not.toContain("/soulai-test");
-      expect(source).not.toContain("Feel meUus");
-      expect(source).not.toContain("meUusSoulAI");
-    }
-  });
+  expect(home).toContain('to="/soulai-test"');
+  expect(home).toContain("Feel meUus");
+  expect(home).toContain("meUusSoulAI");
+
+  const ordinaryPublicSurfaces = [
+    status,
+    privacy,
+    consent,
+    navigation,
+    navbar,
+    footer,
+  ];
+
+  for (const source of ordinaryPublicSurfaces) {
+    expect(source).not.toContain("/soulai-test");
+    expect(source).not.toContain("Feel meUus");
+    expect(source).not.toContain("meUusSoulAI");
+  }
+});
 
   test("uses the official client after consent and enforces reset, timeout, retry and UI-limit code paths", () => {
     const component = readSource("src/components/soulai/SoulAiPilot.tsx");
