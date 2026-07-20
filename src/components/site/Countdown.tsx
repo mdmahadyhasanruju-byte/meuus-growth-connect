@@ -10,7 +10,7 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
           aria-hidden="true"
           className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] shadow-glow-gold"
         />
-        <span className="text-[var(--gold)]">21 July 2026</span>
+        <span className="text-[var(--gold)]">Phase One</span>
         <span aria-hidden="true" className="text-foreground/40">
           —
         </span>
@@ -29,7 +29,7 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
         <span className="h-px w-10 bg-gradient-to-l from-transparent to-foreground/25" />
       </div>
       <p className="font-serif text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
-        <span className="text-[var(--gold)]">21 July 2026</span>
+        <span className="text-[var(--gold)]">Phase One</span>
         <span className="text-foreground/45"> — </span>
         Day One public foundation checkpoint
       </p>

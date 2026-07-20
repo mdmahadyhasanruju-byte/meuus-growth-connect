@@ -158,7 +158,8 @@ export default function FoundationPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground/70">
             Proposed entry points, three execution layers, and one controlled loop at a time until
-            Day One on 21 July 2026. Offline operations require evidence outside this repository.
+            The meUus Starting Point begins with Phase One. Offline operations require evidence
+            outside this repository.
           </p>
           <div className="mt-10">
             <Countdown variant="compact" />

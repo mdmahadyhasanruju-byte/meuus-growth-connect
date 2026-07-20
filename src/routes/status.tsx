@@ -58,7 +58,7 @@ const STATUS_ITEMS = [
 ] as const;
 
 const BOUNDARIES = [
-  "21 July 2026 is a Day One continuation target, not proof that the full ecosystem is complete.",
+  "Phase One is a continuation stage, not proof that the full ecosystem is complete.",
   "The public /status, /join, and /journey routes are live. This does not verify a backend, operating program, or future platform services.",
   "Journey remains a bounded first-slice prototype even though preference confirmation and the local browser clear/restart control are completed and live verified.",
   "Internal source-of-truth and archive inventory documents exist. They preserve evidence and do not make old materials production truth.",
@@ -119,7 +119,7 @@ function StatusPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">Day One</p>
             <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
-              21 July 2026 marks a beginning.
+              The meUus Starting Point marks a beginning.
             </h2>
             <p className="mt-5 leading-relaxed text-foreground/70">
               Day One should be understood as truthful continuation: a public informational website,

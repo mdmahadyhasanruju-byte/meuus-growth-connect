@@ -65,7 +65,7 @@ const PHASES = [
     body: "Foundation building, founding team recruitment, partnerships, content.",
   },
   {
-    t: "21 July 2026 — Day One public foundation checkpoint",
+    t: "meUus Starting Point — Phase One",
     body: "Day One continuation: truthful public status, prototype clarity, and manually verified next steps.",
   },
   { t: "Year 1 — Product–Market Fit", body: "Retention, referral growth, revenue optimization." },
@@ -244,7 +244,7 @@ function EcosystemPage() {
         <div className="mx-auto max-w-3xl rounded-3xl border-hairline bg-card/50 p-10 text-center shadow-glow-violet">
           <h3 className="font-serif text-3xl text-foreground sm:text-4xl">Help us build it.</h3>
           <p className="mt-3 text-foreground/65">
-            Until 21 July 2026, every meaningful role is open.
+            During Phase One, every meaningful role remains open.
           </p>
           <Link
             to="/join"
