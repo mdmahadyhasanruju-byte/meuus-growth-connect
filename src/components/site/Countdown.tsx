@@ -14,7 +14,7 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
         <span aria-hidden="true" className="text-foreground/40">
           —
         </span>
-        <span>Day One public foundation checkpoint</span>
+        <span>meUus Starting Point</span>
       </div>
     );
   }
@@ -31,7 +31,7 @@ export function Countdown({ variant = "hero" }: CountdownProps) {
       <p className="font-serif text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
         <span className="text-[var(--gold)]">Phase One</span>
         <span className="text-foreground/45"> — </span>
-        Day One public foundation checkpoint
+        meUus Starting Point
       </p>
       <p className="text-sm text-foreground/60">
         Current verified status is maintained at{" "}
