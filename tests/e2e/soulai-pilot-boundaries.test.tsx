@@ -7,7 +7,7 @@ import { SafeMessage, SoulAiPilot } from "../../src/components/soulai/SoulAiPilo
 
 const projectRoot = join(import.meta.dir, "..", "..");
 
-describe("Feel meUus Day One pilot boundaries", () => {
+describe("Feel meUus RC1 hidden-route boundaries", () => {
   test("renders the dedicated pilot with active, unchecked adult and consent controls", () => {
     const html = renderToStaticMarkup(
       <SoulAiPilot
@@ -69,7 +69,7 @@ describe("Feel meUus Day One pilot boundaries", () => {
     expect(html).not.toContain("<strong>");
   });
 
-  test("adds one bounded public gateway while keeping navigation and legal surfaces free of invitations", () => {
+  test("keeps ordinary public surfaces unchanged while retaining the direct hidden route", () => {
     const home = readSource("src/routes/index.tsx");
     const status = readSource("src/routes/status.tsx");
     const privacy = readSource("src/routes/privacy.tsx");
@@ -84,17 +84,7 @@ describe("Feel meUus Day One pilot boundaries", () => {
     expect(route).toContain("noindex,nofollow");
     expect(routeTree).toContain("'/soulai-test'");
 
-    expect(home).toContain('to="/soulai-test"');
-    expect(home).toContain("Feel meUus");
-    expect(home).toContain("Experimental");
-    expect(home).toContain("Claim ≤ Evidence");
-    expect(home).toContain("me → U → us");
-    expect(home).toContain("Cannot create reminders, monitor you, contact people");
-    expect(status).toContain('to="/soulai-test"');
-    expect(status).toContain("Experimental Pilot");
-    expect(status).toContain("The complete meYoo");
-
-    const ordinaryPublicSurfaces = [privacy, consent, navigation, navbar, footer];
+    const ordinaryPublicSurfaces = [home, status, privacy, consent, navigation, navbar, footer];
     for (const source of ordinaryPublicSurfaces) {
       expect(source).not.toContain("/soulai-test");
       expect(source).not.toContain("Feel meUus");
