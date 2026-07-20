@@ -38,6 +38,12 @@ const STATUS_ITEMS = [
     body: "Journey Mode is available as a local-first, non-diagnostic first-slice prototype. It includes Knowledge Before Action, one quest, optional written reflection, and an internal checkpoint. Explicit preference confirmation and the local browser clear/restart control are completed and live verified. Journey data remains in the current browser.",
   },
   {
+    label: "Experimental Pilot",
+    icon: CircleDot,
+    title: "Feel meUus guided reflection",
+    body: "A limited, consent-gated, adults-only text reflection is available at /soulai-test. It is not therapy, diagnosis, professional advice, crisis or emergency support, a validated DLAS assessment, or the completed meYoo platform.",
+  },
+  {
     label: "Planned",
     icon: Clock3,
     title: "DLAS",
@@ -53,7 +59,7 @@ const STATUS_ITEMS = [
     label: "Not verified or live",
     icon: PauseCircle,
     title: "Platform systems",
-    body: "No backend, AI runtime, DLAS runtime, accounts, cloud storage, payments, rewards, or subscriptions are verified or live.",
+    body: "The limited SoulAI pilot does not establish a full meYoo or platform AI runtime. DLAS, accounts, cloud profiles, payments, rewards, subscriptions, and automated decisions remain unverified or not live.",
   },
 ] as const;
 
@@ -61,6 +67,7 @@ const BOUNDARIES = [
   "21 July 2026 is a Day One continuation target, not proof that the full ecosystem is complete.",
   "The public /status, /join, and /journey routes are live. This does not verify a backend, operating program, or future platform services.",
   "Journey remains a bounded first-slice prototype even though preference confirmation and the local browser clear/restart control are completed and live verified.",
+  "Feel meUus is an experimental, consent-gated text-reflection pilot. Its availability does not make the completed meYoo, DLAS, or wider AI platform live.",
   "Internal source-of-truth and archive inventory documents exist. They preserve evidence and do not make old materials production truth.",
   "DLAS must stay non-operational in public wording until it has a governed specification, evidence standard, consent model, and implementation.",
   "Founding-role and intake language should be treated as proposed or manually handled unless a reliable intake workflow is verified.",
@@ -94,7 +101,7 @@ function StatusPage() {
             title="What can be said today"
             subtitle="These labels are evidence boundaries for public copy. They are not a claim that every service is operating."
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-5">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {STATUS_ITEMS.map((item) => {
               const Icon = item.icon;
               return (
@@ -150,11 +157,11 @@ function StatusPage() {
             Where this fits · Verify
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
-            Not yet available
+            Full platform not live
           </p>
           <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">
-            No backend, AI runtime, DLAS runtime, accounts, cloud storage, payments, rewards, or
-            subscriptions are verified or live.
+            One experimental reflection pilot is available. The complete meYoo, DLAS, account,
+            cloud, payment, reward, subscription, and automated-decision systems are not live.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">
             Those systems remain future work. Public claims should stay calm, specific, and tied to
@@ -162,6 +169,12 @@ function StatusPage() {
             exist.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/soulai-test"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet"
+            >
+              View Feel meUus pilot <ArrowRight className="h-4 w-4" />
+            </Link>
             <Link
               to="/journey"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet"

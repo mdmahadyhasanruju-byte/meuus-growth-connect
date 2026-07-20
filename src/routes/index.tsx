@@ -82,26 +82,29 @@ const JOURNEY = [
   },
 ] as const;
 
-const HUBS = [
+const DOMAIN_DIRECTIONS = [
   {
-    label: "meUus",
-    title: "The Soul",
-    body: "Human-first principles: truth, dignity, privacy, responsible action, and learning before claims.",
-    href: "/" as const,
+    label: "meuus.org",
+    title: "Understand",
+    status: "Live",
+    body: "The public truth and trust foundation: understand what meUus is, what exists now, and what remains unfinished.",
+    href: "https://meuus.org/",
     accent: "from-violet-500/30 via-violet-500/5 to-transparent",
   },
   {
-    label: "meUus Ecosystem",
-    title: "The Body",
-    body: "Nine intended pillars and a future platform plan. The full operating ecosystem is not yet live.",
-    href: "/ecosystem" as const,
+    label: "meuussoul.com",
+    title: "Learn",
+    status: "Live knowledge gateway",
+    body: "A bounded path into Soul, knowledge, reflection, and Book Be. The wider learning system remains in development.",
+    href: "https://meuussoul.com/",
     accent: "from-cyan-500/30 via-cyan-500/5 to-transparent",
   },
   {
-    label: "meUus Global",
-    title: "The Reach",
-    body: "A planned path from Bangladesh toward wider reach, subject to evidence, partnerships, and responsible delivery.",
-    href: "/global" as const,
+    label: "meuus.app",
+    title: "Act",
+    status: "In Review",
+    body: "The future application direction for assessment, action, progress, and support. The complete platform is not live.",
+    href: "https://meuus.app/",
     accent: "from-amber-400/30 via-amber-400/5 to-transparent",
   },
 ];
@@ -157,15 +160,26 @@ const PUBLIC_JOURNEY = [
 const LIVE_NOW = [
   "Public website foundation",
   "Current Status page",
-  "Browser-local Journey prototype",
   "Manual expression-of-interest path",
   "Initial privacy, terms, consent, appreciation, and domain-role boundaries",
 ] as const;
 
-const NOT_LIVE_YET = [
+const EXPERIMENTAL_NOW = [
+  "Feel meUus guided-reflection pilot",
+  "Browser-local Journey prototype",
+  "Book Be working public preview",
+] as const;
+
+const IN_DEVELOPMENT = [
+  "Nine Pillars ecosystem directions",
+  "Soul and Knowledge Hub",
+  "One responsible service pathway",
+] as const;
+
+const COMING_LATER = [
   "Full app",
   "Accounts",
-  "AI runtime",
+  "Full meYoo intelligence layer",
   "DLAS runtime",
   "Cloud storage",
   "Payments",
@@ -206,6 +220,14 @@ function HomePage() {
             Connecting Everything.
           </p>
 
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gold)]/85 sm:text-sm">
+            <span>me → U → us</span>
+            <span aria-hidden="true" className="text-foreground/30">
+              ·
+            </span>
+            <span>Claim ≤ Evidence</span>
+          </div>
+
           <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
             meUus begins with a live public foundation, a browser-local Journey prototype, and the
             first Soul learning path: Knowledge Before Action. Start by learning, reflecting, and
@@ -219,7 +241,7 @@ function HomePage() {
           </p>
 
           <div className="grid w-full max-w-3xl gap-2 rounded-2xl border-hairline bg-glass p-3 text-xs text-foreground/70 sm:grid-cols-4 sm:p-4">
-            {["Understand", "Learn", "Reflect", "Choose one responsible step"].map((step, i) => (
+            {["Understand", "Learn", "Reflect", "Act responsibly"].map((step, i) => (
               <div key={step} className="flex items-center justify-center gap-2 sm:justify-start">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] font-serif text-[var(--gold)]">
                   {i + 1}
@@ -386,7 +408,7 @@ function HomePage() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               <div className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200/80">
                   Live now
@@ -401,12 +423,40 @@ function HomePage() {
                 </ul>
               </div>
 
+              <div className="rounded-2xl border border-violet-300/15 bg-violet-300/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-violet-200/80">
+                  Experimental Pilot
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/70">
+                  {EXPERIMENTAL_NOW.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-violet-200/80">·</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200/80">
+                  In Development
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/70">
+                  {IN_DEVELOPMENT.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-cyan-200/80">·</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/55">
-                  Not live yet
+                  Coming Later
                 </p>
-                <ul className="mt-4 grid gap-3 text-sm leading-6 text-foreground/60 sm:grid-cols-2">
-                  {NOT_LIVE_YET.map((item) => (
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/60">
+                  {COMING_LATER.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="text-foreground/35">·</span>
                       <span>{item}</span>
@@ -416,6 +466,65 @@ function HomePage() {
               </div>
             </div>
           </div>
+
+          <article className="relative mt-10 overflow-hidden rounded-3xl border border-violet-300/20 bg-card/55 p-6 shadow-glow-violet sm:p-9">
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
+            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div>
+                <div className="flex flex-wrap gap-2">
+                  {["Experimental", "Free Pilot", "18+", "Maximum 5 Messages"].map((label) => (
+                    <span
+                      key={label}
+                      className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-foreground/75"
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--gold)]/85">
+                  A future-facing experiment
+                </p>
+                <h3 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">Feel meUus</h3>
+                <p className="mt-2 font-serif text-xl italic text-foreground/75">
+                  meUusSoulAI — Guided Reflection Pilot
+                </p>
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-foreground/70">
+                  A short, consent-based text reflection that may help you pause, express what
+                  matters, and identify one possible next step. It is a limited experimental preview
+                  of future meYoo Reflection Mode—not the completed meYoo or meUus platform.
+                </p>
+                <Link
+                  to="/soulai-test"
+                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
+                >
+                  Begin the Experimental Reflection
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-background/45 p-5 sm:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gold)]/85">
+                  Boundaries before entry
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/68">
+                  <li>Active adult confirmation and consent are required.</li>
+                  <li>Limited text reflection only; you remain the final authority.</li>
+                  <li>
+                    Not therapy, diagnosis, medical, legal, financial, religious, crisis, or
+                    emergency support.
+                  </li>
+                  <li>
+                    Cannot create reminders, monitor you, contact people, or guarantee human review.
+                  </li>
+                  <li>
+                    Do not submit passwords, identity or payment data, exact addresses, medical
+                    documents, or another person’s confidential information.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -479,30 +588,37 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ───────── THREE VISION HUBS ───────── */}
+      {/* ───────── THREE DOMAIN DIRECTIONS ───────── */}
       <section className="relative px-4 py-32 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Three Hubs"
+            eyebrow="Three connected domain directions"
             title={
               <>
-                One vision, <em className="italic">three doors</em>
+                Understand, learn, then <em className="italic">act</em>
               </>
             }
-            subtitle="Each door separates what is available now from what remains intended or planned."
+            subtitle="One ecosystem and one truthful journey, presented through three bounded public surfaces."
           />
           <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {HUBS.map((h) => (
-              <Link
+            {DOMAIN_DIRECTIONS.map((h) => (
+              <a
                 key={h.label}
-                to={h.href}
+                href={h.href}
                 className="group relative overflow-hidden rounded-3xl border-hairline bg-card/40 p-8 transition hover:border-white/15 hover:bg-card/60"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${h.accent} opacity-60 transition group-hover:opacity-100`}
                 />
                 <div className="relative">
-                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/55">{h.label}</p>
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-xs uppercase tracking-[0.3em] text-foreground/55">
+                      {h.label}
+                    </p>
+                    <span className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-foreground/65">
+                      {h.status}
+                    </span>
+                  </div>
                   <h3 className="mt-4 font-serif text-4xl">{h.title}</h3>
                   <p className="mt-3 text-foreground/70">{h.body}</p>
                   <div className="mt-8 inline-flex items-center gap-1 text-sm text-foreground/85">
@@ -510,7 +626,7 @@ function HomePage() {
                     <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
