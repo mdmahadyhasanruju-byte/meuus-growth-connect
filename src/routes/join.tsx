@@ -59,7 +59,7 @@ function JoinPage() {
         />
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
-            Founding Phase · Manual Intake Until 21 July 2026
+            Phase One · Manual Intake
           </div>
           <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
             Join the <span className="italic text-gradient-violet">founding</span> journey

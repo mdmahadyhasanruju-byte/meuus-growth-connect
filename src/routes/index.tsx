@@ -416,6 +416,65 @@ function HomePage() {
               </div>
             </div>
           </div>
+
+          <article className="relative mt-10 overflow-hidden rounded-3xl border border-violet-300/20 bg-card/55 p-6 shadow-glow-violet sm:p-9">
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
+            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div>
+                <div className="flex flex-wrap gap-2">
+                  {["Experimental", "Free Pilot", "18+", "Maximum 5 Messages"].map((label) => (
+                    <span
+                      key={label}
+                      className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-foreground/75"
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--gold)]/85">
+                  A future-facing experiment
+                </p>
+                <h3 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">Feel meUus</h3>
+                <p className="mt-2 font-serif text-xl italic text-foreground/75">
+                  meUusSoulAI — Guided Reflection Pilot
+                </p>
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-foreground/70">
+                  A short, consent-based text reflection that may help you pause, express what
+                  matters, and identify one possible next step. It is a limited experimental preview
+                  of future meYoo Reflection Mode—not the completed meYoo or meUus platform.
+                </p>
+                <Link
+                  to="/soulai-test"
+                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
+                >
+                  Begin the Experimental Reflection
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-background/45 p-5 sm:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gold)]/85">
+                  Boundaries before entry
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/68">
+                  <li>Active adult confirmation and consent are required.</li>
+                  <li>Limited text reflection only; you remain the final authority.</li>
+                  <li>
+                    Not therapy, diagnosis, medical, legal, financial, religious, crisis, or
+                    emergency support.
+                  </li>
+                  <li>
+                    Cannot create reminders, monitor you, contact people, or guarantee human review.
+                  </li>
+                  <li>
+                    Do not submit passwords, identity or payment data, exact addresses, medical
+                    documents, or another person’s confidential information.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

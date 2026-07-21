@@ -79,7 +79,7 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-3 pt-6 text-xs text-foreground/50 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} meUus. Founder: Md. Mahady Hasan.</p>
-          <p>Day One truth status · 21 July 2026 · Alhamdulillah · InShaAllah</p>
+          <p>meUus Starting Point · Phase One · Alhamdulillah · InShaAllah</p>
         </div>
       </div>
     </footer>
