@@ -1,9 +1,9 @@
 ﻿# Wave P1 — Public Truth Route Alignment
 ## Independent Acceptance Record
 
-**Project:** meUus Unified Ecosystem  
-**Domain:** meuus.org  
-**Wave:** P1 — Public Truth Route Alignment  
+**Project:** meUus Unified Ecosystem
+**Domain:** meuus.org
+**Wave:** P1 — Public Truth Route Alignment
 **Acceptance date:** 2026-08-10
 
 ## Verdict
