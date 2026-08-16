@@ -197,10 +197,18 @@ function HomePage() {
             Live Public Foundation · Founding Phase
           </div>
 
-          <h1 className="font-serif text-[clamp(3.5rem,12vw,11rem)] font-medium leading-[0.95] tracking-tight">
-            <span className="text-gradient-violet">me</span>
-            <span className="text-foreground">Uus</span>
-          </h1>
+          <h1 className="sr-only">meUus — Connecting Everything</h1>
+
+          <figure className="relative w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-black/30 shadow-2xl">
+            <img
+              src="/assets/meuus-mountain-hero.png"
+              alt="meUus — Start with me. Grow with U. Build us."
+              className="block h-auto w-full"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+          </figure>
 
           <p className="font-serif text-2xl italic text-foreground/85 sm:text-3xl md:text-4xl">
             Connecting Everything.
