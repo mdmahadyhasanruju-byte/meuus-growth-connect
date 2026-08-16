@@ -12,6 +12,7 @@ export const EXPLORER_NAVIGATION_GROUPS = [
     title: "Start Here",
     links: [
       { to: "/", label: "meUus Home" },
+      { to: "/start", label: "Start with meUus" },
       { to: "/knowledge-before-action", label: "Knowledge Before Action" },
       { to: "/one-word-start", label: "One Word Start" },
       { to: "/journey", label: "Journey", status: "Prototype · browser-local" },
@@ -48,6 +49,10 @@ export const EXPLORER_NAVIGATION_GROUPS = [
     title: "Project Reality",
     links: [
       { to: "/status", label: "Current Status", status: "Truth board" },
+      { to: "/evidence", label: "Evidence", status: "Public record guide" },
+      { to: "/safety", label: "Safety", status: "Public boundary" },
+      { to: "/accessibility", label: "Accessibility", status: "Current commitment" },
+      { to: "/about", label: "About meUus" },
       { to: "/privacy", label: "Privacy", status: "Initial public boundary" },
       { to: "/terms", label: "Terms", status: "Initial public boundary" },
       { to: "/consent", label: "Consent", status: "Initial public boundary" },

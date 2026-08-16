@@ -591,7 +591,7 @@ function SoulPage() {
               <Library className="h-6 w-6" />
             </div>
             <h2 className="font-serif text-3xl text-foreground">
-              DLAS — Deep Life Assessment System
+              DLAS — Development Lens and Assessment System
             </h2>
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-primary">
               Concept / architecture direction / reflection sample only

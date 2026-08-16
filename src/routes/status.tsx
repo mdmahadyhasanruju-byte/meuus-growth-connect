@@ -41,7 +41,7 @@ const STATUS_ITEMS = [
     label: "Planned",
     icon: Clock3,
     title: "DLAS",
-    body: "The Deep Life Assessment System is a future assessment and guidance concept. This repository does not yet contain a DLAS engine, schema, scoring model, validation method, consent model, or Journey integration contract.",
+    body: "The Development Lens and Assessment System is a future assessment and guidance concept. This repository does not yet contain a DLAS engine, schema, scoring model, validation method, consent model, or Journey integration contract.",
   },
   {
     label: "In development",

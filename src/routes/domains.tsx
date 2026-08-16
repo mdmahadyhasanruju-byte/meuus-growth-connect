@@ -11,12 +11,12 @@ export const Route = createFileRoute("/domains")({
       {
         name: "description",
         content:
-          "A truth-bounded guide to the intended roles of meuus.org, meuussoul.com, and meuus.app.",
+          "A truth-bounded guide to the intended roles of meuus.org, meuussoul.com, meuus.app, and rujbel.org.",
       },
       { property: "og:title", content: "meUus Domains" },
       {
         property: "og:description",
-        content: "Three public directions, one developing ecosystem.",
+        content: "Four public directions, one developing ecosystem.",
       },
     ],
   }),
@@ -26,9 +26,9 @@ export const Route = createFileRoute("/domains")({
 const DOMAINS = [
   {
     domain: "meuus.org",
-    label: "Public foundation",
+    label: "Understand",
     status: "Live public gateway",
-    summary: "The main public explanation and trust gateway for the developing meUus ecosystem.",
+    summary: "The public truth and orientation surface for the developing meUus ecosystem.",
     points: [
       "Hosts the current verified public pages.",
       "Explains project status, founder direction, foundation, ecosystem, Journey, and public trust boundaries.",
@@ -43,10 +43,9 @@ const DOMAINS = [
   },
   {
     domain: "meuussoul.com",
-    label: "Soul identity and learning layer",
+    label: "Learn",
     status: "Knowledge Hub starting layer",
-    summary:
-      "The connected Soul identity for learning, reflection, writing, book, and the Knowledge Hub starting layer.",
+    summary: "The reviewed knowledge and learning surface for the developing meUus ecosystem.",
     points: [
       "Currently represented safely through the meUus Soul gateway on meuus.org.",
       "Older or archived Soul material requires review before reuse and is not current production truth.",
@@ -60,10 +59,10 @@ const DOMAINS = [
   },
   {
     domain: "meuus.app",
-    label: "Future app direction",
+    label: "Reflect + Act",
     status: "Gateway · future direction",
     summary:
-      "The intended future product and app surface, currently represented by a bounded public gateway.",
+      "The intended product and workspace surface, currently represented by a bounded public gateway.",
     points: [
       "The current safe public gateway is meuus.org/app.",
       "The current verified Journey is browser-local.",
@@ -74,6 +73,23 @@ const DOMAINS = [
       { to: "/journey", label: "Journey" },
       { to: "/privacy", label: "Privacy" },
       { to: "/consent", label: "Consent" },
+    ],
+  },
+  {
+    domain: "rujbel.org",
+    label: "Founder archive + evidence chronicle",
+    status: "Archive direction",
+    summary:
+      "The founder and project history surface for evidence, decisions, corrections, and continuation records.",
+    points: [
+      "Intended to preserve selected founder and project history as a separate public archive direction.",
+      "Intended to chronicle evidence, decisions, corrections, and continuation records without replacing current status evidence.",
+      "Its bounded role does not make private records, credentials, or unreviewed source material public.",
+    ],
+    links: [
+      { to: "/founder", label: "Founder" },
+      { to: "/evidence", label: "Evidence" },
+      { to: "/status", label: "Status" },
     ],
   },
 ] as const;
@@ -125,7 +141,7 @@ function DomainsPage() {
             meUus <span className="italic text-gradient-violet">Domains</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-            Three public directions, one developing ecosystem.
+            Four public directions, one developing ecosystem.
           </p>
         </div>
       </section>
