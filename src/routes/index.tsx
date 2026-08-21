@@ -1,797 +1,563 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ParticleCanvas } from "@/components/site/ParticleCanvas";
-import { AnimatedOrb } from "@/components/site/AnimatedOrb";
-import { Countdown } from "@/components/site/Countdown";
-import { SectionHeading } from "@/components/site/SectionHeading";
-import { PILLARS } from "@/data/pillars";
-import { ROLES } from "@/data/roles";
-import { ArrowRight, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Check,
+  CheckCircle2,
+  ChevronRight,
+  CircleUserRound,
+  Compass,
+  ExternalLink,
+  Fingerprint,
+  LayoutDashboard,
+  LockKeyhole,
+  Map,
+  MessageCircleMore,
+  Route as RouteIcon,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "meUus — Connecting Everything" },
+      { title: "meUus — Start with clarity" },
       {
         name: "description",
         content:
-          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
+          "Start with understanding, learn what matters, reflect privately, and choose one responsible next step with meUus.",
       },
-      { property: "og:title", content: "meUus — Connecting Everything" },
+      { property: "og:title", content: "meUus — Start with clarity" },
       {
         property: "og:description",
         content:
-          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
+          "A bounded public foundation and authenticated app pilot for learning, reflection, and responsible next steps.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "meUus",
-          description:
-            "A Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
-          founder: { "@type": "Person", name: "Md. Mahady Hasan" },
-          areaServed: "Bangladesh",
-          slogan: "Connecting Everything",
-        }),
-      },
     ],
   }),
   component: HomePage,
 });
 
-const JOURNEY = [
-  {
-    num: "01",
-    title: "Foundation",
-    body: "Live now: public pages, a current status record, and clear evidence boundaries on meuus.org.",
-    href: "/status",
-    linkLabel: "Visit Status",
-  },
-  {
-    num: "02",
-    title: "Knowledge Before Action",
-    body: "Browser-local prototype: pause, learn, reflect, and choose responsibly in one bounded first slice.",
-    href: "/journey",
-    linkLabel: "Start Journey",
-  },
-  {
-    num: "03",
-    title: "Ecosystem",
-    body: "In development: nine intended pillars describe the vision, not a fully operating ecosystem.",
-    href: "/ecosystem",
-    linkLabel: "Learn the vision",
-  },
-  {
-    num: "04",
-    title: "Platform",
-    body: "A bounded meuus.app production pilot now provides sign-in, Dashboard, Profile, Growth Paths, and session restoration. Public AI, DLAS runtime, payments, rewards, and subscriptions are not live.",
-    href: "/status",
-    linkLabel: "See boundaries",
-  },
-  {
-    num: "05",
-    title: "Global",
-    body: "Future vision: begin in Bangladesh and consider wider reach only after evidence and responsible delivery.",
-    href: "/global",
-    linkLabel: "Future vision",
-  },
+const PROOF_POINTS = [
+  "Live public foundation",
+  "Verified app sign-in",
+  "Session restoration",
+  "Claim ≤ Evidence",
 ] as const;
 
-const HUBS = [
+const STARTING_PATHS = [
   {
-    label: "meUus",
-    title: "The Soul",
-    body: "Human-first principles: truth, dignity, privacy, responsible action, and learning before claims.",
-    href: "/" as const,
-    accent: "from-violet-500/30 via-violet-500/5 to-transparent",
-  },
-  {
-    label: "meUus Ecosystem",
-    title: "The Body",
-    body: "Nine intended pillars and a future platform plan. The full operating ecosystem is not yet live.",
-    href: "/ecosystem" as const,
-    accent: "from-cyan-500/30 via-cyan-500/5 to-transparent",
-  },
-  {
-    label: "meUus Global",
-    title: "The Reach",
-    body: "A planned path from Bangladesh toward wider reach, subject to evidence, partnerships, and responsible delivery.",
-    href: "/global" as const,
-    accent: "from-amber-400/30 via-amber-400/5 to-transparent",
-  },
-];
-
-const START_EXPLORING = [
-  {
-    group: "Start Here",
-    href: "/knowledge-before-action",
-    title: "Knowledge Before Action",
-    description:
-      "Understand what is known, unknown, felt, assumed, and responsibly possible before moving forward.",
-    secondaryHref: "/one-word-start",
-    secondaryLabel: "Begin with one word",
-  },
-  {
-    group: "Current Journey",
-    href: "/journey",
-    title: "Journey",
-    status: "Live · browser-local",
-    description:
-      "The current bounded first-slice experience. It stores progress in the browser and does not provide automated analysis or decisions.",
-  },
-  {
-    group: "Knowledge & Reflection",
-    href: "/soul",
-    title: "meUus Soul",
-    status: "Knowledge Hub starting layer",
-    description:
-      "A live Soul learning layer and public Knowledge Hub starting point, updating gradually. The current book is a working public preview, not final publication.",
-    secondaryHref: "/book",
-    secondaryLabel: "Read Be — The Starting Point",
-  },
-  {
-    group: "App Direction",
-    href: "/app",
+    eyebrow: "Live bounded pilot",
     title: "meUus App",
-    status: "Current bounded pilot",
     description:
-      "The public meuus.app pilot now supports sign-in, Dashboard, Profile, Growth Paths, session restoration, and sign-out. Public AI analysis, DLAS runtime, payments, subscriptions, rewards, and automated decisions are not live.",
+      "Sign in, return to your Dashboard and Profile, and continue through Growth Paths with session restoration.",
+    href: "https://www.meuus.app/",
+    external: true,
+    icon: LayoutDashboard,
+    accent: "bg-[#7157ff]",
+    panel: "bg-[#efeaff]",
+  },
+  {
+    eyebrow: "Learning layer",
+    title: "meUus Soul",
+    description:
+      "Begin with source-labelled learning, Knowledge Before Action, and a private moment of reflection.",
+    href: "/soul",
+    external: false,
+    icon: BookOpen,
+    accent: "bg-[#ff6f4d]",
+    panel: "bg-[#fff0e9]",
+  },
+  {
+    eyebrow: "Browser-local prototype",
+    title: "Journey",
+    description:
+      "Understand what is present, record an optional reflection locally, and choose one responsible next step.",
+    href: "/journey",
+    external: false,
+    icon: RouteIcon,
+    accent: "bg-[#19a974]",
+    panel: "bg-[#e8f8f1]",
   },
 ] as const;
 
-const PUBLIC_JOURNEY = [
-  { label: "Understand", to: "/" },
-  { label: "Verify", to: "/status" },
-  { label: "Learn", to: "/soul" },
-  { label: "Read", to: "/book" },
-  { label: "Reflect", to: "/knowledge-before-action" },
-  { label: "Journey", to: "/journey" },
-  { label: "Future Direction", to: "/ecosystem" },
+const STEPS = [
+  [
+    "01",
+    "Understand",
+    "Name what is present without turning a feeling, question, or difficulty into a diagnosis.",
+    Compass,
+  ],
+  [
+    "02",
+    "Learn",
+    "Use bounded, source-labelled material to understand the situation before choosing action.",
+    BookOpen,
+  ],
+  [
+    "03",
+    "Reflect",
+    "Pause privately, separate facts from assumptions, and notice what matters most right now.",
+    MessageCircleMore,
+  ],
+  [
+    "04",
+    "Choose one step",
+    "Move forward responsibly, including manual support or referral where that is more appropriate.",
+    ArrowRight,
+  ],
 ] as const;
 
-const LIVE_NOW = [
-  "Public website foundation",
-  "Current Status page",
-  "Browser-local Journey prototype",
-  "Bounded meuus.app production pilot with authentication, Dashboard, Profile, Growth Paths, and session restoration",
-  "Manual expression-of-interest path",
-  "Initial privacy, terms, consent, appreciation, and domain-role boundaries",
+const BOUNDARIES = [
+  "No public AI analysis",
+  "No live DLAS scoring runtime",
+  "No automated decisions",
+  "No payments, rewards, or subscriptions",
+  "No diagnosis or professional advice",
+  "No claim of validated outcomes",
 ] as const;
 
-const NOT_LIVE_YET = [
-  "Public AI runtime",
-  "DLAS runtime",
-  "Payments",
-  "Rewards/subscriptions",
-  "Automated decisions",
-  "Validated outcomes",
-  "Full operating ecosystem",
-] as const;
+function ProductPreview() {
+  const previewNavigation = [
+    [LayoutDashboard, "Dashboard", true],
+    [CircleUserRound, "Profile", false],
+    [Map, "Growth Paths", false],
+  ] as const;
+
+  return (
+    <div className="relative mx-auto w-full max-w-[42rem] lg:mx-0">
+      <div className="absolute -left-10 top-16 h-36 w-36 rounded-full bg-[#ffc94a]/55 blur-3xl" />
+      <div className="absolute -right-8 bottom-8 h-44 w-44 rounded-full bg-[#8f7bff]/40 blur-3xl" />
+      <div className="relative overflow-hidden rounded-[2rem] border border-slate-950/10 bg-white shadow-[0_32px_90px_rgba(30,24,65,0.18)]">
+        <div className="flex items-center justify-between border-b border-slate-950/8 px-4 py-3 sm:px-5">
+          <div className="flex gap-2" aria-hidden="true">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff6f4d]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffc94a]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#19a974]" />
+          </div>
+          <span className="rounded-full bg-slate-950/[0.04] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Illustrative interface
+          </span>
+        </div>
+
+        <div className="grid min-h-[26rem] grid-cols-[4.8rem_1fr] sm:grid-cols-[10.5rem_1fr]">
+          <aside className="border-r border-slate-950/8 bg-[#faf9f6] p-3 sm:p-4">
+            <div className="flex items-center gap-2 px-1 py-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-950 text-sm font-bold text-white">
+                U
+              </span>
+              <span className="hidden text-sm font-bold text-slate-900 sm:inline">meUus</span>
+            </div>
+            <div className="mt-5 space-y-2">
+              {previewNavigation.map(([Icon, label, active]) => (
+                <div
+                  key={label}
+                  className={`flex min-h-11 items-center gap-2 rounded-xl px-2.5 text-xs font-semibold sm:px-3 ${
+                    active ? "bg-[#7157ff] text-white" : "text-slate-500"
+                  }`}
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <span className="hidden sm:inline">{label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-24 hidden rounded-2xl border border-slate-950/8 bg-white p-3 sm:block">
+              <div className="flex items-center gap-2 text-[0.68rem] font-semibold text-slate-700">
+                <LockKeyhole className="h-3.5 w-3.5 text-[#19a974]" /> Session restored
+              </div>
+              <p className="mt-1.5 text-[0.62rem] leading-4 text-slate-500">
+                Return to your authenticated space.
+              </p>
+            </div>
+          </aside>
+
+          <div className="bg-white p-4 sm:p-6">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#7157ff]">
+                  Your starting point
+                </p>
+                <h2 className="mt-2 font-sans text-xl font-bold tracking-tight text-slate-950 sm:text-2xl">
+                  Welcome back.
+                </h2>
+                <p className="mt-1 text-xs text-slate-500">Continue with clarity.</p>
+              </div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#efeaff] text-[#7157ff]">
+                <CircleUserRound className="h-5 w-5" />
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-slate-950 p-4 text-white sm:p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-white/55">
+                    Current path
+                  </p>
+                  <p className="mt-2 text-base font-semibold">Knowledge Before Action</p>
+                </div>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-slate-950">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+              <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-white/15">
+                <div className="h-full w-2/5 rounded-full bg-[#8f7bff]" />
+              </div>
+              <p className="mt-2 text-[0.65rem] text-white/55">A bounded learning path</p>
+            </div>
+
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-slate-950/8 bg-[#fff8df] p-4">
+                <Fingerprint className="h-5 w-5 text-[#b27b00]" />
+                <p className="mt-8 text-sm font-bold text-slate-900">Profile</p>
+                <p className="mt-1 text-[0.68rem] leading-4 text-slate-500">
+                  Your authenticated record.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-950/8 bg-[#e8f8f1] p-4">
+                <Map className="h-5 w-5 text-[#13825a]" />
+                <p className="mt-8 text-sm font-bold text-slate-900">Growth Paths</p>
+                <p className="mt-1 text-[0.68rem] leading-4 text-slate-500">
+                  Continue one path at a time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute -bottom-5 -left-3 hidden items-center gap-3 rounded-2xl border border-slate-950/10 bg-white px-4 py-3 shadow-xl sm:flex">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8f8f1] text-[#13825a]">
+          <CheckCircle2 className="h-5 w-5" />
+        </span>
+        <span>
+          <span className="block text-xs font-bold text-slate-900">Bounded pilot</span>
+          <span className="block text-[0.65rem] text-slate-500">Verified authenticated flow</span>
+        </span>
+      </div>
+    </div>
+  );
+}
 
 function HomePage() {
   return (
-    <div className="relative isolate overflow-hidden">
-      {/* ───────── HERO ───────── */}
-      <section className="relative flex min-h-[100svh] flex-col items-center justify-center px-4 pt-32 pb-20 text-center sm:px-6">
-        <ParticleCanvas density={80} />
-        <AnimatedOrb className="left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2" size={900} />
-        <AnimatedOrb
-          className="bottom-0 right-0 translate-x-1/3 translate-y-1/3"
-          color="oklch(0.78 0.15 200)"
-          size={500}
+    <div className="relative overflow-hidden bg-[#f7f6f2] text-slate-950">
+      <section className="relative isolate min-h-[100svh] overflow-hidden px-4 pb-20 pt-28 sm:px-6 lg:pb-20 lg:pt-28">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-20 opacity-55 [background-image:radial-gradient(rgba(15,23,42,0.13)_1px,transparent_1px)] [background-size:22px_22px]"
         />
-        <AnimatedOrb
-          className="top-10 left-0 -translate-x-1/3"
-          color="oklch(0.82 0.13 80)"
-          size={400}
-        />
+        <div className="absolute -left-32 top-24 -z-10 h-80 w-80 rounded-full bg-[#ffd55a]/40 blur-3xl" />
+        <div className="absolute right-[-10rem] top-[-8rem] -z-10 h-[30rem] w-[30rem] rounded-full bg-[#a996ff]/30 blur-3xl" />
 
-        <div className="relative z-10 flex flex-col items-center gap-8 animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
-            <Sparkles className="h-3 w-3 text-[var(--gold)]" />
-            Live Public Foundation · Founding Phase
-          </div>
-
-          <h1 className="sr-only">meUus — Connecting Everything</h1>
-
-          <figure className="relative w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-black/30 shadow-2xl">
-            <img
-              src="/assets/meuus-mountain-hero.png"
-              alt="meUus — Start with me. Grow with U. Build us."
-              className="block h-auto w-full"
-              loading="eager"
-              fetchPriority="high"
-            />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-          </figure>
-
-          <p className="font-serif text-2xl italic text-foreground/85 sm:text-3xl md:text-4xl">
-            Connecting Everything.
-          </p>
-
-          <p className="max-w-2xl text-base text-foreground/65 sm:text-lg">
-            meUus begins with a live public foundation, a browser-local Journey prototype, and the
-            first Soul learning path: Knowledge Before Action. Start by learning, reflecting, and
-            choosing one responsible next step. No account is required. Journey progress stays in
-            this browser.
-          </p>
-
-          <p className="max-w-2xl text-sm leading-6 text-foreground/55">
-            Connecting knowledge, reflection, family, work, wellbeing, community, and future
-            responsibility — one careful step at a time.
-          </p>
-
-          <div className="grid w-full max-w-3xl gap-2 rounded-2xl border-hairline bg-glass p-3 text-xs text-foreground/70 sm:grid-cols-4 sm:p-4">
-            {["Understand", "Learn", "Reflect", "Choose one responsible step"].map((step, i) => (
-              <div key={step} className="flex items-center justify-center gap-2 sm:justify-start">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] font-serif text-[var(--gold)]">
-                  {i + 1}
-                </span>
-                <span className="font-medium">{step}</span>
-              </div>
-            ))}
-          </div>
-
-          <Countdown />
-
-          <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-            <Link
-              to="/journey"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.03] sm:w-auto"
-            >
-              Start Journey
-              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              to="/status"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
-            >
-              Visit Status
-            </Link>
-            <Link
-              to="/ecosystem"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground transition hover:bg-white/10 sm:w-auto"
-            >
-              Learn the Vision
-            </Link>
-          </div>
-
-          <p className="mt-10 text-[0.6rem] font-medium uppercase tracking-[0.5em] text-foreground/30">
-            Bismillah · Built for Humanity
-          </p>
-        </div>
-
-        {/* fade to next */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
-      </section>
-
-      {/* ───────── START EXPLORING ───────── */}
-      <section className="relative px-4 py-14 sm:px-6">
-        <div className="mx-auto max-w-7xl rounded-3xl border-hairline bg-card/40 p-6 sm:p-8">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--gold)]/85">
-              Where the public routes fit
+        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+          <div className="animate-fade-up">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-950/10 bg-white/80 px-3.5 py-2 text-[0.68rem] font-bold uppercase tracking-[0.17em] text-slate-700 shadow-sm backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-[#19a974]" /> Public foundation + bounded app
+              pilot
+            </div>
+            <h1 className="mt-6 max-w-3xl font-sans text-[clamp(3rem,5.6vw,5.4rem)] font-bold leading-[0.96] tracking-[-0.06em] text-slate-950">
+              Start with clarity.<span className="mt-2 block text-[#7157ff]">Move with care.</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              meUus connects learning, private reflection, and one responsible next step—without
+              pretending that every part of the wider vision is already live.
             </p>
-            <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
-              Continue through one truthful public journey.
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-foreground/65">
-              Begin with what meUus is, verify what is live, then move through learning, reading,
-              reflection, the browser-local Journey, and clearly labelled future direction.
-            </p>
-          </div>
-          <nav
-            aria-label="meUus public foundation journey"
-            className="mt-7 grid gap-2 sm:grid-cols-2 lg:grid-cols-7"
-          >
-            {PUBLIC_JOURNEY.map((step, index) => (
-              <Link
-                key={step.label}
-                to={step.to}
-                className="group flex min-h-20 items-center justify-between rounded-2xl border border-white/8 bg-background/35 px-4 py-3 transition hover:border-white/15 hover:bg-white/[0.05] lg:flex-col lg:items-start"
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="https://www.meuus.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-sm font-bold text-white shadow-[0_16px_40px_rgba(15,23,42,0.2)] transition hover:-translate-y-0.5 hover:bg-[#7157ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7157ff] focus-visible:ring-offset-2"
               >
-                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[var(--gold)]/75">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="text-sm font-medium text-foreground/80 transition group-hover:text-foreground">
-                  {step.label}
-                </span>
-              </Link>
-            ))}
-          </nav>
+                Open meUus App{" "}
+                <ExternalLink className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href="#how-it-works"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-950/15 bg-white/70 px-6 py-3.5 text-sm font-bold text-slate-900 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7157ff] focus-visible:ring-offset-2"
+              >
+                See how it works <ChevronRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-slate-500">
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-[#13825a]" /> Claim ≤ Evidence
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <LockKeyhole className="h-4 w-4 text-[#13825a]" /> Privacy-conscious boundaries
+              </span>
+            </div>
+          </div>
+          <ProductPreview />
         </div>
       </section>
 
-      <section className="relative px-4 py-20 sm:px-6">
+      <section
+        aria-label="Verified current state"
+        className="border-y border-slate-950/10 bg-white"
+      >
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-slate-950/8 px-4 sm:px-6 md:grid-cols-4 md:divide-y-0">
+          {PROOF_POINTS.map((point) => (
+            <div
+              key={point}
+              className="flex min-h-24 items-center gap-2 px-4 py-5 text-sm font-bold text-slate-700 md:justify-center"
+            >
+              <Check className="h-4 w-4 shrink-0 text-[#19a974]" /> {point}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-4 py-24 sm:px-6 lg:py-32">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="font-serif text-xs uppercase tracking-[0.35em] text-[var(--gold)]/80">
-              Public gateways
-            </p>
-            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
-              Start exploring meUus
-            </h2>
-            <p className="mt-5 text-base leading-7 text-foreground/65 sm:text-lg">
-              Begin with the current public foundation, then move through the developing knowledge,
-              book, and app gateways. Each path is labelled by what is live, planned, or still in
-              development.
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#7157ff]">
+                One vision. Clear starting points.
+              </p>
+              <h2 className="mt-5 max-w-3xl font-sans text-4xl font-bold leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-6xl">
+                Begin where you are.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-slate-600 lg:justify-self-end">
+              The public foundation, app pilot, learning layer, and Journey have different evidence
+              levels. Each path below tells you what it is before you enter.
             </p>
           </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {START_EXPLORING.map((item) => (
-              <article
-                key={item.group}
-                className="group flex min-h-[19rem] flex-col rounded-2xl border-hairline bg-card/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] transition hover:border-white/15 hover:bg-card/65"
-              >
-                <div className="flex min-h-8 items-center justify-between gap-3">
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--gold)]/85">
-                    {item.group}
-                  </p>
-                  {"status" in item ? (
-                    <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[0.62rem] font-medium uppercase tracking-[0.14em] text-foreground/70">
-                      {item.status}
-                    </span>
-                  ) : null}
-                </div>
-
-                <Link
-                  to={item.href}
-                  className="mt-6 inline-flex items-start justify-between gap-4 text-left"
-                >
-                  <span className="font-serif text-2xl leading-tight text-foreground">
-                    {item.title}
-                  </span>
-                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-[var(--gold)] transition group-hover:translate-x-0.5" />
-                </Link>
-
-                <p className="mt-4 flex-1 text-sm leading-6 text-foreground/65">
-                  {item.description}
-                </p>
-
-                {"secondaryHref" in item ? (
-                  <Link
-                    to={item.secondaryHref}
-                    className="mt-6 inline-flex items-center gap-1 text-sm text-[var(--gold)] hover:text-foreground"
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {STARTING_PATHS.map((path) => {
+              const Icon = path.icon;
+              const content = (
+                <>
+                  <div
+                    className={`flex h-14 w-14 items-center justify-center rounded-2xl ${path.panel}`}
                   >
-                    {item.secondaryLabel}
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                ) : null}
+                    <span
+                      className={`flex h-9 w-9 items-center justify-center rounded-xl text-white ${path.accent}`}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </span>
+                  </div>
+                  <p className="mt-10 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-slate-500">
+                    {path.eyebrow}
+                  </p>
+                  <h3 className="mt-3 font-sans text-2xl font-bold tracking-[-0.035em] text-slate-950">
+                    {path.title}
+                  </h3>
+                  <p className="mt-4 min-h-24 text-sm leading-6 text-slate-600">
+                    {path.description}
+                  </p>
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-slate-950">
+                    Enter{" "}
+                    {path.external ? (
+                      <ExternalLink className="h-4 w-4" />
+                    ) : (
+                      <ArrowRight className="h-4 w-4" />
+                    )}
+                  </span>
+                </>
+              );
+              const classes =
+                "group rounded-[1.75rem] border border-slate-950/10 bg-white p-7 shadow-[0_18px_55px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(15,23,42,0.12)] sm:p-8";
+              return path.external ? (
+                <a
+                  key={path.title}
+                  href={path.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes}
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link key={path.title} to={path.href} className={classes}>
+                  {content}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="bg-slate-950 px-4 py-24 text-white sm:px-6 lg:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#a996ff]">
+                Understand → Learn → Reflect → Act
+              </p>
+              <h2 className="mt-5 font-sans text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-6xl">
+                One careful loop.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-white/60 lg:justify-self-end">
+              meUus does not begin by scoring a person. It begins by helping someone slow down,
+              understand the situation, and choose responsibly.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 md:grid-cols-2 xl:grid-cols-4">
+            {STEPS.map(([number, title, body, Icon]) => (
+              <article key={number} className="bg-slate-950 p-7 sm:p-8">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-[0.2em] text-white/35">{number}</span>
+                  <Icon className="h-5 w-5 text-[#a996ff]" />
+                </div>
+                <h3 className="mt-16 font-sans text-2xl font-bold tracking-[-0.03em]">{title}</h3>
+                <p className="mt-4 text-sm leading-6 text-white/55">{body}</p>
               </article>
             ))}
           </div>
-
-          <p className="mt-8 max-w-4xl text-sm leading-6 text-foreground/55">
-            For the current verified state of meUus, see the public{" "}
-            <Link to="/status" className="text-[var(--gold)] hover:text-foreground">
-              Status page
+          <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <p className="max-w-3xl text-sm leading-6 text-white/65">
+              The current Journey is browser-local. The authenticated app pilot and the Journey are
+              separate evidenced surfaces; neither proves a complete ecosystem.
+            </p>
+            <Link
+              to="/status"
+              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-950"
+            >
+              Verify status <ArrowRight className="h-4 w-4" />
             </Link>
-            . Joining remains a{" "}
-            <Link to="/join" search={{}} className="text-[var(--gold)] hover:text-foreground">
-              manual expression of interest
-            </Link>{" "}
-            with manual review and no guaranteed role, payment, equity, opportunity, salary, or
-            outcome.
-          </p>
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-10 rounded-3xl border-hairline bg-card/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] sm:p-8">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="font-serif text-xs uppercase tracking-[0.35em] text-[var(--gold)]/80">
-                  Public boundary
-                </p>
-                <h3 className="mt-3 font-serif text-3xl text-foreground">What is live today?</h3>
-              </div>
-              <p className="max-w-2xl text-sm leading-6 text-foreground/60">
-                Day One continuation is a public foundation and truthful beginning for
-                evidence-building, not proof that every part of the wider vision is already live.
+      <section className="bg-white px-4 py-24 sm:px-6 lg:py-32">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#ff6f4d]">
+              Truth is a product feature
+            </p>
+            <h2 className="mt-5 font-sans text-4xl font-bold leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-6xl">
+              Clear about what is not live.
+            </h2>
+            <p className="mt-7 max-w-xl text-base leading-7 text-slate-600">
+              A polished interface should make capability boundaries easier to understand—not hide
+              them. These limits remain visible while the wider architecture is developed.
+            </p>
+            <Link
+              to="/evidence"
+              className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#fff0e9] px-5 py-3 text-sm font-bold text-[#9b3e24] transition hover:bg-[#ffe5db]"
+            >
+              See how evidence is labelled <ArrowRight className="h-4 w-4" />
+            </Link>
+            <div className="mt-5 max-w-xl rounded-2xl border border-slate-950/10 bg-[#f7f6f2] p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+                Feel meUus · meUusSoulAI
               </p>
-            </div>
-
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
-              <div className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200/80">
-                  Live now
-                </p>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/70">
-                  {LIVE_NOW.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-emerald-200/80">·</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/55">
-                  Not live yet
-                </p>
-                <ul className="mt-4 grid gap-3 text-sm leading-6 text-foreground/60 sm:grid-cols-2">
-                  {NOT_LIVE_YET.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-foreground/35">·</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                New SoulAI messages are temporarily paused while privacy and governance review
+                continues.
+              </p>
+              <Link
+                to="/soulai-test"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-slate-950"
+              >
+                View Paused Status <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
-
-          <article className="relative mt-10 overflow-hidden rounded-3xl border border-violet-300/20 bg-card/55 p-6 shadow-glow-violet sm:p-9">
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
-            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="rounded-[2rem] border border-slate-950/10 bg-[#f7f6f2] p-5 sm:p-8">
+            <div className="flex items-center gap-3 border-b border-slate-950/10 pb-5">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                <ShieldCheck className="h-5 w-5" />
+              </span>
               <div>
-                <div className="flex flex-wrap gap-2">
-                  {["Experimental History", "Paused", "Privacy Review"].map((label) => (
-                    <span
-                      key={label}
-                      className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-foreground/75"
-                    >
-                      {label}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--gold)]/85">
-                  Public pilot status
-                </p>
-                <h3 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">Feel meUus</h3>
-                <p className="mt-2 font-serif text-xl italic text-foreground/75">
-                  meUusSoulAI — Guided Reflection Pilot
-                </p>
-                <p className="mt-5 max-w-2xl text-sm leading-7 text-foreground/70">
-                  This guided-reflection pilot is temporarily paused while meUus verifies its
-                  privacy, retention, deletion, and provider boundaries. New SoulAI messages are not
-                  being accepted during this review.
-                </p>
-                <Link
-                  to="/soulai-test"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet transition hover:scale-[1.02]"
-                >
-                  View Paused Status
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-background/45 p-5 sm:p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gold)]/85">
-                  Current status
-                </p>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground/68">
-                  <li>No public SoulAI message processing is available from the pilot page.</li>
-                  <li>Privacy and data-handling boundaries remain under review.</li>
-                  <li>The pilot&apos;s source, history, and evidence are being preserved.</li>
-                  <li>This pause does not claim that existing records have been deleted.</li>
-                  <li>No restart date is being promised.</li>
-                </ul>
+                <p className="text-sm font-bold text-slate-950">Current public boundaries</p>
+                <p className="mt-1 text-xs text-slate-500">Updated against verified evidence</p>
               </div>
             </div>
-          </article>
-        </div>
-      </section>
-
-      {/* ───────── JOURNEY MAP ───────── */}
-      <section className="relative px-4 py-32 sm:px-6">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="The Journey"
-            title={
-              <>
-                From <em className="italic text-gradient-violet">intention</em> to{" "}
-                <em className="italic text-gradient-gold">every soul</em>
-              </>
-            }
-            subtitle="From a live public foundation and one bounded experience toward a larger vision that remains in development."
-          />
-
-          <div className="relative mt-20">
-            {/* vertical line */}
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[var(--gold)]/30 to-transparent md:left-1/2" />
-            <ol className="space-y-12 md:space-y-24">
-              {JOURNEY.map((s, i) => (
-                <li
-                  key={s.num}
-                  className={`relative grid grid-cols-[2.5rem_1fr] gap-6 md:grid-cols-2 md:gap-12 ${
-                    i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
-                  }`}
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {BOUNDARIES.map((boundary) => (
+                <div
+                  key={boundary}
+                  className="flex min-h-16 items-center gap-3 rounded-xl border border-slate-950/8 bg-white px-4 py-3"
                 >
-                  <div
-                    className={`flex items-center ${i % 2 === 1 ? "md:justify-start md:pl-12" : "md:justify-end md:pr-12"}`}
-                  >
-                    {/* dot */}
-                    <span className="absolute left-4 -translate-x-1/2 md:left-1/2">
-                      <span className="block h-3 w-3 rounded-full bg-[var(--gold)] shadow-glow-gold" />
-                    </span>
-                    <div
-                      className={`hidden font-serif text-[7rem] font-medium leading-none text-foreground/10 md:block`}
-                    >
-                      {s.num}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-serif text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85 md:hidden">
-                      Chapter {s.num}
-                    </div>
-                    <h3 className="mt-1 font-serif text-3xl text-foreground sm:text-4xl">
-                      {s.title}
-                    </h3>
-                    <p className="mt-3 max-w-md text-foreground/65">{s.body}</p>
-                    <Link
-                      to={s.href}
-                      className="mt-4 inline-flex items-center gap-1 text-sm text-[var(--gold)] hover:text-foreground"
-                    >
-                      {s.linkLabel} <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
-                </li>
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#fff0e9] text-[#bf4d31]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-current" />
+                  </span>
+                  <span className="text-xs font-semibold leading-5 text-slate-700">{boundary}</span>
+                </div>
               ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── THREE VISION HUBS ───────── */}
-      <section className="relative px-4 py-32 sm:px-6">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Three Hubs"
-            title={
-              <>
-                One vision, <em className="italic">three doors</em>
-              </>
-            }
-            subtitle="Each door separates what is available now from what remains intended or planned."
-          />
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {HUBS.map((h) => (
-              <Link
-                key={h.label}
-                to={h.href}
-                className="group relative overflow-hidden rounded-3xl border-hairline bg-card/40 p-8 transition hover:border-white/15 hover:bg-card/60"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${h.accent} opacity-60 transition group-hover:opacity-100`}
-                />
-                <div className="relative">
-                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/55">{h.label}</p>
-                  <h3 className="mt-4 font-serif text-4xl">{h.title}</h3>
-                  <p className="mt-3 text-foreground/70">{h.body}</p>
-                  <div className="mt-8 inline-flex items-center gap-1 text-sm text-foreground/85">
-                    Enter{" "}
-                    <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── PILLARS CONSTELLATION ───────── */}
-      <section className="relative px-4 py-32 sm:px-6">
-        <AnimatedOrb className="-right-32 top-0" color="oklch(0.72 0.22 295)" size={500} />
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="The Nine Pillars"
-            title={
-              <>
-                A constellation, <em className="italic text-gradient-gold">not a list</em>
-              </>
-            }
-            subtitle="Each pillar is an intended direction. Together they describe a future ecosystem, not current operating services."
-          />
-          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {PILLARS.map((p, i) => (
-              <Link
-                key={p.slug}
-                to="/pillars/$slug"
-                params={{ slug: p.slug }}
-                className="group relative overflow-hidden rounded-2xl border-hairline bg-card/40 p-7 transition hover:border-white/15 hover:bg-card/70 animate-scale-in"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <div
-                  className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-30 blur-3xl transition group-hover:opacity-60"
-                  style={{ background: p.color }}
-                />
-                <div className="relative flex items-start justify-between">
-                  <div>
-                    <div className="text-xs uppercase tracking-[0.3em] text-foreground/45">
-                      {p.num}
-                    </div>
-                    <h3 className="mt-2 font-serif text-2xl text-foreground">{p.name}</h3>
-                  </div>
-                  <span className="font-serif text-3xl" style={{ color: p.color }}>
-                    {p.symbol}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm italic text-foreground/65">{p.tagline}</p>
-                <p className="mt-3 text-sm text-foreground/55">{p.short}</p>
-                <div className="mt-6 flex items-center justify-between text-xs">
-                  <span
-                    className="rounded-full px-2.5 py-0.5"
-                    style={{
-                      background: `${p.color}22`,
-                      color: p.color,
-                    }}
-                  >
-                    In development
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-foreground/55 transition group-hover:text-foreground">
-                    Open <ArrowRight className="h-3 w-3" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link
-              to="/pillars"
-              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground hover:bg-white/10"
-            >
-              View all pillar details
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── DLAS ───────── */}
-      <section className="relative px-4 py-32 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            eyebrow="Future Architecture · DLAS"
-            title={
-              <>
-                Development Lens and <em className="italic">Assessment System concept</em>
-              </>
-            }
-            subtitle="A proposed future assessment and guidance framework. No DLAS runtime, scoring model, consent workflow, or validated system is live."
-          />
-          <div className="mt-16 grid gap-10 lg:grid-cols-2">
-            <div className="rounded-3xl border-hairline bg-card/40 p-8">
-              <h3 className="font-serif text-2xl text-foreground">Proposed five-level outline</h3>
-              <ol className="mt-6 space-y-4">
-                {[
-                  ["01", "Surface Entry", "What is bothering you most right now?"],
-                  ["02", "Present Structure", "Where do you feel stuck, day to day?"],
-                  ["03", "Past Extraction", "When did this begin, and who was there?"],
-                  ["04", "Emotional Core", "What truth was never spoken?"],
-                  ["05", "Future Mapping", "What must change? What is the next real step?"],
-                ].map(([n, t, q]) => (
-                  <li key={n} className="flex gap-4">
-                    <span className="font-serif text-2xl text-[var(--gold)]">{n}</span>
-                    <div>
-                      <p className="font-serif text-lg text-foreground">{t}</p>
-                      <p className="text-sm italic text-foreground/60">"{q}"</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
             </div>
-            <div className="space-y-6">
-              <div className="rounded-3xl border-hairline bg-card/40 p-8">
-                <h3 className="font-serif text-2xl text-foreground">Proposed dimensions</h3>
-                <div className="mt-6 grid grid-cols-2 gap-4">
-                  {[
-                    ["Facts", "What objectively happened."],
-                    ["Feelings", "What the person experienced."],
-                    ["Meaning", "What they believe it means."],
-                    ["Impact", "How it shapes life now."],
-                  ].map(([t, b]) => (
-                    <div key={t} className="rounded-2xl border-hairline bg-background/40 p-4">
-                      <p className="font-serif text-lg text-gradient-violet">{t}</p>
-                      <p className="mt-1 text-xs text-foreground/65">{b}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="rounded-3xl border-hairline bg-card/40 p-8">
-                <h3 className="font-serif text-xl text-foreground">Required future boundaries</h3>
-                <ul className="mt-4 space-y-2 text-sm text-foreground/75">
-                  <li>
-                    <span className="text-[var(--gold)]">·</span> Truth over performance
-                  </li>
-                  <li>
-                    <span className="text-[var(--gold)]">·</span> Privacy and consent always
-                  </li>
-                  <li>
-                    <span className="text-[var(--gold)]">·</span> Respect, never manipulation
-                  </li>
-                </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 sm:px-6 lg:py-32">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.25rem] bg-[#141124] text-white shadow-[0_30px_100px_rgba(20,17,36,0.22)]">
+          <div className="grid lg:grid-cols-[1.03fr_0.97fr]">
+            <div className="flex flex-col justify-center p-7 sm:p-12 lg:p-16">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#ffc94a]">
+                Future architecture · clearly labelled
+              </p>
+              <h2 className="mt-5 font-sans text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl">
+                Development Lens and Assessment System.
+              </h2>
+              <p className="mt-6 max-w-xl text-sm leading-7 text-white/60 sm:text-base">
+                DLAS is a proposed future framework for structured understanding and guidance. No
+                public engine, scoring model, automated assessment, or validated runtime is live.
+              </p>
+              <a
+                href="https://meuussoul.com/dlas"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex min-h-12 w-fit items-center gap-2 rounded-xl border border-white/15 bg-white/8 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/15"
+              >
+                Read the bounded concept <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="relative min-h-[28rem] overflow-hidden">
+              <img
+                src="/assets/meuus-mountain-hero.png"
+                alt="A person looking toward a mountain horizon, representing the meUus starting-point journey"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#141124] via-[#141124]/25 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-[#141124]/30" />
+              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/15 bg-black/35 p-5 backdrop-blur-md">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffc94a]">
+                  me → U → us
+                </p>
+                <p className="mt-2 text-sm leading-6 text-white/75">
+                  Start with me. Grow with U. Build us.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ───────── PRE-FOUNDING ROLES ───────── */}
-      <section className="relative px-4 py-32 sm:px-6">
-        <AnimatedOrb className="left-0 top-1/4" color="oklch(0.82 0.13 80)" size={500} />
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Expression of Interest"
-            title={
-              <>
-                Help shape the <em className="italic text-gradient-gold">founding phase</em>
-              </>
-            }
-            subtitle="These are areas for manual expressions of interest with manual review, not guaranteed roles, payment, equity, opportunities, salaries, or outcomes."
-          />
-          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {ROLES.map((r, i) => (
-              <Link
-                key={r.slug}
-                to="/join"
-                search={{ role: r.slug }}
-                className="group relative overflow-hidden rounded-2xl border-hairline bg-card/40 p-7 transition hover:border-white/15 hover:bg-card/70 animate-scale-in"
-                style={{ animationDelay: `${i * 50}ms` }}
-              >
-                <div className="flex items-start justify-between">
-                  <span className="font-serif text-3xl" style={{ color: r.color }}>
-                    {r.symbol}
-                  </span>
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 text-[0.6rem] uppercase tracking-wider ${
-                      r.urgency === "Most Urgent"
-                        ? "bg-rose-500/20 text-rose-300"
-                        : r.urgency === "Urgent"
-                          ? "bg-amber-500/20 text-amber-300"
-                          : "bg-white/10 text-foreground/65"
-                    }`}
-                  >
-                    Manual review
-                  </span>
-                </div>
-                <h3 className="mt-4 font-serif text-2xl text-foreground">{r.title}</h3>
-                <p className="mt-2 text-sm text-foreground/65">{r.short}</p>
-                <div className="mt-6 flex items-center justify-between text-xs text-foreground/55">
-                  <span>{r.commitment}</span>
-                  <span className="inline-flex items-center gap-1 transition group-hover:text-foreground">
-                    View details <ArrowRight className="h-3 w-3" />
-                  </span>
-                </div>
-              </Link>
-            ))}
+      <section className="px-4 pb-28 pt-10 sm:px-6 lg:pb-36">
+        <div className="mx-auto max-w-5xl text-center">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#efeaff] text-[#7157ff]">
+            <Sparkles className="h-6 w-6" />
           </div>
-          <div className="mt-12 text-center">
-            <Link
-              to="/join"
-              search={{}}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow-violet hover:scale-[1.03]"
+          <h2 className="mx-auto mt-7 max-w-4xl font-sans text-4xl font-bold leading-[1.02] tracking-[-0.05em] text-slate-950 sm:text-6xl">
+            You do not need the whole answer to choose one honest next step.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600">
+            Begin with the authenticated app pilot, explore the public learning foundation, or
+            verify the exact current state before continuing.
+          </p>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <a
+              href="https://www.meuus.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#7157ff] px-6 py-3.5 text-sm font-bold text-white shadow-[0_16px_40px_rgba(113,87,255,0.28)] transition hover:-translate-y-0.5"
             >
-              Express interest manually
-              <ArrowRight className="h-4 w-4" />
+              Open meUus App <ExternalLink className="h-4 w-4" />
+            </a>
+            <Link
+              to="/status"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-950/15 bg-white px-6 py-3.5 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5"
+            >
+              Verify current status <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* ───────── MANIFESTO ───────── */}
-      <section className="relative px-4 py-32 sm:px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-serif text-sm uppercase tracking-[0.4em] text-[var(--gold)]/85">
-            بسم الله الرحمن الرحيم
-          </p>
-          <p className="mt-8 font-serif text-3xl italic leading-tight text-foreground/90 sm:text-5xl">
-            "Understand the whole human.
-            <br />
-            Not only the visible problem."
-          </p>
-          <p className="mt-8 text-foreground/60">
-            meUus is a human-development vision beginning with a live public foundation and one
-            bounded Journey prototype. The wider ecosystem remains future work.
-          </p>
-          <p className="mt-2 text-xs uppercase tracking-[0.3em] text-foreground/45">
-            Alhamdulillah · InShaAllah
-          </p>
         </div>
       </section>
     </div>
