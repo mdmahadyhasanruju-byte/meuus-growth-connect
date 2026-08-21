@@ -69,7 +69,7 @@ const JOURNEY = [
   {
     num: "04",
     title: "Platform",
-    body: "Future architecture: backend, accounts, cloud storage, AI runtime, payments, rewards, and subscriptions are not live.",
+    body: "A bounded meuus.app production pilot now provides sign-in, Dashboard, Profile, Growth Paths, and session restoration. Public AI, DLAS runtime, payments, rewards, and subscriptions are not live.",
     href: "/status",
     linkLabel: "See boundaries",
   },
@@ -138,9 +138,9 @@ const START_EXPLORING = [
     group: "App Direction",
     href: "/app",
     title: "meUus App",
-    status: "Future concept",
+    status: "Current bounded pilot",
     description:
-      "A developing direction for guided reflection, learning, and responsible next steps. The full app, DLAS runtime, accounts, dashboards, AI analysis, and cloud systems are not live yet.",
+      "The public meuus.app pilot now supports sign-in, Dashboard, Profile, Growth Paths, session restoration, and sign-out. Public AI analysis, DLAS runtime, payments, subscriptions, rewards, and automated decisions are not live.",
   },
 ] as const;
 
@@ -158,19 +158,19 @@ const LIVE_NOW = [
   "Public website foundation",
   "Current Status page",
   "Browser-local Journey prototype",
+  "Bounded meuus.app production pilot with authentication, Dashboard, Profile, Growth Paths, and session restoration",
   "Manual expression-of-interest path",
   "Initial privacy, terms, consent, appreciation, and domain-role boundaries",
 ] as const;
 
 const NOT_LIVE_YET = [
-  "Full app",
-  "Accounts",
-  "AI runtime",
+  "Public AI runtime",
   "DLAS runtime",
-  "Cloud storage",
   "Payments",
   "Rewards/subscriptions",
   "Automated decisions",
+  "Validated outcomes",
+  "Full operating ecosystem",
 ] as const;
 
 function HomePage() {
@@ -650,7 +650,7 @@ function HomePage() {
             eyebrow="Future Architecture · DLAS"
             title={
               <>
-                Deep Life <em className="italic">Assessment System concept</em>
+                Development Lens and <em className="italic">Assessment System concept</em>
               </>
             }
             subtitle="A proposed future assessment and guidance framework. No DLAS runtime, scoring model, consent workflow, or validated system is live."
