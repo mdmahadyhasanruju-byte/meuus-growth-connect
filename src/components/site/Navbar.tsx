@@ -1,5 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { Compass, Menu, X } from "lucide-react";
 import { Countdown } from "./Countdown";
 import { PRIMARY_NAVIGATION } from "@/data/navigation";
@@ -10,6 +10,17 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [explorerOpen, setExplorerOpen] = useState(false);
   const loc = useLocation();
+  const isHome = loc.pathname === "/";
+
+  const homeTheme = isHome
+    ? ({
+        "--background": "oklch(0.97 0.01 90)",
+        "--foreground": "oklch(0.2 0.02 265)",
+        "--primary": "oklch(0.25 0.02 265)",
+        "--primary-foreground": "oklch(0.99 0 0)",
+        "--gold": "oklch(0.62 0.2 292)",
+      } as CSSProperties)
+    : undefined;
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 20);
@@ -30,8 +41,13 @@ export function Navbar() {
 
   return (
     <header
+      style={homeTheme}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "border-b border-white/5 bg-background/70 backdrop-blur-xl" : "bg-transparent"
+        isHome
+          ? "border-b border-slate-950/8 bg-[#f7f6f2]/90 backdrop-blur-xl"
+          : scrolled
+            ? "border-b border-white/5 bg-background/70 backdrop-blur-xl"
+            : "bg-transparent"
       }`}
     >
       {/* platinum hairline */}
@@ -104,7 +120,11 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-white/5 bg-background/95 backdrop-blur-xl lg:hidden">
+        <div
+          className={`border-t backdrop-blur-xl lg:hidden ${
+            isHome ? "border-slate-950/8 bg-[#f7f6f2]/98" : "border-white/5 bg-background/95"
+          }`}
+        >
           <div className="flex flex-col px-4 py-4">
             {PRIMARY_NAVIGATION.map((item) =>
               item.kind === "explore" ? (
