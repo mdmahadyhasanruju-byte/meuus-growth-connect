@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as StartRouteImport } from './routes/start'
 import { Route as SoulaiTestRouteImport } from './routes/soulai-test'
 import { Route as SoulRouteImport } from './routes/soul'
+import { Route as SafetyRouteImport } from './routes/safety'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PillarsRouteImport } from './routes/pillars'
 import { Route as OneWordStartRouteImport } from './routes/one-word-start'
@@ -25,6 +27,7 @@ import { Route as JoinRouteImport } from './routes/join'
 import { Route as GlobalRouteImport } from './routes/global'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as FoundationRouteImport } from './routes/foundation'
+import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as DomainsRouteImport } from './routes/domains'
 import { Route as ConsentRouteImport } from './routes/consent'
@@ -32,6 +35,8 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as AppreciationRouteImport } from './routes/appreciation'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as AmanahRouteImport } from './routes/amanah'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SoulKnowledgeBeforeActionRouteImport } from './routes/soul.knowledge-before-action'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
@@ -64,6 +69,11 @@ const StatusRoute = StatusRouteImport.update({
   path: '/status',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StartRoute = StartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SoulaiTestRoute = SoulaiTestRouteImport.update({
   id: '/soulai-test',
   path: '/soulai-test',
@@ -72,6 +82,11 @@ const SoulaiTestRoute = SoulaiTestRouteImport.update({
 const SoulRoute = SoulRouteImport.update({
   id: '/soul',
   path: '/soul',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -134,6 +149,11 @@ const FoundationRoute = FoundationRouteImport.update({
   path: '/foundation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
   path: '/ecosystem',
@@ -167,6 +187,16 @@ const AppRoute = AppRouteImport.update({
 const AmanahRoute = AmanahRouteImport.update({
   id: '/amanah',
   path: '/amanah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -283,6 +313,8 @@ const JourneyQuestQuestIdRoute = JourneyQuestQuestIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/amanah': typeof AmanahRoute
   '/app': typeof AppRoute
   '/appreciation': typeof AppreciationRoute
@@ -290,6 +322,7 @@ export interface FileRoutesByFullPath {
   '/consent': typeof ConsentRoute
   '/domains': typeof DomainsRoute
   '/ecosystem': typeof EcosystemRoute
+  '/evidence': typeof EvidenceRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
@@ -302,8 +335,10 @@ export interface FileRoutesByFullPath {
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/safety': typeof SafetyRoute
   '/soul': typeof SoulRouteWithChildren
   '/soulai-test': typeof SoulaiTestRoute
+  '/start': typeof StartRoute
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -329,6 +364,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/amanah': typeof AmanahRoute
   '/app': typeof AppRoute
   '/appreciation': typeof AppreciationRoute
@@ -336,6 +373,7 @@ export interface FileRoutesByTo {
   '/consent': typeof ConsentRoute
   '/domains': typeof DomainsRoute
   '/ecosystem': typeof EcosystemRoute
+  '/evidence': typeof EvidenceRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
@@ -348,8 +386,10 @@ export interface FileRoutesByTo {
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/safety': typeof SafetyRoute
   '/soul': typeof SoulRouteWithChildren
   '/soulai-test': typeof SoulaiTestRoute
+  '/start': typeof StartRoute
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -376,6 +416,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/amanah': typeof AmanahRoute
   '/app': typeof AppRoute
   '/appreciation': typeof AppreciationRoute
@@ -383,6 +425,7 @@ export interface FileRoutesById {
   '/consent': typeof ConsentRoute
   '/domains': typeof DomainsRoute
   '/ecosystem': typeof EcosystemRoute
+  '/evidence': typeof EvidenceRoute
   '/foundation': typeof FoundationRoute
   '/founder': typeof FounderRoute
   '/global': typeof GlobalRoute
@@ -395,8 +438,10 @@ export interface FileRoutesById {
   '/one-word-start': typeof OneWordStartRoute
   '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/safety': typeof SafetyRoute
   '/soul': typeof SoulRouteWithChildren
   '/soulai-test': typeof SoulaiTestRoute
+  '/start': typeof StartRoute
   '/status': typeof StatusRoute
   '/terms': typeof TermsRoute
   '/journey/accessibility': typeof JourneyAccessibilityRoute
@@ -424,6 +469,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/accessibility'
     | '/amanah'
     | '/app'
     | '/appreciation'
@@ -431,6 +478,7 @@ export interface FileRouteTypes {
     | '/consent'
     | '/domains'
     | '/ecosystem'
+    | '/evidence'
     | '/foundation'
     | '/founder'
     | '/global'
@@ -443,8 +491,10 @@ export interface FileRouteTypes {
     | '/one-word-start'
     | '/pillars'
     | '/privacy'
+    | '/safety'
     | '/soul'
     | '/soulai-test'
+    | '/start'
     | '/status'
     | '/terms'
     | '/journey/accessibility'
@@ -470,6 +520,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/accessibility'
     | '/amanah'
     | '/app'
     | '/appreciation'
@@ -477,6 +529,7 @@ export interface FileRouteTypes {
     | '/consent'
     | '/domains'
     | '/ecosystem'
+    | '/evidence'
     | '/foundation'
     | '/founder'
     | '/global'
@@ -489,8 +542,10 @@ export interface FileRouteTypes {
     | '/one-word-start'
     | '/pillars'
     | '/privacy'
+    | '/safety'
     | '/soul'
     | '/soulai-test'
+    | '/start'
     | '/status'
     | '/terms'
     | '/journey/accessibility'
@@ -516,6 +571,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/accessibility'
     | '/amanah'
     | '/app'
     | '/appreciation'
@@ -523,6 +580,7 @@ export interface FileRouteTypes {
     | '/consent'
     | '/domains'
     | '/ecosystem'
+    | '/evidence'
     | '/foundation'
     | '/founder'
     | '/global'
@@ -535,8 +593,10 @@ export interface FileRouteTypes {
     | '/one-word-start'
     | '/pillars'
     | '/privacy'
+    | '/safety'
     | '/soul'
     | '/soulai-test'
+    | '/start'
     | '/status'
     | '/terms'
     | '/journey/accessibility'
@@ -563,6 +623,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   AmanahRoute: typeof AmanahRoute
   AppRoute: typeof AppRoute
   AppreciationRoute: typeof AppreciationRoute
@@ -570,6 +632,7 @@ export interface RootRouteChildren {
   ConsentRoute: typeof ConsentRoute
   DomainsRoute: typeof DomainsRoute
   EcosystemRoute: typeof EcosystemRoute
+  EvidenceRoute: typeof EvidenceRoute
   FoundationRoute: typeof FoundationRoute
   FounderRoute: typeof FounderRoute
   GlobalRoute: typeof GlobalRoute
@@ -582,8 +645,10 @@ export interface RootRouteChildren {
   OneWordStartRoute: typeof OneWordStartRoute
   PillarsRoute: typeof PillarsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
+  SafetyRoute: typeof SafetyRoute
   SoulRoute: typeof SoulRouteWithChildren
   SoulaiTestRoute: typeof SoulaiTestRoute
+  StartRoute: typeof StartRoute
   StatusRoute: typeof StatusRoute
   TermsRoute: typeof TermsRoute
 }
@@ -604,6 +669,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StatusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/start': {
+      id: '/start'
+      path: '/start'
+      fullPath: '/start'
+      preLoaderRoute: typeof StartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/soulai-test': {
       id: '/soulai-test'
       path: '/soulai-test'
@@ -616,6 +688,13 @@ declare module '@tanstack/react-router' {
       path: '/soul'
       fullPath: '/soul'
       preLoaderRoute: typeof SoulRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -702,6 +781,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoundationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ecosystem': {
       id: '/ecosystem'
       path: '/ecosystem'
@@ -749,6 +835,20 @@ declare module '@tanstack/react-router' {
       path: '/amanah'
       fullPath: '/amanah'
       preLoaderRoute: typeof AmanahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -981,6 +1081,8 @@ const SoulRouteWithChildren = SoulRoute._addFileChildren(SoulRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
   AmanahRoute: AmanahRoute,
   AppRoute: AppRoute,
   AppreciationRoute: AppreciationRoute,
@@ -988,6 +1090,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConsentRoute: ConsentRoute,
   DomainsRoute: DomainsRoute,
   EcosystemRoute: EcosystemRoute,
+  EvidenceRoute: EvidenceRoute,
   FoundationRoute: FoundationRoute,
   FounderRoute: FounderRoute,
   GlobalRoute: GlobalRoute,
@@ -1000,8 +1103,10 @@ const rootRouteChildren: RootRouteChildren = {
   OneWordStartRoute: OneWordStartRoute,
   PillarsRoute: PillarsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
+  SafetyRoute: SafetyRoute,
   SoulRoute: SoulRouteWithChildren,
   SoulaiTestRoute: SoulaiTestRoute,
+  StartRoute: StartRoute,
   StatusRoute: StatusRoute,
   TermsRoute: TermsRoute,
 }

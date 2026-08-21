@@ -38,10 +38,16 @@ const STATUS_ITEMS = [
     body: "Journey Mode is available as a local-first, non-diagnostic first-slice prototype. It includes Knowledge Before Action, one quest, optional written reflection, and an internal checkpoint. Explicit preference confirmation and the local browser clear/restart control are completed and live verified. Journey data remains in the current browser.",
   },
   {
+    label: "Live bounded pilot",
+    icon: CheckCircle2,
+    title: "meuus.app",
+    body: "The public meuus.app production pilot has verified sign-in, Dashboard, Profile, authenticated records, Growth Paths, full-reload session restoration, and sign-out. This does not activate public AI analysis, DLAS runtime, payments, rewards, subscriptions, or automated decisions.",
+  },
+  {
     label: "Planned",
     icon: Clock3,
     title: "DLAS",
-    body: "The Deep Life Assessment System is a future assessment and guidance concept. This repository does not yet contain a DLAS engine, schema, scoring model, validation method, consent model, or Journey integration contract.",
+    body: "The Development Lens and Assessment System is a future assessment and guidance concept. This repository does not yet contain a DLAS engine, schema, scoring model, validation method, consent model, or Journey integration contract.",
   },
   {
     label: "In development",
@@ -50,16 +56,16 @@ const STATUS_ITEMS = [
     body: "The website describes nine intended pillars as an ecosystem direction and content model. The repository does not prove operating services, partners, pilots, professionals, customers, revenue, or public impact.",
   },
   {
-    label: "Not verified or live",
+    label: "Not live",
     icon: PauseCircle,
-    title: "Platform systems",
-    body: "No backend, AI runtime, DLAS runtime, accounts, cloud storage, payments, rewards, or subscriptions are verified or live.",
+    title: "Broader platform systems",
+    body: "Public AI analysis, DLAS runtime or scoring, payments, rewards, subscriptions, automated decisions, and the full operating ecosystem are not verified or live.",
   },
 ] as const;
 
 const BOUNDARIES = [
   "Phase One is a continuation stage, not proof that the full ecosystem is complete.",
-  "The public /status, /join, and /journey routes are live. This does not verify a backend, operating program, or future platform services.",
+  "The public /status, /join, and /journey routes are live on meuus.org. The separately verified meuus.app pilot provides bounded authenticated features; neither domain proves a complete operating ecosystem or future platform services.",
   "Journey remains a bounded first-slice prototype even though preference confirmation and the local browser clear/restart control are completed and live verified.",
   "Internal source-of-truth and archive inventory documents exist. They preserve evidence and do not make old materials production truth.",
   "DLAS must stay non-operational in public wording until it has a governed specification, evidence standard, consent model, and implementation.",
@@ -94,7 +100,7 @@ function StatusPage() {
             title="What can be said today"
             subtitle="These labels are evidence boundaries for public copy. They are not a claim that every service is operating."
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-5">
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {STATUS_ITEMS.map((item) => {
               const Icon = item.icon;
               return (
@@ -150,21 +156,33 @@ function StatusPage() {
             Where this fits · Verify
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
-            Not yet available
+            Current verified boundary
           </p>
           <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">
-            No backend, AI runtime, DLAS runtime, accounts, cloud storage, payments, rewards, or
-            subscriptions are verified or live.
+            A bounded authenticated app pilot is live. Public AI, DLAS runtime, payments, rewards,
+            subscriptions, and automated decisions are not.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">
-            Those systems remain future work. Public claims should stay calm, specific, and tied to
-            evidence until implementation, validation, legal review, and operational ownership
-            exist.
+            The app evidence is limited to its accepted production flow and authenticated records.
+            Broader systems remain future work. Public claims must stay specific and tied to
+            implementation, validation, review, and operational ownership.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <a
+              href="https://www.meuus.app/"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet"
+            >
+              Open verified meUus App <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="https://meuussoul.com/dlas"
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground"
+            >
+              Review DLAS boundary <ArrowRight className="h-4 w-4" />
+            </a>
             <Link
               to="/journey"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow-violet"
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-6 py-3 text-sm text-foreground"
             >
               View Journey prototype <ArrowRight className="h-4 w-4" />
             </Link>
