@@ -24,3 +24,9 @@ Client parity and exact source-file matches support this recovery. The server-bu
 ## Release boundary
 
 This branch is a recovery candidate for review. The active Worker remains on its existing manual production version. No production deployment, DNS change, binding/secret change, or custom-domain change was made. Language Hub remains a draft public preview, not a completed curriculum. Any promotion requires a reviewed preview, route/content/accessibility review, and a documented rollback target.
+
+## PR preview continuation — 4 October 2026
+
+- Both Cloudflare PR checks (`meuus-growth-connect` and `tried`) completed successfully for the initial recovery head.
+- The isolated Workers.dev preview returned HTTP 200 on `/`, `/soul`, `/book`, `/app`, and `/language-knowledge`. `/dlas` is not a route on this domain; DLAS concept content is linked to the `.com` domain. Browser review at 319×510 showed the fixed Book Preview CTA obscuring hero copy on narrow screens.
+- The candidate now hides that floating CTA below the small-screen breakpoint; the Book Preview remains reachable through normal site navigation. Typecheck and production build pass after the change. A fresh Cloudflare PR preview check is required to confirm the updated mobile layout; no production release has occurred.
