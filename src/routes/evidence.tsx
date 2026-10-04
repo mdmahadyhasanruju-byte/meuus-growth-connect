@@ -60,7 +60,7 @@ function EvidencePage() {
             <h2 className="mt-4 font-serif text-4xl text-foreground">Evidence is not a promise.</h2>
             <p className="mt-5 leading-relaxed text-foreground/70">
               A public page can describe the present state and a careful next step. It cannot make a
-              planned system live, establish an external result, or disclose private founder,
+              planned system live, establish an external result, or disclose private project,
               participant, reflection, or contact information.
             </p>
           </div>

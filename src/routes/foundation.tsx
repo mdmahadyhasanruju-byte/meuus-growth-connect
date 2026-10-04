@@ -18,13 +18,13 @@ import {
 export const Route = createFileRoute("/foundation")({
   head: () => ({
     meta: [
-      { title: "Before Founding — The meUus Foundation Map" },
+      { title: "Foundation — The meUus Execution Map" },
       {
         name: "description",
         content:
-          "A founder execution map for proposed entry points, execution layers, and disciplined Day One work before public operating claims are verified.",
+          "A public execution map for proposed entry points, execution layers, and disciplined work before public operating claims are verified.",
       },
-      { property: "og:title", content: "Before Founding — The meUus Foundation Map" },
+      { property: "og:title", content: "Foundation — The meUus Execution Map" },
       {
         property: "og:description",
         content:

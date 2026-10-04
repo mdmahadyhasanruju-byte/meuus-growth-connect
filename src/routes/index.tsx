@@ -111,6 +111,7 @@ const STEPS = [
 ] as const;
 
 const BOUNDARIES = [
+  "Unlisted, consent-gated AI chat preview only",
   "No public AI analysis",
   "No live DLAS scoring runtime",
   "No automated decisions",
@@ -448,14 +449,14 @@ function HomePage() {
                 Feel meUus · meUusSoulAI
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                New SoulAI messages are temporarily paused while privacy and governance review
-                continues.
+                An unlisted, consent-gated SoulAI chat preview is deployed. Its first owner-led
+                end-to-end check is still pending; it is not an AI analysis or advice service.
               </p>
               <Link
                 to="/soulai-test"
                 className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-slate-950"
               >
-                View Paused Status <ArrowRight className="h-4 w-4" />
+                View Preview Status <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
