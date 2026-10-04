@@ -82,7 +82,7 @@ describe("Feel meUus RC1 hidden-route boundaries", () => {
 
     expect(route).toContain('createFileRoute("/soulai-test")');
     expect(route).toContain("noindex,nofollow");
-    expect(route).toContain("temporarily paused");
+    expect(route).toContain("limited SoulAI chat preview is deployed");
     expect(route).toContain("No SoulAI message can be submitted");
     expect(route).not.toContain("SoulAiPilot");
     expect(route).not.toContain("@n8n/chat");
@@ -93,8 +93,8 @@ describe("Feel meUus RC1 hidden-route boundaries", () => {
     expect(home).toContain('to="/soulai-test"');
     expect(home).toContain("Feel meUus");
     expect(home).toContain("meUusSoulAI");
-    expect(home).toContain("View Paused Status");
-    expect(home).toContain("New SoulAI messages are");
+    expect(home).toContain("View Preview Status");
+    expect(home).toContain("An unlisted, consent-gated SoulAI chat preview is deployed");
     expect(home).not.toContain("Begin the Experimental Reflection");
 
     const ordinaryPublicSurfaces = [status, privacy, consent, navigation, navbar, footer];

@@ -22,20 +22,19 @@ export const EXPLORER_NAVIGATION_GROUPS = [
     id: "knowledge-reflection",
     title: "Knowledge & Reflection",
     links: [
-      { to: "/soul", label: "meUus Soul", status: "Knowledge Hub starting layer" },
+      { to: "/soul", label: "meUusSoul · Learn", status: "Current LEARN gateway · meuussoul.com" },
       {
         to: "/book",
         label: "Book meUus",
-        status: "Working public preview · v0.3",
+        status: "Compatibility gateway · current resources on LEARN",
       },
-      { to: "/manifesto-full", label: "Founder Manifesto" },
     ],
   },
   {
     id: "app-direction",
-    title: "App Direction",
+    title: "Reflect + Act",
     links: [
-      { to: "/app", label: "meUus App", status: "Future concept" },
+      { to: "/app", label: "meUus App", status: "Live bounded pilot · meuus.app" },
       {
         to: "/ecosystem",
         label: "Ecosystem Vision",
@@ -60,7 +59,6 @@ export const EXPLORER_NAVIGATION_GROUPS = [
       { to: "/appreciation", label: "Appreciation", status: "Gratitude and boundaries" },
       { to: "/domains", label: "Domains", status: "Public role map" },
       { to: "/foundation", label: "Public Foundation" },
-      { to: "/founder", label: "Founder’s Letter" },
       { to: "/global", label: "Global Vision", status: "Future direction" },
       {
         to: "/join",

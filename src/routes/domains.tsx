@@ -31,7 +31,7 @@ const DOMAINS = [
     summary: "The public truth and orientation surface for the developing meUus ecosystem.",
     points: [
       "Hosts the current verified public pages.",
-      "Explains project status, founder direction, foundation, ecosystem, Journey, and public trust boundaries.",
+      "Explains project status, current direction, foundation, ecosystem, Journey, and public trust boundaries.",
       "The safest public place to check what is currently live, bounded, planned, or unavailable.",
     ],
     links: [
@@ -44,10 +44,10 @@ const DOMAINS = [
   {
     domain: "meuussoul.com",
     label: "Learn",
-    status: "Knowledge Hub starting layer",
-    summary: "The reviewed knowledge and learning surface for the developing meUus ecosystem.",
+    status: "LEARN surface · current candidate",
+    summary: "The current reviewed knowledge and learning home for the developing meUus ecosystem.",
     points: [
-      "Currently represented safely through the meUus Soul gateway on meuus.org.",
+      "Current learning traffic continues through meuussoul.com; the older /soul route remains a compatibility gateway.",
       "Older or archived Soul material requires review before reuse and is not current production truth.",
       "This direction is not a replacement for professional, religious-authority, medical, legal, or emergency support.",
     ],
@@ -60,13 +60,13 @@ const DOMAINS = [
   {
     domain: "meuus.app",
     label: "Reflect + Act",
-    status: "Gateway · future direction",
+    status: "Live bounded pilot",
     summary:
-      "The intended product and workspace surface, currently represented by a bounded public gateway.",
+      "The current bounded authenticated Reflect + Act surface, with wider platform directions still in development.",
     points: [
-      "The current safe public gateway is meuus.org/app.",
-      "The current verified Journey is browser-local.",
-      "Separate app preview work exists, but a full app, live AI, DLAS runtime, accounts, dashboards, cloud storage, payments, subscriptions, rewards, and automated decisions are not live unless specifically stated on a verified status page.",
+      "The current app destination is https://www.meuus.app/; meuus.org/app remains a truth-bounded gateway.",
+      "A browser-local Journey also remains available on the public UNDERSTAND surface.",
+      "The bounded authenticated pilot is real; broader AI, DLAS runtime, marketplace, payments, subscriptions, rewards, certifications, and automated-authority claims remain separate until specifically verified.",
     ],
     links: [
       { to: "/app", label: "App gateway" },
@@ -77,17 +77,15 @@ const DOMAINS = [
   },
   {
     domain: "rujbel.org",
-    label: "Founder archive + evidence chronicle",
-    status: "Archive direction",
-    summary:
-      "The founder and project history surface for evidence, decisions, corrections, and continuation records.",
+    label: "Archive + portfolio",
+    status: "Archive + portfolio home",
+    summary: "The project-history, accountability, Master File, and professional portfolio home.",
     points: [
-      "Intended to preserve selected founder and project history as a separate public archive direction.",
+      "Preserves selected project history, accountability records, Master File material, and portfolio context as a separate public surface.",
       "Intended to chronicle evidence, decisions, corrections, and continuation records without replacing current status evidence.",
       "Its bounded role does not make private records, credentials, or unreviewed source material public.",
     ],
     links: [
-      { to: "/founder", label: "Founder" },
       { to: "/evidence", label: "Evidence" },
       { to: "/status", label: "Status" },
     ],

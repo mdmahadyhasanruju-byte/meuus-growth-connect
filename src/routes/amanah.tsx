@@ -12,13 +12,13 @@ export const Route = createFileRoute("/amanah")({
       {
         name: "description",
         content:
-          "The Amanah layer explains meUus truth boundaries, evidence limits, and public responsibility during Phase Zero.",
+          "The Amanah layer explains meUus truth boundaries, evidence limits, and public responsibility during current development.",
       },
       { property: "og:title", content: "Amanah — meUus Trust Boundary" },
       {
         property: "og:description",
         content:
-          "The Amanah layer explains meUus truth boundaries, evidence limits, and public responsibility during Phase Zero.",
+          "The Amanah layer explains meUus truth boundaries, evidence limits, and public responsibility during current development.",
       },
     ],
   }),
@@ -50,7 +50,7 @@ const CONSTITUTION_SECTIONS = [
   "Why this constitution exists",
   "Core law: Claim ≤ Evidence",
   "Soul, Trust, Work, Try, Support",
-  "Founder inner guard",
+  "Stewardship inner guard",
   "Corruption guard",
   "Current truth rule",
   "Domain truth rule",
@@ -63,7 +63,7 @@ const CONSTITUTION_SECTIONS = [
   "Listening rule",
   "Support rule",
   "Correction rule",
-  "Founder covenant",
+  "Stewardship covenant",
   "Build rule",
   "What meUus must never become",
   "What meUus must try to become",
@@ -76,7 +76,7 @@ const FREE_AGREEMENT = [
   "meUus must not reduce people into scores, labels, diagnoses, spiritual judgments, or employability judgments.",
   "A person must remain free to enter, pause, leave, question, disagree, refuse, or not share sensitive information.",
   "meUus Soul must remain a learning and reflection path, not therapy, diagnosis, religious authority, or guaranteed transformation.",
-  "The founder remains responsible for public claims, correction, and safe sequencing.",
+  "The project remains responsible for public claims, correction, and safe sequencing.",
   "The project must earn trust through evidence, not demand trust through emotion.",
 ] as const;
 
@@ -90,12 +90,12 @@ const AGREEMENT = [
     body: "To protect reflection before guidance, and to stay within learning, knowledge, and responsible next-step boundaries.",
   },
   {
-    title: "The founder agrees",
+    title: "The project agrees",
     body: "To protect meUus from ego, haste, false claims, money too early, AI arrogance, and using people's pain irresponsibly.",
   },
   {
-    title: "The founder also recognizes",
-    body: "In his faith-grounded worldview, the need to seek protection from shaytan, from Iblis, and from the nafs inside himself. This is founder discipline, not a judgment of users.",
+    title: "Faith and values boundary",
+    body: "Personal faith and values may guide contributors, while meUus does not make spiritual judgments of users or claim religious authority.",
   },
 ] as const;
 

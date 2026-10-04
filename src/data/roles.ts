@@ -19,13 +19,13 @@ export const ROLES: Role[] = [
     slug: "co-founder",
     title: "Co-Founder",
     urgency: "Most Urgent",
-    short: "Build the foundation of meUus with the founder.",
+    short: "Help build the foundation of meUus with the early project team.",
     description:
-      "Express interest in standing beside the founder during the early foundation stage. Any future ownership, authority, title, or decision role requires direct review, clear agreement, and proper legal structure.",
+      "Express interest in joining meUus during the early foundation stage. Any future ownership, authority, title, or decision role requires direct review, clear agreement, and proper legal structure.",
     responsibilities: [
       "Co-own product, growth, technology, or operations end-to-end",
       "Shape strategy, roadmap, and culture from day zero",
-      "Build the founding team alongside the founder",
+      "Help build the founding team through accountable collaboration",
       "Represent meUus to partners, investors, and early users",
     ],
     ideal: [
@@ -34,7 +34,7 @@ export const ROLES: Role[] = [
       "Honest, principled, and willing to do unglamorous work",
     ],
     commitment: "Full ownership · Long-term",
-    reward: "Manual founder discussion only · no guaranteed title, payment, or equity",
+    reward: "Manual project discussion only · no guaranteed title, payment, or equity",
     symbol: "◈",
     color: "#A78BFA",
   },
@@ -47,7 +47,7 @@ export const ROLES: Role[] = [
       "We have direction. We need careful delivery. Execution Partners may help with content, coordination, documentation, and public-foundation work so the Day One checkpoint remains truthful and useful.",
     responsibilities: [
       "Drive weekly delivery across product, content, or operations",
-      "Coordinate between pillar leads and the founder",
+      "Coordinate between project and pillar leads",
       "Own a clear domain and report progress transparently",
       "Build the systems that keep meUus shipping",
     ],
@@ -79,7 +79,7 @@ export const ROLES: Role[] = [
       "Interested in Bangladesh and South Asia growth markets",
     ],
     commitment: "Capital partnership",
-    reward: "Direct founder conversation only · no public investment offer",
+    reward: "Direct project conversation only · no public investment offer",
     symbol: "◇",
     color: "#D4AF37",
   },

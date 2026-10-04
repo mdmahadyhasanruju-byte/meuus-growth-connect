@@ -11,7 +11,7 @@ export const Route = createFileRoute("/appreciation")({
       {
         name: "description",
         content:
-          "A public record of gratitude for the tools, learning, feedback, and support that have helped the founder-led meUus project.",
+          "A public record of gratitude for the tools, learning, feedback, and support that have helped the developing meUus project.",
       },
       { property: "og:title", content: "Appreciation — meUus" },
       {
@@ -67,7 +67,7 @@ function AppreciationPage() {
             Appreciation <span className="italic text-gradient-violet">— meUus</span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground/70">
-            meUus is a founder-led project built through effort, reflection, learning, and practical
+            meUus is a developing project built through effort, reflection, learning, and practical
             help from many tools, ideas, and people.
           </p>
         </div>
@@ -166,13 +166,13 @@ function AppreciationPage() {
       <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
-            Founder responsibility
+            Project responsibility
           </p>
           <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
             Responsibility stays with the project.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-foreground/70 sm:text-lg">
-            The responsibility for meUus remains with its founder and future approved team.
+            The responsibility for meUus remains with the project and its accountable contributors.
             Mistakes, unfinished areas, and future corrections belong to the project itself.
           </p>
         </div>
