@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
+          "meUus is a developing public foundation for understanding, verification, learning, reflection, and responsible human-development architecture.",
       },
-      { name: "author", content: "Md. Mahady Hasan" },
       { property: "og:title", content: "meUus — Connecting Everything" },
       {
         property: "og:description",
         content:
-          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
+          "meUus is a developing public foundation for understanding, verification, learning, reflection, and responsible human-development architecture.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -92,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "meUus is a Phase Zero public foundation for understanding, verification, learning, reflection, and future human-development architecture.",
+          "meUus is a developing public foundation for understanding, verification, learning, reflection, and responsible human-development architecture.",
       },
       {
         property: "og:image",

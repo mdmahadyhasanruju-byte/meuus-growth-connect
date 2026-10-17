@@ -62,11 +62,11 @@ function JoinPage() {
             Phase One · Manual Intake
           </div>
           <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
-            Join the <span className="italic text-gradient-violet">founding</span> journey
+            Join the <span className="italic text-gradient-violet">building</span> journey
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-foreground/70">
-            Before founding, we are choosing the founders. These roles are presented for manual
-            review and follow-up; availability and response handling should be verified directly.
+            meUus is inviting early collaborators through careful manual review. These roles do not
+            guarantee title, authority, payment, equity, or an outcome.
           </p>
           <div className="mt-8">
             <Countdown variant="compact" />

@@ -77,9 +77,17 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-3 pt-6 text-xs text-foreground/50 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} meUus. Founder: Md. Mahady Hasan.</p>
-          <p>meUus Starting Point · Phase One · Alhamdulillah · InShaAllah</p>
+        <div className="flex flex-col items-start justify-between gap-4 pt-6 text-xs text-foreground/50 sm:flex-row sm:items-center">
+          <p>© {new Date().getFullYear()} meUus.</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a
+              href="https://rujbel.org/"
+              className="inline-flex items-center gap-1.5 font-medium text-[var(--gold)] transition hover:text-foreground"
+            >
+              Meet the Founder <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+            <span>meUus Starting Point · Phase One · Alhamdulillah · InShaAllah</span>
+          </div>
         </div>
       </div>
     </footer>

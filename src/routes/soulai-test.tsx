@@ -3,17 +3,17 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/soulai-test")({
   head: () => ({
     meta: [
-      { title: "SoulAI Pilot Paused | meUus" },
+      { title: "SoulAI Preview Status | meUus" },
       {
         name: "description",
         content:
-          "The public SoulAI pilot is temporarily paused while meUus verifies its privacy, retention, deletion, and provider boundaries.",
+          "An unlisted SoulAI chat preview is deployed with adult confirmation and consent. The first owner-led end-to-end check is pending.",
       },
-      { property: "og:title", content: "SoulAI Pilot Paused | meUus" },
+      { property: "og:title", content: "SoulAI Preview Status | meUus" },
       {
         property: "og:description",
         content:
-          "The public SoulAI pilot is temporarily paused for privacy and data-handling review.",
+          "SoulAI is an unlisted, consent-gated chat preview. It is not an AI analysis or advice service.",
       },
       { property: "og:type", content: "website" },
       { name: "robots", content: "noindex,nofollow" },
@@ -28,22 +28,24 @@ function SoulAiTestPage() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-500/15 blur-3xl" />
       <section className="relative mx-auto max-w-3xl rounded-3xl border border-violet-300/20 bg-card/70 p-7 shadow-glow-violet sm:p-12">
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--gold)]/85">
-          SoulAI · Privacy Review
+          SoulAI · Unlisted Preview
         </p>
         <h1 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
-          The public SoulAI pilot is temporarily paused.
+          A limited SoulAI chat preview is deployed.
         </h1>
         <p className="mt-6 text-base leading-8 text-foreground/75">
-          meUus is verifying the pilot&apos;s privacy, retention, deletion, and provider boundaries
-          before any further public use.
+          The preview requires an adult confirmation and active consent before a message can be
+          submitted. The first owner-led end-to-end inference check is still pending.
         </p>
         <div className="mt-8 rounded-2xl border border-white/10 bg-background/45 p-5 sm:p-6">
           <p className="font-medium text-foreground">
-            No SoulAI message can be submitted from this page while the review is in progress.
+            This status page does not submit messages. The preview is unlisted and is not linked
+            from public navigation.
           </p>
           <p className="mt-3 text-sm leading-7 text-foreground/65">
-            The pilot&apos;s source, history, and evidence are being preserved. This pause does not
-            claim that existing records have been deleted, and no restart date is being promised.
+            Chat text stays only in the page session and is sent to Cloudflare Workers AI for a
+            response. meUus does not keep chat history. SoulAI is not DLAS, diagnosis, professional
+            advice, or an automated decision system.
           </p>
         </div>
         <Link
