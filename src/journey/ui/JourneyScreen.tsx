@@ -22,7 +22,7 @@ import type {
   JourneyStorageMode,
   ReflectionResolution,
 } from "../domain/types";
-import { useJourney } from "../provider";
+import { useJourney } from "../context";
 import { canEnterJourneyRoute, getNextJourneyPath } from "../routing/guards";
 
 type ScreenKind =
