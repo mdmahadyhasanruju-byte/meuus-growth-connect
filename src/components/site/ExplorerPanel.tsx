@@ -26,7 +26,7 @@ export function ExplorerPanel({ open, onOpenChange }: ExplorerPanelProps) {
         <SheetHeader className="border-b border-white/5 px-6 pt-8 pb-6 text-left">
           <div className="flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[var(--gold)]">
             <Compass className="h-4 w-4" aria-hidden="true" />
-            meYoo · navigation helper
+            Navigation · site index
           </div>
           <SheetTitle className="font-serif text-3xl font-medium">Explore meUus</SheetTitle>
           <SheetDescription className="max-w-sm leading-relaxed text-foreground/60">

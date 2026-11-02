@@ -16,19 +16,30 @@ This repository powers **[meuus.org](https://meuus.org)**, the authoritative pub
 - `/` — Homepage (What is meUus? Why does it exist? Who is it for?)
 - `/status` — Live ecosystem status and verification checkpoint
 - `/about` — Origin, philosophy, and founder responsibility statement
-- `/governance` — The Amanah Constitution and ethical principles
-- `/contact` — Responsible communication channels
+- `/amanah` — The Amanah Constitution and ethical principles
+- `/join` — Express interest (manual review; no guaranteed role)
+
+The founder's living archive, including *The First True Story of meUus*, is kept on
+[rujbel.org](https://rujbel.org). `/founder` on this site redirects there by design, so
+the archive is not duplicated here.
 
 ---
 
 ### 💻 Development & Deployment
+This repository is a Bun project (`bun.lock`, `bunfig.toml`).
+
 ```bash
 # Install dependencies
-npm install
+bun install --frozen-lockfile
 
 # Run local development server
-npm run dev
+bun run dev
 
 # Build production bundle
-npm run build
+bun run build
+
+# Typecheck, lint, unit tests
+bun run typecheck
+bun run lint
+bun test tests/unit
 ```
