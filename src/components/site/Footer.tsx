@@ -86,6 +86,12 @@ export function Footer() {
             >
               Meet the Founder <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
+            <a
+              href="https://rujbel.org/story"
+              className="inline-flex items-center gap-1.5 font-medium text-[var(--gold)] transition hover:text-foreground"
+            >
+              The First True Story <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
             <span>meUus Starting Point · Phase One · Alhamdulillah · InShaAllah</span>
           </div>
         </div>
