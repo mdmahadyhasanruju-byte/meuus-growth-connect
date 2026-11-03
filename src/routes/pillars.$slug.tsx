@@ -153,6 +153,14 @@ function PillarPage() {
             )}
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <a
+              href={`https://meuussoul.com/pillars/${p.slug}`}
+              className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-7 py-3.5 text-sm font-medium text-foreground hover:bg-white/10 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go deeper on meUus Soul <ArrowRight className="h-4 w-4" />
+            </a>
             <Link
               to="/join"
               search={{}}
