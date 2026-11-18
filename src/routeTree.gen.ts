@@ -38,6 +38,7 @@ import { Route as AmanahRouteImport } from './routes/amanah'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PillarsIndexRouteImport } from './routes/pillars.index'
 import { Route as SoulKnowledgeBeforeActionRouteImport } from './routes/soul.knowledge-before-action'
 import { Route as PillarsSlugRouteImport } from './routes/pillars.$slug'
 import { Route as LanguageKnowledgeWordsToUnderstandingRouteImport } from './routes/language-knowledge.words-to-understanding'
@@ -204,6 +205,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PillarsIndexRoute = PillarsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PillarsRoute,
+} as any)
 const SoulKnowledgeBeforeActionRoute =
   SoulKnowledgeBeforeActionRouteImport.update({
     id: '/knowledge-before-action',
@@ -360,6 +366,7 @@ export interface FileRoutesByFullPath {
   '/language-knowledge/words-to-understanding': typeof LanguageKnowledgeWordsToUnderstandingRoute
   '/pillars/$slug': typeof PillarsSlugRoute
   '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
+  '/pillars/': typeof PillarsIndexRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRoutesByTo {
@@ -384,7 +391,6 @@ export interface FileRoutesByTo {
   '/manifesto': typeof ManifestoRoute
   '/manifesto-full': typeof ManifestoFullRoute
   '/one-word-start': typeof OneWordStartRoute
-  '/pillars': typeof PillarsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/safety': typeof SafetyRoute
   '/soul': typeof SoulRouteWithChildren
@@ -411,6 +417,7 @@ export interface FileRoutesByTo {
   '/language-knowledge/words-to-understanding': typeof LanguageKnowledgeWordsToUnderstandingRoute
   '/pillars/$slug': typeof PillarsSlugRoute
   '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
+  '/pillars': typeof PillarsIndexRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRoutesById {
@@ -463,6 +470,7 @@ export interface FileRoutesById {
   '/language-knowledge/words-to-understanding': typeof LanguageKnowledgeWordsToUnderstandingRoute
   '/pillars/$slug': typeof PillarsSlugRoute
   '/soul/knowledge-before-action': typeof SoulKnowledgeBeforeActionRoute
+  '/pillars/': typeof PillarsIndexRoute
   '/journey/quest/$questId': typeof JourneyQuestQuestIdRoute
 }
 export interface FileRouteTypes {
@@ -516,6 +524,7 @@ export interface FileRouteTypes {
     | '/language-knowledge/words-to-understanding'
     | '/pillars/$slug'
     | '/soul/knowledge-before-action'
+    | '/pillars/'
     | '/journey/quest/$questId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -540,7 +549,6 @@ export interface FileRouteTypes {
     | '/manifesto'
     | '/manifesto-full'
     | '/one-word-start'
-    | '/pillars'
     | '/privacy'
     | '/safety'
     | '/soul'
@@ -567,6 +575,7 @@ export interface FileRouteTypes {
     | '/language-knowledge/words-to-understanding'
     | '/pillars/$slug'
     | '/soul/knowledge-before-action'
+    | '/pillars'
     | '/journey/quest/$questId'
   id:
     | '__root__'
@@ -618,6 +627,7 @@ export interface FileRouteTypes {
     | '/language-knowledge/words-to-understanding'
     | '/pillars/$slug'
     | '/soul/knowledge-before-action'
+    | '/pillars/'
     | '/journey/quest/$questId'
   fileRoutesById: FileRoutesById
 }
@@ -858,6 +868,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pillars/': {
+      id: '/pillars/'
+      path: '/'
+      fullPath: '/pillars/'
+      preLoaderRoute: typeof PillarsIndexRouteImport
+      parentRoute: typeof PillarsRoute
+    }
     '/soul/knowledge-before-action': {
       id: '/soul/knowledge-before-action'
       path: '/knowledge-before-action'
@@ -1060,10 +1077,12 @@ const LanguageKnowledgeRouteWithChildren =
 
 interface PillarsRouteChildren {
   PillarsSlugRoute: typeof PillarsSlugRoute
+  PillarsIndexRoute: typeof PillarsIndexRoute
 }
 
 const PillarsRouteChildren: PillarsRouteChildren = {
   PillarsSlugRoute: PillarsSlugRoute,
+  PillarsIndexRoute: PillarsIndexRoute,
 }
 
 const PillarsRouteWithChildren =
