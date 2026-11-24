@@ -7,35 +7,77 @@ export interface Env {
 }
 
 const VERIFIED_BUILD = {
-  governance: '5b885b6 Phase 1 P1 CLOSED 27 files',
-  app: '26a3877 ecosystem ACTIVE f70528c 8f26d6b fe44edf 82c2f64 + e08bc47 P2-01 + 269457e P2-02',
-  meuus_app: '269457e P2-02 6 verified games – 1561 modules – 576.32 kB',
-  learning: 'e08bc47 P2-01 dimensionProgress 105 concepts + 60 capabilities + DLAS Full-100',
-  meuussoul: '8f26d6b main fixed P1-10 + P1-13 origin/HEAD → main',
-  meuus_org: 'fe44edf → P2-03 VERIFIED CTA',
-  rujbel: '82c2f64 founder archive',
-  build: '1561 modules transformed',
+  governance: "5b885b6 Phase 1 P1 CLOSED 27 files",
+  app: "26a3877 ecosystem ACTIVE f70528c 8f26d6b fe44edf 82c2f64 + e08bc47 P2-01 + 269457e P2-02",
+  meuus_app: "269457e P2-02 6 verified games – 1561 modules – 576.32 kB",
+  learning: "e08bc47 P2-01 dimensionProgress 105 concepts + 60 capabilities + DLAS Full-100",
+  meuussoul: "8f26d6b main fixed P1-10 + P1-13 origin/HEAD → main",
+  meuus_org: "fe44edf → P2-03 VERIFIED CTA",
+  rujbel: "82c2f64 founder archive",
+  build: "1561 modules transformed",
 };
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    
+
     // Verified CTA routes – Phase 2 P2-03
-    if (url.pathname === '/api/verified') {
-      return new Response(JSON.stringify({
-        phase: 'Phase 2 P2-03 VERIFIED',
-        source: VERIFIED_BUILD,
-        ctas: [
-          { titleEn: 'Book Zero – 105 Concepts', titleBn: 'বুক জিরো – ১০৫ ধারণা', href: 'https://meuus.app/books/book-zero', source: 'BOOK_ZERO_CONCEPT_REGISTER 105 – 5b885b6' },
-          { titleEn: 'Learning Progress – VERIFIED_BASELINE 5/8', titleBn: 'শেখার অগ্রগতি – যাচাইকৃত ৫/৮', href: 'https://meuus.app/education/progress', source: 'LearningProgressStub e08bc47' },
-          { titleEn: 'Game Hub – 6 Verified Games', titleBn: 'গেম হাব – ৬ যাচাইকৃত গেম', href: 'https://meuus.app/games', source: 'GameHub 269457e – 220+/193- – build 576.32 kB' },
-          { titleEn: 'Ecosystem – 4 Domain ACTIVE', titleBn: 'ইকোসিস্টেম – ৪ ডোমেইন ACTIVE', href: 'https://meuus.app/ecosystem', source: '26a3877 ACTIVE f70528c 8f26d6b fe44edf 82c2f64' },
-          { titleEn: 'Soul – meuussoul.com', titleBn: 'আত্মা – meuussoul.com', href: 'https://meuussoul.com', source: '8f26d6b main fixed P1-10/P1-13' },
-          { titleEn: 'Founder Archive – rujbel.org', titleBn: 'প্রতিষ্ঠাতা আর্কাইভ – rujbel.org', href: 'https://rujbel.org', source: '82c2f64 founder' },
-        ],
-        claim: 'Claim ≤ Evidence: local CTAs, no live API, no payments, privacy-first offline',
-      }, null, 2), { headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
+    if (url.pathname === "/api/verified") {
+      return new Response(
+        JSON.stringify(
+          {
+            phase: "Phase 2 P2-03 VERIFIED",
+            source: VERIFIED_BUILD,
+            ctas: [
+              {
+                titleEn: "Book Zero – 105 Concepts",
+                titleBn: "বুক জিরো – ১০৫ ধারণা",
+                href: "https://meuus.app/books/book-zero",
+                source: "BOOK_ZERO_CONCEPT_REGISTER 105 – 5b885b6",
+              },
+              {
+                titleEn: "Learning Progress – VERIFIED_BASELINE 5/8",
+                titleBn: "শেখার অগ্রগতি – যাচাইকৃত ৫/৮",
+                href: "https://meuus.app/education/progress",
+                source: "LearningProgressStub e08bc47",
+              },
+              {
+                titleEn: "Game Hub – 6 Verified Games",
+                titleBn: "গেম হাব – ৬ যাচাইকৃত গেম",
+                href: "https://meuus.app/games",
+                source: "GameHub 269457e – 220+/193- – build 576.32 kB",
+              },
+              {
+                titleEn: "Ecosystem – 4 Domain ACTIVE",
+                titleBn: "ইকোসিস্টেম – ৪ ডোমেইন ACTIVE",
+                href: "https://meuus.app/ecosystem",
+                source: "26a3877 ACTIVE f70528c 8f26d6b fe44edf 82c2f64",
+              },
+              {
+                titleEn: "Soul – meuussoul.com",
+                titleBn: "আত্মা – meuussoul.com",
+                href: "https://meuussoul.com",
+                source: "8f26d6b main fixed P1-10/P1-13",
+              },
+              {
+                titleEn: "Founder Archive – rujbel.org",
+                titleBn: "প্রতিষ্ঠাতা আর্কাইভ – rujbel.org",
+                href: "https://rujbel.org",
+                source: "82c2f64 founder",
+              },
+            ],
+            claim: "Claim ≤ Evidence: local CTAs, no live API, no payments, privacy-first offline",
+          },
+          null,
+          2,
+        ),
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "public, max-age=3600",
+          },
+        },
+      );
     }
 
     // Root – Verified Landing with CTA
@@ -84,6 +126,11 @@ Build: vite v5.4.21 1561 modules transformed → dist/assets/App-BlDiGL7F.js 576
 </body>
 </html>`;
 
-    return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=600' } });
+    return new Response(html, {
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "public, max-age=600",
+      },
+    });
   },
 };

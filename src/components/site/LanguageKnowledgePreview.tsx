@@ -52,8 +52,12 @@ export function LanguageKnowledgePreview({ page }: { page: LanguageKnowledgePrev
             <ShieldCheck className="h-3.5 w-3.5 text-[var(--gold)]" />
             {page.eyebrow}
           </div>
-          <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">{page.title}</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">{page.subtitle}</p>
+          <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.02] sm:text-7xl">
+            {page.title}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
+            {page.subtitle}
+          </p>
         </div>
       </section>
 
@@ -71,8 +75,12 @@ export function LanguageKnowledgePreview({ page }: { page: LanguageKnowledgePrev
       <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">Short purpose</p>
-            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">What this page is for</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
+              Short purpose
+            </p>
+            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
+              What this page is for
+            </h2>
             <p className="mt-5 leading-relaxed text-foreground/70">{page.shortPurpose}</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
@@ -88,12 +96,17 @@ export function LanguageKnowledgePreview({ page }: { page: LanguageKnowledgePrev
             <article key={section.title} className="rounded-3xl border-hairline bg-card/45 p-7">
               <h2 className="font-serif text-3xl text-foreground">{section.title}</h2>
               {section.paragraphs?.map((paragraph) => (
-                <p key={paragraph} className="mt-4 leading-relaxed text-foreground/70">{paragraph}</p>
+                <p key={paragraph} className="mt-4 leading-relaxed text-foreground/70">
+                  {paragraph}
+                </p>
               ))}
               {section.bullets && (
                 <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                   {section.bullets.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-foreground/72">
+                    <li
+                      key={item}
+                      className="flex gap-3 text-sm leading-relaxed text-foreground/72"
+                    >
                       <CircleDot className="mt-0.5 h-4 w-4 flex-none text-[var(--gold)]" />
                       <span>{item}</span>
                     </li>
@@ -107,7 +120,11 @@ export function LanguageKnowledgePreview({ page }: { page: LanguageKnowledgePrev
 
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow="Review boundary" title="Claim must stay smaller than or equal to evidence." subtitle={page.claimReminder} />
+          <SectionHeading
+            eyebrow="Review boundary"
+            title="Claim must stay smaller than or equal to evidence."
+            subtitle={page.claimReminder}
+          />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             <InfoPanel title="One small action" body={page.oneSmallAction} />
             <InfoPanel title="Disclaimer block" body={SHARED_DISCLAIMER} />
@@ -119,13 +136,24 @@ export function LanguageKnowledgePreview({ page }: { page: LanguageKnowledgePrev
       <section className="border-y border-foreground/10 bg-foreground/[0.025] px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">Related pages</p>
-            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">Stay inside the draft set.</h2>
-            <p className="mt-5 leading-relaxed text-foreground/70">These links point only to bounded draft public-preview pages. They do not indicate publication approval.</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">
+              Related pages
+            </p>
+            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
+              Stay inside the draft set.
+            </h2>
+            <p className="mt-5 leading-relaxed text-foreground/70">
+              These links point only to bounded draft public-preview pages. They do not indicate
+              publication approval.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3 self-center">
             {page.relatedPages.map((related) => (
-              <Link key={related.to} to={related.to} className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-5 py-3 text-sm text-foreground transition hover:text-[var(--gold)]">
+              <Link
+                key={related.to}
+                to={related.to}
+                className="inline-flex items-center gap-2 rounded-full border-hairline bg-glass px-5 py-3 text-sm text-foreground transition hover:text-[var(--gold)]"
+              >
                 {related.label} <ArrowRight className="h-4 w-4" />
               </Link>
             ))}
@@ -136,9 +164,15 @@ export function LanguageKnowledgePreview({ page }: { page: LanguageKnowledgePrev
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl rounded-3xl border-hairline bg-card/50 p-8 text-center shadow-glow-gold">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]/85">Version note</p>
-          <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">Internal corrected draft revision.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">{SHARED_VERSION_NOTE}</p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">Next internal step: {page.nextInternalStep}</p>
+          <h2 className="mt-4 font-serif text-3xl text-foreground sm:text-4xl">
+            Internal corrected draft revision.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">
+            {SHARED_VERSION_NOTE}
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/65">
+            Next internal step: {page.nextInternalStep}
+          </p>
         </div>
       </section>
     </div>
